@@ -1,0 +1,132 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body {
+	padding-top: 70px;
+	background: #80bfff;
+}
+
+
+.txtpadding { 
+	display: inline-block; 
+	text-align: center;
+	background-color: #888888; 
+	color: white; 
+	border-radius: 7px;
+}
+
+
+.navbar-nav > li {
+	display: inline-block;
+   font-size: 20px;
+   text-align: center;
+}
+
+.user_thumb {  
+   max-height: 100; 
+   max-width: 100%; 
+   border-radius: 50%;
+   float: left;  
+}
+
+.text_right {
+   float: right;
+   
+}
+
+.link1 {
+   background-color: #003300;
+   color: white !important;
+   border: 1px solid #66ff66;
+}
+
+.link2 {
+   background-color: #003366;
+   color: white !important;  
+	border: 1px solid #80bfff;
+}
+
+.link3 {
+   background-color: #ff0000;
+   color: white !important;
+   border: 1px solid #ff8080;
+} 
+
+
+.div1 {
+	background-color: #FFFFFF;
+}
+
+.div2 {
+   text-align: center; 
+   background: #80bfff;
+}
+   
+.answerDiv {
+	display: inline-block; 
+	border: 1px solid white; 
+	border-color: white; 
+	text-align: center; 
+	background-color: white; 
+	width: 80%; 
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+}
+
+.userDiv {
+   display: inline-block;
+   width: 100%; 
+   height: 20%;
+   border: 1px solid black;
+   border-color: black; 
+   background-color: white;
+   font-family: "Roboto", sans-serif;
+   
+}
+
+
+.ajax_server{
+	text-align: center;
+    background: #FFA500;
+	padding: 10px 20px;
+    border: 0;
+    display: inline-block;
+    margin-top: 20px;
+    cursor: pointer;
+	display:none;
+	color: white;		
+}
+
+
+.ajax_failure{
+	text-align: center;
+    background: #F3A6A6;
+	padding: 10px 20px;
+    border: 0;
+    display: inline-block;
+    margin-top: 20px;
+    cursor: pointer;
+	display:none;
+	color: white;
+}
+
+
+.ajax_success{
+	text-align: center;
+    background: #CCF5CC;
+	padding: 10px 20px;
+    border: 0;
+    display: inline-block;
+    margin-top: 20px;
+    cursor: pointer;
+	display:none;
+	color: white;
+}
+
+.score-div {
+	background: #D3D3D3; 
+	border-radius: 50%;
+	color: white;
+}
+

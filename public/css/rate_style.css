@@ -1,0 +1,106 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+
+
+
+body {
+	padding-top: 70px; 
+	background: #80bfff;
+}
+
+.navbar-nav > li {
+	display: inline-block;
+   font-size: 20px;
+   text-align: center;
+}
+
+.link1 {
+   background-color: #003300;
+   color: white !important;
+   border: 1px solid #66ff66;
+}
+
+.link2 {
+   background-color: #003366;
+   color: white !important;  
+	border: 1px solid #80bfff;
+}
+
+.link3 {
+   background-color: #ff0000;
+   color: white !important;
+   border: 1px solid #ff8080;
+} 
+
+.rateForm {
+	/*display: inline-block; */
+	border: 1px solid white; 
+	border-color: white; 
+	text-align: center; 
+	background-color: white; 
+	/*width: auto; */
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.ajax_failure{
+	text-align: center;
+    background: #F3A6A6;
+	padding: 10px 20px;
+    border: 0;
+    display: inline-block;
+    margin-top: 20px;
+    cursor: pointer;
+	display:none;
+	color: white;
+}
+
+h1 {
+	font-family: "Roboto", sans-serif;
+	text-align: center;
+	font-size: 36px;
+	font-weight: 300;
+}
+
+p {
+	font-family: "Roboto", sans-serif;
+	color: black; 
+	font-size: 20px;
+	font-weight: 300;
+	text-shadow: none;
+}
+
+Button[id*="upButton"]:hover {
+	background-color: green;
+	color: white;
+}
+
+
+
+Button[id*="downButton"]:hover {
+	background-color: red;
+	color: white;
+}
+
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+
+            .links > a {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+			
+            .top-right {
+                position: absolute;
+                right: 10px;
+                top: 18px;
+            }
+
