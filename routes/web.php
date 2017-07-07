@@ -28,7 +28,7 @@ Auth::routes();
 //Route::get('user/{id}', 'UserController@profile');
 Route::get('/users', 'UserController@userList');
 
-Route::get('/user/{id}', 'AnsweredQuestionController@userAnswers');
+Route::get('/user/{id}', 'UserController@userAnswers');
 
 //USER ANSWERING ROUTE
 Route::get('/home', 'QuestionController@showQues');

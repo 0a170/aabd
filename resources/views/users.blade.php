@@ -70,30 +70,44 @@
   </div>
 </nav>
 
-	
-	<div style="background-color: #bfbfbf;">
-	   <br><br>
-	</div>
    
-   <br>
+   
    
    <div class="div2">
+   
+      <h1> Browse Users </h1>
    
       <br>
    
       @foreach($users as $user) 
       
+         <a href="user/{{ $user->id }}" style="display: block;">
+      
          <div class="userDiv">
          
-               <img src="{{ asset('storage\\images\\' . $user->profile_image) }}" class="user_thumb">
-         
-               <p class="right_text"> Name: {{ $user->user_name }} </p>
+            @if(file_exists('storage\\images\\' . $user->profile_image))
             
-               <p class="right_text"> Description: {{ $user->description }} </p>
+               <img src="{{ asset('storage\\images\\' . $user->profile_image) }}" class="userThumb">
+         
+            @else
                
-               <p class="right_text"> Score: {{ $user->score }} </p>
+               <img src="{{ asset('storage\\images\\prof_def.png') }}" class="userThumb"> 
+            
+            @endif
+            
+               <div class="rightText">
+            
+                  <p> Name: {{ $user->user_name }} </p>
+            
+                  <p> Description: {{ $user->description }} </p>
+               
+                  <p> Score: {{ $user->score }} </p>
+                  
+               </div> 
          
          </div> 
+         
+         </a>
          
          <br>
       

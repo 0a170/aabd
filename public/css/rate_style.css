@@ -1,15 +1,21 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 
-
-
 body {
 	padding-top: 70px; 
 	background: #80bfff;
 }
 
+.navbar-brand {
+   color: white !important;
+}
+
+.navbar-toggle {  
+   color: white !important
+}
+
 .navbar-nav > li {
-	display: inline-block;
+	//display: inline-block;
    font-size: 20px;
    text-align: center;
 }
@@ -17,32 +23,44 @@ body {
 .link1 {
    background-color: #003300;
    color: white !important;
-   border: 1px solid #66ff66;
+   //border: 1px solid #66ff66;
 }
 
 .link2 {
    background-color: #003366;
    color: white !important;  
-	border: 1px solid #80bfff;
+	//border: 1px solid #80bfff;
 }
 
 .link3 {
    background-color: #ff0000;
    color: white !important;
-   border: 1px solid #ff8080;
+   //border: 1px solid #ff8080;
 } 
 
-.rateForm {
-	/*display: inline-block; */
+.link4 {
+   background-color: #400080;
+   color: white !important;
+   //border: 1px solid #cc99ff;
+} 
+
+.div1 {
+   text-align: center;
+}
+
+.rateDiv {
+	display: inline-block; 
 	border: 1px solid white; 
 	border-color: white; 
 	text-align: center; 
 	background-color: white; 
-	/*width: auto; */
+   width: 90%;
+	max-width: 400px;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding: 10px;
+	//padding-bottom: 10px;
 }
+
 
 .ajax_failure{
 	text-align: center;

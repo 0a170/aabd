@@ -1,20 +1,27 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 #pAsk {
-width: 360px;
-margin: auto;
-padding: 8% 0 0 !important;
-	
+   //width: 360px;
+   //text-align: center !important;
+   //margin: auto;
+   //padding: 8% 0 0 !important;
 }
-
 
 body {
 	padding-top: 70px; 
 	background: #80bfff;
 }
 
+.navbar-brand {
+   color: white !important;
+}
+
+.navbar-toggle {  
+   color: white !important
+}
+
 .navbar-nav > li {
-	display: inline-block;
+	//display: inline-block;
    font-size: 20px;
    text-align: center;
 }
@@ -22,21 +29,26 @@ body {
 .link1 {
    background-color: #003300;
    color: white !important;
-   border: 1px solid #66ff66;
+   //border: 1px solid #66ff66;
 }
 
 .link2 {
    background-color: #003366;
    color: white !important;  
-	border: 1px solid #80bfff;
+	//border: 1px solid #80bfff;
 }
 
 .link3 {
    background-color: #ff0000;
    color: white !important;
-   border: 1px solid #ff8080;
-}  
+   //border: 1px solid #ff8080;
+} 
 
+.link4 {
+   background-color: #400080;
+   color: white !important;
+   //border: 1px solid #cc99ff;
+}  
 
 #dPage {
 	background: white !important;
@@ -136,8 +148,8 @@ h1 {
 
 #askForm {
 	//position: relative;
-	max-width: 360px !important; 
-	//text-align: center !important;
+	max-width: 320px !important; 
+	text-align: center !important;
 	box-shadow: 2px 2px 2px #888888 !important;
 	padding-bottom: 5% !important;
 	background: #F0F0F0 !important;
@@ -145,7 +157,10 @@ h1 {
 }
 
 
-
+#frmDemo {
+   display: inline-block !important;
+   //text-align: center !important;
+}
 
 #frmDemo > .content {
 	min-height: 100px;
@@ -156,18 +171,17 @@ h1 {
 
 }
 
-
 #frmDemo > .content > .body {
 	//display: inline-block; 
 	height: auto;
    text-align: center !important;
 }
 
-
 #frmDemo > .content > .body input{
 	
 	width: 100%;
-	display: inline-block;
+   //text-align: center;
+	//display: inline-block;
 	//margin: 0 auto;
    margin-bottom: 30px;
    font-size: 16px;
@@ -176,7 +190,6 @@ h1 {
 #frmDemo > .steps {
 	display: none;
 	text-shadow: none;
-	
 }
 
 
@@ -184,7 +197,8 @@ h1 {
 	border-radius: 2px !important;
 	color: white !important;
 	text-align: center !important;
-	width: 100% !important;
+	//width: 100px !important;
+   width: 5.5em !important;
    font-family: "Roboto", sans-serif;
    font-size: 20px;
    font-weight: 300;
@@ -194,9 +208,11 @@ h1 {
 #frmDemo > .actions > ul > li:first-child,
 #frmDemo > .actions > ul > li:first-child.active {
 	border: 1px solid red !important;
+   border-radius: 2px !important;
+   border-top: 5px !important;
    background: #ff6666 !important; 
+   color: white !important;
    margin-right: 25px;
-   //float: left; 
    display: inline-block;
    text-align: center !important;
 }
@@ -208,9 +224,6 @@ h1 {
    border-top: 5px !important;
 	background: #4981ce !important;
 	color: white !important;
-	text-align: center !important;
-	//width: 100% !important;
-   //float: right;
    margin-left: 25px;
    display: inline-block;
 }   
@@ -218,17 +231,14 @@ h1 {
 
 #frmDemo > .actions .disabled a {
    background: #888888;
-	//display: none !important;
 } 
 
 
 #frmDemo > .actions > ul > li:last-child {
 	border: 1px solid green !important;
-   background: #00ff55 !important; 
-   //float: right; 
+   background: #00ff55 !important;  
    text-align: center !important;
    margin-left: 25px;
-   //padding-right: 50px;
    display: inline-block;
    
 }

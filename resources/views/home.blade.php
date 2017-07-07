@@ -36,12 +36,12 @@
   
       <ul class="nav navbar-nav">
 
-        <li><a href="{{ url('/ask') }}" class="link1">Ask</a></li>
-        <li><a href="{{ url('/recent') }}" class="link2">Recent</a></li>
+        <li><a href="{{ url('/ask') }}" class="link1"><span class="glyphicon glyphicon-question-sign"></span> Ask</a></li>
+        <li><a href="{{ url('/recent') }}" class="link2"><span class="glyphicon glyphicon-thumbs-up"></span> Recent</a></li>
         <li>
             <a href="#" onclick="event.preventDefault();
                                                      document.getElementById('logOutForm').submit();" class="link3"> 
-            Logout</a>
+            <span class="glyphicon glyphicon-log-out"></span> Logout</a>
         
                <form id="logOutForm" method="POST" action="{{ route('logout') }}" style="display: none;">
         
@@ -67,6 +67,7 @@
    @else
       <img src="{{ asset('storage\\images\\prof_def.png') }}" style="height: auto; width: 100%; border-radius: 50%;" data-toggle="modal" data-target="#popupLogin">
    @endif   
+   
    
       <div class="container" style="inline-block; text-align: center; background-color: #e4e4e4;">
    
@@ -192,6 +193,7 @@
             
                          
             <form id="{{ $question->question_id }}" class="aForm" method="POST">
+            
             
                <input type="text" id="answerID{{ $question->question_id }}" name="answerInput" class="answers" style="max-width: 60%; display: block; margin: 0 auto;"></textarea>   
             

@@ -26,124 +26,98 @@
 
        <script src="{{ asset('/js/quest_submit_ajax.js') }}"></script>
 
-        <!-- Styles -->
-        <style>
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 16px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-                font-family: "Roboto", sans-serif;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style> 
     </head>
     <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="{{ url('/ask') }}">Ask a Brotha</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>                        
+               </button>
+               <a class="navbar-brand" href="{{ url('/ask') }}">Ask a Brotha</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
 
-      <ul class="nav navbar-nav">
-      @if (Auth::check())
-        <li><a href="{{ url('/home') }}" class="link1">Answer</a></li>
-        <li><a href="{{ url('/recent') }}" class="link2">Recent</a></li>
-        <li>
-            <a href=" {{ url('/logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logOutForm').submit();" class="link3"> 
-            Logout</a>
+               <ul class="nav navbar-nav">
+                  @if (Auth::check())
+                     <li><a href="{{ url('/home') }}" class="link1"><span class="glyphicon glyphicon-pencil"></span> Answer</a></li>
+                     <li><a href="{{ url('/recent') }}" class="link2"><span class="glyphicon glyphicon-thumbs-up"></span> Recent</a></li>
+                     <li>
+                     <a href=" {{ url('/logout') }}" onclick="event.preventDefault();
+                                                             document.getElementById('logOutForm').submit();" class="link3"> 
+                        <span class="glyphicon glyphicon-log-out"></span>Logout
+                     </a>
         
-               <form id="logOutForm" method="POST" action="{{ url('/logout') }}" style="display: none;">
+                     <form id="logOutForm" method="POST" action="{{ url('/logout') }}" style="display: none;">
                         
-                  {{ csrf_field() }}
+                        {{ csrf_field() }}
                        
-               </form>
+                     </form>
                     
-        </li>
-        @else
-        <li><a href="{{ url('/login') }}" class="link1">Login</a></li>
-        <li><a href="{{ url('/register') }}" class="link2">Register</a></li>
-        <li><a href="{{ url('/recent') }}" class="link3">Recent</a></li>
-        @endif
-      </ul>
-    </div>
-  </div>
-</nav>
+                     </li>
+                  @else
+                     <li><a href="{{ url('/login') }}" class="link1"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                     <li><a href="{{ url('/register') }}"class="link2"><span class="glyphicon glyphicon-check"></span> Register</a></li>
+                     <li><a href="{{ url('/recent') }}" class="link3"><span class="glyphicon glyphicon-thumbs-up"></span> Recent</a></li>
+                     <li><a href="{{ url('/users') }}" class="link4"><span class="glyphicon glyphicon-user"></span> Users</a></li>
+                  @endif
+               </ul>
+            </div>
+         </div>
+      </nav>
 
 
 
-<div id="pAsk" class="content">	
+      <!-- <div id="pAsk">	-->
 	
-	<h1> Ask a question </h1>
-	<br>
-	<br>
-	<div id="askForm">
+	     <h1> Ask a question </h1>
+	     <br>
+	     <br>
+	     <div id="askForm">
 	
-	<form id="frmDemo" class="form-group" method="POST">
+	        <form id="frmDemo" class="form-group" method="POST">
 
-		<h3> Ask</h3> 
+		       <h3> Ask</h3> 
 
-		<section> 
-			<div id="stepHeader">
-				<h2> Your Question</h2>
-			</div>
-			<input type="text" id="quest" name="question" class="all_inputs" value="Question" onfocus="if(this.value == 'Question') this.value = ''"> 
-			<input type="hidden" class="whatev" value="{{ csrf_token() }}">
-		</section> 
+		       <section> 
+			       <div id="stepHeader">
+				       <h2> Your Question</h2>
+			       </div>
+			       <input type="text" id="quest" name="question" class="all_inputs" value="Question" onfocus="if(this.value == 'Question') this.value = ''"> 
+			       <input type="hidden" class="whatev" value="{{ csrf_token() }}">
+		       </section> 
 			
-		<h3> Email </h3>
+		       <h3> Email </h3>
 			
-		<section>
-			<div id="stepHeader">
-				<h2> Your Email Address </h2>
-			</div>			
-			<input type="text" id="em" name="email"  class="all_inputs" value="Email Address" onfocus="if(this.value == 'Email Address') this.value = ''"> 
-         <br>
-         
-		</section> 
+		       <section>
+			       <div id="stepHeader">
+				       <h2> Your Email Address </h2>
+			       </div>			
+			       <input type="text" id="em" name="email"  class="all_inputs" value="Email Address" onfocus="if(this.value == 'Email Address') this.value = ''"> 
+                <br>    
+		       </section> 
 		
-		<h3> Submit </h3> 
+		       <h3> Submit </h3> 
 		
-		<section> 
-			<div id="stepHeader">
-				<h2> Submit your question </h2>
-			</div>
+		       <section> 
+			       <div id="stepHeader">
+				       <h2> Submit your question </h2>
+			       </div>
+			       <br>
+		       </section>
 	
-			<br>
-		</section>
-	
-	</form>
+	        </form>
 		
-		<div id="success_message" class="ajax_response" style="float:left"></div>
-      <div id="error_message" class="ajax_response" style"float:left"></div>
-	</div>
+		     <div id="success_message" class="ajax_response" style="float:left"></div>
+           <div id="error_message" class="ajax_response" style"float:left"></div>
+           
+	     </div>
 		
-</div>
-        </div>
+     <!-- </div> -->
+        <!-- </div> -->
     </body>
+    
 </html>

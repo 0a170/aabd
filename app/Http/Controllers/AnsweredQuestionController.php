@@ -50,7 +50,7 @@ class AnsweredQuestionController extends Controller
     }
     
     
-    public function userAnswers($id) {
+    /*public function userAnswers($id) {
       
       $user = User::findOrFail($id);
       
@@ -61,7 +61,7 @@ class AnsweredQuestionController extends Controller
       //return view('user_profile', array('user' => $user, 'user_answers' => '$user_answers'));
       return view('user_profile', compact('user', 'user_answers'));
       
-    }
+    } */
     
     
     public function like(Request $req) {

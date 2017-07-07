@@ -1,16 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
+//include composer autoload
+require '../vendor/autoload.php';
+
 
 use View;
 use App\User;
+//use Image;
+use App\AnsweredQuestion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class UserController extends Controller {
-
 
 
 
@@ -39,6 +44,20 @@ class UserController extends Controller {
       return view('users', ['users' => $users]);   
    }
    
+      
+   public function userAnswers($id) {
+      
+      $user = User::findOrFail($id);
+      
+      $user_answers = AnsweredQuestion::where('user_id', $id)
+                                             ->orderBy('updated_at', 'desc')
+                                             ->get();
+                                             
+      //return view('user_profile', array('user' => $user, 'user_answers' => '$user_answers'));
+      return view('user_profile', compact('user', 'user_answers'));
+      
+   }
+   
    
    public function upload(Request $req) {
       
@@ -52,6 +71,11 @@ class UserController extends Controller {
       $username = $username_sans_ext . '.' . $ext; 
 
       $file->storeAs('/public/images/', $username);
+      
+      $manager = new ImageManager(array('driver' => 'imagick'));
+      
+      $file->storeAs('/public/thumbnails/', $username_sans_ext . '_thumbnail' . $ext)->resize(100, 100);
+   
 
           
       
@@ -63,9 +87,9 @@ class UserController extends Controller {
       $user_prof->save();
       
       return redirect()->back();
-
  
    }
+   
    
    public function updateDescription(Request $req) {
       

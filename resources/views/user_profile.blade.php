@@ -71,8 +71,19 @@
 </nav>
 
    
-   <img src="{{ asset('storage\\images\\' . $user->user_name . '.jpg') }}" style="height: auto; width: 100%; border-radius: 50%;" data-toggle="modal" data-target="#popupLogin">
+   @if(file_exists('storage\\images\\' . $user->user_name . '.jpg'))
+   
+      <img src="{{ asset('storage\\images\\' . $user->user_name . '.jpg') }}" style="height: auto; width: 100%; border-radius: 50%;">
 
+   @elseif(file_exists('storage\\images\\' . $user->user_name . '.png')) 
+   
+      <img src="{{ asset('storage\\images\\' . $user->user_name . '.jpg') }}" style="height: auto; width: 100%; border-radius: 50%;">
+      
+   @else
+   
+      <img src="{{ asset('storage\\images\\prof_def.png') }}" style="height: auto; width: 100%; border-radius: 50%;">
+   
+   @endif
    <div class="container" style="inline-block; text-align: center; background-color: #e4e4e4;">
 
       
@@ -82,7 +93,7 @@
       <h2 style="display: inline-block; text-align: center; background-color: #888888; color: white; border-radius: 7px; padding: 7px;"> {{ $user->user_name }} </h2> <br>
 	
 	
-	   <h3 style="display: inline-block; text-align: center; background-color: #888888; color: white; border-radius: 7px; padding: 7px;" data-toggle="modal" data-target="#popupDesc"> {{ $user->description }} </h3> 
+	   <h3 style="display: inline-block; text-align: center; background-color: #888888; color: white; border-radius: 7px; padding: 7px;"> {{ $user->description }} </h3> 
 
 
    
