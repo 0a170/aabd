@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateQuestionCheckTable extends Migration
+class CreateQuestionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateQuestionCheckTable extends Migration
      */
     public function up()
     {
-        Schema::create('question_check', function (Blueprint $table) {
-            $table->increments('check_id');
-            $table->integer('ques_id');
-            $table->string('question_to_check');
-            $table->tinyInteger('has_been_answered');
+        Schema::create('questions', function (Blueprint $table) {
+            $table->increments('question_id');
+            $table->string('question');
+            $table->string('asker_email');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -30,6 +29,6 @@ class CreateQuestionCheckTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('question_check');
+        Schema::dropIfExists('questions');
     }
 }
