@@ -69,6 +69,7 @@ class RegisterController extends Controller
             'profile_image' => ' {{ asset("profile_images/prof_def.png") }} ',
             'description' => 'Click here to change your description',
             'questions_answered' => 0,
+			'score' => 0,
         ]);
     }
 }
