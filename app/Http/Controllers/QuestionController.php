@@ -50,7 +50,7 @@ class QuestionController extends Controller
       }
       else {
 
-         return view('\auth\login')->with('status', 'Not logged in');
+         return view('auth.login')->with('status', 'Not logged in');
 
       }
 
