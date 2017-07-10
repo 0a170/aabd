@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 
-         <link rel="stylesheet" type="text/css" href="{{asset('css/jquery.steps.css')}}"> 
+         <link rel="stylesheet" type="text/css" href="{{asset('css/jquery.steps.css')}}">
 
 
          <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
@@ -35,7 +35,7 @@
                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>                        
+                  <span class="icon-bar"></span>
                </button>
                <a class="navbar-brand" href="{{ url('/ask') }}">Ask a Brotha</a>
             </div>
@@ -47,16 +47,16 @@
                      <li><a href="{{ url('/recent') }}" class="link2"><span class="glyphicon glyphicon-thumbs-up"></span> Recent</a></li>
                      <li>
                      <a href=" {{ url('/logout') }}" onclick="event.preventDefault();
-                                                             document.getElementById('logOutForm').submit();" class="link3"> 
+                                                             document.getElementById('logOutForm').submit();" class="link3">
                         <span class="glyphicon glyphicon-log-out"></span>Logout
                      </a>
-        
+
                      <form id="logOutForm" method="POST" action="{{ url('/logout') }}" style="display: none;">
-                        
+
                         {{ csrf_field() }}
-                       
+
                      </form>
-                    
+
                      </li>
                   @else
                      <li><a href="{{ url('/login') }}" class="link1"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -72,52 +72,61 @@
 
 
       <!-- <div id="pAsk">	-->
-	
+    <div id="pAsk">
+
 	     <h1> Ask a question </h1>
+
 	     <br>
 	     <br>
-	     <div id="askForm">
-	
+
+	     <div id="askDiv">
+
 	        <form id="frmDemo" class="form-group" method="POST">
 
-		       <h3> Ask</h3> 
+		         <h3> Ask</h3>
 
-		       <section> 
-			       <div id="stepHeader">
-				       <h2> Your Question</h2>
-			       </div>
-			       <input type="text" id="quest" name="question" class="all_inputs" value="Question" onfocus="if(this.value == 'Question') this.value = ''"> 
-			       <input type="hidden" class="whatev" value="{{ csrf_token() }}">
-		       </section> 
-			
-		       <h3> Email </h3>
-			
-		       <section>
-			       <div id="stepHeader">
-				       <h2> Your Email Address </h2>
-			       </div>			
-			       <input type="text" id="em" name="email"  class="all_inputs" value="Email Address" onfocus="if(this.value == 'Email Address') this.value = ''"> 
-                <br>    
-		       </section> 
-		
-		       <h3> Submit </h3> 
-		
-		       <section> 
-			       <div id="stepHeader">
-				       <h2> Submit your question </h2>
-			       </div>
-			       <br>
-		       </section>
-	
+		         <section>
+
+			          <div id="stepHeader">
+				           <h2> Your Question</h2>
+			          </div>
+			          <input type="text" id="quest" name="question" class="all_inputs" value="Question" onfocus="if(this.value == 'Question') this.value = ''">
+			          <input type="hidden" class="whatev" value="{{ csrf_token() }}">
+
+             </section>
+
+		         <h3> Email </h3>
+
+		         <section>
+
+			          <div id="stepHeader">
+				           <h2> Your Email Address </h2>
+			          </div>
+			          <input type="text" id="em" name="email"  class="all_inputs" value="Email Address" onfocus="if(this.value == 'Email Address') this.value = ''">
+                <br>
+
+		         </section>
+
+		         <h3> Submit </h3>
+
+		         <section>
+
+			          <div id="stepHeader">
+				           <h2> Submit your question </h2>
+			          </div>
+			          <br>
+
+		         </section>
+
 	        </form>
-		
-		     <div id="success_message" class="ajax_response" style="float:left"></div>
-           <div id="error_message" class="ajax_response" style"float:left"></div>
-           
+
+		      <div id="success_message" class="ajax_response" style="float:left"></div>
+          <div id="error_message" class="ajax_response" style"float:left"></div>
+
 	     </div>
-		
+
      <!-- </div> -->
-        <!-- </div> -->
+    </div>
     </body>
-    
+
 </html>

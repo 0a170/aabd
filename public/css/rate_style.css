@@ -2,7 +2,7 @@
 
 
 body {
-	padding-top: 70px; 
+	padding-top: 70px;
 	background: #80bfff;
 }
 
@@ -10,7 +10,7 @@ body {
    color: white !important;
 }
 
-.navbar-toggle {  
+.navbar-toggle {
    color: white !important
 }
 
@@ -28,7 +28,7 @@ body {
 
 .link2 {
    background-color: #003366;
-   color: white !important;  
+   color: white !important;
 	//border: 1px solid #80bfff;
 }
 
@@ -36,25 +36,25 @@ body {
    background-color: #ff0000;
    color: white !important;
    //border: 1px solid #ff8080;
-} 
+}
 
 .link4 {
    background-color: #400080;
    color: white !important;
    //border: 1px solid #cc99ff;
-} 
+}
 
 .div1 {
    text-align: center;
 }
 
 .rateDiv {
-	display: inline-block; 
-	border: 1px solid white; 
-	border-color: white; 
-	text-align: center; 
-	background-color: white; 
-   width: 90%;
+	display: inline-block;
+	border: 1px solid white;
+	border-color: white;
+	text-align: center;
+	background-color: white;
+  width: 90%;
 	max-width: 400px;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 	padding: 10px;
@@ -83,7 +83,7 @@ h1 {
 
 p {
 	font-family: "Roboto", sans-serif;
-	color: black; 
+	color: black;
 	font-size: 20px;
 	font-weight: 300;
 	text-shadow: none;
@@ -115,10 +115,9 @@ Button[id*="downButton"]:hover {
                 text-decoration: none;
                 text-transform: uppercase;
             }
-			
+
             .top-right {
                 position: absolute;
                 right: 10px;
                 top: 18px;
             }
-
