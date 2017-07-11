@@ -6,11 +6,11 @@ body {
 }
 
 
-.txtpadding { 
-	display: inline-block; 
+.txtpadding {
+	display: inline-block;
 	text-align: center;
-	background-color: #888888; 
-	color: white; 
+	background-color: #888888;
+	color: white;
 	border-radius: 7px;
 }
 
@@ -18,7 +18,7 @@ body {
    color: white !important;
 }
 
-.navbar-toggle {  
+.navbar-toggle {
    color: white !important
 }
 
@@ -37,7 +37,7 @@ h1 {
 
 p {
 	font-family: "Roboto", sans-serif;
-	color: black; 
+	color: black;
 	font-size: 20px;
 	font-weight: 300;
 	text-shadow: none;
@@ -52,7 +52,7 @@ p {
 
 .link2 {
    background-color: #003366;
-   color: white !important;  
+   color: white !important;
    width: 100%;
 	//border: 1px solid #80bfff;
 }
@@ -62,14 +62,14 @@ p {
    color: white !important;
    width: 100%;
    //border: 1px solid #ff8080;
-} 
+}
 
 .link4 {
    background-color: #400080;
    color: white !important;
    width: 100%;
    //border: 1px solid #cc99ff;
-} 
+}
 
 
 .div1 {
@@ -77,17 +77,27 @@ p {
 }
 
 .div2 {
-   text-align: center; 
+   text-align: center;
    background: #80bfff;
 }
-   
+
+.profileImg {
+  max-height: 300px;
+	max-width: 300px;
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	display: block;
+	margin: auto;
+}
+
 .answerDiv {
-	display: inline-block; 
-	border: 1px solid white; 
-	border-color: white; 
-	text-align: center; 
+	display: inline-block;
+	border: 1px solid white;
+	border-color: white;
+	text-align: center;
 	background-color: white;
-   width: 90%; 
+   width: 90%;
 	max-width: 400px;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 	padding: 10px;
@@ -99,23 +109,23 @@ p {
    float: right;
 }
 
-.userThumb {  
+.userThumb {
    width: 100px;
-   height: 100px; 
-   float: left;  
+   height: 100px;
+   float: left;
 }
 
 .userDiv {
    display: inline-block;
    max-width: 500px;
-   width: 100%; 
+   width: 100%;
    height: 20%;
    //border: 1px solid black;
-   //border-color: black; 
+   //border-color: black;
    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
    background-color: white;
    font-family: "Roboto", sans-serif;
-   
+
 }
 
 
@@ -128,7 +138,7 @@ p {
     margin-top: 20px;
     cursor: pointer;
 	display:none;
-	color: white;		
+	color: white;
 }
 
 
@@ -156,5 +166,3 @@ p {
 	display:none;
 	color: white;
 }
-
-
