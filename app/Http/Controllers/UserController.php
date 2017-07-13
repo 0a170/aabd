@@ -63,7 +63,7 @@ class UserController extends Controller {
       $file = $req->file('userImage');
 
       // TIME TO ADD A FILE SIZE CHECK
-      $path = public_path('thumbnails' . $file);
+      //$path = public_path('thumbnails' . $file);
       $username_sans_ext = $req->input('hidUsn');
 
       // UPLOAD FILE TO FILE SYSTEM
@@ -80,7 +80,7 @@ class UserController extends Controller {
 
       //$file->storeAs(''/public)
 
-      $thumb = Image::make($req->file('userImage'))->resize(100, 100)->save(public_path() . '/' . 'thumbnails' . $file . '.' . $ext);
+      $thumb = Image::make($req->file('userImage'))->resize(100, 100)->save(public_path() . '/' . 'thumbnails' . $username);
       //working on image manager stuff
       //Image::make($file)->getRealPath();
 
