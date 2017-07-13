@@ -80,9 +80,9 @@ class UserController extends Controller {
 
       //$file->storeAs(''/public)
 
-      Image::make($file->getRealPath())->resize(100, 100)->save('/thumbnails' . $file . '_thumbnail');
+      //Image::make($file->getRealPath())->resize(100, 100)->save(public_path('/thumbnails') . $file . '_thumbnail');
       //working on image manager stuff
-
+      Image::make($file)->getRealPath();
 
       // UPDATE PROFILE IMAGE FILE NAME IN DATABASE AND REFRESH PAGE
       $user_prof = User::where('user_name', $username_sans_ext)->first();
