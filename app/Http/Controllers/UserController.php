@@ -80,7 +80,7 @@ class UserController extends Controller {
 
       //$file->storeAs(''/public)
 
-      Image::make($file)->resize(100, 100)->save(public_path('/thumbnails') . $file . '_thumbnail');
+      Image::make($file)->resize(100, 100)->save(public_path('/thumbnails') . $file . '_thumbnail' . $ext);
       //working on image manager stuff
       //Image::make($file)->getRealPath();
 
