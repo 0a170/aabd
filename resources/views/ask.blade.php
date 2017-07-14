@@ -99,7 +99,7 @@
 		         <section>
 
 			          <div id="stepHeader">
-				           <h2> Your Email Address </h2>
+				           <h2> Your Email </h2>
 			          </div>
 			          <input type="text" id="em" name="email"  class="all_inputs" value="Email Address" onfocus="if(this.value == 'Email Address') this.value = ''">
                 <br>
