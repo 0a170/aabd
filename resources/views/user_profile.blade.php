@@ -58,10 +58,10 @@
 
         @else
 
-          <li><a href="{{ url('/login') }}">Login</a></li>
-          <li><a href="{{ url('/ask') }}">Ask</a></li>
-          <li><a href="{{ url('/register') }}">Register</a></li>
-          <li><a href="{{ url('/recent') }}">Recent</a></li>
+          <li><a href="{{ url('/login') }}" class="link1"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><a href="{{ url('/ask') }}" class="link2"><span class="glyphicon glyphicon-question-sign"></span> Ask </a></li>
+          <li><a href="{{ url('/register') }}" class="link3"><span class="glyphicon glyphicon-check"></span> Register </a></li>
+          <li><a href="{{ url('/recent') }}" class="link4"><span class="glyphicon glyphicon-thumbs-up"></span> Recent </a></li>
 
         @endif
 
