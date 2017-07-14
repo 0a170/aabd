@@ -30,7 +30,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Ask a Brotha</a>
+      <a class="navbar-brand" href="{{ url('/ask') }}">Ask a Brotha</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
 
