@@ -85,26 +85,26 @@
 
 			   <div class="modal-body">
 
-	            <form id="upl_img" enctype="multipart/form-data" action="upload_image" method="POST">
+	          <form id="upl_img" enctype="multipart/form-data" action="upload_image" method="POST">
 
                   {{ csrf_field() }}
-					   <div style="padding:10px 20px;">
+					     <div style="padding:10px 20px;">
 
-						   <input type="file" name="userImage"><br>
+						      <input type="file" class="btn-primary" name="userImage"><br>
 
-                     <input type="hidden" name="hidUsn" value="{{ Auth::user()->user_name }}">
+                  <input type="hidden" name="hidUsn" value="{{ Auth::user()->user_name }}">
 
-                     <input type="hidden" value="{{ csrf_token() }}">
+                  <input type="hidden" value="{{ csrf_token() }}">
 
-						   <input type="submit" class="btn-primary" id="Up_Img" name="Upload_Image" value="Upload">
+						      <input type="submit" class="btn-primary" id="Up_Img" name="Upload_Image" value="Upload">
 
-					   </div>
+					     </div>
 
-				   </form>
+				     </form>
 
-				   <p id="msg"></p>
+				     <p id="msg"></p>
 
-			   </div>
+			    </div>
 
 		   </div>
 
@@ -146,7 +146,7 @@
 
                      <input type="hidden" value="{{ csrf_token() }}">
 
-						   <input type="submit" id="Up_Desc" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check" name="Update_Description" value="Update">
+						   <input type="submit" class="btn-primary" id="Up_Desc" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check" name="Update_Description" value="Update">
 
 					   </div>
 
