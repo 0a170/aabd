@@ -96,7 +96,7 @@
 
                      <input type="hidden" value="{{ csrf_token() }}">
 
-						   <input type="submit" id="Up_Img" name="Upload_Image" value="Upload">
+						   <input type="submit" class="btn-primary" id="Up_Img" name="Upload_Image" value="Upload">
 
 					   </div>
 
