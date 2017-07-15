@@ -67,7 +67,7 @@
       <img src="{{ asset('storage\\images\\' . Auth::user()->profile_image) }}" class="profileImg"  data-toggle="modal" data-target="#popupLogin">
    @elseif(file_exists('storage\\images\\' . Auth::user()->user_name . '.png'))
       <img src="{{ asset('storage\\images\\' . Auth::user()->profile_image) }}" class="profileImg"  data-toggle="modal" data-target="#popupLogin">
-   @elseif(file_exists('public\\images\\' . Auth::user()->user_name . '.png'))
+   @elseif(file_exists('public\\storage\\images\\' . Auth::user()->user_name . '.png'))
       <img src="{{ asset('public\\images\\' . Auth::user()->profile_image) }}" class="profileImg"  data-toggle="modal" data-target="#popupLogin">
    @elseif(file_exists('public\\images\\' . Auth::user()->user_name . '.jpg'))
       <img src="{{ asset('public\\images\\' . Auth::user()->profile_image) }}" class="profileImg"  data-toggle="modal" data-target="#popupLogin">
@@ -217,11 +217,10 @@
                <br>
 
                <div id="answer_failure{{ $question->question_id }}" class="ajax_failure"></div>
-					<div id="answer_success{{ $question->question_id }}" class="ajax_success"></div>
-					<div id="server_error{{ $question->question_id }}" class="ajax_failure"></div>
+					     <div id="answer_success{{ $question->question_id }}" class="ajax_success"></div>
+					     <div id="server_error{{ $question->question_id }}" class="ajax_failure"></div>
 
                <br>
-
 
             </form>
 
