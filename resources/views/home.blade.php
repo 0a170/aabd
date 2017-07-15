@@ -9,6 +9,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
+<title>AABD - Home</title>
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style2.css') }}">
 
@@ -95,7 +97,7 @@
                   {{ csrf_field() }}
 					     <div style="padding:10px 20px;">
 
-						      <input type="file" name="userImage"><br>
+						      <input type="file" class="btn-primary" name="userImage"><br>
 
                   <input type="hidden" name="hidUsn" value="{{ Auth::user()->user_name }}">
 
