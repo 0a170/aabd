@@ -68,9 +68,9 @@
    @elseif(file_exists('storage\\images\\' . Auth::user()->user_name . '.png'))
       <img src="{{ asset('storage\\images\\' . Auth::user()->profile_image) }}" class="profileImg"  data-toggle="modal" data-target="#popupLogin">
    @elseif(file_exists('public\\storage\\images\\' . Auth::user()->user_name . '.png'))
-      <img src="{{ asset('images\\' . Auth::user()->profile_image) }}" class="profileImg"  data-toggle="modal" data-target="#popupLogin">
+      <img src="{{ asset('storage\\images' . Auth::user()->profile_image) }}" class="profileImg"  data-toggle="modal" data-target="#popupLogin">
    @elseif(file_exists('public\\images\\' . Auth::user()->user_name . '.jpg'))
-      <img src="{{ asset('images\\' . Auth::user()->profile_image) }}" class="profileImg"  data-toggle="modal" data-target="#popupLogin">
+      <img src="{{ asset('storage\\images\\' . Auth::user()->profile_image) }}" class="profileImg"  data-toggle="modal" data-target="#popupLogin">
    @else
       <img src="{{ asset('storage\\images\\prof_def.png') }}" class="profileImg" data-toggle="modal" data-target="#popupLogin">
    @endif
