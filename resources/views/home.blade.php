@@ -97,7 +97,7 @@
                   {{ csrf_field() }}
 					     <div style="padding:10px 20px;">
 
-						      <input type="file" class="btn-primary" name="userImage"><br>
+						      <input type="file" name="userImage"><br>
 
                   <input type="hidden" name="hidUsn" value="{{ Auth::user()->user_name }}">
 
