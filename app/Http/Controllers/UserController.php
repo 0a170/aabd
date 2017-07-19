@@ -72,7 +72,10 @@ class UserController extends Controller {
       $username = $username_sans_ext . '.' . $ext;
 
       //$file->storeAs('/public/images/', $username);
-      $file->storeAs('/public/storage/images/', $username);
+      //$file->storeAs('/public/storage/images/', $username);
+
+      $file->storeAs('/public/images/', $username);
+
       //$manager = new ImageManager(array('driver' => 'imagick'));
 
       //$file->storeAs('/public/thumbnails/', $username_sans_ext . '_thumbnail' . $ext)->resize(100, 100)->save();
