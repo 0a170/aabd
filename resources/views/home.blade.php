@@ -63,8 +63,8 @@
 </nav>
 
 
-   @if(file_exists('storage\\images\\' . Auth::user()->user_name . '.jpg'))
-      <img src="{{ asset('images\\' . Auth::user()->profile_image) }}" class="profileImg"  data-toggle="modal" data-target="#popupLogin">
+   @if(file_exists({{ Storage::disk(s3)->url('profile_images/' . Auth::user()->profile_image) }}))
+      <img src="{{ Storage::disk(s3)->url('profile_images/' . Auth::user()->profile_image) }}" class="profileImg"  data-toggle="modal" data-target="#popupLogin">
    @elseif(file_exists('storage\\images\\' . Auth::user()->user_name . '.png'))
       <img src="{{ asset('storage\\images\\' . Auth::user()->profile_image) }}" class="profileImg"  data-toggle="modal" data-target="#popupLogin">
    @elseif(file_exists('public\\storage\\images\\' . Auth::user()->user_name . '.png'))
