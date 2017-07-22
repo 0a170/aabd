@@ -19,7 +19,7 @@ $(document).ready(function() {
          finish: "done"
       }
 
-  }
+  };
 
 
 	var frmToken = form.attr("data-link");
