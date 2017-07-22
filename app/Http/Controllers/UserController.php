@@ -79,12 +79,11 @@ class UserController extends Controller {
 
       //$manager = new ImageManager(array('driver' => 'imagick'));
 
-      //$file->storeAs('/public/thumbnails/', $username_sans_ext . '_thumbnail' . $ext)->resize(100, 100)->save();
-      //$image = Image::make('/public/thumbnails/' . $username_sans_ext . '_thumbnail' . "." . $ext)->resize(100, 100);
+      //$file_thumbnail = Image::make($req->file('userImage'))->resize(100, 100)->save(public_path() . '/' . 'storage/' . 'thumbnails/' . $username_sans_ext . "_thumbnail" . "." . $ext);
 
-      //$file->storeAs(''/public)
+      $file_thumbnail = Image::make($req->file('userImage'))->resize(100, 100)->stream();
 
-      $file_thumbnail = Image::make($req->file('userImage'))->resize(100, 100)->save(public_path() . '/' . 'storage/' . 'thumbnails/' . $username_sans_ext . "_thumbnail" . "." . $ext);
+      $file_thumbnail = $file_thumbnail->_toString();
 
       $file_thumbnail->storeAs('thumbnails/', $username_sans_ext . '_thumbnail.' . $ext, 's3');
       //working on image manager stuff
