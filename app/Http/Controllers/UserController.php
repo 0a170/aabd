@@ -83,7 +83,7 @@ class UserController extends Controller {
 
       $file_thumbnail = Image::make($req->file('userImage'))->resize(100, 100)->stream();
 
-      $file_thumbnail = $file_thumbnail->_toString();
+      //$file_thumbnail = $file_thumbnail->_toString();
 
       $file_thumbnail->storeAs('thumbnails/', $username_sans_ext . '_thumbnail.' . $ext, 's3');
       //working on image manager stuff
