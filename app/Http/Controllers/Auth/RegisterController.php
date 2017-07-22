@@ -66,7 +66,7 @@ class RegisterController extends Controller
             'user_name' => $data['user_name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'profile_image' => ' {{ asset("profile_images/prof_def.png") }} ',
+            'profile_image' => 'prof_def.png',
             'description' => 'Click here to change your description',
             'questions_answered' => 0,
 			'score' => 0,
