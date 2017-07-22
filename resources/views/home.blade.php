@@ -63,10 +63,7 @@
 </nav>
 
 
-
-      <img src="{{ Storage::disk('s3')->url(Auth::user()->profile_image) }}" class="profileImg"  data-toggle="modal" data-target="#popupLogin">
-
-
+      <img src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profileImg"  data-toggle="modal" data-target="#popupLogin">
 
       <div class="container" style="inline-block; text-align: center; background-color: #e4e4e4;">
 
