@@ -13,18 +13,8 @@ $(document).ready(function() {
 
   var form = $("#frmDemo");
 
-  var settings = {
-      labels: {
-         previous: "back",
-         finish: "done"
-      }
-
-  };
-
-
 	var frmToken = form.attr("data-link");
 
-  $("#frmDemo").steps(settings);
 
   $("#frmDemo").steps({
 
@@ -32,7 +22,10 @@ $(document).ready(function() {
     bodyTag: "section",
     transitionEffect: "slideLeft",
     autoFocus: true,
-
+    labels: {
+       previous: "Back",
+       finish: "Done"
+    },
 	/*onStepChanging: function(event, currentIndex, newIndex)
 	{
 		return form.valid();
