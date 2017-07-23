@@ -63,6 +63,11 @@ class UserController extends Controller {
 
       $file = $req->file('userImage');
 
+      if($file = null) {
+
+          return redirect()->back()->withErrors(['err', 'Attempted to upload an empty image']);
+
+      }
       // TIME TO ADD A FILE SIZE CHECK
       //$path = public_path('thumbnails' . $file);
       $username_sans_ext = $req->input('hidUsn');
