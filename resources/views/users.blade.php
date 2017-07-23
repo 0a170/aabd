@@ -85,7 +85,7 @@
 
          <div class="userDiv">
 
-               <img src="{{ Storage::disk('s3')->url('thumbnails/' . $user->profile_image) }}" class="userThumb">
+               <img src="{{ Storage::disk('s3')->url('thumbnails/thumbnail_' . $user->profile_image) }}" class="userThumb">
 
                <div class="rightText">
 
