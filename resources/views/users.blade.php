@@ -85,15 +85,7 @@
 
          <div class="userDiv">
 
-            @if(file_exists('storage\\images\\' . $user->profile_image))
-
-               <img src="{{ asset('storage\\images\\' . $user->profile_image) }}" class="userThumb">
-
-            @else
-
-               <img src="{{ asset('storage\\images\\prof_def.png') }}" class="userThumb">
-
-            @endif
+               <img src="{{ Storage::disk('s3')->url('thumbnails/' . $user->profile_image) }}" class="userThumb">
 
                <div class="rightText">
 
