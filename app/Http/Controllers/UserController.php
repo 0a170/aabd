@@ -8,6 +8,7 @@ namespace App\Http\Controllers;
 use View;
 use App\User;
 use Image;
+use Storage;
 use App\AnsweredQuestion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
