@@ -70,7 +70,7 @@
   </div>
 </nav>
 
-   <img src="{{ Storage::disk('s3')->url('profile_images' . $user->profile_image) }}">
+   <img src="{{ Storage::disk('s3')->url('profile_images/' . $user->profile_image) }}">
 
    <div class="container" style="inline-block; text-align: center; background-color: #e4e4e4;">
 
