@@ -88,7 +88,7 @@ class UserController extends Controller {
 
       $file_thumbnail = $file_thumbnail->stream();
 
-      Storage::disk('s3')->put('thumbnails', $file_thumbnail->__toString());
+      Storage::disk('s3')->put('thumbnails/'. $username_sans_ext . '_thumbnail.' . $ext , $file_thumbnail->__toString());
 
       //$file_thumbnail->storeAs('thumbnails/', $username_sans_ext . '_thumbnail.' . $ext, 's3');
       //working on image manager stuff
