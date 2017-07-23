@@ -9,6 +9,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
+<title>AABD - {{ $user->user_name }}</title>
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style2.css') }}">
 
@@ -16,7 +18,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="{{ asset('js/answer_ajax.js') }}"></script>
+
 
 </head>
 
@@ -70,7 +72,7 @@
   </div>
 </nav>
 
-   <img src="{{ Storage::disk('s3')->url('profile_images/' . $user->profile_image) }}">
+   <img src="{{ Storage::disk('s3')->url('profile_images/' . $user->profile_image) }}" class="profileImg">
 
    <div class="container" style="inline-block; text-align: center; background-color: #e4e4e4;">
 
