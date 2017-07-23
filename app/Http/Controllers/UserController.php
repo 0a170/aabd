@@ -81,12 +81,17 @@ class UserController extends Controller {
 
       //$file_thumbnail = Image::make($req->file('userImage'))->resize(100, 100)->save(public_path() . '/' . 'storage/' . 'thumbnails/' . $username_sans_ext . "_thumbnail" . "." . $ext);
 
-      $file_thumbnail = Image::make($req->file('userImage'))->resize(100, 100)->stream();
+      $file_thumbnail = Image::make($req->file('userImage'))->resize(100, 100);
 
       //$file_thumbnail = $file_thumbnail->_toString();
 
-      $file_thumbnail->storeAs('thumbnails/', $username_sans_ext . '_thumbnail.' . $ext, 's3');
+      $file_thumbnail = $file_thumbnail->stream();
+
+      Storage::disk('s3')->put('thumbnails', $file_thumbnail->__toString());
+
+      //$file_thumbnail->storeAs('thumbnails/', $username_sans_ext . '_thumbnail.' . $ext, 's3');
       //working on image manager stuff
+
       //Image::make($file)->getRealPath();
 
       // UPDATE PROFILE IMAGE FILE NAME IN DATABASE AND REFRESH PAGE
