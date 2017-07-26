@@ -71,8 +71,6 @@
       </nav>
 
 
-
-      <!-- <div id="pAsk">	-->
     <div id="pAsk">
 
 	     <h1> Ask a question </h1>

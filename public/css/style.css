@@ -240,6 +240,8 @@ h1 {
 #frmDemo > .actions > ul > li:last-child {
 	border: 1px solid green !important;
    background: #00ff55 !important;
+   border-radius: 2px !important;
+   border-top: 5px !important;
    text-align: center !important;
    margin-left: 25px;
    display: inline-block;

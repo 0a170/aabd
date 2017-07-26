@@ -24,13 +24,12 @@ Auth::routes();
 
 //Route::get('/home', 'HomeController@index');
 
-//TEST PROFILE ROUTE
-//Route::get('user/{id}', 'UserController@profile');
+//USER BROWSING ROUTES
 Route::get('/users', 'UserController@userList');
 
 Route::get('/user/{id}', 'UserController@userAnswers');
 
-//USER ANSWERING ROUTE
+//USER ANSWERING ROUTES
 Route::get('/home', 'QuestionController@showQues');
 
 Route::get('/recent', 'AnsweredQuestionController@showAll');
@@ -51,16 +50,16 @@ Route::post('submit', 'QuestionController@submit');
 
 Route::post('answer', 'QuestionController@answer');
 
-/*Route::post('answer', function(\Illuminate\Http\Request $request, 
+/*Route::post('answer', function(\Illuminate\Http\Request $request,
    \Illuminate\Mail\Mailer $mailer) {
       $mailer
       ->to($request->input('ema'))
       ->send(new \App\Mail\AnswerMail($request->input('answerInput')));
-      
+
       //AnsweredQuestion::find(Auth::user()->user_id;
-      
-      
-      
+
+
+
    return redirect()->back();
 })->name('answer'); */
 
@@ -70,8 +69,11 @@ Route::post('like', 'AnsweredQuestionController@like');
 
 Route::post('dislike', 'AnsweredQuestionController@dislike');
 
-//Route::post('upload_image', 'AnsweredQuestionController@upload');
 Route::post('upload_image', 'UserController@upload');
 
-//Route::post('change_description', 'AnsweredQuestionController@updateDescription');
 Route::post('change_description', 'UserController@updateDescription');
+
+//ERROR ROUTE STILL IN TESTING
+Route::get('/error', function() {
+   return view('error');
+});
