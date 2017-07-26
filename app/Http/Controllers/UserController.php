@@ -63,6 +63,7 @@ class UserController extends Controller {
 
       $file = $req->file('userImage');
 
+      //need to figure out image validation to improve storage, maybe use intervention
       /*if($file = null) {
 
           return redirect()->back()->withErrors(['err', 'Attempted to upload an empty image']);
