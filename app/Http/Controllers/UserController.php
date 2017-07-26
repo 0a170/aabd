@@ -64,51 +64,54 @@ class UserController extends Controller {
       $file = $req->file('userImage');
 
       //need to figure out image validation to improve storage, maybe use intervention
-      /*if($file = null) {
+      if($file = null) {
 
           return redirect()->back()->withErrors(['err', 'Attempted to upload an empty image']);
 
-      }*/
+      }
+
+      else {
       // TIME TO ADD A FILE SIZE CHECK
-      //$path = public_path('thumbnails' . $file);
-      $username_sans_ext = $req->input('hidUsn');
+         $username_sans_ext = $req->input('hidUsn');
 
-      // UPLOAD FILE TO FILE SYSTEM
-      $ext = $file->getClientOriginalExtension();
+         // UPLOAD FILE TO FILE SYSTEM
+         $ext = $file->getClientOriginalExtension();
 
-      $username = $username_sans_ext . '.' . $ext;
+         $username = $username_sans_ext . '.' . $ext;
 
-      //$file->storeAs('/public/images/', $username);
-      //$file->storeAs('/public/storage/images/', $username);
-      $file->storeAs('profile_images/', $username, 's3');
+         //$file->storeAs('/public/images/', $username);
+         //$file->storeAs('/public/storage/images/', $username);
+         $file->storeAs('profile_images/', $username, 's3');
 
-      //$file->storeAs('/public/storage/images/', $username);
+         //$file->storeAs('/public/storage/images/', $username);
 
-      //$manager = new ImageManager(array('driver' => 'imagick'));
+         //$manager = new ImageManager(array('driver' => 'imagick'));
 
-      //$file_thumbnail = Image::make($req->file('userImage'))->resize(100, 100)->save(public_path() . '/' . 'storage/' . 'thumbnails/' . $username_sans_ext . "_thumbnail" . "." . $ext);
+         //$file_thumbnail = Image::make($req->file('userImage'))->resize(100, 100)->save(public_path() . '/' . 'storage/' . 'thumbnails/' . $username_sans_ext . "_thumbnail" . "." . $ext);
 
-      $file_thumbnail = Image::make($req->file('userImage'))->resize(100, 100);
+         $file_thumbnail = Image::make($req->file('userImage'))->resize(100, 100);
 
-      //$file_thumbnail = $file_thumbnail->_toString();
+         //$file_thumbnail = $file_thumbnail->_toString();
 
-      $file_thumbnail = $file_thumbnail->stream();
+         $file_thumbnail = $file_thumbnail->stream();
 
-      Storage::disk('s3')->put('thumbnails/thumbnail_'. $username_sans_ext . '.' . $ext , $file_thumbnail->__toString());
+         Storage::disk('s3')->put('thumbnails/thumbnail_'. $username_sans_ext . '.' . $ext , $file_thumbnail->__toString());
 
-      //$file_thumbnail->storeAs('thumbnails/', $username_sans_ext . '_thumbnail.' . $ext, 's3');
-      //working on image manager stuff
+         //$file_thumbnail->storeAs('thumbnails/', $username_sans_ext . '_thumbnail.' . $ext, 's3');
+         //working on image manager stuff
 
-      //Image::make($file)->getRealPath();
+         //Image::make($file)->getRealPath();
 
-      // UPDATE PROFILE IMAGE FILE NAME IN DATABASE AND REFRESH PAGE
-      $user_prof = User::where('user_name', $username_sans_ext)->first();
+         // UPDATE PROFILE IMAGE FILE NAME IN DATABASE AND REFRESH PAGE
+         $user_prof = User::where('user_name', $username_sans_ext)->first();
 
-      $user_prof->profile_image = $username;
+         $user_prof->profile_image = $username;
 
-      $user_prof->save();
+         $user_prof->save();
 
-      return redirect()->back();
+         return redirect()->back();
+
+      }
 
    }
 

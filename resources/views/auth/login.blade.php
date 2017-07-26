@@ -10,13 +10,16 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="{{asset('css/rate_style.css')}}"> 
+<link rel="stylesheet" type="text/css" href="{{asset('css/rate_style.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
 
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
 </head>
 
@@ -28,7 +31,7 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="{{ url('/ask') }}">Ask a Brotha</a>
     </div>
