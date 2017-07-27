@@ -92,7 +92,7 @@ class UserController extends Controller {
 
          $file_avatar = $file_avatar->stream();
 
-         Storage::disk('s3')->put('profile_images/' . $username_sans_ext . '.' . $ext, $file_avatar->__toString());
+         Storage::disk('s3')->put('profile_images/' . $username, $file_avatar->__toString());
          //$file->storeAs('/public/storage/images/', $username);
 
          //$manager = new ImageManager(array('driver' => 'imagick'));
@@ -103,7 +103,7 @@ class UserController extends Controller {
 
          $file_thumbnail = $file_thumbnail->stream();
 
-         Storage::disk('s3')->put('thumbnails/thumbnail_' . $username_sans_ext . '.' . $ext , $file_thumbnail->__toString());
+         Storage::disk('s3')->put('thumbnails/thumbnail_' . $username, $file_thumbnail->__toString());
 
          //$file_thumbnail->storeAs('thumbnails/', $username_sans_ext . '_thumbnail.' . $ext, 's3');
          //working on image manager stuff
