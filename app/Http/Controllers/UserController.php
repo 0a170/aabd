@@ -64,7 +64,7 @@ class UserController extends Controller {
       $file = $req->file('userImage');
 
       $this->validate($req, [
-         'image' => 'required|mimes:jpeg, jpg, png|max:300px',
+         'userImage' => 'required|mimes:jpeg, jpg, png|max:300px',
       ]);
 
 
