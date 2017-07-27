@@ -64,7 +64,7 @@ class UserController extends Controller {
       $file = $req->file('userImage');
 
       $this->validate($req, [
-         'userImage' => 'required|mimes:jpeg, jpg, png|max:300px',
+         'userImage' => 'required|mimes:jpeg,jpg,png|max:500000',
       ]);
 
 
@@ -86,8 +86,13 @@ class UserController extends Controller {
 
          //$file->storeAs('/public/images/', $username);
          //$file->storeAs('/public/storage/images/', $username);
-         $file->storeAs('profile_images/', $username, 's3');
 
+         //$file->storeAs('profile_images/', $username, 's3');
+         $file_avatar = Image::make($req->file('userImage'))->resize(300, 300);
+
+         $file_avatar = $file_avatar->stream();
+
+         Storage::disk('s3')->put('profile_images/' . $username, $file_main->__toString());
          //$file->storeAs('/public/storage/images/', $username);
 
          //$manager = new ImageManager(array('driver' => 'imagick'));
@@ -96,11 +101,9 @@ class UserController extends Controller {
 
          $file_thumbnail = Image::make($req->file('userImage'))->resize(100, 100);
 
-         //$file_thumbnail = $file_thumbnail->_toString();
-
          $file_thumbnail = $file_thumbnail->stream();
 
-         Storage::disk('s3')->put('thumbnails/thumbnail_'. $username_sans_ext . '.' . $ext , $file_thumbnail->__toString());
+         Storage::disk('s3')->put('thumbnails/thumbnail_' . $username_sans_ext . '.' . $ext , $file_thumbnail->__toString());
 
          //$file_thumbnail->storeAs('thumbnails/', $username_sans_ext . '_thumbnail.' . $ext, 's3');
          //working on image manager stuff
