@@ -64,13 +64,8 @@ class UserController extends Controller {
       $file = $req->file('userImage');
 
       //need to figure out image validation to improve storage, maybe use intervention
-      if($file = null) {
 
-          return redirect()->back()->withErrors(['err', 'Attempted to upload an empty image']);
-
-      }
-
-      else {
+      if($req->file('image')->isValid()) {
       // TIME TO ADD A FILE SIZE CHECK
          $username_sans_ext = $req->input('hidUsn');
 
@@ -110,6 +105,12 @@ class UserController extends Controller {
          $user_prof->save();
 
          return redirect()->back();
+
+      }
+
+      else {
+
+         return redirect()->back()->withErrors(['err', 'Attempted to upload an empty image']);
 
       }
 
