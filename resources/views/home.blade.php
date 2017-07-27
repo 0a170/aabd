@@ -83,30 +83,41 @@
 
 			   <div class="modal-body">
 
-	          <form id="upl_img" enctype="multipart/form-data" action="upload_image" method="POST">
+	            <form id="upl_img" enctype="multipart/form-data" action="upload_image" method="POST">
 
-                  {{ csrf_field() }}
-					     <div style="padding:10px 20px;">
+                {{ csrf_field() }}
 
-						      <input type="file" name="userImage"><br>
+                  <div style="padding:10px 20px;">
 
-                  <input type="hidden" name="hidUsn" value="{{ Auth::user()->user_name }}">
+				  	      <input type="file" name="userImage"><br>
 
-                  <input type="hidden" value="{{ csrf_token() }}">
+                     <input type="hidden" name="hidUsn" value="{{ Auth::user()->user_name }}">
 
-						      <input type="submit" class="btn-primary" id="Up_Img" name="Upload_Image" value="Upload">
+                     <input type="hidden" value="{{ csrf_token() }}">
 
-					     </div>
+					      <input type="submit" class="btn-primary" id="Up_Img" name="Upload_Image" value="Upload">
 
-				     </form>
+					   </div>
 
-				     <p id="msg"></p>
+				   </form>
 
-			    </div>
+               @if ($errors->any())
+                   <div class="alert alert-danger">
+                       <ul>
+                           @foreach ($errors->all() as $error)
+                               <li> {{ $error }} </li>
+                           @endforeach
+                       </ul>
+                   </div>
+               @endif
 
-		   </div>
+				   <p id="msg"></p>
 
-	   </div>
+			   </div>
+
+         </div>
+
+      </div>
 
       <br>
 

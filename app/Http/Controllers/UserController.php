@@ -63,15 +63,19 @@ class UserController extends Controller {
 
       $file = $req->file('userImage');
 
+      $this->validate($req, [
+         'image' => 'required|mimes:jpeg, jpg, png|max:300px',
+      ]);
 
-      if($req->file('userImage') == null) {
+
+      /*if($req->file('userImage') == null) {
 
          return redirect()->back()->withErrors(['err', "Please upload an image"]);
 
-      }
+      }*/
 
       //VALIDATING WHETHER OR NOT FILE IS AN IMAGE
-      else if($req->file('userImage')->isValid()) {
+      /*else if($req->file('userImage')->isValid()) { */
 
          $username_sans_ext = $req->input('hidUsn');
 
@@ -112,13 +116,13 @@ class UserController extends Controller {
 
          return redirect()->back();
 
-      }
+      //}
 
-      else {
+      /*else {
 
          return redirect()->back()->withErrors(['err', 'Invalid file type, please upload an image']);
 
-      }
+      } */
 
    }
 
