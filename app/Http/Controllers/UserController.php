@@ -106,7 +106,11 @@ class UserController extends Controller {
          return redirect()->back();
 
       }
+      else if($req->file('userImage') == null) {
 
+         return redirect()->back()->withErrors(['err', "Please upload an image"]);
+
+      }
       else {
 
          return redirect()->back()->withErrors(['err', 'Invalid file type, please upload an image']);
