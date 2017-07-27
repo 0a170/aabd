@@ -109,6 +109,10 @@ p {
    float: right;
 }
 
+.rightText {
+	text-align: left;
+}
+
 .userThumb {
    width: 100px;
    height: 100px;
