@@ -64,7 +64,7 @@ class UserController extends Controller {
       $file = $req->file('userImage');
 
       //VALIDATING WHETHER OR NOT FILE IS AN IMAGE
-      if($req->file('image')->isValid()) {
+      if($req->file('userImage')->isValid()) {
 
          $username_sans_ext = $req->input('hidUsn');
 
