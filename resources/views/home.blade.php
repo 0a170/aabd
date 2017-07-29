@@ -146,7 +146,11 @@
 
          </div>
 
+      </div>
+
          <br>
+
+      <div class="row">
 
          <div class="col-sm-3">
 
@@ -160,17 +164,21 @@
 
          </div>
 
+      </div>
+
          <br>
+
+      <div class="row">
 
          <div class="col-sm-3">
 
-            <h2 style="display: inline-block; text-align: center; background-color: #888888; color: white; border-radius: 7px; padding: 7px;"> Score: {{ Auth::user()->score }} </h2> <br>
+            <h2 style="display: inline-block; text-align: center; background-color: #888888; color: white; border-radius: 7px; padding: 7px;"> Score </h2> <br>
 
          </div>
 
          <div class="col-sm-9">
 
-            <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; border-radius: 7px; padding: 7px;"> Score: {{ Auth::user()->score }} </h2> <br>
+            <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; border-radius: 7px; padding: 7px;"> {{ Auth::user()->score }} </h2> <br>
 
          </div>
 
