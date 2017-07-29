@@ -76,6 +76,8 @@
 
       <img src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profileImg"  data-toggle="modal" data-target="#popupLogin">
 
+      <br>
+
       <div class="container" style="inline-block; text-align: center; background-color: #e4e4e4;">
 
       <div role="dialog" id="popupLogin" class="modal fade">
@@ -130,14 +132,49 @@
 
       <br>
 
-      <h2 style="display: inline-block; text-align: center; background-color: #888888; color: white; border-radius: 7px; padding: 7px;"> {{ Auth::user()->user_name }} </h2> <br>
+      <div class="row">
 
+         <div class="col-sm-3">
 
-	   <h3 style="display: inline-block; text-align: center; background-color: #888888; color: white; border-radius: 7px; padding: 7px;" data-toggle="modal" data-target="#popupDesc"> {{ Auth::user()->description }} </h3> <br>
+            <h2 style="display: inline-block; text-align: center; background-color: #888888; color: white; padding: 7px;"> Name </h2>
 
+         </div>
 
-      <h2 style="display: inline-block; text-align: center; background-color: #888888; color: white; border-radius: 7px; padding: 7px;"> Score: {{ Auth::user()->score }} </h2> <br>
+         <div class="col-sm-9">
 
+            <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; border-radius: 7px; padding: 7px;"> {{ Auth::user()->user_name }} </h2>
+
+         </div>
+
+         <br>
+
+         <div class="col-sm-3">
+
+	           <h3 style="display: inline-block; text-align: center; background-color: #888888; color: white; border-radius: 7px; padding: 7px;" data-toggle="modal" data-target="#popupDesc"> Status </h3>
+
+         </div>
+
+         <div class="col-sm-9">
+
+              <h3 style="display: inline-block; text-align: center; background-color: white; color: #888888; border-radius: 7px; padding: 7px;" data-toggle="modal" data-target="#popupDesc"> {{ Auth::user()->description }} </h3>
+
+         </div>
+
+         <br>
+
+         <div class="col-sm-3">
+
+            <h2 style="display: inline-block; text-align: center; background-color: #888888; color: white; border-radius: 7px; padding: 7px;"> Score: {{ Auth::user()->score }} </h2> <br>
+
+         </div>
+
+         <div class="col-sm-9">
+
+            <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; border-radius: 7px; padding: 7px;"> Score: {{ Auth::user()->score }} </h2> <br>
+
+         </div>
+
+      </div>
 
       <div role="dialog" id="popupDesc" class="modal fade">
 
