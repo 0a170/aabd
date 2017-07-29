@@ -105,28 +105,67 @@
 
    <div class="div2">
 
-      <h1> {{ $user->user_name }} </h1>
 
-      <br>
+                   <h1> Recent Answers </h1>
 
-      @foreach($user_answers as $user_answer)
 
-         <div class="answerDiv">
+                     @foreach($answers as $answer)
 
-            <p> Question: {{ $user_answer->answered_question }} </p>
+                     <br>
 
-            <br>
+                     <div class="rateDiv">
 
-            <p> Answer: {{ $user_answer->user_answer }} </p>
+                       <form id="{{ $answer->answer_id }}" class="rateForm" method="POST">
 
-         </div>
+                           <br>
+                           <input type="hidden" value="{{ $answer->user_id }}" name="UIDName">
+                           <input type="hidden" value="{{ $answer->answer_score }}" name="answerScoreName">
+                           <input type="hidden" value="{{ $answer->user_answer }}" name="answeredQuestionName">
+                           <input type="hidden" value="{{ $answer->up_votes }}" name="upVoteName">
+                           <input type="hidden" value="{{ $answer->down_votes }}" name="downVoteName">
+                           <input type="hidden" value="{{ $answer->answer_id }}">
 
-         <br>
-         <br>
+                           <input type="hidden" value="{{ csrf_token() }}">
 
-      @endforeach
 
-      <br>
+                           <p> Question: {{ $answer->answered_question }} </p>
+                           <br>
+                           <p> User Answer: {{ $answer->user_answer }} </p>
+                           <br>
+                           <p> User ID: {{ $answer->user_id }} </p>
+
+                           <br>
+
+                           <button type="button" id="voteButton" class="btn btn-default btn-lg" value="upButtonVal">
+                              <span class="glyphicon glyphicon-thumbs-up">
+                                 {{ $answer->up_votes }}
+                              </span>
+                           </button>
+
+                           &nbsp &nbsp &nbsp &nbsp
+
+                           <button type="button" id="voteButton" class="btn btn-default btn-lg" value="downButtonVal">
+                              <span class="glyphicon glyphicon-thumbs-down">
+                                 {{ $answer->down_votes }}
+                              </span>
+                           </button>
+
+                           <br>
+                           <br>
+
+                           <div id="rate_failure{{ $answer->answer_id }}" class="ajax_failure"></div>
+
+                       </form>
+
+                     </div>
+
+                     <br>
+                     <br>
+                    @endforeach
+
+
+                   <br>
+
 
    </div>
 
