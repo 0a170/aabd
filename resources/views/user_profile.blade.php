@@ -105,6 +105,8 @@
 
    <div class="div2">
 
+      <h1> {{ $user->user_name }} </h1>
+
       <br>
 
       @foreach($user_answers as $user_answer)
