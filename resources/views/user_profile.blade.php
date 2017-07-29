@@ -18,6 +18,8 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
 <script src="{{ asset('js/rate_ajax.js') }}"></script>
 
 </head>
@@ -42,6 +44,7 @@
 
         <li><a href="{{ url('/ask') }}" class="link1"><span class="glyphicon glyphicon-question-sign"></span> Ask </a></li>
         <li><a href="{{ url('/recent') }}" class="link2"><span class="glyphicon glyphicon-thumbs-up"></span> Recent </a></li>
+        <li><a href="{{ url('/users') }}" class="link4"><span class="glyphicon glyphicon-user"></span> Users </a></li>
         <li>
             <a href="#" onclick="event.preventDefault();
                                                      document.getElementById('logOutForm').submit();" class="link3">
