@@ -113,15 +113,15 @@
 
          <div class="rateDiv">
 
-            <form id="{{ $answer->answer_id }}" class="rateForm" method="POST">
+            <form id="{{ $user_answer->answer_id }}" class="rateForm" method="POST">
 
                <br>
-               <input type="hidden" value="{{ $answer->user_id }}" name="UIDName">
-               <input type="hidden" value="{{ $answer->answer_score }}" name="answerScoreName">
-               <input type="hidden" value="{{ $answer->user_answer }}" name="answeredQuestionName">
-               <input type="hidden" value="{{ $answer->up_votes }}" name="upVoteName">
-               <input type="hidden" value="{{ $answer->down_votes }}" name="downVoteName">
-               <input type="hidden" value="{{ $answer->answer_id }}">
+               <input type="hidden" value="{{ $user_answer->user_id }}" name="UIDName">
+               <input type="hidden" value="{{ $user_answer->answer_score }}" name="answerScoreName">
+               <input type="hidden" value="{{ $user_answer->user_answer }}" name="answeredQuestionName">
+               <input type="hidden" value="{{ $user_answer->up_votes }}" name="upVoteName">
+               <input type="hidden" value="{{ $user_answer->down_votes }}" name="downVoteName">
+               <input type="hidden" value="{{ $user_answer->answer_id }}">
 
                <input type="hidden" value="{{ csrf_token() }}">
 
