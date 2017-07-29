@@ -74,6 +74,8 @@
 
    <img src="{{ Storage::disk('s3')->url('profile_images/' . $user->profile_image) }}" class="profileImg">
 
+   <br>
+
    <div class="container" style="inline-block; text-align: center; background-color: #e4e4e4;">
 
 
@@ -86,8 +88,7 @@
 	    <h3 style="display: inline-block; text-align: center; background-color: #888888; color: white; border-radius: 7px; padding: 7px;"> {{ $user->description }} </h3>
 
 
-
-   	<br>
+       <br>
 
 
 	<!-- <a href="#sPage" class="ui-btn ui-shadow ui-corner-all ui-icon-star ui-btn-icon-notext" style="display: inline-block; text-align: center;"></a> -->
