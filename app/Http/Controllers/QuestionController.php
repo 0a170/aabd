@@ -100,6 +100,10 @@ class QuestionController extends Controller
       $email_val = $req['ema'];
       //$userId = $req['use'];
 
+      $this->validate($req, [
+         'answer_val' => 'required',
+      ]);
+
       if(Auth::check()) {
 
          $userId = Auth::user()->id;
