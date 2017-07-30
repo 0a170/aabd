@@ -64,7 +64,6 @@ Route::post('answer', 'QuestionController@answer');
 })->name('answer'); */
 
 
-
 Route::post('like', 'AnsweredQuestionController@like');
 
 Route::post('dislike', 'AnsweredQuestionController@dislike');

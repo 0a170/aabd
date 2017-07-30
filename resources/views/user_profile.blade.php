@@ -120,6 +120,7 @@
             <form id="{{ $user_answer->answer_id }}" class="rateForm" method="POST">
 
                <br>
+               
                <input type="hidden" value="{{ $user_answer->user_id }}" name="UIDName">
                <input type="hidden" value="{{ $user_answer->answer_score }}" name="answerScoreName">
                <input type="hidden" value="{{ $user_answer->user_answer }}" name="answeredQuestionName">
