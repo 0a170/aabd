@@ -20,7 +20,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
-<script src="{{ asset('js/answer_ajax.js') }}"></script>
 
 </head>
 
@@ -277,6 +276,16 @@
 					     <div id="server_error{{ $question->question_id }}" class="ajax_failure"></div>
 
                <br>
+
+               @if ($errors->any())
+                  <div class="alert alert-danger">
+                     <ul>
+                        @foreach ($errors->all() as $error)
+                           <li> {{ $error }} </li>
+                        @endforeach
+                     </ul>
+                  </div>
+               @endif
 
             </form>
 
