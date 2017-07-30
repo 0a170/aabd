@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e081386c6c5fcfcc1e89f02edd4c32f2",
+    "content-hash": "1e836478b25a87ab1bfd61740ba877fb",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -2554,7 +2554,7 @@
             ],
             "authors": [
                 {
-                    "name": "Pádraic Brady",
+                    "name": "Padraic Brady",
                     "email": "padraic.brady@gmail.com",
                     "homepage": "http://blog.astrumfutura.com"
                 },
