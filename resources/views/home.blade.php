@@ -20,6 +20,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
+<script src="{{ asset('js/answer_ajax.js') }}"></script>
 
 </head>
 
@@ -254,9 +255,7 @@
 
 
 
-            <form id="{{ $question->question_id }}" class="aForm" method="POST" action="answer">
-
-               {{ csrf_field() }}
+            <form id="{{ $question->question_id }}" class="aForm" method="POST">
 
                <input type="text" id="answerID{{ $question->question_id }}" name="answerInput" class="answers" style="max-width: 60%; display: block; margin: 0 auto;"></textarea>
 
