@@ -94,8 +94,10 @@
 
 			   <div class="modal-body">
 
-	            <form id="upl_img" enctype="multipart/form-data" method="POST">
+	            <form id="upl_img" enctype="multipart/form-data" action="upload_image" method="POST">
 
+                  {{ csrf_field() }}
+                  
                   <div style="padding:10px 20px;">
 
 				  	      <input type="file" name="userImage"><br>
