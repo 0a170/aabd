@@ -256,6 +256,7 @@
 
             <form id="{{ $question->question_id }}" class="aForm" method="POST" action="answer">
 
+               {{ csrf_field() }}
 
                <input type="text" id="answerID{{ $question->question_id }}" name="answerInput" class="answers" style="max-width: 60%; display: block; margin: 0 auto;"></textarea>
 
