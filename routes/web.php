@@ -27,7 +27,7 @@ Auth::routes();
 //USER BROWSING ROUTES
 Route::get('/users', 'UserController@userList');
 
-Route::get('/user/{id}/', 'UserController@userAnswers');
+Route::get('/user/{id}', 'UserController@userAnswers');
 
 //USER ANSWERING ROUTES
 Route::get('/home', 'QuestionController@showQues');
