@@ -142,7 +142,7 @@
 
          <div class="col-sm-9">
 
-            <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; border-radius: 7px; padding: 7px;"> {{ Auth::user()->user_name }} </h2>
+            <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; padding: 7px;"> {{ Auth::user()->user_name }} </h2>
 
          </div>
 
@@ -156,13 +156,13 @@
 
          <div class="col-sm-3">
 
-	           <h3 style="display: inline-block; text-align: center; background-color: #888888; color: white; border-radius: 7px; padding: 7px;" data-toggle="modal" data-target="#popupDesc"> Status </h3>
+	           <h2 style="display: inline-block; text-align: center; background-color: #888888; color: white; padding: 7px;" data-toggle="modal" data-target="#popupDesc"> Status </h3>
 
          </div>
 
          <div class="col-sm-9">
 
-              <h3 style="display: inline-block; text-align: center; background-color: white; color: #888888; border-radius: 7px; padding: 7px;" data-toggle="modal" data-target="#popupDesc"> {{ Auth::user()->description }} </h3>
+              <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; border-radius: 7px; padding: 7px;" data-toggle="modal" data-target="#popupDesc"> {{ Auth::user()->description }} </h3>
 
          </div>
 
@@ -176,13 +176,13 @@
 
          <div class="col-sm-3">
 
-            <h2 style="display: inline-block; text-align: center; background-color: #888888; color: white; border-radius: 7px; padding: 7px;"> Score </h2> <br>
+            <h2 style="display: inline-block; text-align: center; background-color: #888888; color: white; padding: 7px;"> Score </h2> <br>
 
          </div>
 
          <div class="col-sm-9">
 
-            <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; border-radius: 7px; padding: 7px;"> {{ Auth::user()->score }} </h2> <br>
+            <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; padding: 7px;"> {{ Auth::user()->score }} </h2> <br>
 
          </div>
 
