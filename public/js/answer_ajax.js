@@ -73,7 +73,7 @@ $(document).ready(function() {
 				error: function(data) {
 
 					//alert(ansVal);
-					$('#' + servFailureID).show().html("Server Issue: " + data + "try again later");
+					$('#' + servFailureID).show().html("Server Issue: " + data + " try again later");
 					//setTimeout(function() {
 					$('#' + servFailureID).fadeOut(3000, function() {
 						$('#' + servFailureID).remove();
