@@ -114,7 +114,7 @@ class QuestionController extends Controller
 
 
 
-      //Mail::to($email_val)->send(new AnswerMail($answer_val));
+      Mail::to($email_val)->send(new AnswerMail($answer_val));
 
 
       $new_answer = new AnsweredQuestion;
