@@ -63,7 +63,7 @@ $(document).ready(function() {
 				success: function(data) {
 
 					//alert(data);
-					$('#' + successID).show().html("Successfully sent");
+					$('#' + successID).show().html(data);
 					//setTimeout(function() {
 					$('#' + dID).fadeOut(3000, function() {
 						$('#' + dID).remove();

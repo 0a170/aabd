@@ -131,8 +131,8 @@ class QuestionController extends Controller
       $new_answer->save();
 
 
-
-      return redirect()->back();
+      echo "Successfully sent!";
+      //return redirect()->back();
 
 
    }
