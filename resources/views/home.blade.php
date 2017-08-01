@@ -149,7 +149,7 @@
       </div>
 
       <br>
-      <hr>
+      <hr class="divider">
       <br>
 
       <div class="row">
@@ -169,7 +169,7 @@
       </div>
 
       <br>
-      <hr>
+      <hr class="divider">
       <br>
 
       <div class="row">

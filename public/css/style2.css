@@ -44,6 +44,10 @@ p {
 	text-shadow: none;
 }
 
+.divider {
+	color: #888888;
+}
+
 .link1 {
    background-color: #003300;
    color: white !important;
