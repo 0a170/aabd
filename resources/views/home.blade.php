@@ -149,6 +149,8 @@
       </div>
 
       <br>
+      <hr>
+      <br>
 
       <div class="row">
 
@@ -166,7 +168,9 @@
 
       </div>
 
-         <br>
+      <br>
+      <hr>
+      <br>
 
       <div class="row">
 
