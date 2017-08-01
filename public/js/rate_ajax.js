@@ -58,6 +58,11 @@ $(document).ready(function() {
 
 					}
 
+				},
+				error: function(data) {
+
+					$('#' + failureID).text(data);
+
 				}
 
 			});
