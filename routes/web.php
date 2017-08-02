@@ -29,6 +29,8 @@ Route::get('/users', 'UserController@userList');
 
 Route::get('/user/{id}', 'UserController@userAnswers');
 
+Route::post('/user/{id}/like', 'UserController@');
+
 //USER ANSWERING ROUTES
 Route::get('/home', 'QuestionController@showQues');
 
