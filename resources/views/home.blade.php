@@ -78,7 +78,7 @@
 
       <br>
 
-      <!-- <div class="container" style="inline-block; text-align: center; background-color: #e4e4e4;"> -->
+      <div class="container">
       <div class="statsDiv">
 
       <div role="dialog" id="popupLogin" class="modal fade">
@@ -237,6 +237,8 @@
 	   <br>
 
 	   </div>
+
+      </div>
 
 	   <div style="background-color: #bfbfbf;">
 		   <br><br>
