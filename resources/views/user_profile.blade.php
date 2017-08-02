@@ -121,9 +121,12 @@
 
          <div class="rateDiv">
 
-            <h2> {{ $user->user_name }} hasn't answered any questions yet </h2>
+            <p> {{ $user->user_name }} hasn't answered any questions yet </p>
 
          </div>
+
+         <br>
+         <br>
 
       @else
 

@@ -73,12 +73,13 @@
             </ul>
          </div>
       @endif
- 
+
       <img src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profileImg"  data-toggle="modal" data-target="#popupLogin">
 
       <br>
 
-      <div class="container" style="inline-block; text-align: center; background-color: #e4e4e4;">
+      <!-- <div class="container" style="inline-block; text-align: center; background-color: #e4e4e4;"> -->
+      <div class="statsDiv">
 
       <div role="dialog" id="popupLogin" class="modal fade">
 

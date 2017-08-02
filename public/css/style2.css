@@ -102,6 +102,12 @@ p {
 	margin: auto;
 }
 
+.statsDiv {
+	display: inline-block;
+	text-align: center;
+	background-color: #e4e4e4;
+}
+
 .answerDiv {
 	display: inline-block;
 	border: 1px solid white;
