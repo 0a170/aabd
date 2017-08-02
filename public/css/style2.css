@@ -48,6 +48,10 @@ p {
 	border: 1px solid #888888;
 }
 
+.ansDivider {
+	border: 1px solid black;
+}
+
 .link1 {
    background-color: #003300;
    color: white !important;
