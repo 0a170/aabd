@@ -269,7 +269,7 @@
 
                <br>
 
-               <input type="submit" class="btn-primary" id="ent{{ $question->question_id }}" name="theAnswer" value="Answer this">
+               <button type="submit" class="btn-primary" id="ent{{ $question->question_id }}" name="theAnswer" value="Answer this">
 
                <br>
 
