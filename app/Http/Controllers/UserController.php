@@ -49,7 +49,7 @@ class UserController extends Controller {
       $user = User::findOrFail($id);
 
       $user_answers = AnsweredQuestion::where('user_id', $id)
-                                             ->orderBy('score', 'desc')
+                                             ->orderBy('updated_at', 'desc')
                                              ->get();
 
       //return view('user_profile', array('user' => $user, 'user_answers' => '$user_answers'));
