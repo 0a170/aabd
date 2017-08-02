@@ -42,6 +42,7 @@
 
       @if (Auth::check())
 
+      ``<li><a href="{{ url('/home') }}" class="link5"><span class="glyphicon glyphicon-pencil"></span> Answer </a></li>
         <li><a href="{{ url('/ask') }}" class="link1"><span class="glyphicon glyphicon-question-sign"></span> Ask </a></li>
         <li><a href="{{ url('/recent') }}" class="link2"><span class="glyphicon glyphicon-thumbs-up"></span> Recent </a></li>
         <li><a href="{{ url('/users') }}" class="link4"><span class="glyphicon glyphicon-user"></span> Users </a></li>
@@ -67,6 +68,7 @@
           <li><a href="{{ url('/ask') }}" class="link2"><span class="glyphicon glyphicon-question-sign"></span> Ask </a></li>
           <li><a href="{{ url('/register') }}" class="link3"><span class="glyphicon glyphicon-check"></span> Register </a></li>
           <li><a href="{{ url('/recent') }}" class="link4"><span class="glyphicon glyphicon-thumbs-up"></span> Recent </a></li>
+          <li><a href="{{ url('/users') }}" class="link5"><span class="glyphicon glyphicon-user"></span> Users </a></li>
 
         @endif
 
