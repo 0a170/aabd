@@ -26,110 +26,105 @@
 
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="{{ url('/ask') }}">Ask a Brotha</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
+   <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ url('/ask') }}">Ask a Brotha</a>
+         </div>
+         <div class="collapse navbar-collapse" id="myNavbar">
 
-      <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav">
 
-        <li><a href="{{ url('/ask') }}" class="link1"><span class="glyphicon glyphicon-question-sign"></span> Ask </a></li>
-        <li><a href="{{ url('/recent') }}" class="link2"><span class="glyphicon glyphicon-thumbs-up"></span> Recent </a></li>
-        <li><a href="{{ url('/users') }}" class="link4"><span class="glyphicon glyphicon-user"></span> Users </a></li>
-        <li>
-            <a href="#" onclick="event.preventDefault();
-                                                     document.getElementById('logOutForm').submit();" class="link3">
-            <span class="glyphicon glyphicon-log-out"></span> Logout</a>
+               <li><a href="{{ url('/ask') }}" class="link1"><span class="glyphicon glyphicon-question-sign"></span> Ask </a></li>
+               <li><a href="{{ url('/recent') }}" class="link2"><span class="glyphicon glyphicon-thumbs-up"></span> Recent </a></li>
+               <li><a href="{{ url('/users') }}" class="link4"><span class="glyphicon glyphicon-user"></span> Users </a></li>
+               <li>
+                  <a href="#" onclick="event.preventDefault();
+                                       document.getElementById('logOutForm').submit();" class="link3">
+                                       <span class="glyphicon glyphicon-log-out"></span> Logout</a>
 
-               <form id="logOutForm" method="POST" action="{{ route('logout') }}" style="display: none;">
+                  <form id="logOutForm" method="POST" action="{{ route('logout') }}" style="display: none;">
+                     {{ csrf_field() }}
+                  </form>
 
-
-                  {{ csrf_field() }}
-
-
-               </form>
-
-
-        </li>
-
-      </ul>
-    </div>
-  </div>
-</nav>
-
-      @if ($errors->any())
-         <div class="alert alert-danger">
-            <ul>
-               @foreach ($errors->all() as $error)
-                  <li> {{ $error }} </li>
-               @endforeach
+               </li>
             </ul>
          </div>
-      @endif
+      </div>
+   </nav>
 
-      <img src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profileImg"  data-toggle="modal" data-target="#popupLogin">
+   @if ($errors->any())
+      <div class="alert alert-danger">
+         <ul>
+            @foreach ($errors->all() as $error)
+               <li> {{ $error }} </li>
+            @endforeach
+         </ul>
+      </div>
+   @endif
 
-      <br>
+   <img src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profileImg"  data-toggle="modal" data-target="#popupLogin">
 
-      <div class="container">
+   <br>
+
+   <div class="container">
+
       <div class="statsDiv">
 
-      <div role="dialog" id="popupLogin" class="modal fade">
+         <div role="dialog" id="popupLogin" class="modal fade">
 
-		   <div class="modal-content">
+		      <div class="modal-content">
 
-			   <div class="modal-header">
+			      <div class="modal-header">
 
-				   <button type="button" class="close" data-dismiss="modal">&times;</button>
+				      <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-				   <h3 class="modal-title">Change your profile picture</h3>
+				      <h3 class="modal-title">Change your profile picture</h3>
 
-			   </div>
+			      </div>
 
-			   <div class="modal-body">
+			      <div class="modal-body">
 
-	            <form id="upl_img" enctype="multipart/form-data" action="upload_image" method="POST">
+	               <form id="upl_img" enctype="multipart/form-data" action="upload_image" method="POST">
 
-                  {{ csrf_field() }}
+                     {{ csrf_field() }}
 
-                  <div style="padding:10px 20px;">
+                     <div style="padding:10px 20px;">
 
-				  	      <input type="file" name="userImage"><br>
+				  	         <input type="file" name="userImage"><br>
 
-                     <input type="hidden" name="hidUsn" value="{{ Auth::user()->user_name }}">
+                        <input type="hidden" name="hidUsn" value="{{ Auth::user()->user_name }}">
 
-                     <input type="hidden" value="{{ csrf_token() }}">
+                        <input type="hidden" value="{{ csrf_token() }}">
 
-					      <input type="submit" class="btn-primary" id="Up_Img" name="Upload_Image" value="Upload">
+					         <input type="submit" class="btn-primary" id="Up_Img" name="Upload_Image" value="Upload">
 
-					   </div>
+					      </div>
 
-				   </form>
+				      </form>
 
-               @if ($errors->any())
-                   <div class="alert alert-danger">
-                       <ul>
+                  @if ($errors->any())
+                     <div class="alert alert-danger">
+                        <ul>
                            @foreach ($errors->all() as $error)
-                               <li> {{ $error }} </li>
+                              <li> {{ $error }} </li>
                            @endforeach
                        </ul>
-                   </div>
-               @endif
+                    </div>
+                 @endif
 
-				   <p id="msg"></p>
+				     <p id="msg"></p>
 
-			   </div>
+			     </div>
+
+           </div>
 
          </div>
-
-      </div>
 
       <br>
 
@@ -274,7 +269,7 @@
 
                <br>
 
-               <input type="submit" style="background-color: #80bfff; width: 60%; display: block; margin: 0 auto;" class="fbox" id="ent{{ $question->question_id }}" name="theAnswer" value="Answer this">
+               <input type="submit" class="btn-primary" id="ent{{ $question->question_id }}" name="theAnswer" value="Answer this">
 
                <br>
 
