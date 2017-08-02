@@ -36,7 +36,7 @@ $(document).ready(function() {
 			$.ajax({
 
 				type: 'POST',
-				url: 'user/{' + User_ID + '}/like',
+				url: '{' + User_ID + '}/like',
 				data: { 'UIDName': User_ID, 'answerScoreName': Answer_Score,
 				        'upVoteName': upVal, 'answeredQuestionName': Answer_Question,
 				        'AIDName': Answer_ID, '_token': token },
