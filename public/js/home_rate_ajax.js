@@ -76,7 +76,7 @@ $(document).ready(function() {
 			$.ajax({
 
 				type: "POST",
-				url: 'dislike',
+				url: '{' + User_ID + '}/dislike',
 				data: {'UIDName': User_ID, 'answerScoreName': Answer_Score,
 						 'downVoteValName': downVal, 'answeredQuestionName': Answer_Question,
 						 'AIDName': Answer_ID, '_token': token },

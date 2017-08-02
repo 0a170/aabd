@@ -29,8 +29,6 @@ Route::get('/users', 'UserController@userList');
 
 Route::get('/user/{id}', 'UserController@userAnswers');
 
-Route::post('/user/{id}/like', 'AnsweredQuestionController@like');
-
 //USER ANSWERING ROUTES
 Route::get('/home', 'QuestionController@showQues');
 
@@ -66,10 +64,17 @@ Route::post('answer', 'QuestionController@answer');
 })->name('answer'); */
 
 
+//RATE ROUTES FOR RATING REQUESTS ON THE RECENT PAGE
 Route::post('like', 'AnsweredQuestionController@like');
 
 Route::post('dislike', 'AnsweredQuestionController@dislike');
 
+//RATE ROUTES FOR RATING REQUESTS ON USER PROFILE PAGES
+Route::post('/user/{id}/like', 'AnsweredQuestionController@like');
+
+Route::post('/user/{id}/dislike', 'AnsweredQuestionController@dislike');
+
+//HOME PAGE REQUESTS
 Route::post('upload_image', 'UserController@upload');
 
 Route::post('change_description', 'UserController@updateDescription');
