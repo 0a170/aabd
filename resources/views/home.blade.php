@@ -249,7 +249,7 @@
 
          <div id="aDiv{{ $question->question_id }}" class="answerDiv">
 
-            <p style="color: #888888;"><b>Question: {{ $question->question }}</b></p>
+            <p style="color: #888888;"><ul><b>Question: {{ $question->question }}</b></ul></p>
 
             <!-- <p style="color: #888888;"><b>Email: {{ $question->asker_email }}</b></p> -->
 
@@ -269,7 +269,7 @@
 
                <br>
 
-               <button type="submit" class="btn-primary" id="ent{{ $question->question_id }}" name="theAnswer" value="Answer this">
+               <input type="submit" class="btn-primary" id="ent{{ $question->question_id }}" name="theAnswer" value="Answer this">
 
                <br>
 
