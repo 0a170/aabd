@@ -235,7 +235,7 @@
 
    </div>
 
-	   <div style="background-color: #bfbfbf;">
+	   <div>
 		   <br><br>
 	   </div>
 
