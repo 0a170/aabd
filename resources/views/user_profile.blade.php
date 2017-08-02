@@ -117,7 +117,7 @@
 
       <br>
 
-      @if(is_null($user_answers))
+      @if($user_answers->isEmpty())
 
          <div class="rateDiv">
 
