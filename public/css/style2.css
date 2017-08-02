@@ -103,7 +103,7 @@ p {
 }
 
 .statsDiv {
-	display: inline-block;
+	//display: inline-block;
 	text-align: center;
 	background-color: #e4e4e4;
 	width: 90%;
