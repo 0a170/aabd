@@ -72,7 +72,7 @@
 
    <br>
 
-   <div class="container">
+   <!-- <div class="container"> -->
 
       <div class="statsDiv">
 
@@ -233,7 +233,7 @@
 
 	   </div>
 
-      </div>
+      <!-- </div> -->
 
 	   <div style="background-color: #bfbfbf;">
 		   <br><br>
@@ -249,7 +249,7 @@
 
          <div id="aDiv{{ $question->question_id }}" class="answerDiv">
 
-            <p style="color: #888888;"><ul><b>Question: {{ $question->question }}</b></ul></p>
+            <p style="color: #888888;"><b>Question: {{ $question->question }}</b></p>
 
             <!-- <p style="color: #888888;"><b>Email: {{ $question->asker_email }}</b></p> -->
 
