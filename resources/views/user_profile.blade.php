@@ -127,6 +127,8 @@
 
       }
 
+      @else
+
       @foreach($user_answers as $user_answer)
 
          <div class="rateDiv">
@@ -178,6 +180,8 @@
          <br>
 
       @endforeach
+
+      @endif
 
       <br>
 
