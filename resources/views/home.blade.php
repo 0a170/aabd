@@ -72,7 +72,7 @@
 
    <br>
 
-   <!-- <div class="container"> -->
+   <div class="div2">
 
       <div class="statsDiv">
 
@@ -233,7 +233,7 @@
 
 	   </div>
 
-      <!-- </div> -->
+   </div>
 
 	   <div style="background-color: #bfbfbf;">
 		   <br><br>
