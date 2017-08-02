@@ -20,7 +20,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
-<script src="{{ asset('js/rate_ajax.js') }}"></script>
+<script src="{{ asset('js/home_rate_ajax.js') }}"></script>
 
 </head>
 
@@ -120,7 +120,7 @@
             <form id="{{ $user_answer->answer_id }}" class="rateForm" method="POST">
 
                <br>
-               
+
                <input type="hidden" value="{{ $user_answer->user_id }}" name="UIDName">
                <input type="hidden" value="{{ $user_answer->answer_score }}" name="answerScoreName">
                <input type="hidden" value="{{ $user_answer->user_answer }}" name="answeredQuestionName">
