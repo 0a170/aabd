@@ -9,7 +9,7 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-   <link rel="stylesheet" type="text/css" href="{{ asset('email_style.css') }}">
+   <link rel="stylesheet" type="text/css" href="{{ asset('css/email_style.css') }}">
 
 </head>
 
@@ -21,7 +21,7 @@
 
     <tr>
      <td style="background: #80bfff">
-      <img src="logo.png" style="display: block; margin: auto;">
+      <img src="{{ asset('logo.png') }}" style="display: block; margin: auto;">
      </td>
     </tr>
 
