@@ -28,10 +28,10 @@ class QuestionController extends Controller
       $email = $req['email'];
 
 
-      $this->validate($req, [
+      /*$this->validate($req, [
          'question' => 'required|mimes:jpeg,jpg,png|max:500000',
          'email' => 'required|email',
-      ]);
+      ]); */
 
 
       $new_question = new Question;
