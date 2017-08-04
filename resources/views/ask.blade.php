@@ -80,7 +80,7 @@
 
 	     <div id="askDiv">
 
-	        <form id="frmDemo" class="form-group" method="POST" action="submit">
+	        <form id="frmDemo" class="form-group" method="POST">
 
 		         <h3> Ask</h3>
 
