@@ -80,7 +80,7 @@
 
 	     <div id="askDiv">
 
-	        <form id="frmDemo" class="form-group" method="POST">
+	        <form id="frmDemo" class="form-group" method="POST" action="submit">
 
 		         <h3> Ask</h3>
 
@@ -119,8 +119,23 @@
 
 	        </form>
 
-		      <div id="success_message" class="ajax_response" style="float:left"></div>
-          <div id="error_message" class="ajax_response" style"float:left"></div>
+           @if ($errors->any())
+             <div class="alert alert-danger">
+                 <ul>
+                    @foreach ($errors->all() as $error)
+                       <li> {{ $error }} </li>
+                    @endforeach
+                 </ul>
+             </div>
+           @endif
+
+           @if(session()->has('message'))
+             <div class="alert alert-success">
+                {{ session()->get('message') }}
+             </div>
+           @endif
+		    <!--  <div id="success_message" class="ajax_response" style="float:left"></div>
+           <div id="error_message" class="ajax_response" style"float:left"></div> -->
 
 	     </div>
 

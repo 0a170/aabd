@@ -28,6 +28,12 @@ class QuestionController extends Controller
       $email = $req['email'];
 
 
+      $this->validate($req, [
+         'question' => 'required|mimes:jpeg,jpg,png|max:500000',
+         'email' => 'required|email',
+      ]);
+
+
       $new_question = new Question;
 
       $new_question->question = $question;
@@ -35,8 +41,8 @@ class QuestionController extends Controller
 
       $new_question->save();
 
-      echo "Question submitted, we'll get back to you by email soon";
-
+      //echo "Question submitted, we'll get back to you by email soon";
+      return redirect()->back()->with("message", "Question submitted, we'll get back to you by email soon");
    }
 
 
