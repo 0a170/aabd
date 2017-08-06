@@ -88,6 +88,8 @@
 
    <div class="div2">
 
+   <div class="statsDiv">
+
       <div class="row">
 
          <div class="col-sm-3">
@@ -145,6 +147,9 @@
 
       </div>
 
+   </div>
+
+   </div>
 
 
       ------------------------
@@ -158,8 +163,6 @@
 
 	<!-- <a href="#sPage" class="ui-btn ui-shadow ui-corner-all ui-icon-star ui-btn-icon-notext" style="display: inline-block; text-align: center;"></a> -->
 
-
-	</div>
 
 	<div style="background-color: #bfbfbf;">
 	   <br><br>
