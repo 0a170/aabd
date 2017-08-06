@@ -242,6 +242,18 @@
 
       <div class="div2">
 
+      @if($questions->isEmpty())
+
+      <div class="answerDiv">
+
+         <p> No questions to answer now. Check back later, brotha. </p>
+
+      </div>
+
+      <br>
+      <br>
+
+      @else
 
       @foreach($questions as $question)
 

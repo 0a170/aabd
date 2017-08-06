@@ -18,7 +18,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<script src="https://use.fontawesome.com/4269355819.js"></script>
 <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
 <script src="{{ asset('js/home_rate_ajax.js') }}"></script>
 
@@ -85,6 +85,69 @@
 
 
       <br>
+
+      ------------------------
+
+      <div class="row">
+
+         <div class="col-sm-3">
+
+            <h2 style="display: inline-block; text-align: center; background-color: #888888; color: white; padding: 7px;"> Name </h2>
+
+         </div>
+
+         <div class="col-sm-9">
+
+            <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; padding: 7px;"> {{ Auth::user()->user_name }} </h2>
+
+         </div>
+
+      </div>
+
+      <br>
+      <hr class="divider">
+      <br>
+
+      <div class="row">
+
+         <div class="col-sm-3">
+
+	           <h2 style="display: inline-block; text-align: center; background-color: #888888; color: white; padding: 7px;" data-toggle="modal" data-target="#popupDesc"> Status </h3>
+
+         </div>
+
+         <div class="col-sm-9">
+
+              <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; border-radius: 7px; padding: 7px;" data-toggle="modal" data-target="#popupDesc"> {{ Auth::user()->description }} </h3>
+
+         </div>
+
+      </div>
+
+      <br>
+      <hr class="divider">
+      <br>
+
+      <div class="row">
+
+         <div class="col-sm-3">
+
+            <h2 style="display: inline-block; text-align: center; background-color: #888888; color: white; padding: 7px;"> Score </h2> <br>
+            <i class="icon-trophy"></i> icon-trophy
+
+         </div>
+
+         <div class="col-sm-9">
+
+            <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; padding: 7px;"> {{ Auth::user()->score }} </h2> <br>
+
+         </div>
+
+      </div>
+
+
+
+      ------------------------
 
 
       <h2 style="display: inline-block; text-align: center; background-color: #888888; color: white; border-radius: 7px; padding: 7px;"> {{ $user->user_name }} </h2> <br>
