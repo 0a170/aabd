@@ -136,7 +136,7 @@
          <div class="col-sm-3">
 
             <h2 style="display: inline-block; text-align: center; background-color: #888888; color: white; padding: 7px;"> Score </h2> <br>
-            <i class="icon-trophy"></i> icon-trophy
+            <i class="fa fa-trophy" aria-hidden="true"></i>
 
          </div>
 
