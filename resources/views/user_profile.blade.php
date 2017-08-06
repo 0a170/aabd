@@ -152,23 +152,10 @@
    </div>
 
 
-      ------------------------
+   <div>
+      <br><br>
+   </div>
 
-      <div>
-         <br><br>
-      </div>
-
-       <br>
-
-
-	<!-- <a href="#sPage" class="ui-btn ui-shadow ui-corner-all ui-icon-star ui-btn-icon-notext" style="display: inline-block; text-align: center;"></a> -->
-
-
-	<div style="background-color: #bfbfbf;">
-	   <br><br>
-	</div>
-
-   <br>
 
    <div class="div2">
 
