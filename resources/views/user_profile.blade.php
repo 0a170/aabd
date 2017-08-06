@@ -136,7 +136,7 @@
          <div class="col-sm-3">
 
             <!-- <h2 style="display: inline-block; text-align: center; background-color: #888888; color: white; padding: 7px;"> Score </h2> <br> -->
-            <i class="fa fa-trophy fa-4x" aria-hidden="true"></i>
+            <i class="fa fa-trophy fa-5x" style="color: gold;" aria-hidden="true"></i>
 
          </div>
 
