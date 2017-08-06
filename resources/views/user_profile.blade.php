@@ -81,12 +81,12 @@
 
    <br>
 
-   <div class="container" style="inline-block; text-align: center; background-color: #e4e4e4;">
+   <!-- <div class="container" style="inline-block; text-align: center; background-color: #e4e4e4;"> -->
 
 
-      <br>
+   <br>
 
-      ------------------------
+   <div class="div2">
 
       <div class="row">
 
