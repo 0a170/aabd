@@ -98,7 +98,7 @@
 
          <div class="col-sm-9">
 
-            <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; padding: 7px;"> {{ Auth::user()->user_name }} </h2>
+            <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; padding: 7px;"> {{ $user->user_name }} </h2>
 
          </div>
 
@@ -118,7 +118,7 @@
 
          <div class="col-sm-9">
 
-              <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; border-radius: 7px; padding: 7px;" data-toggle="modal" data-target="#popupDesc"> {{ Auth::user()->description }} </h3>
+              <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; border-radius: 7px; padding: 7px;" data-toggle="modal" data-target="#popupDesc"> {{ $user->description }} </h3>
 
          </div>
 
@@ -139,7 +139,7 @@
 
          <div class="col-sm-9">
 
-            <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; padding: 7px;"> {{ Auth::user()->score }} </h2> <br>
+            <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; padding: 7px;"> {{ $user->score}} </h2> <br>
 
          </div>
 
@@ -149,20 +149,15 @@
 
       ------------------------
 
-
-      <h2 style="display: inline-block; text-align: center; background-color: #888888; color: white; border-radius: 7px; padding: 7px;"> {{ $user->user_name }} </h2> <br>
-
-
-	    <h3 style="display: inline-block; text-align: center; background-color: #888888; color: white; border-radius: 7px; padding: 7px;"> {{ $user->description }} </h3>
-
+      <div>
+         <br><br>
+      </div>
 
        <br>
 
 
 	<!-- <a href="#sPage" class="ui-btn ui-shadow ui-corner-all ui-icon-star ui-btn-icon-notext" style="display: inline-block; text-align: center;"></a> -->
 
-
-	   <br>
 
 	</div>
 
