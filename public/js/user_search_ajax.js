@@ -3,7 +3,8 @@ $(document).ready(function() {
    $('.itemName').select2({
      placeholder: 'Search for a user',
      ajax: {
-       url: '/userSearch',
+       //url: '/userSearch',
+       url: 'userSearch',
        dataType: 'json',
        delay: 250,
        processResults: function (data) {
