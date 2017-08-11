@@ -114,6 +114,13 @@ p {
 	padding: 10px;
 }
 
+.searchDiv {
+	display: inline-block;
+	text-align: center;
+	width: 90%;
+	max-width: 400px;
+}
+
 .answerDiv {
 	display: inline-block;
 	border: 1px solid white;

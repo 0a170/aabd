@@ -82,7 +82,7 @@
 
       <br>
 
-      <div class="container">
+      <div class="searchDiv">
 
          <!-- <h2>Laravel 5 - Dynamic autocomplete search using select2 JS Ajax</h2>
          <br/> -->

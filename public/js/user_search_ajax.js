@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
    $('.itemName').select2({
-     placeholder: 'Select an item',
+     placeholder: 'Search for a user',
      ajax: {
        url: '/userSearch',
        dataType: 'json',
