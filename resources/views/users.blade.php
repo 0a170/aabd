@@ -86,10 +86,11 @@
 
          <!-- <h2>Laravel 5 - Dynamic autocomplete search using select2 JS Ajax</h2>
          <br/> -->
-         <select class="itemName form-control" style="width:500px;" name="itemName"></select>
+         <select class="itemName form-control" name="itemName"></select>
 
       </div>
 
+      <br>
       <br>
 
       @foreach($users as $user)
