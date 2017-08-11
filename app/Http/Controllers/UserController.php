@@ -61,8 +61,8 @@ class UserController extends Controller {
 
       $data = [];
 
-      if($request->has('q')){
-          $search = $request->q;
+      if($req->has('q')){
+          $search = $req->q;
           $data = DB::table("users")
                 ->select("id","user_name")
                 ->where('user_name','LIKE',"%$search%")
