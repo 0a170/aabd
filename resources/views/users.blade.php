@@ -10,13 +10,16 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style2.css') }}">
 
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 <script src="{{ asset('js/answer_ajax.js') }}"></script>
+<script src="{{ asset('js/user_search_ajax.js') }}"></script>
 
 </head>
 
@@ -76,6 +79,16 @@
    <div class="div2">
 
       <h1> Browse Users </h1>
+
+      <br>
+
+      <div class="container">
+
+         <!-- <h2>Laravel 5 - Dynamic autocomplete search using select2 JS Ajax</h2>
+         <br/> -->
+         <select class="itemName form-control" style="width:500px;" name="itemName"></select>
+
+      </div>
 
       <br>
 

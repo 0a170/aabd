@@ -57,6 +57,22 @@ class UserController extends Controller {
 
    }
 
+   public function userSearch(Request $req) {
+
+      $data = [];
+
+      if($request->has('q')){
+          $search = $request->q;
+          $data = DB::table("users")
+                ->select("id","user_name")
+                ->where('user_name','LIKE',"%$search%")
+                ->get();
+      }
+
+      return response()->json($data);
+
+   }
+
 
    public function upload(Request $req) {
 
