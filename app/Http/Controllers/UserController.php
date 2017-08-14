@@ -59,7 +59,11 @@ class UserController extends Controller {
 
    public function userSearch(Request $req) {
 
-      $data = [];
+
+      $searchUsers = Users::where("name", "iLIKE", "%{$keyword->get('keywords')}%")->get();
+      //return View::make('templates.searchUsers')->with('searchUsers', $searchUsers);
+      return response()->json($searchUsers);
+      /*$data = [];
 
       if($req->has('q')){
           $search = $req->q;
@@ -69,7 +73,7 @@ class UserController extends Controller {
                 ->get();
       }
 
-      return response()->json($data);
+      return response()->json($data); */
 
    }
 
