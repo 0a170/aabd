@@ -4,7 +4,7 @@ $(document).ready(function() {
      placeholder: 'Search for a user',
      ajax: {
        //url: '/userSearch',
-       url: 'search',
+       url: 'search-test',
        dataType: 'json',
        delay: 250,
        processResults: function (data) {
@@ -20,5 +20,7 @@ $(document).ready(function() {
        cache: true
      }
    });
+
+
 
 });

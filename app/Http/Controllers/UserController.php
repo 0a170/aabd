@@ -66,7 +66,11 @@ class UserController extends Controller {
       $searchUsers = DB::table('users')
                      ->where('user_name', 'LIKE', '%' . $req->search . '%')->get();
 
-      $output = '<p>' . $searchUsers . '</p>\n';
+      foreach ($searchUsers as $key => $searchUser) {
+
+         $output = '<p>' . $searchUser->user_name . '</p>\n';
+
+      }
 
       return response($output);
       //return response()->json($searchUsers);
@@ -81,6 +85,34 @@ class UserController extends Controller {
       }
 
       return response()->json($data); */
+
+   }
+
+
+   public function userSearchTest(Request $req) {
+
+
+      //$searchUsers = Users::where("name", "iLIKE", "%{$keyword->get('keywords')}%")->get();
+      //return View::make('templates.searchUsers')->with('searchUsers', $searchUsers);
+
+      //$searchUsers = DB::table('users')
+                     //->where('user_name', 'LIKE', '%' . $req->search . '%')->get();
+
+      //$output = '<p>' . $searchUsers . '</p>\n';
+
+      //return response($output);
+      //return response()->json($searchUsers);
+      $data = [];
+
+      if($req->has('q')){
+          $search = $req->q;
+          $data = DB::table("users")
+                ->select("id","user_name")
+                ->where('user_name','LIKE',"%$search%")
+                ->get();
+      }
+
+      return response()->json($data);
 
    }
 
