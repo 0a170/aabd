@@ -64,7 +64,7 @@ class UserController extends Controller {
       //return View::make('templates.searchUsers')->with('searchUsers', $searchUsers);
 
       $searchUsers = DB::table('users')
-                     ->where('user_name', 'LIKE', '%' . $req->userSearch . '%')->get();
+                     ->where('user_name', 'LIKE', '%' . $req->search . '%')->get();
 
       $output = '<p>' . $searchUsers . '</p>';
 
