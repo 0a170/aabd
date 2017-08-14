@@ -1,4 +1,4 @@
-//$(document).ready(function(){
+$(document).ready(function() {
 
 $('.testInput').on('keyup', function() {
 
@@ -57,4 +57,4 @@ function searchDown() {
 } */
 
 
-//});
+});
