@@ -68,7 +68,7 @@ class UserController extends Controller {
 
       foreach ($searchUsers as $key => $searchUser) {
 
-         $output = '<p>' . $searchUser->user_name . '</p>\n';
+         $output = '<a href="{{ url("/user/' . $searchUser->id . '") }}">' . $searchUser->user_name . '</a>' . '\n';
 
       }
 
