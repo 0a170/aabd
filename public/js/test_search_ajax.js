@@ -18,6 +18,10 @@ $('.testInput').on('keyup', function() {
             $('.results').html(data);
 
          }
+         else
+         {
+            alert("data is empty");
+         }
 
       }
 
