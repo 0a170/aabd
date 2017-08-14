@@ -66,7 +66,7 @@ class UserController extends Controller {
       $searchUsers = DB::table('users')
                      ->where('user_name', 'LIKE', '%' . $req->search . '%')->get();
 
-      $output = '<p>' . $searchUsers . '</p>';
+      $output = '<p>' . $searchUsers . '</p>\n';
 
       return response($output);
       //return response()->json($searchUsers);

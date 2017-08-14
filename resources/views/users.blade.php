@@ -95,7 +95,7 @@
 
       <div class="testDiv">
 
-         <input type="text" name="search" onkeyup="searchUser">
+         <input type="text" name="search" class="testInput">
          <div class="results"></div>
 
       </div>

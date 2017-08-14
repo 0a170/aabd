@@ -1,6 +1,6 @@
 //$(document).ready(function(){
 
-$('.itemName').on('keyup', function() {
+$('.testInput').on('keyup', function() {
 
    $value = $(this).val();
 
