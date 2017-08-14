@@ -95,11 +95,13 @@
 
       <div class="testDiv">
 
-         <input type="text" name="search">
+         <input type="text" name="search" onkeyup="searchUser">
          <div class="results"></div>
 
       </div>
 
+      <br>
+      <br>
 
 
       @foreach($users as $user)

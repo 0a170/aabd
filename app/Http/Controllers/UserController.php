@@ -60,9 +60,16 @@ class UserController extends Controller {
    public function userSearch(Request $req) {
 
 
-      $searchUsers = Users::where("name", "iLIKE", "%{$keyword->get('keywords')}%")->get();
+      //$searchUsers = Users::where("name", "iLIKE", "%{$keyword->get('keywords')}%")->get();
       //return View::make('templates.searchUsers')->with('searchUsers', $searchUsers);
-      return response()->json($searchUsers);
+
+      $searchUsers = DB::table('users')
+                     ->where('user_name', 'LIKE', '%' . $req->userSearch . '%')->get();
+
+      $output = '<p>' . $searchUsers . '</p>'
+
+      return response($output);
+      //return response()->json($searchUsers);
       /*$data = [];
 
       if($req->has('q')){

@@ -1,5 +1,31 @@
 //$(document).ready(function(){
-var timer;
+
+$('.itemName').on('keyup', function() {
+
+   $value = $(this).val();
+
+   $.ajax({
+
+      type: 'GET',
+      url: 'search',
+      data: {'search': $value},
+
+      success: function(data) {
+
+         //console.log(data);
+         if(data != "") {
+
+            $('.results').html(data);
+
+         }
+
+      }
+
+   });
+
+});
+
+/*var timer;
 function searchUser() {
 
    timer = setTimeOut(function(){
@@ -24,7 +50,7 @@ function searchDown() {
 
    clearTimeout(timer);
 
-}
+} */
 
 
 //});
