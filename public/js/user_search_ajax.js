@@ -22,7 +22,7 @@ $(document).ready(function() {
 
    });
 
-   $("#goUser").on(click, function(){
+   $("#goUser").on('click', function(){
 
       userValue = $(".itemName").val();
 
