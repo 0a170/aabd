@@ -88,6 +88,8 @@
          <br/> -->
          <select class="itemName form-control" name="itemName"></select>
 
+         <br>
+
          <button id="goUser" class="btn-primary"> Go </button>
 
       </div>
