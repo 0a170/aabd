@@ -88,6 +88,8 @@
          <br/> -->
          <select class="itemName form-control" name="itemName"></select>
 
+         <button id="goUser" class="btn-primary"> Go </button>
+
       </div>
 
       <br>
@@ -96,7 +98,7 @@
       <div class="testDiv">
 
          <input type="text" name="search" class="testInput">
-         
+
          <div class="results"></div>
 
       </div>

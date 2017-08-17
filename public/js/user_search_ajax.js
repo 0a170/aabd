@@ -19,7 +19,28 @@ $(document).ready(function() {
        },
        cache: true
      }
+
    });
+
+   $("#goUser").on(click, function(){
+
+      userValue = $(".itemName").val();
+
+      if(userValue != "") {
+
+         window.location.href = "http://aabd.herokuapp.com/user/" + userValue;
+
+      }
+
+      else {
+
+         alert("something isn't right here");
+
+      }
+
+   });
+
+
 
 
 

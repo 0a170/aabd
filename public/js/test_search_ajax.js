@@ -4,6 +4,12 @@ $('.testInput').on('keyup', function() {
 
    $value = $(this).val();
 
+   if($value == "") {
+
+      $('.results').html("");
+
+   }
+
    $.ajax({
 
       type: 'GET',
