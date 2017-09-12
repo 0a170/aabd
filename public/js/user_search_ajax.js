@@ -29,9 +29,9 @@ $(document).ready(function() {
 
       alert(userValue);
 
-      if(userValue === null) {
+      if(userValue === null || userValue == "") {
 
-         $('#failedRequest').show().html("empty");
+         $('#failedRequest').show().html("Please select a user");
 
       }
 
