@@ -22,11 +22,12 @@ $(document).ready(function() {
 
    });
 
+
    $("#goUser").on('click', function(){
 
       userValue = $("#itemNameID").val();
 
-      if(userValue != "" || userValue != null || userValue != "null") {
+      if(userValue != "" || userValue !== null || userValue !== "null") {
 
          window.location.href = "http://aabd.herokuapp.com/user/" + userValue;
 
