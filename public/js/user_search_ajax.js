@@ -35,7 +35,7 @@ $(document).ready(function() {
       else if(userValue == "" || userValue == null || userValue == "null") {
 
          //alert("empty");
-         $('#failedRequst').show().html("empty");
+         $('#failedRequest').show().html("empty");
 
       }
 
