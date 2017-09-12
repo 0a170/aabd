@@ -32,7 +32,7 @@ $(document).ready(function() {
 
       }
 
-      else if(userValue == ""){
+      else if(userValue == "" || uservalue == null){
 
          alert("empty");
 
