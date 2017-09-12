@@ -47,7 +47,7 @@ class Handler extends ExceptionHandler
 
       if($this->isHttpException($exception))
       {
-         switch (intval($exception->getStatusCode())) {
+         /*switch (intval($exception->getStatusCode())) {
             // not found
             case 404:
                return redirect()->route('/');
@@ -63,11 +63,15 @@ class Handler extends ExceptionHandler
             }
       }
 
-      else
-
-      {
-        return parent::render($request, $exception);
+      else*/
+      
+      if ($e instanceof NotFoundHttpException) {
+          return redirect()->route('home');
       }
+
+      //{
+        return parent::render($request, $exception);
+      //}
 
     }
 
