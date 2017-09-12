@@ -115,7 +115,7 @@ p {
 }
 
 .searchDiv {
-	//display: inline-block;
+	display: inline-block;
 	text-align: center;
 	width: 90%;
 	max-width: 400px;
