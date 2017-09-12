@@ -25,12 +25,12 @@ $(document).ready(function() {
 
    $("#goUser").on('click', function(){
 
-      userValue = $("#itemNameID").val();
+      var userValue = $("#itemNameID").val();
 
       if(userValue != "" || userValue != null || userValue != "null") {
 
-         //window.location.href = "http://aabd.herokuapp.com/user/" + userValue;
-         alert("going to user search");
+         window.location.href = "http://aabd.herokuapp.com/user/" + userValue;
+         //alert("going to user search");
       }
 
       else if(userValue == "" || userValue == null || userValue == "null") {
