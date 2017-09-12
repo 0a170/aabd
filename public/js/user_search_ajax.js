@@ -27,8 +27,6 @@ $(document).ready(function() {
 
       var userValue = $("#itemNameID").val();
 
-      alert(userValue);
-
       if(userValue === null || userValue == "") {
 
          $('#failedRequest').show().html("Please select a user");
