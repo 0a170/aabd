@@ -26,7 +26,7 @@ $(document).ready(function() {
 
       userValue = $(".itemName").val();
 
-      if(userValue != "" || userValue != null) {
+      if(userValue != "" || userValue != null || userValue != "null") {
 
          window.location.href = "http://aabd.herokuapp.com/user/" + userValue;
 
