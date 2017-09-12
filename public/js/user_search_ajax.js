@@ -24,7 +24,7 @@ $(document).ready(function() {
 
    $("#goUser").on('click', function(){
 
-      userValue = $(".itemName").val();
+      userValue = $("#itemNameID").val();
 
       if(userValue != "" || userValue != null || userValue != "null") {
 
