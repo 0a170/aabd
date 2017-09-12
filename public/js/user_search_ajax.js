@@ -29,22 +29,15 @@ $(document).ready(function() {
 
       alert(userValue);
 
-      if(userValue !== null || userValue != "") {
+      if(userValue === null) {
 
-         window.location.href = "http://aabd.herokuapp.com/user/" + userValue;
-         //alert("going to user search");
-      }
-
-      else if(userValue == "" || userValue == null || userValue == "null") {
-
-         //alert("empty");
          $('#failedRequest').show().html("empty");
 
       }
 
       else {
 
-         alert("something isn't right here");
+         window.location.href = "http://aabd.herokuapp.com/user/" + userValue;
 
       }
 
