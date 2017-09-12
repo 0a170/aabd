@@ -27,7 +27,9 @@ $(document).ready(function() {
 
       var userValue = $("#itemNameID").val();
 
-      if(userValue != "" || userValue != null || userValue != "null") {
+      alert(userValue);
+
+      if(userValue != null || userValue != "") {
 
          window.location.href = "http://aabd.herokuapp.com/user/" + userValue;
          //alert("going to user search");
