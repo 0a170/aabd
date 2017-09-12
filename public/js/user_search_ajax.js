@@ -29,8 +29,8 @@ $(document).ready(function() {
 
       if(userValue != "" || userValue != null || userValue != "null") {
 
-         window.location.href = "http://aabd.herokuapp.com/user/" + userValue;
-
+         //window.location.href = "http://aabd.herokuapp.com/user/" + userValue;
+         alert("going to user search");
       }
 
       else if(userValue == "" || userValue == null || userValue == "null") {

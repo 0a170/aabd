@@ -20,6 +20,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 <script src="{{ asset('js/answer_ajax.js') }}"></script>
 <script src="{{ asset('js/user_search_ajax.js') }}"></script>
+<script src="{{ asset('js/test_search_ajax.js') }}"></script>
 </head>
 
 <body>
