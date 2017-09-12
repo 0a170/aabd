@@ -32,6 +32,12 @@ $(document).ready(function() {
 
       }
 
+      else if(userValue == ""){
+
+         alert("empty");
+
+      }
+
       else {
 
          alert("something isn't right here");
