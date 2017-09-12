@@ -64,8 +64,8 @@ class Handler extends ExceptionHandler
       }
 
       else*/
-      
-      if ($e instanceof NotFoundHttpException) {
+
+      if ($exception instanceof NotFoundHttpException) {
           return redirect()->route('home');
       }
 
