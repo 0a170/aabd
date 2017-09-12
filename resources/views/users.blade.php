@@ -89,7 +89,7 @@
          <select class="itemName form-control" name="itemName"></select>
 
          <br>
-         <div class="ajax_failure"></div>
+         <div id="failedRequest" class="ajax_failure"></div>
          <br>
          <button id="goUser" class="btn btn-primary"> Go </button>
 

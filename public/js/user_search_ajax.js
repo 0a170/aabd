@@ -32,9 +32,10 @@ $(document).ready(function() {
 
       }
 
-      else if(userValue == "" || userValue == null || userValue == "null"){
+      else if(userValue == "" || userValue == null || userValue == "null") {
 
-         alert("empty");
+         //alert("empty");
+         $('#failedRequst').show().html("empty");
 
       }
 
