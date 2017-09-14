@@ -98,7 +98,7 @@
       <br>
       <br>
 
-      <div class="testDiv">
+      <!--<div class="testDiv">
 
          <input type="text" name="search" class="testInput">
 
@@ -107,7 +107,7 @@
       </div>
 
       <br>
-      <br>
+      <br> -->
 
 
       @foreach($users as $user)
