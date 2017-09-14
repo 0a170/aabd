@@ -88,3 +88,9 @@ Route::post('change_description', 'UserController@updateDescription');
 Route::get('/error', function() {
    return view('error');
 });
+
+
+
+Route::any('{query}',
+  function() { return redirect('/'); })
+  ->where('query', '.*');
