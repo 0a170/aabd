@@ -97,7 +97,7 @@ $(document).ready(function() {
 
 						//data = JSON.parse(data);
 						//$(span).text(" " + data.down_votes);
-						/$(span).text(" " + data);
+						$(span).text(" " + data);
 
 		         }
 
