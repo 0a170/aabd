@@ -72,7 +72,10 @@ class AnsweredQuestionController extends Controller
 
       }
 
-      else {
+      else
+
+      if(!(Vote::where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->first())) {
+
 
          $new_vote = new Vote;
 
@@ -115,7 +118,10 @@ class AnsweredQuestionController extends Controller
 
       }
 
-      else {
+      else
+
+      if(!(Vote::where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->first())) {
+       {
 
          $new_vote = new Vote;
 
