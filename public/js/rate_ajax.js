@@ -53,8 +53,9 @@ $(document).ready(function() {
 					}
 					else if(data != "Already voted") {
 
-						data = JSON.parse(data);
-					   $(span).text(" " + data.up_votes);
+						//data = JSON.parse(data);
+					   //$(span).text(" " + data.up_votes);
+						$(span).text(" " + data);
 
 					}
 
