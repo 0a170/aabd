@@ -51,7 +51,7 @@ $(document).ready(function() {
 						$('#' + failureID).text(data);
 
 					}
-					else {
+					else if(data != "Already voted") {
 
 						data = JSON.parse(data);
 					   $(span).text(" " + data.up_votes);
