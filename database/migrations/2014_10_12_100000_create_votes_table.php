@@ -20,7 +20,8 @@ class CreateVotesTable extends Migration
             $table->string('answer');
             $table->tinyInteger('vote_up');
             $table->tinyInteger('vote_down');
-            $table->ipAddress('ip_address');
+            //$table->ipAddress('ip_address');
+            $table->string('ip_address');
             $table->rememberToken();
             $table->timestamps();
         });
