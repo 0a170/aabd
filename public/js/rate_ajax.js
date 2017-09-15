@@ -53,7 +53,7 @@ $(document).ready(function() {
 					}
 					else if(data != "Already voted") {
 
-						//data = JSON.parse(data);
+						data = JSON.parse(data);
 					   $(span).text(" " + data.up_votes);
 						//$(span).text(" " + data);
 
@@ -95,7 +95,7 @@ $(document).ready(function() {
 
 					else {
 
-						//data = JSON.parse(data);
+						data = JSON.parse(data);
 						$(span).text(" " + data.down_votes);
 						//$(span).text(" " + data);
 
