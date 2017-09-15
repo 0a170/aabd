@@ -89,7 +89,7 @@ $(document).ready(function() {
 			   	if(data == "Already voted") {
 
 						//$('#' + failureID).show();
-						$('#' . failureID).text(data);
+						$('#' + failureID).text(data);
 
 					}
 
