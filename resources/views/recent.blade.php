@@ -116,9 +116,9 @@
                         <br>
                         <br>
 
-                        <div id="rate_failure{{ $answer->answer_id }}" class="ajax_failure"></div>
-
                     </form>
+
+                    <div id="rate_failure{{ $answer->answer_id }}" class="ajax_failure"></div>
 
                   </div>
 
