@@ -87,6 +87,7 @@ $(document).ready(function() {
 
 			   	if(data == "Already voted") {
 
+						alert(data);
 						//$('#' + failureID).show().html(data);
 						$('#' . failureID).text(data);
 
