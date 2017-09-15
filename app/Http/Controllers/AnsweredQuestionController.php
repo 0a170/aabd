@@ -65,8 +65,8 @@ class AnsweredQuestionController extends Controller
       /*NOT SURE WHAT'S HAPPENING TO WHERE VOTES FROM THE SAME IP ADDR STILL WORK FOR THE SAME
       ANSWER AFTER A FEW SECONDS OR SOMETHING*/
 
-      //if(Vote::where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->first()) {
-      if(DB::table('votes')->where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->first()) {
+      if(Vote::where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->first()) {
+      //if(DB::table('votes')->where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->first()) {
 
          echo "Already voted";
 
@@ -106,8 +106,8 @@ class AnsweredQuestionController extends Controller
       $answer_id = $req['AIDName'];
       $ip_add = $req->ip();
 
-      //if(Vote::where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->first()) {
-      if(DB::table('votes')->where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->first()) {
+      if(Vote::where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->first()) {
+      //if(DB::table('votes')->where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->first()) {
 
          echo "Already voted";
 
