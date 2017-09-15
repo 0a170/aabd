@@ -118,7 +118,8 @@ class AnsweredQuestionController extends Controller
          $new_vote->answer = $answer;
          $new_vote->vote_up = 1;
          $new_vote->vote_down = 0;
-         $new_vote->ip_address = $ip_add;
+         //$new_vote->ip_address = $ip_add;
+         $new_vote->ip_address = $req->ip();
 
          $new_vote->save();
 
