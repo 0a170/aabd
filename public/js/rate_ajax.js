@@ -47,8 +47,8 @@ $(document).ready(function() {
 
 					if(data == "Already voted") {
 
-						//$('#' + failureID).show().html(data);
-						$('#' + failureID).text(data);
+						$('#' + failureID).show();
+						//$('#' + failureID).text(data);
 
 					}
 					else if(data != "Already voted") {

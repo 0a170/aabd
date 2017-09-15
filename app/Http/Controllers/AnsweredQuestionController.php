@@ -134,7 +134,6 @@ class AnsweredQuestionController extends Controller
          AnsweredQuestion::where('answer_id', $answer_id)->increment('down_votes');
 
          //$new_down_votes = AnsweredQuestion::select('down_votes')->where('answer_id', $answer_id)->get();
-
          $new_down_votes = AnsweredQuestion::select('down_votes')->where('answer_id', $answer_id)->first();
 
          //echo $new_down_votes[0];
