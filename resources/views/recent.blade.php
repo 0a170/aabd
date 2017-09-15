@@ -124,11 +124,10 @@
 
                   <br>
                   <br>
+
                  @endforeach
 
-
                 <br>
-
 
 </div>
 
