@@ -212,6 +212,8 @@
 
                      <input type="hidden" value="{{ csrf_token() }}">
 
+                     <br>
+
 						   <input type="submit" class="btn btn-primary" id="Up_Desc" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check" name="Update_Description" value="Update">
 
 					   </div>
@@ -284,7 +286,7 @@
 
                <br>
 
-               <input type="submit" class="btn-primary" id="ent{{ $question->question_id }}" name="theAnswer" value="Answer this">
+               <input type="submit" class="btn btn-primary" id="ent{{ $question->question_id }}" name="theAnswer" value="Answer this">
 
                <br>
 
