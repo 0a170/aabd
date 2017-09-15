@@ -47,15 +47,15 @@ $(document).ready(function() {
 
 					if(data == "Already voted") {
 
-						$('#' + failureID).show();
-						//$('#' + failureID).text(data);
+						//$('#' + failureID).show();
+						$('#' + failureID).text(data);
 
 					}
 					else if(data != "Already voted") {
 
 						//data = JSON.parse(data);
-					   //$(span).text(" " + data.up_votes);
-						$(span).text(" " + data);
+					   $(span).text(" " + data.up_votes);
+						//$(span).text(" " + data);
 
 					}
 
@@ -96,8 +96,8 @@ $(document).ready(function() {
 					else {
 
 						//data = JSON.parse(data);
-						//$(span).text(" " + data.down_votes);
-						$(span).text(" " + data);
+						$(span).text(" " + data.down_votes);
+						//$(span).text(" " + data);
 
 		         }
 
