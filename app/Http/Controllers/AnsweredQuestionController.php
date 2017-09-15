@@ -90,8 +90,8 @@ class AnsweredQuestionController extends Controller
 
          AnsweredQuestion::where('answer_id', $answer_id)->increment('up_votes');
 
-         //$new_up_votes = AnsweredQuestion::select('up_votes')->where('answer_id', $answer_id)->get();
-         $new_up_votes = AnsweredQuestion::select('up_votes')->where('answer_id', $answer_id)->first();
+         $new_up_votes = AnsweredQuestion::select('up_votes')->where('answer_id', $answer_id)->get();
+         //$new_up_votes = AnsweredQuestion::select('up_votes')->where('answer_id', $answer_id)->first();
 
          echo $new_up_votes[0];
          //echo $new_up_votes;
@@ -134,8 +134,8 @@ class AnsweredQuestionController extends Controller
 
          AnsweredQuestion::where('answer_id', $answer_id)->increment('down_votes');
 
-         //$new_down_votes = AnsweredQuestion::select('down_votes')->where('answer_id', $answer_id)->get();
-         $new_down_votes = AnsweredQuestion::select('down_votes')->where('answer_id', $answer_id)->first();
+         $new_down_votes = AnsweredQuestion::select('down_votes')->where('answer_id', $answer_id)->get();
+         //$new_down_votes = AnsweredQuestion::select('down_votes')->where('answer_id', $answer_id)->first();
 
          echo $new_down_votes[0];
          //echo $new_down_votes;
