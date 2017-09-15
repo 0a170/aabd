@@ -116,7 +116,7 @@
                         <br>
                         <br>
 
-                        <div id="rate_failure{{ $answer->answer_id }}" class="ajax_failure" style="display:hidden;"> <p>Already voted</p> </div>
+                        <div id="rate_failure{{ $answer->answer_id }}" class="ajax_failure"></div>
 
                     </form>
 

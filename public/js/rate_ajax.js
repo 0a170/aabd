@@ -70,7 +70,7 @@ $(document).ready(function() {
 
 		}
 
-
+		else
 
 		if(btnVal == "downButtonVal") {
 
@@ -88,15 +88,16 @@ $(document).ready(function() {
 
 			   	if(data == "Already voted") {
 
-						$('#' + failureID).show();
-						//$('#' . failureID).text(data);
+						//$('#' + failureID).show();
+						$('#' . failureID).text(data);
 
 					}
 
 					else {
 
-						data = JSON.parse(data);
-						$(span).text(" " + data.down_votes);
+						//data = JSON.parse(data);
+						//$(span).text(" " + data.down_votes);
+						/$(span).text(" " + data);
 
 		         }
 
