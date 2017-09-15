@@ -58,7 +58,7 @@ class AnsweredQuestionController extends Controller
       $answer = $req['answeredQuestionName'];
       $answer_id = $req['AIDName'];
       //$ip_add = $req->ip();
-      $ip_add = Request::getClientIp();
+      $ip_add = $req->getClientIp();
 
       // COMPARE CLIENT'S IP ADDRESS WITH IP ADDRESSES IN VOTE TABLE FOR SPECIFIC ANSWER VOTE
 
