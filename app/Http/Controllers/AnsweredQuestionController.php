@@ -64,15 +64,18 @@ class AnsweredQuestionController extends Controller
 
       /*NOT SURE WHAT'S HAPPENING TO WHERE VOTES FROM THE SAME IP ADDR STILL WORK FOR THE SAME
       ANSWER AFTER A FEW SECONDS OR SOMETHING*/
+      $vote_exists = Vote::where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->first();
 
       //if(Vote::where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->get()) {
-      if(Vote::where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->first()) {
+      if($vote_exists) {
 
          echo "Already voted";
 
       }
 
-      else {
+      else
+
+      if(!$vote_exists){
 
          $new_vote = new Vote;
 
