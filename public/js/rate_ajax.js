@@ -72,7 +72,7 @@ $(document).ready(function() {
 
 		else
 
-		if(btnVal == "downButtonVal") {
+		/*if(btnVal == "downButtonVal")*/ {
 
 			$.ajax({
 
