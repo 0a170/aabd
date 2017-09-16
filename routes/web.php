@@ -70,7 +70,9 @@ Route::post('answer', 'QuestionController@answer');
 
 
 //RATE ROUTES FOR RATING REQUESTS ON THE RECENT PAGE
-Route::post('like', 'AnsweredQuestionController@like');
+//Route::post('like', 'AnsweredQuestionController@like');
+Route::post('like', 'AnsweredQuestionController@like')->middleware('throttle:10');
+
 
 Route::post('dislike', 'AnsweredQuestionController@dislike');
 
