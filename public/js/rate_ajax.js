@@ -51,7 +51,7 @@ $(document).ready(function() {
 						$('#' + failureID).text(data);
 
 					}
-					else if(data == "Too many attempts") {
+					else if(data == "Too Many Attempts.") {
 
 						$('#' + failureID).text(data);
 
