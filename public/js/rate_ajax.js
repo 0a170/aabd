@@ -93,7 +93,9 @@ $(document).ready(function() {
 
 					}
 
-					else {
+					else
+
+					if(data != "Already voted") {
 
 						data = JSON.parse(data);
 						$(span).text(" " + data.down_votes);
