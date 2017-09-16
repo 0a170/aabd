@@ -6,7 +6,8 @@ $(document).ready(function() {
     	}
 	});
 
-	$('Button').on('click', function(e) {
+	//$('Button').on('click', function(e) {
+	$('#voteButton').on('click', function(e) {
 
 		e.preventDefault();
 
