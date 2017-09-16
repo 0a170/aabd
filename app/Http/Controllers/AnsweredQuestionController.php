@@ -69,7 +69,7 @@ class AnsweredQuestionController extends Controller
       $vote_exists = Vote::where('answer_id', $answer_id)->where('ip_address', $ip_add)->first();
 
       //if(Vote::where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->get()) {
-      if(!(is_null($vote_exists))) {
+      if(!$vote_exists) {
 
          echo "Already voted";
 
@@ -77,7 +77,7 @@ class AnsweredQuestionController extends Controller
 
       else
 
-      if(is_null($vote_exists)) {
+      if($vote_exists) {
 
          $new_vote = new Vote;
 
