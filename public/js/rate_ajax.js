@@ -53,6 +53,7 @@ $(document).ready(function() {
 					}
 					else if(data == "Too Many Attempts.") {
 
+						alert(data);
 						$('#' + failureID).text(data);
 
 					}
