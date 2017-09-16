@@ -107,18 +107,22 @@ class AnsweredQuestionController extends Controller
 
       $user_id = $req['UIDName'];
       $answer = $req['answeredQuestionName'];
-      $answer_id = $req['AIDName'];
+      $answer_id = (int)$req['AIDName'];
       //$ip_add = $req->ip();
       $ip_add = \Request::getClientIp();
 
-      if(Vote::where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->get()) {
+      $vote_exists = Vote::where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->get();
+
+      if($vote_exists) {
       //if(DB::table('votes')->where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->first()) {
 
          echo "Already voted";
 
       }
 
-      else {
+      else
+
+      if(!$vote_exists) {
 
          $new_vote = new Vote;
 
