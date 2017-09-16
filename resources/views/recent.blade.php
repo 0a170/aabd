@@ -95,9 +95,6 @@
                         <br>
                         <p> User Answer: {{ $answer->user_answer }} </p>
                         <br>
-                        <p> User ID: {{ $answer->user_id }} </p>
-
-                        <br>
 
                         <button type="button" id="voteButton" class="btn btn-default btn-lg" value="upButtonVal">
                            <span class="glyphicon glyphicon-thumbs-up">
