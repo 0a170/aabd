@@ -32,7 +32,7 @@ $(document).ready(function() {
 
 		if(btnVal == "upButtonVal") {
 
-
+		//something is wrong
 
 			$.ajax({
 
