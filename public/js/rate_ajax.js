@@ -48,7 +48,6 @@ $(document).ready(function() {
 
 					if(data == "Already voted") {
 
-						//$('#' + failureID).show();
 						$('#' + failureID).text(data);
 
 					}
@@ -56,7 +55,6 @@ $(document).ready(function() {
 
 						data = JSON.parse(data);
 					   $(span).text(" " + data.up_votes);
-						//$(span).text(" " + data);
 
 					}
 
@@ -100,7 +98,6 @@ $(document).ready(function() {
 
 						data = JSON.parse(data);
 						$(span).text(" " + data.down_votes);
-						//$(span).text(" " + data);
 
 		         }
 
