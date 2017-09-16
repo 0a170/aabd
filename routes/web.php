@@ -70,16 +70,14 @@ Route::post('answer', 'QuestionController@answer');
 
 
 //RATE ROUTES FOR RATING REQUESTS ON THE RECENT PAGE
-//Route::post('like', 'AnsweredQuestionController@like');
 Route::post('like', 'AnsweredQuestionController@like')->middleware('throttle:10');
 
-
-Route::post('dislike', 'AnsweredQuestionController@dislike');
+Route::post('dislike', 'AnsweredQuestionController@dislike')->middleware('throttle:10');
 
 //RATE ROUTES FOR RATING REQUESTS ON USER PROFILE PAGES
-Route::post('/user/{id}/like', 'AnsweredQuestionController@like');
+Route::post('/user/{id}/like', 'AnsweredQuestionController@like')->middleware('throttle:10');
 
-Route::post('/user/{id}/dislike', 'AnsweredQuestionController@dislike');
+Route::post('/user/{id}/dislike', 'AnsweredQuestionController@dislike')->middleware('throttle:10');
 
 //HOME PAGE REQUESTS
 Route::post('upload_image', 'UserController@upload');
