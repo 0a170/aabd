@@ -111,7 +111,7 @@ class AnsweredQuestionController extends Controller
       //$ip_add = $req->ip();
       $ip_add = \Request::getClientIp();
 
-      $vote_exists = Vote::where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->get();
+      $vote_exists = Vote::where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->first();
 
       if($vote_exists) {
       //if(DB::table('votes')->where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->first()) {
@@ -141,7 +141,7 @@ class AnsweredQuestionController extends Controller
 
          AnsweredQuestion::where('answer_id', $answer_id)->increment('down_votes');
 
-         $new_down_votes = AnsweredQuestion::select('down_votes')->where('answer_id', $answer_id)->get();
+         $new_down_votes = AnsweredQuestion::select('down_votes')->where('answer_id', $answer_id)->first();
          //$new_down_votes = AnsweredQuestion::select('down_votes')->where('answer_id', $answer_id)->first();
 
          echo $new_down_votes[0];
