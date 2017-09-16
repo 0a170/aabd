@@ -56,7 +56,7 @@ class AnsweredQuestionController extends Controller
 
       $user_id = $req['UIDName'];
       $answer = $req['answeredQuestionName'];
-      $answer_id = $req['AIDName'];
+      $answer_id = (int)$req['AIDName'];
       //$ip_add = $req->ip();
       $ip_add = \Request::getClientIp();
 
