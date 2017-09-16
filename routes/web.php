@@ -51,9 +51,9 @@ Route::get('/ask', function() {
     return view('ask');
 });
 
-Route::post('submit', 'QuestionController@submit');
+Route::post('submit', 'QuestionController@submit')->middleware('throttle:5');
 
-Route::post('answer', 'QuestionController@answer');
+Route::post('answer', 'QuestionController@answer')->middleware('throttle:10');
 
 /*Route::post('answer', function(\Illuminate\Http\Request $request,
    \Illuminate\Mail\Mailer $mailer) {
@@ -80,9 +80,9 @@ Route::post('/user/{id}/like', 'AnsweredQuestionController@like')->middleware('t
 Route::post('/user/{id}/dislike', 'AnsweredQuestionController@dislike')->middleware('throttle:10');
 
 //HOME PAGE REQUESTS
-Route::post('upload_image', 'UserController@upload');
+Route::post('upload_image', 'UserController@upload')->middleware('throttle:3');
 
-Route::post('change_description', 'UserController@updateDescription');
+Route::post('change_description', 'UserController@updateDescription')->middleware('throttle:5');
 
 //ERROR ROUTE STILL IN TESTING
 Route::get('/error', function() {

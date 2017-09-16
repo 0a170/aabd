@@ -51,10 +51,15 @@ $(document).ready(function() {
 						$('#' + failureID).text(data);
 
 					}
-					else if(data != "Already voted") {
+					else if(data == "Too many attempts") {
+
+						$('#' + failureID).text(data);
+
+					}
+					else /* if(data != "Already voted") */ {
 
 						data = JSON.parse(data);
-					   $(span).text(" " + data.up_votes);
+						$(span).text(" " + data.up_votes);
 						//$(span).text(" " + data);
 
 					}
