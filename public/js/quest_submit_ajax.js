@@ -13,6 +13,7 @@ $(document).ready(function() {
 
   var form = $("#frmDemo");
 
+  var emailReg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
   $("#frmDemo").steps({
 
@@ -57,6 +58,14 @@ $(document).ready(function() {
          }, 3000);
 
 		}
+      else if(!emailReg(em)) {
+
+         $('#error_message').fadeIn().html("Invalid Email Address");
+         setTimeout(function() {
+            $('#error_message').fadeOut('slow');
+         }, 3000);
+
+      }
 
 
 		else {
