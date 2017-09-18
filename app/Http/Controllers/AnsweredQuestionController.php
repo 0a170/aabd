@@ -66,10 +66,12 @@ class AnsweredQuestionController extends Controller
       ANSWER AFTER A FEW SECONDS OR SOMETHING*/
       //$vote_exists = Vote::where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->first();
 
-      $vote_exists = Vote::where('answer_id', $answer_id)->where('ip_address', $ip_add)->first();
+      //$vote_exists = Vote::where('answer_id', $answer_id)->where('ip_address', $ip_add)->first();
+      $vote_count = Vote::where('answer_id', $answer_id)->where('ip_address', $ip_add)->count();
 
       //if(Vote::where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->get()) {
-      if(!$vote_exists) {
+      //if(!$vote_exists) {
+      if($vote_count > 0) {
 
          echo "Already voted";
 
@@ -77,7 +79,9 @@ class AnsweredQuestionController extends Controller
 
       else
 
-      if($vote_exists) {
+      //if($vote_exists) {
+      if($vote_count == 0) {
+
 
          $new_vote = new Vote;
 
@@ -113,9 +117,12 @@ class AnsweredQuestionController extends Controller
       //$ip_add = $req->ip();
       $ip_add = \Request::getClientIp();
 
-      $vote_exists = Vote::where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->first();
+      //$vote_exists = Vote::where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->first();
 
-      if(!(is_null($vote_exists))) {
+      $vote_count = Vote::where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->count();
+
+      //if(!(is_null($vote_exists))) {
+      if($vote_count > 0) {
       //if(DB::table('votes')->where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->first()) {
 
          echo "Already voted";
@@ -124,7 +131,8 @@ class AnsweredQuestionController extends Controller
 
       else
 
-      if(is_null($vote_exists)) {
+      //if(is_null($vote_exists)) {
+      if($vote_count == 0) {
 
          $new_vote = new Vote;
 
