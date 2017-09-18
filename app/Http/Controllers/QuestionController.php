@@ -42,7 +42,8 @@ class QuestionController extends Controller
       $new_question->save();
 
       //echo "Question submitted, we'll get back to you by email soon";
-      return redirect()->back()->with("message", "Question submitted, we'll get back to you by email soon");
+      //return redirect()->back()->with("message", "Question submitted, we'll get back to you by email soon");
+      echo "Question submitted, we'll get back to you by email soon";
    }
 
 
