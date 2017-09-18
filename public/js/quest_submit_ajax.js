@@ -61,7 +61,7 @@ $(document).ready(function() {
 
       else
 
-      if(em.value.match(emailReg) == null) {
+      if(em.match(emailReg) == null) {
 
          $('#error_message').fadeIn().html("Invalid Email Address");
          setTimeout(function() {
