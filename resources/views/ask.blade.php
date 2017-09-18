@@ -119,12 +119,14 @@
 
 	        </form>
 
+		     <div id="success_message" class="ajax_response" style="float:left"></div>
+           <div id="error_message" class="ajax_response" style"float:left"></div>
+
 	     </div>
 
     </div>
+
     <br>
-    <div id="success_message" class="ajax_response" style="float:left"></div>
-    <div id="error_message" class="ajax_response" style"float:left"></div>
 
     </body>
 
