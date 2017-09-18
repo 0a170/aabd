@@ -121,20 +121,24 @@
 
 		     <div id="success_message" class="ajax_response" style="float:left"></div>
            <div id="error_message" class="ajax_response" style"float:left"></div>
-           <br>
-           @if ($errors->any())
-             <div class="alert alert-danger">
-                 <ul>
-                    @foreach ($errors->all() as $error)
-                       <li> {{ $error }} </li>
-                    @endforeach
-                </ul>
-             </div>
-          @endif
 
 	     </div>
 
     </div>
+
+    <br>
+
+    @if ($errors->any())
+      <div class="alert alert-danger">
+          <ul>
+             @foreach ($errors->all() as $error)
+                <li> {{ $error }} </li>
+             @endforeach
+         </ul>
+      </div>
+   @endif
+
+
     </body>
 
 </html>
