@@ -27,8 +27,8 @@ $(document).ready(function() {
 
 		var span = $(':first-child', this);
 
-		var failureID = $('#' + theFormID).last().attr('id');
-		//var failureID = $('#' + theFormID + ' :last-child').attr('id');
+		//var failureID = $('#' + theFormID).last().attr('id');
+		var failureID = $('#' + theFormID + ' :last').attr('id');
 
 		if(btnVal == "upButtonVal") {
 
