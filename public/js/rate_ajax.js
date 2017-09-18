@@ -46,7 +46,7 @@ $(document).ready(function() {
 
 				success: function(data) {
 
-					if(data == "Already voted") {
+					if(data == "Already voted" || data == null || data == "") {
 
 						$('#' + failureID).text(data);
 

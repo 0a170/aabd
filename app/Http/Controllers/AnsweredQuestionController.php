@@ -139,8 +139,8 @@ class AnsweredQuestionController extends Controller
          //$new_answer->vote_id = $userId;
          $new_vote->answer_id = $answer_id;
          $new_vote->answer = $answer;
-         $new_vote->vote_up = 1;
-         $new_vote->vote_down = 0;
+         $new_vote->vote_up = 0;
+         $new_vote->vote_down = 1;
          $new_vote->ip_address = $ip_add;
 
          $new_vote->save();
