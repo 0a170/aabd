@@ -9,7 +9,45 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-   <link rel="stylesheet" type="text/css" href="{{ asset('css/email_style.css') }}">
+   <style>
+
+      @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+      table {
+
+      }
+
+      .header {
+         background: #80bfff;
+      }
+
+      .footer {
+         background: #888888;
+      }
+
+      p {
+   	   font-family: "Roboto", sans-serif;
+   	   color: black;
+   	   //font-size: 20px;
+   	   font-size:1.1em;
+         font-weight: 300;
+   	   text-shadow: none;
+      }
+
+      h2 {
+   	   font-family: "Roboto", sans-serif;
+   	   color: #888888;
+   	   text-shadow: none;
+      }
+
+      h1 {
+   	   font-family: "Roboto", sans-serif;
+   	   text-align: center;
+   	   font-size: 36px;
+   	   font-weight: 300;
+      }
+
+   </style>
 
 </head>
 
@@ -20,8 +58,8 @@
    <table style="width: 100%; max-width: 600px;" border="1" cellpadding="0" cellspacing="0">
 
     <tr>
-     <td style="background: #80bfff">
-       <h1 style="text-align: center; color: #00008B;"> Ask A Bored Guy <h1>
+     <td class="header">
+       <h1> Ask A Bored Guy <h1>
      </td>
     </tr>
 
@@ -48,9 +86,7 @@
     <tr>
      <td class="footer">
         <br>
-        <br>
-        <br>
-        <br>
+        <p> Copyright - Ask A Bored Dude </p>
         <br>
      </td>
     </tr>
