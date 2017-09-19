@@ -33,7 +33,7 @@
       {{ $body }}
       <br>
       <br>
-      <a href="{{ url('/ask') }}" class="btn btn-primary btn-lg" role="button">Ask Again</a>
+      <a href="{{ url('/ask') }}" class="btn btn-primary btn-lg">Ask Again</a>
       <br>
       <br>
      </td>
