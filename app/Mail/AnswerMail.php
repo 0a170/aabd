@@ -10,7 +10,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class AnswerMail extends Mailable
 {
     use Queueable, SerializesModels;
-    
+
     public $title, $body;
 
     /**
@@ -22,8 +22,8 @@ class AnswerMail extends Mailable
     {
         //
         //$this->$title = $title;
-        $this->body = $body; 
-        
+        $this->body = $body;
+
     }
 
     /**
@@ -33,11 +33,11 @@ class AnswerMail extends Mailable
      */
     public function build()
     {
-        return $this->from('askblackmen@gmail.com')
+        return $this->from('askaboredguy@gmail.com')
         ->view('email.sendanswer')
-        ->subject("A brotha has answered your question");
-        
-        
-        
+        ->subject("A bored guy has answered your question");
+
+
+
     }
 }

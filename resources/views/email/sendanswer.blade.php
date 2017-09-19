@@ -21,7 +21,7 @@
 
     <tr>
      <td style="background: #80bfff">
-      <img src="{{ asset('logo.png') }}" style="display: block; margin: auto;">
+       <h1 style="text-align: center; color: #00008B;"> Ask A Bored Guy <h1>
      </td>
     </tr>
 
@@ -30,10 +30,10 @@
       <br>
       <br>
       <br>
-      {{ $body }}
+      <h2 style="color: #00008B;"> {{ $body }} </h2>
       <br>
       <br>
-
+      <br>
       <div class="color: #ffffff; background-color: #611BBD; border-color: #130269;">
 
          <a href="{{ url('/ask') }}" class="btn btn-primary btn-lg">Ask Again</a>
