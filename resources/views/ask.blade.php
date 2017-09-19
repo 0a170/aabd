@@ -129,4 +129,18 @@
 
     </body>
 
+<script>
+
+   $(document).ready(function() {
+
+      $("#logOutForm").submit(function(e) {
+
+         e.preventDefault();
+
+      });
+
+   });
+
+</script>
+
 </html>
