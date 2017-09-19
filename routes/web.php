@@ -93,4 +93,8 @@ Route::get('/error', function() {
 //REDIRECT ANY UNKNOWN REQUEST NOT FOUND ABOVE BACK TO HOMEPAGE
 /*Route::any('{query}',
   function() { return redirect('/'); })
-  ->where('query', '.*'); */
+  ->where('query', '.*');*/
+
+  Route::any('{query}',
+    function() { return view('notfound'); })
+    ->where('query', '.*');

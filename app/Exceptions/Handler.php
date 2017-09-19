@@ -46,7 +46,7 @@ class Handler extends ExceptionHandler
     {
         if ($exception instanceof NotFoundHttpException) {
            //return redirect()->route('/');
-           return redirect('/');
+           return redirect('/notfound');
         }
 
         if ($exception instanceof TokenMismatchException) {
