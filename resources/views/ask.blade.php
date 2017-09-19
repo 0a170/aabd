@@ -23,7 +23,6 @@
 
          <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
          <script src="{{ asset('js/jquery.steps.min.js') }}"></script>
-         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
        <script src="{{ asset('js/quest_submit_ajax.js') }}"></script>
 
