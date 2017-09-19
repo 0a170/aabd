@@ -69,15 +69,18 @@
 </nav>
 
 
-<div class="container">
 
    <div class="div1">
 
-      <h1> Sorry, an Error has occurred. Try again later </h1>
+      <h1> 404 Error </h1>
+
+      <br>
+      <br>
+
+      <h2> Page not found </h2>
 
    </div>
 
-</div>
 
 </body>
 
