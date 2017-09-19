@@ -54,6 +54,9 @@ $(document).ready(function() {
 					else if(data != "Already voted") {
 
 						data = JSON.parse(data);
+
+						$(btn).css({'color': 'white', 'background': 'green'});
+
 					   $(span).text(" " + data.up_votes);
 
 					}
@@ -97,8 +100,10 @@ $(document).ready(function() {
 					if(data != "Already voted") {
 
 						data = JSON.parse(data);
-						$
-						$(span).css({'color': 'white', 'background': 'red'}).text(" " + data.down_votes);
+
+						$(btn).css({'color': 'white', 'background': 'red'});
+
+						$(span).text(" " + data.down_votes);
 
 		         }
 
