@@ -10,7 +10,7 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="{{asset('public/css/rate_style.css')}}"> 
+<link rel="stylesheet" type="text/css" href="{{asset('public/css/rate_style.css')}}">
 
 
 
@@ -28,9 +28,9 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Ask a Brotha</a>
+      <a class="navbar-brand" href="#">AABG</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
 
