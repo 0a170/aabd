@@ -75,7 +75,7 @@
       <br>
       <br>
 
-      <h2> Page not found </h2>
+      <h2 style="text-align: center;"> Page not found </h2>
 
 
 </body>
