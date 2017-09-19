@@ -17,7 +17,7 @@
 
 <div class="container">
 
-   <table style="width: 100%; max-width: 600px;" border="0" cellpadding="0" cellspacing="0">
+   <table style="width: 100%; max-width: 600px;" border="1" cellpadding="0" cellspacing="0">
 
     <tr>
      <td style="background: #80bfff">
@@ -34,9 +34,9 @@
       <br>
       <br>
       <br>
-      <div class="color: #ffffff; background-color: #611BBD; border-color: #130269;">
+      <div class="color: #ffffff; background: #611BBD; border-color: #130269;">
 
-         <a href="{{ url('/ask') }}" class="btn btn-primary btn-lg">Ask Again</a>
+         <a href="{{ url('/ask') }}">Ask Again</a>
 
       </div>
 
