@@ -25,7 +25,7 @@
 <script src="{{ asset('js/jquery.steps.min.js') }}"></script>
 </head>
 
-<body>
+<body style="padding-top: 70px; background: #80bfff;">
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
