@@ -45,6 +45,8 @@
                   @if (Auth::check())
                      <li><a href="{{ url('/home') }}" class="link1"><span class="glyphicon glyphicon-pencil"></span> Answer</a></li>
                      <li><a href="{{ url('/recent') }}" class="link2"><span class="glyphicon glyphicon-thumbs-up"></span> Recent</a></li>
+                     <li><a href="{{ url('/users') }}" class="link4"><span class="glyphicon glyphicon-user"></span> Users </a></li>
+
                      <li>
                      <a href=" {{ url('/logout') }}" onclick="event.preventDefault();
                                                              document.getElementById('logOutForm').submit();" class="link3">
@@ -72,7 +74,7 @@
 
     <div id="pAsk">
 
-	     <h1> Ask a question </h1>
+	     <h1> Ask a Bored Guy </h1>
 
 	     <br>
 	     <br>

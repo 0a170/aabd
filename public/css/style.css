@@ -208,7 +208,7 @@ h1 {
 
 #frmDemo > .actions > ul > li:first-child,
 #frmDemo > .actions > ul > li:first-child.active {
-	border: 1px solid red !important;
+	//border: 1px solid red !important;
    border-radius: 2px !important;
    border-top: 5px !important;
    background: #ff6666 !important;
@@ -220,7 +220,7 @@ h1 {
 
 
 #frmDemo > .actions > ul > li:nth-child(2) {
-	border: 1px solid blue !important;
+	//border: 1px solid blue !important;
 	border-radius: 2px !important;
    border-top: 5px !important;
 	background: #4981ce !important;
@@ -238,7 +238,7 @@ h1 {
 
 
 #frmDemo > .actions > ul > li:last-child {
-	border: 1px solid green !important;
+	//border: 1px solid green !important;
    background: #00ff55 !important;
    border-radius: 2px !important;
    border-top: 5px !important;

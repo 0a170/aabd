@@ -250,7 +250,7 @@
 
       <div class="answerDiv">
 
-         <p> No questions to answer now. Check back later, brotha. </p>
+         <p> No questions to answer now. Check back later. </p>
 
       </div>
 
