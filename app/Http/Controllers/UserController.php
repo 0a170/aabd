@@ -26,21 +26,16 @@ class UserController extends Controller {
    public function profile($id) {
 
       $user = User::findOrFail($id);
-      //$user = User::find($id)->first();
 
-      //return View::make('user.profile', array('user_name' => $user));
-
-      //return view('user_profile', compact('user'));
       return view('user_profile', ['user' => $user]);
-      //$user_info = User::where($username)->first();
+
    }
 
    public function userList() {
 
-      //$users = User::selec
-      //$users = DB::table('users')->select('SELECT id, user_name, description, profile_image, questions_answered, score FROM users')-get();
       $users = User::select('id', 'user_name', 'description', 'profile_image', 'questions_answered', 'score')->get();
       return view('users', ['users' => $users]);
+
    }
 
 
@@ -60,17 +55,11 @@ class UserController extends Controller {
 
    public function userSearch(Request $req) {
 
-
-      //$searchUsers = Users::where("name", "iLIKE", "%{$keyword->get('keywords')}%")->get();
-      //return View::make('templates.searchUsers')->with('searchUsers', $searchUsers);
-
       $searchUsers = DB::table('users')
                      ->where('user_name', 'LIKE', '%' . $req->search . '%')->get();
-                     //->where('user_name', 'LIKE', $req->search)->get();
 
       foreach ($searchUsers as $key => $searchUser) {
 
-         //$output = '<a href=\"{{ url' . '(\"/user/' . $searchUser->id . '\") }}>' . $searchUser->user_name . '</a>' . '\n';
          $output = '<a href="/user/' . $searchUser->id . '">' . $searchUser->user_name . '</a>' . '\n';
 
       }
@@ -107,64 +96,37 @@ class UserController extends Controller {
       ]);
 
 
-      /*if($req->file('userImage') == null) {
 
-         return redirect()->back()->withErrors(['err', "Please upload an image"]);
+      $username_sans_ext = $req->input('hidUsn');
 
-      }*/
+      // UPLOAD FILE TO FILE SYSTEM
+      $ext = $file->getClientOriginalExtension();
 
-      //VALIDATING WHETHER OR NOT FILE IS AN IMAGE
-      /*else if($req->file('userImage')->isValid()) { */
+      $username = $username_sans_ext . '.' . $ext;
 
-         $username_sans_ext = $req->input('hidUsn');
 
-         // UPLOAD FILE TO FILE SYSTEM
-         $ext = $file->getClientOriginalExtension();
+      $file_avatar = Image::make($req->file('userImage'))->resize(300, 300);
 
-         $username = $username_sans_ext . '.' . $ext;
+      $file_avatar = $file_avatar->stream();
 
-         //$file->storeAs('/public/images/', $username);
-         //$file->storeAs('/public/storage/images/', $username);
+      Storage::disk('s3')->put('profile_images/' . $username, $file_avatar->__toString());
 
-         //$file->storeAs('profile_images/', $username, 's3');
-         $file_avatar = Image::make($req->file('userImage'))->resize(300, 300);
+      $file_thumbnail = Image::make($req->file('userImage'))->resize(100, 100);
 
-         $file_avatar = $file_avatar->stream();
+      $file_thumbnail = $file_thumbnail->stream();
 
-         Storage::disk('s3')->put('profile_images/' . $username, $file_avatar->__toString());
-         //$file->storeAs('/public/storage/images/', $username);
+      Storage::disk('s3')->put('thumbnails/thumbnail_' . $username, $file_thumbnail->__toString());
 
-         //$manager = new ImageManager(array('driver' => 'imagick'));
 
-         //$file_thumbnail = Image::make($req->file('userImage'))->resize(100, 100)->save(public_path() . '/' . 'storage/' . 'thumbnails/' . $username_sans_ext . "_thumbnail" . "." . $ext);
+      // UPDATE PROFILE IMAGE FILE NAME IN DATABASE AND REFRESH PAGE
+      $user_prof = User::where('user_name', $username_sans_ext)->first();
 
-         $file_thumbnail = Image::make($req->file('userImage'))->resize(100, 100);
+      $user_prof->profile_image = $username;
 
-         $file_thumbnail = $file_thumbnail->stream();
+      $user_prof->save();
 
-         Storage::disk('s3')->put('thumbnails/thumbnail_' . $username, $file_thumbnail->__toString());
+      return redirect()->back();
 
-         //$file_thumbnail->storeAs('thumbnails/', $username_sans_ext . '_thumbnail.' . $ext, 's3');
-         //working on image manager stuff
-
-         //Image::make($file)->getRealPath();
-
-         // UPDATE PROFILE IMAGE FILE NAME IN DATABASE AND REFRESH PAGE
-         $user_prof = User::where('user_name', $username_sans_ext)->first();
-
-         $user_prof->profile_image = $username;
-
-         $user_prof->save();
-
-         return redirect()->back();
-
-      //}
-
-      /*else {
-
-         return redirect()->back()->withErrors(['err', 'Invalid file type, please upload an image']);
-
-      } */
 
    }
 
