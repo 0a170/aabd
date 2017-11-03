@@ -88,7 +88,7 @@
 
 			      </div>
 
-			      <div class="modal-body" style="text-align: center; max-width: 400px;">
+			      <div class="modal-body">
 
 	               <form id="upl_img" enctype="multipart/form-data" action="upload_image" method="POST">
 
