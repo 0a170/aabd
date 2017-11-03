@@ -1,5 +1,22 @@
 $(document).ready(function() {
 
+   function charCount(str) {
+
+      var count = 0;
+
+      var charArr = str.split("");
+
+      for(var i = 0; i < charArr.length; i++) {
+
+         count += 1;
+
+      }
+
+      return count;
+
+
+   }
+
 
   $.ajaxSetup({
   		//headers: { 'csrftoken' : '{{ csrf_token() }}' }
@@ -26,25 +43,9 @@ $(document).ready(function() {
       finish: "Done"
     },
 
-	/*onStepChanging: function(event, currentIndex, newIndex)
-	{
-		if(currentIndex > 0) {
-
-			$('.actions > ul > li:first-child').attr('style', 'display:none');
-
-		}
-		//return form.valid();
-	}, */
-	/*
-	onFinishing: function(event, currentIndex)
-	{
-
-		return form.valid();
-
-	}, */
 	onFinished: function(event, currentIndex)
 	{
-		//alert("here");
+
 		var ques = $("#quest").val();
 		var em = $("#em").val();
 		var token = $(":hidden").val();
@@ -64,6 +65,17 @@ $(document).ready(function() {
       if(em.match(emailReg) == null) {
 
          $('#error_message').fadeIn().html("Invalid Email Address");
+         setTimeout(function() {
+            $('#error_message').fadeOut('slow');
+         }, 3000);
+
+      }
+
+      else
+
+      if(charCount(ques) > 140) {
+
+         $('#error_message').fadeIn().html("Question must be 140 characters or less");
          setTimeout(function() {
             $('#error_message').fadeOut('slow');
          }, 3000);
