@@ -21,10 +21,10 @@
          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-         <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
-         <script src="{{ asset('js/jquery.steps.min.js') }}"></script>
+         <script src="{{ secure_asset('js/jquery-3.2.1.js') }}"></script>
+         <script src="{{ secure_asset('js/jquery.steps.min.js') }}"></script>
 
-       <script src="{{ asset('js/quest_submit_ajax.js') }}"></script>
+       <script src="{{ secure_asset('js/quest_submit_ajax.js') }}"></script>
 
     </head>
     <body>
