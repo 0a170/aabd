@@ -4,7 +4,7 @@ $(document).ready(function() {
      placeholder: 'Search for a user',
      ajax: {
        //url: '/userSearch',
-       url: 'search-test',
+       url: 'search',
        dataType: 'json',
        delay: 250,
        processResults: function (data) {
