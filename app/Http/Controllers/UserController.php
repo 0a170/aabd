@@ -52,22 +52,6 @@ class UserController extends Controller {
    }
 
 
-   /*public function userSearch(Request $req) {
-
-      $searchUsers = DB::table('users')
-                     ->where('user_name', 'LIKE', '%' . $req->search . '%')->get();
-
-      foreach ($searchUsers as $key => $searchUser) {
-
-         $output = '<a href="/user/' . $searchUser->id . '">' . $searchUser->user_name . '</a>' . '\n';
-
-      }
-
-      return response($output);
-
-   } */
-
-
    public function userSearch(Request $req) {
 
       $data = [];
@@ -134,6 +118,11 @@ class UserController extends Controller {
 
       // UPDATE PROFILE DESCRIPTION IN DATABASE AND REFRESH PAGE
       $desc = $req->input('newDesc');
+
+      $this->validate($req, [
+         'userImage' => 'required',
+      ]);
+
 
       $usernameD = $req->input('hidUsnD');
 

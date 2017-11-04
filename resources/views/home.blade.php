@@ -108,15 +108,15 @@
 
 				      </form>
 
-                  @if ($errors->any())
-                     <div class="alert alert-danger">
-                        <ul>
-                           @foreach ($errors->all() as $error)
-                              <li> {{ $error }} </li>
-                           @endforeach
-                       </ul>
-                    </div>
-                 @endif
+              @if ($errors->any())
+                <div class="alert alert-danger">
+                   <ul>
+                      @foreach ($errors->all() as $error)
+                         <li> {{ $error }} </li>
+                      @endforeach
+                   </ul>
+                </div>
+              @endif
 
 				     <p id="msg"></p>
 
@@ -227,11 +227,7 @@
 
 	   </div>
 
-   	<br>
-
-
-	<!-- <a href="#sPage" class="ui-btn ui-shadow ui-corner-all ui-icon-star ui-btn-icon-notext" style="display: inline-block; text-align: center;"></a> -->
-
+   	 <br>
 
 	   <br>
 
@@ -267,12 +263,6 @@
 
             <p style="color: #888888;"><b>Question: {{ $question->question }}</b></p>
 
-            <!-- <p style="color: #888888;"><b>Email: {{ $question->asker_email }}</b></p> -->
-
-            <!-- <p style="color: #888888;"><b>Question ID: {{ $question->question_id }}</b></p> -->
-
-
-
             <form id="{{ $question->question_id }}" class="aForm" method="POST">
 
                <input type="text" id="answerID{{ $question->question_id }}" name="answerInput" class="answers" style="max-width: 60%; display: block; margin: 0 auto;"></textarea>
@@ -290,8 +280,8 @@
                <br>
 
                <div id="answer_failure{{ $question->question_id }}" class="ajax_failure"></div>
-					<div id="answer_success{{ $question->question_id }}" class="ajax_success"></div>
-					<div id="server_error{{ $question->question_id }}" class="ajax_failure"></div>
+					     <div id="answer_success{{ $question->question_id }}" class="ajax_success"></div>
+					     <div id="server_error{{ $question->question_id }}" class="ajax_failure"></div>
 
                <br>
 
