@@ -47,13 +47,12 @@ class UserController extends Controller {
                                              ->orderBy('updated_at', 'desc')
                                              ->get();
 
-      //return view('user_profile', array('user' => $user, 'user_answers' => '$user_answers'));
       return view('user_profile', compact('user', 'user_answers'));
 
    }
 
 
-   public function userSearch(Request $req) {
+   /*public function userSearch(Request $req) {
 
       $searchUsers = DB::table('users')
                      ->where('user_name', 'LIKE', '%' . $req->search . '%')->get();
@@ -66,10 +65,10 @@ class UserController extends Controller {
 
       return response($output);
 
-   }
+   } */
 
 
-   public function userSearchTest(Request $req) {
+   public function userSearch(Request $req) {
 
       $data = [];
 

@@ -100,18 +100,6 @@
       <br>
       <br>
 
-      <!--<div class="testDiv">
-
-         <input type="text" name="search" class="testInput">
-
-         <div class="results"></div>
-
-      </div>
-
-      <br>
-      <br> -->
-
-
       @foreach($users as $user)
 
          <a href="user/{{ $user->id }}" style="display: block;">

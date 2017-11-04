@@ -30,22 +30,16 @@ Route::get('/users', 'UserController@userList');
 Route::get('/user/{id}', 'UserController@userAnswers');
 
 //USER AJAX SEARCH
-Route::get('/search', 'UserController@userSearch');
+//Route::get('/search', 'UserController@userSearch');
 
-Route::get('search-test', 'UserController@userSearchTest');
+Route::get('search', 'UserController@userSearch');
+
 
 //USER ANSWERING ROUTES
 Route::get('/home', 'QuestionController@showQues');
 
 Route::get('/recent', 'AnsweredQuestionController@showAll');
 
-//Route::post('logout', 'AnsweredQuestionController@logOut');
-//Route::post('/logout', 'Auth\LoginController@logOut');
-
-
-//Route::get('/recent', function() {
- //  return view('recent', );
-//});
 
 Route::get('/ask', function() {
     return view('ask');
@@ -54,20 +48,6 @@ Route::get('/ask', function() {
 Route::post('submit', 'QuestionController@submit')->middleware('throttle:5');
 
 Route::post('answer', 'QuestionController@answer')->middleware('throttle:10');
-
-/*Route::post('answer', function(\Illuminate\Http\Request $request,
-   \Illuminate\Mail\Mailer $mailer) {
-      $mailer
-      ->to($request->input('ema'))
-      ->send(new \App\Mail\AnswerMail($request->input('answerInput')));
-
-      //AnsweredQuestion::find(Auth::user()->user_id;
-
-
-
-   return redirect()->back();
-})->name('answer'); */
-
 
 //RATE ROUTES FOR RATING REQUESTS ON THE RECENT PAGE
 Route::post('like', 'AnsweredQuestionController@like')->middleware('throttle:10');
@@ -89,12 +69,7 @@ Route::get('/error', function() {
    return view('error');
 });
 
-
-//REDIRECT ANY UNKNOWN REQUEST NOT FOUND ABOVE BACK TO HOMEPAGE
-/*Route::any('{query}',
-  function() { return redirect('/'); })
-  ->where('query', '.*');*/
-
-  Route::any('{query}',
-    function() { return view('notfound'); })
-    ->where('query', '.*');
+//404 PAGE
+Route::any('{query}',
+   function() { return view('notfound'); })
+   ->where('query', '.*');
