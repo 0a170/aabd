@@ -120,7 +120,7 @@ class UserController extends Controller {
       $desc = $req->input('newDesc');
 
       $this->validate($req, [
-         'userImage' => 'required',
+         'newDesc' => 'required',
       ]);
 
 
