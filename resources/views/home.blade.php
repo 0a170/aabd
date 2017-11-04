@@ -116,7 +116,7 @@
                       @endforeach
                    </ul>
                 </div>
-              @endif
+             @endif
 
 				     <p id="msg"></p>
 

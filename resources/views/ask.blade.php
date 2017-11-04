@@ -12,9 +12,9 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.steps.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
-        <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="{{ secure_asset('css/jquery.steps.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ secure_asset('css/bootstrap.min.css') }}">
+        <link href="{{ secure_asset('css/style.css') }}" rel="stylesheet" type="text/css">
 
 
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
