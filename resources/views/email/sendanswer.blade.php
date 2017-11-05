@@ -19,6 +19,7 @@
    	   font-size:1.1em;
          font-weight: 300;
    	   text-shadow: none;
+         text-align: center;
       }
 
       h2 {
