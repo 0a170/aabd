@@ -127,7 +127,7 @@ Button[id*="downButton"]:hover {
    max-width: 300px;
    height: 100%;
    width: 100%;
-    /*float: none; */
+   float: none;
    margin-right:0;
    text-align: center;
    /*width:auto;*/
