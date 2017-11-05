@@ -117,21 +117,24 @@ Button[id*="downButton"]:hover {
    background: #80bfff;
 }
 
+.profImg {
+   border-radius: 50%;
+}
+
 @media screen and (max-width: 400px) {
-   .profileImg {
+   .imgDiv {
    max-height: 300px;
    max-width: 300px;
    height: 100%;
    width: 100%;
     /*float: none; */
    margin-right:0;
-   border-radius: 50%;
    text-align: center;
    /*width:auto;*/
   }
 }
 
-.profileImg {
+.imgDiv {
    max-height: 300px;
 	max-width: 300px;
 	height: 100%;
@@ -139,7 +142,8 @@ Button[id*="downButton"]:hover {
 	border-radius: 50%;
 	display: block;
 	margin: auto;
-}
+ }
+
 
 .statsDiv {
 	display: inline-block;
