@@ -27,7 +27,7 @@
 
       p {
    	   font-family: "Roboto", sans-serif;
-   	   color: black;
+   	   color: #888888;
    	   //font-size: 20px;
    	   font-size:1.1em;
          font-weight: 300;
@@ -43,8 +43,16 @@
       h1 {
    	   font-family: "Roboto", sans-serif;
    	   text-align: center;
+         color: #888888;
    	   font-size: 36px;
    	   font-weight: 300;
+      }
+
+      .ask-button {
+         color: white;
+         border: 1 px #888888;
+         background: #611BBD;
+         border-color: #130269;
       }
 
    </style>
@@ -58,7 +66,7 @@
    <table style="width: 100%; max-width: 600px;" border="1" cellpadding="0" cellspacing="0">
 
     <tr>
-     <td class="header">
+     <td bgcolor="#80bfff" class="header">
        <h1> Ask A Bored Guy <h1>
      </td>
     </tr>
@@ -68,11 +76,11 @@
       <br>
       <br>
       <br>
-      <h2 style="color: #00008B;"> {{ $body }} </h2>
+      <h2 style="color: #888888;"> {{ $body }} </h2>
       <br>
       <br>
       <br>
-      <div class="color: #ffffff; background: #611BBD; border-color: #130269;">
+      <div class="ask-button">
 
          <a href="{{ url('/ask') }}">Ask Again</a>
 
@@ -84,7 +92,7 @@
     </tr>
 
     <tr>
-     <td class="footer">
+     <td bgcolor="#80bfff" class="footer" >
         <br>
         <p> Copyright - Ask A Bored Dude </p>
         <br>
