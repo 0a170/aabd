@@ -60,7 +60,7 @@
 
       a {
         text-decoration: none;
-        color: white;
+        /*color: white; */
         font-size: 20px;
         font-family: "Roboto", sans-serif;
         font-weight: normal;
@@ -93,7 +93,7 @@
          <br>
          <div class="ask-button">
 
-            <a href="{{ url('/ask') }}">Ask Again</a>
+            <a href="{{ url('/ask') }}" style="color: white">Ask Again</a>
 
          </div>
 
