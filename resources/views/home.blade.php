@@ -72,7 +72,7 @@
 
    <br>
 
-   <div class="div2">
+   <div class="div1">
 
       <div class="statsDiv">
 
@@ -240,7 +240,7 @@
 	   </div>
 
 
-      <div class="div2">
+      <div class="div1">
 
       @if($questions->isEmpty())
 

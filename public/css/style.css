@@ -113,11 +113,6 @@ Button[id*="downButton"]:hover {
 }
 
 .div1 {
-	background-color: #FFFFFF;
-   text-align: center;
-}
-
-.div2 {
    text-align: center;
    background: #80bfff;
 }

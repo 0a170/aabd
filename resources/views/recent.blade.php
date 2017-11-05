@@ -71,6 +71,7 @@
 
                 <h1> Recent Answers </h1>
 
+                <br>
 
                   @foreach($answers as $answer)
 

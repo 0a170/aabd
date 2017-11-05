@@ -86,7 +86,7 @@
 
    <br>
 
-   <div class="div2">
+   <div class="div1">
 
    <div class="statsDiv">
 
@@ -157,7 +157,7 @@
    </div>
 
 
-   <div class="div2">
+   <div class="div1">
 
       <h1> {{ $user->user_name }}'s answers </h1>
 

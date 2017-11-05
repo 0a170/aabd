@@ -78,7 +78,7 @@
 
 
 
-   <div class="div2">
+   <div class="div1">
 
       <h1> Browse Users </h1>
 
