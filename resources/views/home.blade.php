@@ -70,7 +70,7 @@
 
    <div class="imgDiv">
 
-      <img src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profImg" data-toggle="modal" data-target="#popupLogin">
+      <img src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profImg" style="border-radius: 50%;" data-toggle="modal" data-target="#popupLogin">
 
    </div>
 
