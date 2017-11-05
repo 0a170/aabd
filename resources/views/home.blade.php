@@ -68,15 +68,15 @@
       </div>
    @endif
 
-   <div class="imgDiv">
+   <div class="div1">
 
-      <img src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profImg" style="border-radius: 50%;" data-toggle="modal" data-target="#popupLogin">
+      <div class="imgDiv">
 
-   </div>
+         <img src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profImg" style="border-radius: 50%;" data-toggle="modal" data-target="#popupLogin">
+
+      </div>
 
    <!-- <br> -->
-
-   <div class="div1">
 
       <div class="statsDiv">
 
