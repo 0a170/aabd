@@ -5,6 +5,9 @@ body {
 	background: #80bfff !important;
 }
 
+a {
+   font-family: "Roboto", sans-serif;
+}
 
 .txtpadding {
 	display: inline-block;
