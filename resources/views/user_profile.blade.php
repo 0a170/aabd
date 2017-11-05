@@ -17,8 +17,8 @@
 
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<scr<script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 <script src="https://use.fontawesome.com/4269355819.js"></script>
 <script src="{{ asset('js/home_rate_ajax.js') }}"></script>
 
