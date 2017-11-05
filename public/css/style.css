@@ -112,9 +112,22 @@ Button[id*="downButton"]:hover {
 	border: 1px solid black;
 }
 
+.imgDiv {
+   text-align: center;
+}
+
 .div1 {
    text-align: center;
    background: #80bfff;
+}
+
+@media screen and (max-width: 400px) {
+   .imgDiv {
+    float: none;
+    margin-right:0;
+    width:auto;
+    border:0;
+    border-bottom:2px solid #000;
 }
 
 .profileImg {
