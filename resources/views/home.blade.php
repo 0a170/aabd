@@ -68,9 +68,9 @@
       </div>
    @endif
 
-   <div class="imgDiv">
+   <div class="profileImg">
 
-      <img src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profileImg"  data-toggle="modal" data-target="#popupLogin">
+      <img src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" data-toggle="modal" data-target="#popupLogin">
 
    </div>
 
