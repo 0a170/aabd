@@ -119,10 +119,15 @@ Button[id*="downButton"]:hover {
 
 @media screen and (max-width: 400px) {
    .profileImg {
-    float: none;
-    margin-right:0;
-    border-radius: 50%;
-    width:auto;
+   max-height: 300px;
+   max-width: 300px;
+   height: 100%;
+   width: 100%;
+   /*float: none; */
+   margin-right:0;
+   border-radius: 50%;
+   text-align: center;
+   /*width:auto;*/
 }
 
 .profileImg {
