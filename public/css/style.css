@@ -148,6 +148,7 @@ Button[id*="downButton"]:hover {
 .imgDiv {
    border-radius: 50%;
    max-width: 100%;
+   text-align: center;
  }
 
 .statsDiv {
