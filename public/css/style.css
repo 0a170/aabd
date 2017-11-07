@@ -137,22 +137,18 @@ Button[id*="downButton"]:hover {
 
 @media screen and (max-width: 400px) {
    .userInfo {
-   max-height: 90%;
-   max-width: 90%;
-   height: 100%;
-   width: 100%;
-   float: none;
-   /*margin-right:0;
-   text-align: center;*/
-   /*width:auto;*/
-  }
+      max-height: 90%;
+      max-width: 90%;
+      height: 100%;
+      width: 100%;
+      float: none;
+   }
 }
 
 .imgDiv {
    border-radius: 50%;
    max-width: 100%;
  }
-
 
 .statsDiv {
 	display: inline-block;
@@ -182,8 +178,6 @@ Button[id*="downButton"]:hover {
 	max-width: 400px;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 	padding: 10px;
-	//padding-bottom: 20px;
-
 }
 
 .textRight {
@@ -226,8 +220,6 @@ Button[id*="downButton"]:hover {
 	//padding-bottom: 10px;
 }
 
-
-
 .all_buttons {
    border:none !important;
    border-radius: 25px !important;
@@ -235,8 +227,6 @@ Button[id*="downButton"]:hover {
    color: white !important;
    text-shadow: none !important;
 }
-
-
 
 #error_message {
    background: #F3A6A6;
@@ -266,8 +256,6 @@ Button[id*="downButton"]:hover {
     background: #CCF5CC;
 }
 
-
-
 .ajax_response {
    padding: 10px 20px;
    border: 0;
@@ -282,7 +270,6 @@ Button[id*="downButton"]:hover {
    font-family: "Roboto", sans-serif;
    font-size: 25px;
 	font-weight: 300
-
 }
 
 .ajax_server{
@@ -297,7 +284,6 @@ Button[id*="downButton"]:hover {
 	color: white;
 }
 
-
 .ajax_failure{
 	text-align: center;
     background: #F3A6A6;
@@ -310,7 +296,6 @@ Button[id*="downButton"]:hover {
 	color: white;
 }
 
-
 .ajax_success{
 	text-align: center;
     background: #CCF5CC;
@@ -322,8 +307,6 @@ Button[id*="downButton"]:hover {
 	display:none;
 	color: white;
 }
-
-
 
 #log_header {
 
@@ -353,7 +336,6 @@ Button[id*="downButton"]:hover {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24) !important;
 
 }
-
 
 #frmDemo {
    display: inline-block !important;
@@ -388,7 +370,6 @@ Button[id*="downButton"]:hover {
 	text-shadow: none;
 }
 
-
 #frmDemo > .actions a {
 	border-radius: 5px !important;
 	color: white !important;
@@ -400,7 +381,6 @@ Button[id*="downButton"]:hover {
    font-size: 20px;
    font-weight: 300;
 }
-
 
 #frmDemo > .actions > ul > li:first-child,
 #frmDemo > .actions > ul > li:first-child.active {
@@ -414,7 +394,6 @@ Button[id*="downButton"]:hover {
    text-align: center !important;
 }
 
-
 #frmDemo > .actions > ul > li:nth-child(2) {
 	/*border: 1px solid blue !important; */
 	border-radius: 5px !important;
@@ -425,13 +404,11 @@ Button[id*="downButton"]:hover {
    display: inline-block;
 }
 
-
 #frmDemo > .actions .disabled a {
    background: #888888;
 	 /*display: inline-block;
 	 text-align: center; */
 }
-
 
 #frmDemo > .actions > ul > li:last-child {
 	/*border: 1px solid green !important; */
@@ -443,7 +420,6 @@ Button[id*="downButton"]:hover {
    display: inline-block;
 
 }
-
 
 #frmDemo > .number {
 	display: none;
