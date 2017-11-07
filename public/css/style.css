@@ -146,13 +146,13 @@ Button[id*="downButton"]:hover {
 .imgDiv {
    float:left;
    margin-right:20px;
-   width:140px;
    text-align: center;
  }
 
  .profImg {
     border-radius: 50%;
     max-width: 100%;
+    max-height: 100%;
  }
 
 .statsDiv {
