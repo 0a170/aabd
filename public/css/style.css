@@ -145,10 +145,13 @@ Button[id*="downButton"]:hover {
    }
 }
 
+.imgAndStats {
+   margin: 0 auto;
+}
+
 .imgDiv {
    float:left;
    text-align: center;
-   margin: 0 auto;
  }
 
 .profImg {
