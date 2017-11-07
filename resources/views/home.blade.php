@@ -112,32 +112,32 @@
 
       <div class="row">
          <div class="col-sm-3">
-            <h2 style="display: inline-block; text-align: center; background-color: #888888; color: white; padding: 7px;"> Name </h2>
+            <p style="display: inline-block; text-align: center; background-color: #888888; color: white; padding: 7px;"> Name </p>
          </div>
          <div class="col-sm-9">
-            <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; padding: 7px;"> {{ Auth::user()->user_name }} </h2>
+            <p style="display: inline-block; text-align: center; background-color: white; color: #888888; padding: 7px;"> {{ Auth::user()->user_name }} </p>
          </div>
-      </div> <br>
+      </div>
 
-      <hr class="divider"> <br>
+      <hr class="divider">
 
       <div class="row">
          <div class="col-sm-3">
-	           <h2 style="display: inline-block; text-align: center; background-color: #888888; color: white; padding: 7px;" data-toggle="modal" data-target="#popupDesc"> Status </h3>
+	           <p style="display: inline-block; text-align: center; background-color: #888888; color: white; padding: 7px;" data-toggle="modal" data-target="#popupDesc"> Status </p>
          </div>
          <div class="col-sm-9">
-              <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; border-radius: 7px; padding: 7px;" data-toggle="modal" data-target="#popupDesc"> {{ Auth::user()->description }} </h3>
+              <p style="display: inline-block; text-align: center; background-color: white; color: #888888; border-radius: 7px; padding: 7px;" data-toggle="modal" data-target="#popupDesc"> {{ Auth::user()->description }} </p>
          </div>
       </div> <br>
 
-      <hr class="divider"> <br>
+      <hr class="divider">
 
       <div class="row">
          <div class="col-sm-3">
             <i class="fa fa-trophy fa-5x" style="color: gold;" aria-hidden="true"></i>
          </div>
          <div class="col-sm-9">
-            <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; padding: 7px;"> {{ Auth::user()->score }} </h2> <br>
+            <p style="display: inline-block; text-align: center; background-color: white; color: #888888; padding: 7px;"> {{ Auth::user()->score }} </p>
          </div>
       </div>
 

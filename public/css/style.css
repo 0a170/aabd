@@ -140,14 +140,19 @@ Button[id*="downButton"]:hover {
       float: none;
       margin-right:0;
       width:auto;
-
    }
 }
 
 .imgDiv {
-   border-radius: 50%;
-   max-width: 100%;
+   float:left;
+   margin-right:20px;
+   width:140px;
    text-align: center;
+ }
+
+ .profImg {
+    border-radius: 50%;
+    max-width: 100%;
  }
 
 .statsDiv {
