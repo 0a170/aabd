@@ -104,6 +104,19 @@ Button[id*="downButton"]:hover {
 	background: white !important;
 }
 
+.wrapper {
+  text-align: center;
+  margin: 0 auto;
+  overflow:hidden;
+  margin: 0 auto;
+}
+
+.wrapper div {
+   min-height: 200px;
+   padding: 10px;
+   max-width: 400px;
+}
+
 .divider {
 	border: 1px solid #888888;
 }
@@ -112,7 +125,12 @@ Button[id*="downButton"]:hover {
 	border: 1px solid black;
 }
 
-.div1 {
+.userInfo {
+   text-align: center;
+   background: #80bfff;
+}
+
+.quesDiv {
    text-align: center;
    background: #80bfff;
 }
@@ -122,14 +140,14 @@ Button[id*="downButton"]:hover {
 }
 
 @media screen and (max-width: 400px) {
-   .imgDiv {
+   .userInfo {
    max-height: 90%;
    max-width: 90%;
    height: 100%;
    width: 100%;
    float: none;
-   margin-right:0;
-   text-align: center;
+   /*margin-right:0;
+   text-align: center;*/
    /*width:auto;*/
   }
 }
@@ -148,7 +166,7 @@ Button[id*="downButton"]:hover {
 	border: 1px solid white;
 	text-align: center;
 	background-color: #e4e4e4;
-	width: 90%;
+	/*width: 90%; */
 	max-width: 400px;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 	padding: 10px;

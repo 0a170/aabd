@@ -15,8 +15,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 
-
-
 <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
@@ -68,28 +66,18 @@
       </div>
    @endif
 
+  <div class="wrapper">
    <div class="div1">
-
       <div class="imgDiv">
-
          <img src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profImg" style="border-radius: 50%;" data-toggle="modal" data-target="#popupLogin">
-
       </div>
-
    <!-- <br> -->
-
       <div class="statsDiv">
-
          <div role="dialog" id="popupLogin" class="modal fade">
-
 		      <div class="modal-content">
-
 			      <div class="modal-header">
-
 				      <button type="button" class="close" data-dismiss="modal">&times;</button>
-
 				      <h3 class="modal-title">Change your profile picture</h3>
-
 			      </div>
 
 			      <div class="modal-body">
@@ -99,17 +87,11 @@
                      {{ csrf_field() }}
 
                      <div style="padding:10px 20px;">
-
 				  	         <input type="file" name="userImage"><br>
-
                         <input type="hidden" name="hidUsn" value="{{ Auth::user()->user_name }}">
-
                         <input type="hidden" value="{{ csrf_token() }}">
-
 					         <input type="submit" class="btn btn-primary" id="Up_Img" name="Upload_Image" value="Upload">
-
 					      </div>
-
 				      </form>
 
               @if ($errors->any())
@@ -123,190 +105,100 @@
              @endif
 
 				     <p id="msg"></p>
-
 			     </div>
-
            </div>
-
          </div>
-
       <br>
 
       <div class="row">
-
          <div class="col-sm-3">
-
             <h2 style="display: inline-block; text-align: center; background-color: #888888; color: white; padding: 7px;"> Name </h2>
-
          </div>
-
          <div class="col-sm-9">
-
             <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; padding: 7px;"> {{ Auth::user()->user_name }} </h2>
-
          </div>
+      </div> <br>
 
-      </div>
-
-      <br>
-      <hr class="divider">
-      <br>
+      <hr class="divider"> <br>
 
       <div class="row">
-
          <div class="col-sm-3">
-
 	           <h2 style="display: inline-block; text-align: center; background-color: #888888; color: white; padding: 7px;" data-toggle="modal" data-target="#popupDesc"> Status </h3>
-
          </div>
-
          <div class="col-sm-9">
-
               <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; border-radius: 7px; padding: 7px;" data-toggle="modal" data-target="#popupDesc"> {{ Auth::user()->description }} </h3>
-
          </div>
+      </div> <br>
 
-      </div>
-
-      <br>
-      <hr class="divider">
-      <br>
+      <hr class="divider"> <br>
 
       <div class="row">
-
          <div class="col-sm-3">
-
-            <!-- <h2 style="display: inline-block; text-align: center; background-color: #888888; color: white; padding: 7px;"> Score </h2> <br> -->
             <i class="fa fa-trophy fa-5x" style="color: gold;" aria-hidden="true"></i>
-
-
          </div>
-
          <div class="col-sm-9">
-
             <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; padding: 7px;"> {{ Auth::user()->score }} </h2> <br>
-
          </div>
-
       </div>
 
       <div role="dialog" id="popupDesc" class="modal fade">
-
 		   <div class="modal-content">
-
 			   <div class="modal-header">
-
 				   <button type="button" class="close" data-dismiss="modal">&times;</button>
-
                <h3 class="modal-title">Change your profile description</h3>
-
 			   </div>
 
 			   <div class="modal-body">
-
 				   <form id="upd_desc" action="change_description" method="POST">
 				   {{ csrf_field() }}
-
 					   <div style="padding: 10px 20px;">
-
 						   <input type="text" id="nD" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left" name="newDesc"><br>
-
                      <input type="hidden" name="hidUsnD" value="{{ Auth::user()->user_name }}">
-
                      <input type="hidden" value="{{ csrf_token() }}">
-
                      <br>
-
 						   <input type="submit" class="btn btn-primary" id="Up_Desc" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check" name="Update_Description" value="Update">
-
 					   </div>
-
 				   </form>
-
 				   <p id="msg2"></p>
-
 			   </div>
-
 		   </div>
-
+	   </div> <br><br>
 	   </div>
-
-   	 <br>
-
-	   <br>
-
-	   </div>
-
    </div>
 
-	   <div>
-		   <br><br>
-	   </div>
+	<div>
+	 <br><br>
+	</div>
 
-
-      <div class="div1">
-
+   <div class="quesDiv">
       @if($questions->isEmpty())
-
       <div class="answerDiv">
-
          <p> No questions to answer now. Check back later. </p>
-
-      </div>
-
-      <br>
-      <br>
-
+      </div> <br><br>
       @else
-
       @foreach($questions as $question)
-
          <br>
 
          <div id="aDiv{{ $question->question_id }}" class="answerDiv">
-
             <p style="color: #888888;"><b>Question: {{ $question->question }}</b></p>
-
             <form id="{{ $question->question_id }}" class="aForm" method="POST">
-
                <input type="text" id="answerID{{ $question->question_id }}" name="answerInput" class="answers" style="max-width: 60%; display: block; margin: 0 auto;"></textarea>
-
                <input type="hidden" id="questionID{{ $question->question_id }}" name="ques" value="{{ $question->question }}">
-
                <input type="hidden" id="emailID{{ $question->question_id }}" name="ema" value="{{ $question->asker_email }}">
-
                <input type="hidden" value="{{ csrf_token() }}">
-
                <br>
-
                <input type="submit" class="btn btn-primary" id="ent{{ $question->question_id }}" name="theAnswer" value="Answer this">
-
                <br>
-
                <div id="answer_failure{{ $question->question_id }}" class="ajax_failure"></div>
 					     <div id="answer_success{{ $question->question_id }}" class="ajax_success"></div>
 					     <div id="server_error{{ $question->question_id }}" class="ajax_failure"></div>
-
                <br>
-
             </form>
-
-         </div>
-
-         <br>
-         <br>
-
+         </div> <br><br>
       @endforeach
-
       @endif
-
       <br>
-
-
    </div>
-
-
-
-
+ </div>
 </body>
 </html>
