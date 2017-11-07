@@ -135,11 +135,6 @@ Button[id*="downButton"]:hover {
    background: #80bfff;
 }
 
-.profImg {
-   border-radius: 50%;
-   max-width: 100%;
-}
-
 @media screen and (max-width: 400px) {
    .userInfo {
    max-height: 90%;
@@ -154,11 +149,8 @@ Button[id*="downButton"]:hover {
 }
 
 .imgDiv {
-   max-height: 90%;
-	max-width: 90%;
-	border-radius: 50%;
-	display: block;
-	margin: auto;
+   border-radius: 50%;
+   max-width: 100%;
  }
 
 
