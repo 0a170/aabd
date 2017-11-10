@@ -67,7 +67,7 @@
    @endif
 
   <div class="wrapper">
-   <!-- <div class="div1"> -->
+    <div class="imgAndStats">
       <div class="imgDiv">
          <img src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profImg" style="border-radius: 50%;" data-toggle="modal" data-target="#popupLogin">
       </div>
@@ -164,7 +164,8 @@
 		   </div>
 	   </div> <br><br>
 	   </div>
-   <!-- </div> -->
+   </div>
+  </div>
 
 	<div>
 	 <br><br>
@@ -199,6 +200,6 @@
       @endif
       <br>
    </div>
- </div>
+ <!-- </div> -->
 </body>
 </html>
