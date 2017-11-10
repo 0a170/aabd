@@ -165,7 +165,6 @@
 	   </div> <br><br>
 	   </div>
    </div>
-  </div>
 
 	<div>
 	 <br><br>
@@ -200,6 +199,6 @@
       @endif
       <br>
    </div>
- <!-- </div> -->
+ </div>
 </body>
 </html>
