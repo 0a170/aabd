@@ -151,8 +151,6 @@ Button[id*="downButton"]:hover {
 
 .profImg {
     border-radius: 50%;
-    max-width: 100%;
-    max-height: 100%;
  }
 
 .statsDiv {
@@ -161,7 +159,6 @@ Button[id*="downButton"]:hover {
 	background-color: white;
 	max-width: 400px;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-	padding: 10px;
 }
 
 .searchDiv {
