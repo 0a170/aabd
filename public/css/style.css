@@ -131,7 +131,7 @@ Button[id*="downButton"]:hover {
 }
 
 .quesDiv {
-   max-width: 400px;
+   max-width: 400px
    text-align: center;
    background: #80bfff;
    margin: 0 auto;
@@ -140,13 +140,13 @@ Button[id*="downButton"]:hover {
 @media screen and (max-width: 400px) {
    .userInfo {
       float: none;
-      margin-right:0;
-      width:auto;
-      max-width: 400px;
+      margin-right: 0;
+      width: auto;
    }
 }
 
 .imgAndStats {
+   width: 50%;
    margin: 0 auto;
 }
 
