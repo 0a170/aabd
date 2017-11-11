@@ -65,7 +65,10 @@
 </nav>
 
 
-<div class="container-fluid">
+<div class="container-fluid" style="float: none; margin: 0 auto;">
+
+   <div class="row">
+
    <div class="div1">
 
 
@@ -127,6 +130,7 @@
 
                 <br>
 
+   </div>
    </div>
 </div>
 
