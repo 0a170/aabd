@@ -112,10 +112,10 @@
       <!-- ************************************ USER STATS ************************************************** -->
       <div class="col-sm-6 statsDiv">
          <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                <p style="display: inline-block; text-align: center; background-color: #888888; color: white; padding: 7px;"> Name </p>
             </div>
-            <div class="col-sm-9">
+            <div class="col-sm-6">
                <p style="display: inline-block; text-align: center; background-color: white; color: #888888; padding: 7px;"> {{ Auth::user()->user_name }} </p>
             </div>
          </div>
@@ -123,10 +123,10 @@
          <hr class="divider">
 
          <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-2">
 	            <p style="display: inline-block; text-align: center; background-color: #888888; color: white; padding: 7px;" data-toggle="modal" data-target="#popupDesc"> Status </p>
             </div>
-            <div class="col-sm-9">
+            <div class="col-sm-6">
               <p style="display: inline-block; text-align: center; background-color: white; color: #888888; border-radius: 7px; padding: 7px;" data-toggle="modal" data-target="#popupDesc"> {{ Auth::user()->description }} </p>
             </div>
          </div> <br>
@@ -134,10 +134,10 @@
          <hr class="divider">
 
          <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                <i class="fa fa-trophy fa-5x" style="color: gold;" aria-hidden="true"></i>
             </div>
-            <div class="col-sm-9">
+            <div class="col-sm-6">
                <p style="display: inline-block; text-align: center; background-color: white; color: #888888; padding: 7px;"> {{ Auth::user()->score }} </p>
             </div>
          </div>
