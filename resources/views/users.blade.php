@@ -77,7 +77,7 @@
 
 
 
-
+<div class="container-fluid">
    <div class="div1">
 
       <h1> Browse Users </h1>
@@ -129,7 +129,7 @@
       <br>
 
    </div>
-
+</div>
 
 
 

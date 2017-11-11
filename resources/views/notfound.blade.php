@@ -61,7 +61,7 @@
   </div>
 </nav>
 
-
+<div class="container-fluid">
 
       <h1> 404 Error </h1>
 
@@ -71,6 +71,7 @@
       <h2 style="text-align: center;"> Page not found </h2>
 
 
+</div>
 </body>
 
 

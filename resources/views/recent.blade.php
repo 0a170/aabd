@@ -65,8 +65,8 @@
 </nav>
 
 
-
-<div class="div1">
+<div class="container-fluid">
+   <div class="div1">
 
 
                 <h1> Recent Answers </h1>
@@ -127,6 +127,7 @@
 
                 <br>
 
+   </div>
 </div>
 
 
