@@ -69,9 +69,7 @@
      <div class="row">
 
       <div class="col-sm-6 imgDiv">
-         <div class="well">
          <img src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profImg" style="border-radius: 50%;" data-toggle="modal" data-target="#popupLogin">
-         </div>
       </div>
 
       <div role="dialog" id="popupLogin" class="modal fade">

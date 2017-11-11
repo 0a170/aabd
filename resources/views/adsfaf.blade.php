@@ -46,41 +46,26 @@
 
       <div class="row">
         <div class="col-sm-6">
-          <div class="well">
-            <h4>image</h4>
-            <p>for user</p>
-          </div>
+           <h4>image</h4>
+           <p>for user</p>
         </div>
         <div class="col-sm-6">
-          <div class="well">
-            <h4>image</h4>
-            <p>for user</p>
-          </div>
+           <h4>stats</h4>
+           <p>for user</p>
         </div>
       </div>
+
 
       <div class="row">
         <div class="col-sm-6">
-          <div class="well">
-            <p>Text</p>
-            <p>Text</p>
-            <p>Text</p>
-          </div>
-        </div>
-
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="well">
-            <p>Text</p>
-          </div>
+           <p>Question</p>
         </div>
       </div>
-
 
     </div>
 
-    
+
+
     <div class="col-sm-3">
       <div class="well">
         <p>Text</p>
@@ -88,16 +73,12 @@
         <p>Text</p>
         <p>Text</p>
       </div>
-    </div>
-    <div class="col-sm-3">
       <div class="well">
         <p>Text</p>
         <p>Text</p>
         <p>Text</p>
         <p>Text</p>
       </div>
-    </div>
-    <div class="col-sm-3">
       <div class="well">
         <p>Text</p>
         <p>Text</p>
