@@ -70,8 +70,7 @@
          </div>
       </nav>
 
-  <div class="container-fluid">
-  <div class="col-sm-9">
+  <div class="container-fluid" style="float: none; margin: 0 auto;">
   <div class="row">
 
     <div id="pAsk">
@@ -131,7 +130,6 @@
 
     <br>
 
-   </div>
    </div>
   </div>
 
