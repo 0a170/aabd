@@ -65,11 +65,6 @@
  <div class="container-fluid">
 
    <div class="col-sm-9">
-
-     <div class="well">
-        <h4>Dashboard</h4>
-        <p>Some text..</p>
-     </div>
 <!-- ************************************ USER IMAGE ************************************************** -->
      <div class="row">
 
