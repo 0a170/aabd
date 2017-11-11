@@ -165,43 +165,43 @@
 		      </div>
 	      </div> <br><br>
 	    </div>
+       <div class="row">
+          <div class="col-sm-6 quesDiv">
+             @if($questions->isEmpty())
+                <div class="answerDiv">
+                   <p> No questions to answer now. Check back later. </p>
+                </div> <br><br>
+             @else
+             @foreach($questions as $question)
+                <br>
+
+                <div id="aDiv{{ $question->question_id }}" class="answerDiv">
+                   <p style="color: #888888;"><b>Question: {{ $question->question }}</b></p>
+                   <form id="{{ $question->question_id }}" class="aForm" method="POST">
+                      <input type="text" id="answerID{{ $question->question_id }}" name="answerInput" class="answers" style="max-width: 60%; display: block; margin: 0 auto;"></textarea>
+                      <input type="hidden" id="questionID{{ $question->question_id }}" name="ques" value="{{ $question->question }}">
+                      <input type="hidden" id="emailID{{ $question->question_id }}" name="ema" value="{{ $question->asker_email }}">
+                      <input type="hidden" value="{{ csrf_token() }}">
+                      <br>
+                      <input type="submit" class="btn btn-primary" id="ent{{ $question->question_id }}" name="theAnswer" value="Answer this">
+                      <br>
+                      <div id="answer_failure{{ $question->question_id }}" class="ajax_failure"></div>
+                     <div id="answer_success{{ $question->question_id }}" class="ajax_success"></div>
+                     <div id="server_error{{ $question->question_id }}" class="ajax_failure"></div>
+                      <br>
+                   </form>
+                </div> <br><br>
+             @endforeach
+             @endif
+             <br>
+          </div>
+       </div>
      </div>
 <!-- *************************************************************************************** -->
 	  <div>
 	     <br><br>
 	  </div>
 <!-- ************************************ QUEST DIV ******************************************************* -->
-     <div class="row">
-        <div class="col-sm-6 quesDiv">
-           @if($questions->isEmpty())
-              <div class="answerDiv">
-                 <p> No questions to answer now. Check back later. </p>
-              </div> <br><br>
-           @else
-           @foreach($questions as $question)
-              <br>
-
-              <div id="aDiv{{ $question->question_id }}" class="answerDiv">
-                 <p style="color: #888888;"><b>Question: {{ $question->question }}</b></p>
-                 <form id="{{ $question->question_id }}" class="aForm" method="POST">
-                    <input type="text" id="answerID{{ $question->question_id }}" name="answerInput" class="answers" style="max-width: 60%; display: block; margin: 0 auto;"></textarea>
-                    <input type="hidden" id="questionID{{ $question->question_id }}" name="ques" value="{{ $question->question }}">
-                    <input type="hidden" id="emailID{{ $question->question_id }}" name="ema" value="{{ $question->asker_email }}">
-                    <input type="hidden" value="{{ csrf_token() }}">
-                    <br>
-                    <input type="submit" class="btn btn-primary" id="ent{{ $question->question_id }}" name="theAnswer" value="Answer this">
-                    <br>
-                    <div id="answer_failure{{ $question->question_id }}" class="ajax_failure"></div>
-					     <div id="answer_success{{ $question->question_id }}" class="ajax_success"></div>
-					     <div id="server_error{{ $question->question_id }}" class="ajax_failure"></div>
-                    <br>
-                 </form>
-              </div> <br><br>
-           @endforeach
-           @endif
-           <br>
-        </div>
-     </div>
 
    </div>
 
