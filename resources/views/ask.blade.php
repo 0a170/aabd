@@ -73,6 +73,7 @@
 
   <div class="container-fluid">
 
+  <div class="row">
 
     <div id="pAsk">
 
@@ -131,6 +132,7 @@
 
     <br>
 
+   </div>
   </div>
 
     </body>
