@@ -40,7 +40,6 @@
                <a class="navbar-brand" href="{{ url('/ask') }}">AABG</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
-
                <ul class="nav navbar-nav">
                   @if (Auth::check())
                      <li><a href="{{ url('/home') }}" class="link1"><span class="glyphicon glyphicon-pencil"></span> Answer</a></li>
@@ -72,7 +71,7 @@
       </nav>
 
   <div class="container-fluid">
-
+  <div class="col-sm-9">
   <div class="row">
 
     <div id="pAsk">
@@ -132,6 +131,7 @@
 
     <br>
 
+   </div>
    </div>
   </div>
 
