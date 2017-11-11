@@ -99,22 +99,6 @@ Button[id*="downButton"]:hover {
 	border-radius: 7px;
 }
 
-#dPage {
-	background: white !important;
-}
-
-.wrapper {
-  text-align: center;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.wrapper div {
-   min-height: 200px;
-   padding: 10px;
-   max-width: 400px;
-}
-
 .divider {
 	border: 1px solid #888888;
 }
@@ -134,19 +118,6 @@ Button[id*="downButton"]:hover {
    background: #80bfff;
    /*margin: 0 auto;*/
 }
-
-/*@media screen and (max-width: 400px) {
-   .userInfo {
-      float: none;
-      margin-right: 0;
-      width: auto;
-   }
-} */
-
-.imgDiv {
-   float:left;
-   text-align: center;
- }
 
 .profImg {
     border-radius: 50%;
