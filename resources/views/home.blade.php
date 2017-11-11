@@ -65,34 +65,28 @@
  <div class="container-fluid">
 
    <div class="col-sm-9">
-<!-- ************************************ USER IMAGE ************************************************** -->
-     <div class="row">
-
-      <div class="col-sm-6 imgDiv">
-         <img src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profImg" style="border-radius: 50%;" data-toggle="modal" data-target="#popupLogin">
-      </div>
 
       <div role="dialog" id="popupLogin" class="modal fade">
-		   <div class="modal-content">
-			   <div class="modal-header">
-				   <button type="button" class="close" data-dismiss="modal">&times;</button>
-				   <h3 class="modal-title">Change your profile picture</h3>
-			   </div>
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+               <h3 class="modal-title">Change your profile picture</h3>
+            </div>
 
-			   <div class="modal-body">
+            <div class="modal-body">
 
-	            <form id="upl_img" enctype="multipart/form-data" action="upload_image" method="POST">
+               <form id="upl_img" enctype="multipart/form-data" action="upload_image" method="POST">
 
                   {{ csrf_field() }}
 
                   <div style="padding:10px 20px;">
-				  	      <input type="file" name="userImage"><br>
+                     <input type="file" name="userImage"><br>
                      <input type="hidden" name="hidUsn" value="{{ Auth::user()->user_name }}">
                      <input type="hidden" value="{{ csrf_token() }}">
-					      <input type="submit" class="btn btn-primary" id="Up_Img" name="Upload_Image" value="Upload">
-					   </div>
+                     <input type="submit" class="btn btn-primary" id="Up_Img" name="Upload_Image" value="Upload">
+                  </div>
 
-				   </form>
+               </form>
 
                @if ($errors->any())
                   <div class="alert alert-danger">
@@ -104,10 +98,41 @@
                   </div>
                @endif
 
-				   <p id="msg"></p>
-			   </div>
+               <p id="msg"></p>
+            </div>
          </div>
       </div>
+
+      <div role="dialog" id="popupDesc" class="modal fade">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+               <h3 class="modal-title">Change your profile description</h3>
+            </div>
+
+            <div class="modal-body">
+               <form id="upd_desc" action="change_description" method="POST">
+               {{ csrf_field() }}
+                  <div style="padding: 10px 20px;">
+                     <input type="text" id="nD" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left" name="newDesc"><br>
+                     <input type="hidden" name="hidUsnD" value="{{ Auth::user()->user_name }}">
+                     <input type="hidden" value="{{ csrf_token() }}">
+                     <br>
+                     <input type="submit" class="btn btn-primary" id="Up_Desc" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check" name="Update_Description" value="Update">
+                  </div>
+               </form>
+               <p id="msg2"></p>
+            </div>
+         </div>
+      </div> <br><br>
+
+<!-- ************************************ USER IMAGE ************************************************** -->
+     <div class="row">
+
+      <div class="col-sm-6 imgDiv">
+         <img src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profImg" style="border-radius: 50%;" data-toggle="modal" data-target="#popupLogin">
+      </div>
+
       <br>
       <!-- ************************************ USER STATS ************************************************** -->
       <div class="col-sm-6 statsDiv">
@@ -142,28 +167,6 @@
             </div>
          </div>
 
-         <div role="dialog" id="popupDesc" class="modal fade">
-		      <div class="modal-content">
-			      <div class="modal-header">
-				      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h3 class="modal-title">Change your profile description</h3>
-			      </div>
-
-			      <div class="modal-body">
-				      <form id="upd_desc" action="change_description" method="POST">
-				      {{ csrf_field() }}
-					      <div style="padding: 10px 20px;">
-						      <input type="text" id="nD" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left" name="newDesc"><br>
-                        <input type="hidden" name="hidUsnD" value="{{ Auth::user()->user_name }}">
-                        <input type="hidden" value="{{ csrf_token() }}">
-                        <br>
-						      <input type="submit" class="btn btn-primary" id="Up_Desc" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check" name="Update_Description" value="Update">
-					      </div>
-				      </form>
-				      <p id="msg2"></p>
-			      </div>
-		      </div>
-	      </div> <br><br>
 	    </div>
      </div>
 <!-- *************************************************************************************** -->
