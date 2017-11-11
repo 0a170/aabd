@@ -62,7 +62,7 @@
       </div>
    @endif
 
- <div class="container-fluid" style="margin: 0 auto;">
+ <div class="container-fluid" style="float: none; margin: 0 auto;">
 
    <div class="col-sm-9">
 <!-- ************************************ USER IMAGE ************************************************** -->
