@@ -52,7 +52,8 @@ Button[id*="downButton"]:hover {
 }
 
 .navbar {
-   background: #004d99;
+   background: #0080ff;
+   border: 1px solid #0080ff;
 }
 
 .navbar-brand {
@@ -87,7 +88,6 @@ Button[id*="downButton"]:hover {
 
 .link5 {
 	color: white !important;
-	width: 100%;
 }
 
 .txtpadding {
