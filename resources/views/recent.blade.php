@@ -67,7 +67,7 @@
 
 <div class="container-fluid">
 
-   <div class="row">
+   <div class="row" style="float: none; margin: 0 auto;">
 
    <div class="div1">
 
