@@ -67,10 +67,7 @@
 
 <div class="container-fluid">
 
-   <div class="row" style="float: none; margin: 0 auto;">
-
-   <div class="div1">
-
+   <div class="row">
 
                 <h1> Recent Answers </h1>
 
@@ -130,7 +127,6 @@
 
                 <br>
 
-   </div>
    </div>
 </div>
 
