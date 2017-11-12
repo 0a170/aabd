@@ -65,7 +65,7 @@
 </nav>
 
 
-<div class="container-fluid" style="float: none; margin: 0 auto;">
+<div class="container-fluid">
 
    <div class="row">
 
