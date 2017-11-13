@@ -208,9 +208,9 @@
    </div>
 
    <div class="col-sm-3">
-      <div class="well">
-      <a href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @TwitterDev</a>
-      </div>
+
+      <a href="https://twitter.com/askaboredguy" class="twitter-follow-button" data-show-count="false" style="margin: 0 auto;">Follow @askaboredguy</a>
+
       <div class="well">
          <p>Text</p>
          <p>Text</p>
