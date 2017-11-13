@@ -20,6 +20,8 @@
 
 <script src="{{ asset('js/answer_ajax.js') }}"></script>
 
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 </head>
 
 <body>
@@ -135,7 +137,7 @@
 
          <div class="row">
             <div class="col-sm-2">
-               <i class="fa fa-trophy fa-5x" style="color: gold;" aria-hidden="true"></i>
+               <i class="fa fa-trophy fa-4x" style="color: gold;" aria-hidden="true"></i>
             </div>
             <div class="col-sm-6">
                <p style="display: inline-block; text-align: center; background-color: white; color: #888888; padding: 7px;"> {{ Auth::user()->score }} </p>
@@ -207,10 +209,7 @@
 
    <div class="col-sm-3">
       <div class="well">
-         <p>Text</p>
-         <p>Text</p>
-         <p>Text</p>
-         <p>Text</p>
+      <a href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @TwitterDev</a>
       </div>
       <div class="well">
          <p>Text</p>
