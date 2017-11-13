@@ -209,7 +209,7 @@
 
    <div class="col-sm-3">
 
-      <a href="https://twitter.com/askaboredguy" class="twitter-follow-button" data-show-count="false" style="text-align: center; margin: 0 auto;">Follow @askaboredguy</a>
+      <a href="https://twitter.com/askaboredguy" class="twitter-follow-button" data-show-count="false" style="margin: 0 auto; display: block;">Follow @askaboredguy</a>
 
       <div class="well">
          <p>Text</p>
