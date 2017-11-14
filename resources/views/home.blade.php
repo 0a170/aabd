@@ -168,7 +168,7 @@
 	      </div> <br><br>
 	    </div>
        <div class="row">
-          <div class="col-sm-6 quesDiv">
+          <div class="col-sm-6">
              @if($questions->isEmpty())
                 <div class="answerDiv">
                    <p> No questions to answer now. Check back later. </p>
