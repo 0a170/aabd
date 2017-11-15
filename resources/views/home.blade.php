@@ -72,6 +72,7 @@
 
       <div class="col-sm-6 imgDiv">
          <img src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profImg" style="border-radius: 50%;" data-toggle="modal" data-target="#popupLogin">
+         <h3 style="display: inline-block; text-align: center; color: #888888; padding: 7px;"> {{ Auth::user()->user_name }} </h3>
       </div>
 
       <div role="dialog" id="popupLogin" class="modal fade">
@@ -113,14 +114,6 @@
 
       <!-- ************************************ USER STATS ************************************************** -->
       <div class="col-sm-6 statsDiv">
-         <div class="row">
-            <div class="col-sm-2">
-               <p style="display: inline-block; text-align: center; background-color: #888888; color: white; padding: 7px;"> Name </p>
-            </div>
-            <div class="col-sm-6">
-               <p style="display: inline-block; text-align: center; background-color: white; color: #888888; padding: 7px;"> {{ Auth::user()->user_name }} </p>
-            </div>
-         </div>
 
          <hr class="divider">
 
