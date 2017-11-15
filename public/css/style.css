@@ -6,6 +6,7 @@
 
 body {
 	background: #80bfff;
+   max-width: 960px;
 }
 
 p {
