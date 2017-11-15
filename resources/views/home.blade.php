@@ -72,7 +72,7 @@
 
       <div class="col-sm-6 imgDiv">
          <img src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profImg" style="border-radius: 50%;" data-toggle="modal" data-target="#popupLogin">
-         <h3 style="display: inline-block; text-align: center; color: #888888; padding: 7px;"> {{ Auth::user()->user_name }} </h3>
+         <h3 style="text-align: center; color: #4981ce; padding: 7px;"> {{ Auth::user()->user_name }} </h3>
       </div>
 
       <div role="dialog" id="popupLogin" class="modal fade">
