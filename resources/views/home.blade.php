@@ -147,7 +147,7 @@
 
 <!-- ************************************ QUESTIONS SECTION ****************************************************************************************** -->
 
-      <div class="col-sm-4 divCenter">
+      <div class="col-sm-4">
 
          @if($questions->isEmpty())
             <div class="answerDiv">
