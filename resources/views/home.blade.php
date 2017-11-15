@@ -38,13 +38,13 @@
          </div>
          <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-               <li><a href="{{ url('/ask') }}" class="link1"><span class="glyphicon glyphicon-question-sign"></span> Ask </a></li>
-               <li><a href="{{ url('/recent') }}" class="link2"><span class="glyphicon glyphicon-thumbs-up"></span> Recent </a></li>
-               <li><a href="{{ url('/users') }}" class="link4"><span class="glyphicon glyphicon-user"></span> Users </a></li>
+               <li><a href="{{ url('/ask') }}" class="link1"> Ask </a></li>
+               <li><a href="{{ url('/recent') }}" class="link2"> Recent </a></li>
+               <li><a href="{{ url('/users') }}" class="link4"> Users </a></li>
                <li>
                   <a href="#" onclick="event.preventDefault();
                                        document.getElementById('logOutForm').submit();" class="link3">
-                                       <span class="glyphicon glyphicon-log-out"></span> Logout</a>
+                  Logout</a>
                   <form id="logOutForm" method="POST" action="{{ route('logout') }}" style="display: none;">
                      {{ csrf_field() }}
                   </form>
@@ -68,7 +68,7 @@
 
    <div class="col-sm-12">
 <!-- ************************************ USER IMAGE AND STATS/MODALS************************************************** -->
-      <div class="col-sm-4 divWidth">
+      <div class="col-sm-4 divLeft">
          <div class="row">
             <img src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profImg" style="border-radius: 50%;" data-toggle="modal" data-target="#popupLogin">
             <h3 style="color: #4981ce; padding: 7px; float: left;"> {{ Auth::user()->user_name }} </h3>
@@ -147,7 +147,7 @@
 
 <!-- ************************************ QUESTIONS SECTION ****************************************************************************************** -->
 
-      <div class="col-sm-4 divWidth">
+      <div class="col-sm-4 divCenter">
 
          @if($questions->isEmpty())
             <div class="answerDiv">
@@ -181,7 +181,7 @@
 <!-- *************************************************************************************** -->
 
 
-      <div class="col-sm-4 divWidth">
+      <div class="col-sm-4 divRight">
 
          <a href="https://twitter.com/askaboredguy" class="twitter-follow-button" data-show-count="false" style="margin: 0 auto; display: block;">Follow @askaboredguy</a>
 

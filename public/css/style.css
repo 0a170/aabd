@@ -117,8 +117,19 @@ Button[id*="downButton"]:hover {
    /*margin: 0 auto;*/
 }
 
-.divWidth {
+.divLeft {
    max-width: 400px;
+   float: left;
+}
+
+.divCenter {
+   max-width: 400px;
+   margin: 0 auto;
+}
+
+.divRight {
+   max-width: 400px;
+   float: right;
 }
 
 .profImg {
