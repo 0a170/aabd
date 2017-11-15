@@ -68,7 +68,7 @@
 
    <div class="col-sm-12">
 <!-- ************************************ USER IMAGE AND STATS/MODALS************************************************** -->
-      <div class="col-sm-4 divLeft">
+      <div class="col-sm-4">
          <div class="row">
             <img src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profImg" style="border-radius: 50%;" data-toggle="modal" data-target="#popupLogin">
             <h3 style="color: #4981ce; padding: 7px; float: left;"> {{ Auth::user()->user_name }} </h3>
@@ -143,7 +143,7 @@
             </div>
          </div>
 
-      </div>
+      </div> <br>
 
 <!-- ************************************ QUESTIONS SECTION ****************************************************************************************** -->
 
