@@ -6,7 +6,8 @@
 
 body {
 	background: #80bfff;
-   max-width: 960px;
+   max-width: 1024px;
+   margin: 0 auto;
 }
 
 p {
@@ -115,6 +116,10 @@ Button[id*="downButton"]:hover {
    text-align: center;
    background: #80bfff;
    /*margin: 0 auto;*/
+}
+
+.divWidth {
+   max-width: 400px;
 }
 
 .profImg {
