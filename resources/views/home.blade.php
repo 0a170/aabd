@@ -64,7 +64,7 @@
       </div>
    @endif
 
- <div class="container-fluid" style="max-width: 900px; margin: 0 auto;">
+ <div class="container-fluid" style="max-width: 960px; margin: 0 auto;">
 
    <div class="col-sm-9">
 <!-- ************************************ USER IMAGE ************************************************** -->
