@@ -26,8 +26,6 @@
 
 <body>
 
- <div class="container-fluid">
-
    <nav class="navbar navbar-inverse navbar-fixed">
       <div class="container-fluid">
          <div class="navbar-header">
@@ -66,7 +64,7 @@
       </div>
    @endif
 
-<!-- <div class="container-fluid"> -->
+<div class="container-fluid">
 
    <div class="col-sm-12">
     <div class="row">
