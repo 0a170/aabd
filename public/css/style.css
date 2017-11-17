@@ -203,6 +203,7 @@ Button[id*="downButton"]:hover {
    .divRight {
       float: right;
       max-width: 400px;
+      border-left:1px solid #4981ce;
    }
 }
 
