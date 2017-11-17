@@ -145,7 +145,7 @@ Button[id*="downButton"]:hover {
 	border-color: white;
 	text-align: center;
 	background-color: white;
-	/*max-width: 400px;*/
+	max-width: 400px;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 	padding: 10px;
 }
@@ -205,7 +205,7 @@ Button[id*="downButton"]:hover {
       border-right: 1px solid #4981ce;
    }
    .divRight {
-      float: right;
+      /*float: right;*/
       max-width: 400px;
       border-left: 1px solid #4981ce;
    }
