@@ -49,7 +49,7 @@
                      <li>
                      <a href=" {{ url('/logout') }}" onclick="event.preventDefault();
                                                               document.getElementById('logOutForm').submit();" class="link">
-                        Logout <img src="{{ Storage::disk('s3')->url('icons/icon_' . Auth::user()->profile_image) }}">
+                        Logout <img src="{{ Storage::disk('s3')->url('icons/icon_' . Auth::user()->profile_image) }}" class="iconImg">
                      </a>
 
                      <form id="logOutForm" method="POST" action="{{ url('/logout') }}" style="display: none;">
