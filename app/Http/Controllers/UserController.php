@@ -71,7 +71,6 @@ class UserController extends Controller {
 
    public function upload(Request $req) {
 
-
       $file = $req->file('userImage');
 
       $this->validate($req, [
@@ -87,19 +86,26 @@ class UserController extends Controller {
 
       $username = $username_sans_ext . '.' . $ext;
 
-
+      // CREATE AND STORE PROFILE IMAGE
       $file_avatar = Image::make($req->file('userImage'))->resize(300, 300);
 
       $file_avatar = $file_avatar->stream();
 
       Storage::disk('s3')->put('profile_images/' . $username, $file_avatar->__toString());
 
+      // CREATE AND STORE THUMBNAIL
       $file_thumbnail = Image::make($req->file('userImage'))->resize(100, 100);
 
       $file_thumbnail = $file_thumbnail->stream();
 
       Storage::disk('s3')->put('thumbnails/thumbnail_' . $username, $file_thumbnail->__toString());
 
+      // CREATE AND STORE ICON
+      $file_icon = Image::make($req->file('userImage'))->resize(50, 50);
+
+      $file_icon - $file_icon->stream();
+
+      Storage::disk('s3')->put('icons/icon_' . $username, $file_icon->__toString());
 
       // UPDATE PROFILE IMAGE FILE NAME IN DATABASE AND REFRESH PAGE
       $user_prof = User::where('user_name', $username_sans_ext)->first();

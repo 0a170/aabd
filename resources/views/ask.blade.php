@@ -49,7 +49,7 @@
                      <li>
                      <a href=" {{ url('/logout') }}" onclick="event.preventDefault();
                                                               document.getElementById('logOutForm').submit();" class="link">
-                        Logout
+                        Logout <img src="{{ Storage::disk('s3')->url('icons/icon_' . Auth::user()->profile_image) }}">
                      </a>
 
                      <form id="logOutForm" method="POST" action="{{ url('/logout') }}" style="display: none;">
@@ -60,10 +60,10 @@
 
                      </li>
                   @else
-                     <li><a href="{{ url('/login') }}" class="link1"> Login</a></li>
-                     <li><a href="{{ url('/register') }}"class="link2"> Register</a></li>
-                     <li><a href="{{ url('/recent') }}" class="link3"> Recent</a></li>
-                     <li><a href="{{ url('/users') }}" class="link4"> Users</a></li>
+                     <li><a href="{{ url('/login') }}" class="link"> Login</a></li>
+                     <li><a href="{{ url('/register') }}"class="link"> Register</a></li>
+                     <li><a href="{{ url('/recent') }}" class="link"> Recent</a></li>
+                     <li><a href="{{ url('/users') }}" class="link"> Users</a></li>
                   @endif
                </ul>
             </div>
