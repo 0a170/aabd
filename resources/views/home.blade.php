@@ -38,12 +38,12 @@
          </div>
          <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-               <li><a href="{{ url('/ask') }}" class="link1"> Ask </a></li>
-               <li><a href="{{ url('/recent') }}" class="link2"> Recent </a></li>
-               <li><a href="{{ url('/users') }}" class="link4"> Users </a></li>
+               <li><a href="{{ url('/ask') }}" class="link"> Ask </a></li>
+               <li><a href="{{ url('/recent') }}" class="link"> Recent </a></li>
+               <li><a href="{{ url('/users') }}" class="link"> Users </a></li>
                <li>
                   <a href="#" onclick="event.preventDefault();
-                                       document.getElementById('logOutForm').submit();" class="link3">
+                                       document.getElementById('logOutForm').submit();" class="link">
                   Logout</a>
                   <form id="logOutForm" method="POST" action="{{ route('logout') }}" style="display: none;">
                      {{ csrf_field() }}

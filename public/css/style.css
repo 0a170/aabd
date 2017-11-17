@@ -69,24 +69,8 @@ Button[id*="downButton"]:hover {
    text-align: center;
 }
 
-.link1 {
+.link {
    color: white !important;
-}
-
-.link2 {
-   color: white !important;
-}
-
-.link3 {
-   color: white !important;
-}
-
-.link4 {
-   color: white !important;
-}
-
-.link5 {
-	color: white !important;
 }
 
 .txtpadding {
@@ -211,6 +195,12 @@ Button[id*="downButton"]:hover {
    background-color: black !important;
    color: white !important;
    text-shadow: none !important;
+}
+
+@@media screen and (max-width: 480px) {
+   .divRight {
+      float: right;
+   }
 }
 
 #error_message {
