@@ -67,7 +67,7 @@
 <div class="container-fluid">
 
    <div class="col-sm-12">
-    <div class="row content">
+   <div class="well">
 <!-- ************************************ USER IMAGE AND STATS/MODALS************************************************** -->
       <div class="col-sm-4 divLeft">
          <div class="row">
@@ -200,8 +200,8 @@
          </div>
 
       </div>
+  </div>
 <!-- ************************************************************************************************************ -->
-   </div>
  </div>
 </div>
 </body>
