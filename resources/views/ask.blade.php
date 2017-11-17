@@ -60,10 +60,10 @@
 
                      </li>
                   @else
-                     <li><a href="{{ url('/login') }}" class="link1"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                     <li><a href="{{ url('/register') }}"class="link2"><span class="glyphicon glyphicon-check"></span> Register</a></li>
-                     <li><a href="{{ url('/recent') }}" class="link3"><span class="glyphicon glyphicon-thumbs-up"></span> Recent</a></li>
-                     <li><a href="{{ url('/users') }}" class="link4"><span class="glyphicon glyphicon-user"></span> Users</a></li>
+                     <li><a href="{{ url('/login') }}" class="link1"> Login</a></li>
+                     <li><a href="{{ url('/register') }}"class="link2"> Register</a></li>
+                     <li><a href="{{ url('/recent') }}" class="link3"> Recent</a></li>
+                     <li><a href="{{ url('/users') }}" class="link4"> Users</a></li>
                   @endif
                </ul>
             </div>
