@@ -107,7 +107,7 @@ Button[id*="downButton"]:hover {
 }
 
 .divCenter {
-   margin: 0 auto;
+   text-align: center;
 }
 
 .divRight {
@@ -207,16 +207,16 @@ Button[id*="downButton"]:hover {
    .divRight {
       float: right;
       max-width: 400px;
-      border-left:1px solid #4981ce;
+      border-left: 1px solid #4981ce;
    }
    .answerDiv {
       display: inline-block;
-      margin: 0 auto;
+      margin: auto;
       border: 1px solid white;
       border-color: white;
       text-align: center;
       background-color: white;
-      /*max-width: 400px;*/
+      max-width: 400px;
       box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
       padding: 10px;
    }
