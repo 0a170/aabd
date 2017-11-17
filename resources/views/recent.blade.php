@@ -37,9 +37,9 @@
 
       <ul class="nav navbar-nav">
       @if (Auth::check())
-        <li><a href="{{ url('/ask') }}" class="link"> <span class="glyphicon glyphicon-question-sign"></span> Ask</a></li>
-        <li><a href="{{ url('/home') }}" class="link"><span class="glyphicon glyphicon-pencil"></span> Answer</a></li>
-        <li><a href="{{ url('/users') }}" class="link"><span class="glyphicon glyphicon-user"></span> Users</a></li>
+        <li><a href="{{ url('/ask') }}" class="link"> Ask</a></li>
+        <li><a href="{{ url('/home') }}" class="link"> Answer</a></li>
+        <li><a href="{{ url('/users') }}" class="link"> Users</a></li>
         <li>
             <a href="#" onclick="event.preventDefault();
                                  document.getElementById('logOutForm').submit();" class="link">
