@@ -106,8 +106,15 @@ Button[id*="downButton"]:hover {
    max-width: 400px;
 }
 
-.divCenter {
-   margin: 0 auto;
+.answerDiv {
+	margin: 0 auto;
+	border: 1px solid white;
+	border-color: white;
+	text-align: center;
+	background-color: white;
+	max-width: 400px;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	padding: 10px;
 }
 
 .divRight {
@@ -137,17 +144,6 @@ Button[id*="downButton"]:hover {
 	text-align: center;
 	width: 90%;
 	max-width: 400px;
-}
-
-.answerDiv {
-	/*display: block; */
-	border: 1px solid white;
-	border-color: white;
-	text-align: center;
-	background-color: white;
-	max-width: 400px;
-	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-	padding: 10px;
 }
 
 .textRight {
@@ -206,7 +202,7 @@ Button[id*="downButton"]:hover {
 
    .divRight {
       margin: 0 auto;
-      max-width: 400px;
+      max-width: 250px;
    }
    .answerDiv {
       border-right: 1px solid #4981ce;
