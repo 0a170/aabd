@@ -35,12 +35,12 @@
 
       <ul class="nav navbar-nav">
 
-        <li><a href="{{ url('/ask') }}">Ask</a></li>
+        <li><a href="{{ url('/ask') }}" class="link">Ask</a></li>
         @if (Auth::check())
-           <li><a href="{{ url('/home') }}">Answer</a></li>
-           <li><a href="{{ url('/recent') }}">Recent</a></li>
+           <li><a href="{{ url('/home') }}" class="link">Answer</a></li>
+           <li><a href="{{ url('/recent') }}" class="link">Recent</a></li>
         @else
-           <li><a href="{{ url('/recent') }}">Recent</a></li>
+           <li><a href="{{ url('/recent') }}" class="link">Recent</a></li>
         @endif
 
       </ul>

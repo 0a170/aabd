@@ -41,24 +41,19 @@
 
       @if (Auth::check())
 
-        <li><a href="{{ url('/ask') }}" class="link1"><span class="glyphicon glyphicon-question-sign"></span>Ask</a></li>
-        <li><a href="{{ url('/recent') }}" class="link2"><span class="glyphicon glyphicon-thumbs-up"></span> Recent</a></li>
-        <li><a href="{{ url('/home') }}" class="link4"><span class="glyphicon glyphicon-pencil"></span> Answer</a></li>
+        <li><a href="{{ url('/ask') }}" class="link1"> Ask </a></li>
+        <li><a href="{{ url('/recent') }}" class="link2"> Recent</a></li>
+        <li><a href="{{ url('/home') }}" class="link4"> Answer</a></li>
         <li>
             <a href="#" class="link3" onclick="event.preventDefault();
                                                      document.getElementById('logOutForm').submit();">
-            <span class="glyphicon glyphicon-log-out"></span>
             Logout</a>
 
                <form id="logOutForm" method="POST" action="{{ route('logout') }}" style="display: none;">
 
-
                   {{ csrf_field() }}
 
-
                </form>
-
-
         </li>
 
         @else

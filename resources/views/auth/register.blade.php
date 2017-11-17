@@ -37,13 +37,13 @@
 
       <ul class="nav navbar-nav">
 
-        <li><a href="{{ url('/ask') }}" class="link1"><span class="glyphicon glyphicon-question-sign"></span> Ask</a></li>
+        <li><a href="{{ url('/ask') }}" class="link"> Ask</a></li>
         @if (Auth::check())
-           <li><a href="{{ url('/home') }}" class="link2"><span class="glyphicon glyphicon-pencil"></span> Answer</a></li>
+           <li><a href="{{ url('/home') }}" class="link"> Answer</a></li>
         @else
-           <li><a href="{{ url('/login') }}" class="link2"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+           <li><a href="{{ url('/login') }}" class="link"> Login</a></li>
         @endif
-        <li><a href="{{ url('/recent') }}" class="link3"><span class="glyphicon glyphicon-thumbs-up"></span> Recent</a></li>
+        <li><a href="{{ url('/recent') }}" class="link"> Recent</a></li>
 
       </ul>
     </div>

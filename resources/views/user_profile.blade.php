@@ -34,24 +34,24 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
       @if (Auth::check())
-        <li><a href="{{ url('/home') }}" class="link5"><span class="glyphicon glyphicon-pencil"></span> Answer </a></li>
-        <li><a href="{{ url('/ask') }}" class="link1"><span class="glyphicon glyphicon-question-sign"></span> Ask </a></li>
-        <li><a href="{{ url('/recent') }}" class="link2"><span class="glyphicon glyphicon-thumbs-up"></span> Recent </a></li>
-        <li><a href="{{ url('/users') }}" class="link4"><span class="glyphicon glyphicon-user"></span> Users </a></li>
+        <li><a href="{{ url('/home') }}" class="link"> Answer </a></li>
+        <li><a href="{{ url('/ask') }}" class="link"> Ask </a></li>
+        <li><a href="{{ url('/recent') }}" class="link"> Recent </a></li>
+        <li><a href="{{ url('/users') }}" class="link"> Users </a></li>
         <li>
             <a href="#" onclick="event.preventDefault();
-                                                     document.getElementById('logOutForm').submit();" class="link3">
+                                                     document.getElementById('logOutForm').submit();" class="link">
             <span= class="glyphicon glyphicon-log-out"></span> Logout </a>
                <form id="logOutForm" method="POST" action="{{ route('logout') }}" style="display: none;">
                   {{ csrf_field() }}
                </form>
         </li>
         @else
-          <li><a href="{{ url('/login') }}" class="link1"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-          <li><a href="{{ url('/ask') }}" class="link2"><span class="glyphicon glyphicon-question-sign"></span> Ask </a></li>
-          <li><a href="{{ url('/register') }}" class="link3"><span class="glyphicon glyphicon-check"></span> Register </a></li>
-          <li><a href="{{ url('/recent') }}" class="link4"><span class="glyphicon glyphicon-thumbs-up"></span> Recent </a></li>
-          <li><a href="{{ url('/users') }}" class="link5"><span class="glyphicon glyphicon-user"></span> Users </a></li>
+          <li><a href="{{ url('/login') }}" class="link"> Login</a></li>
+          <li><a href="{{ url('/ask') }}" class="link"> Ask </a></li>
+          <li><a href="{{ url('/register') }}" class="link"> Register </a></li>
+          <li><a href="{{ url('/recent') }}" class="link"> Recent </a></li>
+          <li><a href="{{ url('/users') }}" class="link"> Users </a></li>
         @endif
 
       </ul>
