@@ -103,7 +103,7 @@ class UserController extends Controller {
       // CREATE AND STORE ICON
       $file_icon = Image::make($req->file('userImage'))->resize(50, 50);
 
-      $file_icon - $file_icon->stream();
+      $file_icon = $file_icon->stream();
 
       Storage::disk('s3')->put('icons/icon_' . $username, $file_icon->__toString());
 
