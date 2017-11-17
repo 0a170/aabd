@@ -200,22 +200,18 @@ Button[id*="downButton"]:hover {
 
 @media screen and (min-width: 768px) {
    .divLeft {
-      border-right: 1px solid #4981ce;
       margin: 0 auto;
       max-width: 400px;
    }
-   .divCenter {
-      margin: 0 auto;
-      max-width: 400px;
-   }
+
    .divRight {
-      /*float: right;*/
-      border-left: 1px solid #4981ce;
       margin: 0 auto;
       max-width: 400px;
    }
    .answerDiv {
-      margin: auto;
+      border-right: 1px solid #4981ce;
+      border-left: 1px solid #4981ce;
+      margin: 0 auto;
       border: 1px solid white;
       border-color: white;
       text-align: center;
