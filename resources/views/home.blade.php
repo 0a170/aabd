@@ -68,7 +68,10 @@
 
    <div class="col-sm-12">
 <!-- ************************************ USER IMAGE AND STATS/MODALS************************************************** -->
-      <div class="col-sm-4 divLeft">
+      <div class="col-sm-4">
+
+       <div class="divLeft">
+
          <div class="row">
             <img src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profImg" style="border-radius: 50%;" data-toggle="modal" data-target="#popupLogin">
             <h2 style="color: #4981ce; padding: 7px;"> {{ Auth::user()->user_name }} </h2>
@@ -142,12 +145,12 @@
                </div>
             </div>
          </div>
-
+      </div>
       </div> <br>
 
 <!-- ************************************ QUESTIONS SECTION ****************************************************************************************** -->
 
-      <div class="col-sm-4 divCenter">
+      <div class="col-sm-4">
 
          @if($questions->isEmpty())
             <div class="answerDiv">
@@ -181,7 +184,9 @@
 <!-- *************************************************************************************** -->
 
 
-      <div class="col-sm-4 divRight" style="padding-left: 20px;">
+      <div class="col-sm-4" style="padding-left: 20px;">
+
+       <div class="divRight">
 
          <a href="https://twitter.com/askaboredguy" class="twitter-follow-button" data-show-count="false" style="margin: 0 auto; display: block;">Follow @askaboredguy</a>
 
@@ -197,6 +202,8 @@
             <p>Text</p>
             <p>Text</p>
          </div>
+
+       </div>
 
       </div>
 <!-- ************************************************************************************************************ -->
