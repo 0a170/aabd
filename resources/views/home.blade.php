@@ -66,9 +66,9 @@
 
 <div class="container-fluid">
 
-   <div class="col-xs-12">
+   <div class="col-sm-12">
 <!-- ************************************ USER IMAGE AND STATS/MODALS************************************************** -->
-      <div class="col-xs-4 divLeft">
+      <div class="col-sm-4 divLeft">
          <div class="row">
             <img src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profImg" style="border-radius: 50%;" data-toggle="modal" data-target="#popupLogin">
             <h2 style="color: #4981ce; padding: 7px;"> {{ Auth::user()->user_name }} </h2>
@@ -147,7 +147,7 @@
 
 <!-- ************************************ QUESTIONS SECTION ****************************************************************************************** -->
 
-      <div class="col-xs-4 divCenter">
+      <div class="col-sm-4 divCenter">
 
          @if($questions->isEmpty())
             <div class="answerDiv">
@@ -181,7 +181,7 @@
 <!-- *************************************************************************************** -->
 
 
-      <div class="col-xs-4 divRight">
+      <div class="col-sm-4 divRight">
 
          <a href="https://twitter.com/askaboredguy" class="twitter-follow-button" data-show-count="false" style="margin: 0 auto; display: block;">Follow @askaboredguy</a>
 
