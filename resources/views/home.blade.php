@@ -181,7 +181,7 @@
 <!-- *************************************************************************************** -->
 
 
-      <div class="col-sm-4 divRight" style="right: 0;">
+      <div class="col-sm-4 divRight" style="padding-left: 20px;">
 
          <a href="https://twitter.com/askaboredguy" class="twitter-follow-button" data-show-count="false" style="margin: 0 auto; display: block;">Follow @askaboredguy</a>
 
