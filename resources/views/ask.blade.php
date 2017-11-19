@@ -48,14 +48,12 @@
 
                      <li>
                      <a href=" {{ url('/logout') }}" onclick="event.preventDefault();
-                                                              document.getElementById('logOutForm').submit();" class="link">
+                                                              document.getElementById('logOutForm').submit();" class="logOutLink">
                         Logout <img src="{{ Storage::disk('s3')->url('icons/icon_' . Auth::user()->profile_image) }}" class="iconImg">
                      </a>
 
                      <form id="logOutForm" method="POST" action="{{ url('/logout') }}" style="display: none;">
-
                         {{ csrf_field() }}
-
                      </form>
 
                      </li>

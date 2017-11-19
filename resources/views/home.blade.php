@@ -43,8 +43,9 @@
                <li><a href="{{ url('/users') }}" class="link"> Users </a></li>
                <li>
                   <a href="#" onclick="event.preventDefault();
-                                       document.getElementById('logOutForm').submit();" class="link">
-                  Logout</a>
+                                       document.getElementById('logOutForm').submit();" class="logOutLink">
+                     Logout <img src="{{ Storage::disk('s3')->url('icons/icon_' . Auth::user()->profile_image) }}" class="iconImg">
+                  </a>
                   <form id="logOutForm" method="POST" action="{{ route('logout') }}" style="display: none;">
                      {{ csrf_field() }}
                   </form>
