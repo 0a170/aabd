@@ -66,7 +66,7 @@ class QuestionController extends Controller
                           ->leftJoin('answered_questions', 'answered_questions.answered_question', '=' ,'questions.question')
                           ->where('answered_questions.answered_question', null)
                           //->get();
-                          ->paginate(3); 
+                          ->paginate(5);
 
       return view('home', ['questions' => $questions]);
 

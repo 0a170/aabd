@@ -177,11 +177,9 @@
                </form>
             </div> <br><br>
          @endforeach
-         {!! $questions->render() !!}
+         <div style="margin: 0 auto;"> {!! $questions->render() !!} </div>
          @endif
          <br>
-         <input type="button" class="btn btn-primary" style="margin: 0 auto;" value="Show More">
-
       </div>
 
 <!-- *************************************************************************************** -->
