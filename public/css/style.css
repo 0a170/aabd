@@ -106,7 +106,6 @@ Button[id*="downButton"]:hover {
 }
 
 .divLeft {
-   border-right: 1px solid #4981ce;
    margin: 0 auto;
    max-width: 400px;
 }
@@ -123,7 +122,6 @@ Button[id*="downButton"]:hover {
 }
 
 .divRight {
-   border-left: 1px solid #4981ce;
    margin: 0 auto;
    max-width: 400px;
 }
