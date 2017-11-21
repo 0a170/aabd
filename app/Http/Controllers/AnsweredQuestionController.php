@@ -28,24 +28,13 @@ class AnsweredQuestionController extends Controller
        // $this->middleware('auth');
     }
 
-    /*public function logOut(Request $req) {
-
-      Auth::logout();
-
-      return view('ask');
-
-    } */
 
     public function showAll() {
-
 
       $answers = AnsweredQuestion::where('answered', 1)
                                         ->orderBy('updated_at', 'desc')
                                         ->get();
 
-      //return $answers;
-      //return View::make('recent', $answers);
-      //return view('recent')->with($answers);
       return view('recent', ['answers' => $answers]);
 
     }
