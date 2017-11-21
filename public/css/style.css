@@ -205,7 +205,7 @@ Button[id*="downButton"]:hover {
    text-shadow: none !important;
 }
 
-@media screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
    .logOutLink {
       float: right;
       color: white;
