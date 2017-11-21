@@ -70,11 +70,11 @@ Button[id*="downButton"]:hover {
 }
 
 .link {
-   color: white;
+   color: white !important;
 }
 
 .logOutLink {
-   color: white;
+   color: white !important;
 }
 
 .txtpadding {
@@ -207,6 +207,7 @@ Button[id*="downButton"]:hover {
 
 @media only screen and (min-width: 768px) {
    .logOutLink {
+      display: inline;
       float: right;
       color: white;
    }
@@ -222,8 +223,6 @@ Button[id*="downButton"]:hover {
    }
 
    .answerDiv {
-      border-right: 1px solid #4981ce;
-      border-left: 1px solid #4981ce;
       margin: 0 auto;
       border: 1px solid white;
       border-color: white;

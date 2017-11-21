@@ -61,40 +61,13 @@ class QuestionController extends Controller
 
       }
 
-
-
-      //$questions = AnsweredQuestion::where('answered', 0)->get();
-      /*$questions = Question::where('user_id', '!=', $userId)
-                                            //->where('answered', 0)
-                                            ->get(); */
-
-      /*$questions = DB::table('answered_questions')
-                          ->join('users', 'answered_questions.user_id', '=' ,'users.id')
-                          ->where('users.id ')*/
-
-
       $questions = DB::table('questions')
-                          /*->leftJoin('answered_questions', function($join) use($userId)
-                          //->leftJoin('questions', function($join) use($userId)
-                          {
-                           $join->on('questions.question', '=', 'answered_questions.answered_question');
-                           //$join->on('answered_questions.answered_question' , '=', 'questions.question')
-
-                           //->where('answered_questions.answered_question', null);
-                           //->where('answered_questions.user_id', '!=', $userId);
-                           $join->where('answered_questions.user_id', '!=', $userId);
-                           $join->orWhereNull('answered_questions.answered_question');
-                           $join->orWhereNull('answered_questions.user_id');
-                          }) */
 
                           ->leftJoin('answered_questions', 'answered_questions.answered_question', '=' ,'questions.question')
-
                           ->where('answered_questions.answered_question', null)
                           ->get();
 
-
       return view('home', ['questions' => $questions]);
-
 
    }
 
@@ -120,7 +93,6 @@ class QuestionController extends Controller
       }
 
 
-
       Mail::to($email_val)->send(new AnswerMail($answer_val));
 
 
@@ -141,8 +113,6 @@ class QuestionController extends Controller
       echo "Successfully sent!";
       //return redirect()->back();
 
-
    }
-
 
 }
