@@ -177,7 +177,7 @@
                </form>
             </div> <br><br>
          @endforeach
-         <div style="margin: 0 auto;"> {!! $questions->render() !!} </div>
+         {!! $questions->render() !!} 
          @endif
          <br>
       </div>
