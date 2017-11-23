@@ -280,6 +280,7 @@ Button[id*="downButton"]:hover {
    font-family: "Roboto", sans-serif;
    font-size: 25px;
 	font-weight: 300
+   max-width: 400px;
 }
 
 .ajax_server{
