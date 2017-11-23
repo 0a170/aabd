@@ -35,11 +35,11 @@ $(document).ready(function() {
 
 
 		//var failureID = $('#' + fID + ' :nth-child(8)').attr('id');
-		var failureID = $('#' + dID).next().attr('id');
+		var failureID = $('#' + dID + ' :nth-child(3)').attr('id');
 		//var successID = $('#' + fID + ' :nth-child(9)').attr('id');
-		var successID = $('#' + dID).next().next().attr('id');
+		var successID = $('#' + dID + ' :nth-child(4)').attr('id');
 		//var servFailureID = $('#' + fID + ' :nth-child(10)').attr('id');
-      var servFailureID = $('#' + dID).next().next().next().attr('id');
+      var servFailureID = $('#' + dID + ' :nth-child(5)').attr('id');
 		var token = $('#' + fID + ' :nth-child(4)').attr('id');
 
 
