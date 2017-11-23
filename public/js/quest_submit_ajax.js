@@ -1,29 +1,19 @@
 $(document).ready(function() {
 
    function charCount(str) {
-
       var count = 0;
-
       var charArr = str.split("");
-
       for(var i = 0; i < charArr.length; i++) {
-
          count += 1;
-
       }
-
       return count;
-
-
    }
 
 
   $.ajaxSetup({
-  		//headers: { 'csrftoken' : '{{ csrf_token() }}' }
+
   		headers: {
-
   					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-
   		}
 
   });
@@ -87,20 +77,12 @@ $(document).ready(function() {
 
 		$.ajax({
 
-		//$.ajax({
-		 //  headers: { 'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content') },
 			type: 'POST',
-			//url: "askques-script.php",
 			url: 'submit',
-			//data: "question="+ques+"&email="+em "&to,
 			data: { 'question': ques, 'email': em, '_token': token },
-			//data: { 'question': ques, 'email': em, '_token': $('input[name=_token]').val() },
-			//dataType: 'text',
 			cache: false,
 			success: function(data){
-				//alert("success");
-				//data = json_decode(data);
-				//alert(data);
+
 				console.log(data);
 				$('#success_message').fadeIn().html(data);
 				setTimeout(function() {
@@ -110,7 +92,6 @@ $(document).ready(function() {
 			},
 			error: function(data) {
 
-				//alert("failure");
 				$('#error_message').fadeIn().html(tokenClass + ": not working");
 				setTimeout(function() {
 					$('#error_message').fadeOut('slow');

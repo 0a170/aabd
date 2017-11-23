@@ -92,7 +92,7 @@
 			          <input type="text" id="quest" name="question" class="all_inputs" value="Question" onfocus="if(this.value == 'Question') this.value = ''">
 			          <input type="hidden" class="whatev" value="{{ csrf_token() }}">
 
-             </section>
+               </section>
 
 		         <h3> Email </h3>
 
@@ -119,10 +119,10 @@
 
 	        </form>
 
-		     <div id="success_message" class="ajax_response" style="float:left"></div>
-           <div id="error_message" class="ajax_response" style"float:left"></div>
-
 	     </div>
+
+        <div id="success_message" class="ajax_response" style="float:left"></div>
+        <div id="error_message" class="ajax_response" style"float:left"></div>
 
     </div>
 
