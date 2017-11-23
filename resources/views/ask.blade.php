@@ -121,8 +121,8 @@
 
 	     </div>
 
-        <div id="success_message" class="ajax_response" style="float:left"></div>
-        <div id="error_message" class="ajax_response" style"float:left"></div>
+        <div id="success_message" class="ajax_response"></div>
+        <div id="error_message" class="ajax_response"></div>
 
     </div>
 

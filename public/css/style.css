@@ -240,6 +240,7 @@ Button[id*="downButton"]:hover {
 
 #error_message {
    background: #F3A6A6;
+   margin: 0 auto;
 }
 
 #name_error {
@@ -264,6 +265,7 @@ Button[id*="downButton"]:hover {
 
 #success_message{
     background: #CCF5CC;
+    margin: 0 auto;
 }
 
 .ajax_response {
