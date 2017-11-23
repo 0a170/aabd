@@ -77,6 +77,10 @@ Button[id*="downButton"]:hover {
    color: white !important;
 }
 
+.all_inputs {
+   margin: 0 auto !important;
+}
+
 .txtpadding {
 	display: inline-block;
 	text-align: center;
