@@ -110,7 +110,7 @@ Button[id*="downButton"]:hover {
    max-width: 400px;
 }
 
-.answerDiv {
+.aForm {
 	margin: 0 auto;
 	border: 1px solid white;
 	border-color: white;
@@ -222,7 +222,7 @@ Button[id*="downButton"]:hover {
       max-width: 250px;
    }
 
-   .answerDiv {
+   .aForm {
       margin: 0 auto;
       border: 1px solid white;
       border-color: white;
