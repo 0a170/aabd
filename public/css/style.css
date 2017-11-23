@@ -333,13 +333,14 @@ Button[id*="downButton"]:hover {
 
 #askDiv {
 	width: 90% !important;
+   max-height: 300 px;
 	max-width: 400px !important;
 	display: inline-block !important;
 	text-align: center !important;
 	//box-shadow: 2px 2px 2px #888888 !important;
 	padding-bottom: 5% !important;
 	background: #F0F0F0 !important;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24) !important;
+   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24) !important;
 
 }
 
