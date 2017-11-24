@@ -40,7 +40,7 @@ $(document).ready(function() {
 		var successID = $('#' + dID + ' :nth-child(4)').attr('id');
 		//var servFailureID = $('#' + fID + ' :nth-child(10)').attr('id');
       var servFailureID = $('#' + dID + ' :nth-child(5)').attr('id');
-		
+
 		var token = $('#' + fID + ' :nth-child(4)').attr('id');
 
 
@@ -51,7 +51,6 @@ $(document).ready(function() {
 				$('#' + failureID).fadeOut("slow");
 				}, 3000);
 
-			//$('#' + ansID).css("background-color", "red");
 
 		} else {
 
