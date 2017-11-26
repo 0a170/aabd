@@ -161,7 +161,6 @@
          @foreach($questions as $question)
             <br>
             <div id="aDiv{{ $question->question_id }}" class="answerDiv">
-               <div id="answer_failure{{ $question->question_id }}" class="ajax_failure"></div>
                <p style="color: #888888;"><b>Question: {{ $question->question }}</b></p>
                <form id="{{ $question->question_id }}" class="aForm" method="POST">
                   <input type="text" id="answerID{{ $question->question_id }}" name="answerInput" class="answers" style="max-width: 60%; display: block; margin: 0 auto;"></textarea>
@@ -169,13 +168,13 @@
                   <input type="hidden" id="emailID{{ $question->question_id }}" name="ema" value="{{ $question->asker_email }}">
                   <input type="hidden" value="{{ csrf_token() }}">
                   <br>
-                  <input type="submit" class="btn btn-primary" id="ent{{ $question->question_id }}" name="theAnswer" value="Answer This">
+                  <input type="submit" class="btn btn-primary" id="ent{{ $question->question_id }}" name="theAnswer" value="Answer This"><br><br>
+                  <div id="answer_failure{{ $question->question_id }}" class="ajax_failure"></div>
+                  <div id="answer_success{{ $question->question_id }}" class="ajax_success"></div>
+                  <div id="server_error{{ $question->question_id }}" class="ajax_failure"></div>
                   <br>
                </form>
                <br>
-               <div id="answer_failure{{ $question->question_id }}" class="ajax_failure"></div>
-               <div id="answer_success{{ $question->question_id }}" class="ajax_success"></div>
-               <div id="server_error{{ $question->question_id }}" class="ajax_failure"></div>
             </div> <br><br>
          @endforeach
          <div style="margin: 0 auto;"> {!! $questions->render() !!} </div>
