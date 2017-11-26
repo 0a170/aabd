@@ -48,10 +48,11 @@ $(document).ready(function() {
 		if(ansVal == '') {
 
 			//$('#' + failureID).show().html("Answer Cannot be empty");
-			$('#' + failureID).css('display', 'block');
+			$('#' + failureID).html('Answer Cannot Be Empty').css('visibility', 'visible');
 			setTimeout(function() {
 				$('#' + failureID).fadeOut("slow");
 				}, 3000);
+			$('#' + failureID).css('visibility', 'hidden');
 
 
 		} else {
