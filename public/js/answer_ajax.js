@@ -36,7 +36,6 @@ $(document).ready(function() {
 
 		//var failureID = $('#' + fID + ' :nth-child(8)').attr('id');
 		var failureID = $('#' + dID + ' :nth-child(3)').attr('id');
-		var failureP = $('#' + failureID + ' :nth-child(1)').attr('id');
 		//var successID = $('#' + fID + ' :nth-child(9)').attr('id');
 		var successID = $('#' + dID + ' :nth-child(4)').attr('id');
 		//var servFailureID = $('#' + fID + ' :nth-child(10)').attr('id');
@@ -47,9 +46,7 @@ $(document).ready(function() {
 
 		if(ansVal == '') {
 
-			//$('#' + failureID).show().html("Answer Cannot be empty");
-			$('#' + failureP).text("Answer Cannot Be Empty");
-			$('#' + failureID).show();
+			$('#' + failureID).show().html("Answer Cannot be empty");
 			setTimeout(function() {
 				$('#' + failureID).fadeOut("slow");
 				}, 3000);

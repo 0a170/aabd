@@ -172,7 +172,7 @@
                   <br>
                </form>
                <br>
-               <div id="answer_failure{{ $question->question_id }}" class="ajax_failure"><p id="p_fail{{ $question->question_id }}"></p></div>
+               <div id="answer_failure{{ $question->question_id }}" class="ajax_failure"><p> Answer Cannot Be Empty </p></div>
                <div id="answer_success{{ $question->question_id }}" class="ajax_success"></div>
                <div id="server_error{{ $question->question_id }}" class="ajax_failure"></div>
             </div>
