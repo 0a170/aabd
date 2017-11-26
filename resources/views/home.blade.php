@@ -161,6 +161,7 @@
          @foreach($questions as $question)
             <br>
             <div id="aDiv{{ $question->question_id }}" class="answerDiv">
+               <div id="answer_failure{{ $question->question_id }}" class="ajax_failure"></div>
                <p style="color: #888888;"><b>Question: {{ $question->question }}</b></p>
                <form id="{{ $question->question_id }}" class="aForm" method="POST">
                   <input type="text" id="answerID{{ $question->question_id }}" name="answerInput" class="answers" style="max-width: 60%; display: block; margin: 0 auto;"></textarea>
@@ -172,7 +173,7 @@
                   <br>
                </form>
                <br>
-               <span id="answer_failure{{ $question->question_id }}" class="ajax_failure"></span>
+               <div id="answer_failure{{ $question->question_id }}" class="ajax_failure"></div>
                <div id="answer_success{{ $question->question_id }}" class="ajax_success"></div>
                <div id="server_error{{ $question->question_id }}" class="ajax_failure"></div>
             </div> <br><br>
