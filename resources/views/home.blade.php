@@ -168,14 +168,15 @@
                   <input type="hidden" id="emailID{{ $question->question_id }}" name="ema" value="{{ $question->asker_email }}">
                   <input type="hidden" value="{{ csrf_token() }}">
                   <br>
-                  <input type="submit" class="btn btn-primary" id="ent{{ $question->question_id }}" name="theAnswer" value="Answer This"><br><br>
-                  <div id="answer_failure{{ $question->question_id }}" class="ajax_failure"></div>
-                  <div id="answer_success{{ $question->question_id }}" class="ajax_success"></div>
-                  <div id="server_error{{ $question->question_id }}" class="ajax_failure"></div>
+                  <input type="submit" class="btn btn-primary" id="ent{{ $question->question_id }}" name="theAnswer" value="Answer This">
                   <br>
                </form>
                <br>
-            </div> <br><br>
+               <div id="answer_failure{{ $question->question_id }}" class="ajax_failure"></div>
+               <div id="answer_success{{ $question->question_id }}" class="ajax_success"></div>
+               <div id="server_error{{ $question->question_id }}" class="ajax_failure"></div>
+            </div>
+            <br>
          @endforeach
          <div style="margin: 0 auto;"> {!! $questions->render() !!} </div>
          @endif
