@@ -46,7 +46,7 @@ $(document).ready(function() {
 
 		if(ansVal == '') {
 
-			$('#' + failureID).show().html("Answer Cannot be empty");
+			$('#' + failureID).show().html("<p>Answer Cannot be empty</p>");
 			setTimeout(function() {
 				$('#' + failureID).fadeOut("slow");
 				}, 3000);
