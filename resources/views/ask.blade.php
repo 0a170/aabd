@@ -120,7 +120,7 @@
 	        </form>
 
 	     </div>
-
+        <br>
         <div id="success_message" class="ajax_response"></div>
         <div id="error_message" class="ajax_response"></div>
 
