@@ -175,8 +175,8 @@
             </div>
             <br>
             <div id="answer_failure{{ $question->question_id }}" class="answer_status"></div>
-            <div id="answer_success{{ $question->question_id }}" class="ajax_success"></div>
-            <div id="server_error{{ $question->question_id }}" class="ajax_failure"></div>
+            <!-- <div id="answer_success{{ $question->question_id }}" class="ajax_success"></div>
+            <div id="server_error{{ $question->question_id }}" class="ajax_failure"></div> -->
             <br>
          @endforeach
          <div style="margin: 0 auto;"> {!! $questions->render() !!} </div>
