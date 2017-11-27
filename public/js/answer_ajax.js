@@ -69,7 +69,8 @@ $(document).ready(function() {
 				success: function(data) {
 
 					//alert(data);
-					$('#' + successID).show().html(data);
+					$('#' + statusID).html(data);
+					$('#' + statusID).css('visibility', 'visible');
 					//setTimeout(function() {
 					$('#' + dID).fadeOut(3000, function() {
 						$('#' + dID).remove();
