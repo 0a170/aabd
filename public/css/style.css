@@ -125,8 +125,7 @@ Button[id*="downButton"]:hover {
 	padding: 10px;
 }
 
-.answer_status {
-   color: red;
+.ans_status {
    visibility: hidden;
 }
 
