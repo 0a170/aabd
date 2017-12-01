@@ -50,7 +50,7 @@ $(document).ready(function() {
 		if(ansVal == '') {
 
 			alert("something is wrong with the js");
-			$('#' + ansStatus).text('Answer Cannot Be Empty');
+			$('#' + ansStatus).html('Answer Cannot Be Empty');
 			$('#' + ansStatus).css('color', 'red');
 
 			$('#' + ansStatus).css('visibility', 'visible');
@@ -80,12 +80,6 @@ $(document).ready(function() {
 				success: function(data) {
 
 					//alert(data);
-
-					$('#' + ansStatus).text(data);
-					$('#' + ansStatus).css('color', 'green');
-
-					$('#' + ansStatus).css('visibility', 'visible');
-
 
 					$('#' + statusID).html(data);
 					$('#' + statusID).css('visibility', 'visible');
