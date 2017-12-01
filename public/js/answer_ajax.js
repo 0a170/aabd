@@ -80,8 +80,8 @@ $(document).ready(function() {
 
 					//alert(data);
 
-					$('#' + ansStatus).text('Answer Cannot Be Empty');
-					$('#' + ansStatus).css('color', 'red');
+					$('#' + ansStatus).text(data);
+					$('#' + ansStatus).css('color', 'green');
 					$('#' + ansStatus).css('visibility', 'visible');
 
 					/*$('#' + statusID).html(data);
