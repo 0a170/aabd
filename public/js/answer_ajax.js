@@ -38,7 +38,7 @@ $(document).ready(function() {
 
 		//var failureID = $('#' + fID + ' :nth-child(8)').attr('id');
 		//var failureID = $('#' + dID + ' :nth-child(3)').attr('id');
-		var statusID = $('#' + dID).nextAll().eq(1).attr('id');
+		var statusID = $('#' + dID).nextAll().eq(0).attr('id');
 		//var successID = $('#' + fID + ' :nth-child(9)').attr('id');
 		//var successID = $('#' + dID + ' :nth-child(4)').attr('id');
 		//var servFailureID = $('#' + fID + ' :nth-child(10)').attr('id');
@@ -58,7 +58,7 @@ $(document).ready(function() {
 			}, 3000);
 
 			//$('#' + failureID).show().html("Answer Cannot be empty");
-			$('#' + statusID).html('Answer Cannot Be Empty');
+			$('#' + statusID).text('Answer Cannot Be Empty');
 			$('#' + statusID).css('visibility', 'visible');
 			setTimeout(function() {
 				$('#' + statusID).fadeOut("slow");
