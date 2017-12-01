@@ -33,19 +33,28 @@ $(document).ready(function() {
 		var emailVal = $('#' + emailID).val();
 		//var userID = $('#' + fID + ' :hidden:eq(2)').attr('id');
 
+		var ansStatus = $('#' + fID + ':nth-child(6)').att('id');
+
 
 		//var failureID = $('#' + fID + ' :nth-child(8)').attr('id');
 		//var failureID = $('#' + dID + ' :nth-child(3)').attr('id');
 		var statusID = $('#' + dID).next().attr('id');
 		//var successID = $('#' + fID + ' :nth-child(9)').attr('id');
-		var successID = $('#' + dID + ' :nth-child(4)').attr('id');
+		//var successID = $('#' + dID + ' :nth-child(4)').attr('id');
 		//var servFailureID = $('#' + fID + ' :nth-child(10)').attr('id');
-      var servFailureID = $('#' + dID + ' :nth-child(5)').attr('id');
+      //var servFailureID = $('#' + dID + ' :nth-child(5)').attr('id');
 
 		//var token = $('#' + fID + ' :nth-child(4)').attr('id');
 		var token = $('#' + fID + ' :hidden:eq(2)').attr('id');
 
 		if(ansVal == '') {
+
+			$('#' + ansStatus).text('Answer Cannot Be Empty').css('color', 'red');
+
+			$('#' + ansStatus).css('visibility', 'visible');
+			setTimeout(function() {
+				$('#' + statusID).css('visibility', 'hidden');
+				}, 3000);
 
 			//$('#' + failureID).show().html("Answer Cannot be empty");
 			$('#' + statusID).html('Answer Cannot Be Empty');

@@ -125,6 +125,11 @@ Button[id*="downButton"]:hover {
 	padding: 10px;
 }
 
+.answer_status {
+   color: red;
+   visibility: hidden;
+}
+
 .divRight {
    margin: 0 auto;
    max-width: 400px;
