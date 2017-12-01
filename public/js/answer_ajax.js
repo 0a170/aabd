@@ -81,7 +81,8 @@ $(document).ready(function() {
 
 					//alert(data);
 
-					$('#' + ansStatus).text(data).css('color', 'green');
+					$('#' + ansStatus).text(data);
+					$('#' + ansStatus).css('color', 'green');
 
 					$('#' + ansStatus).css('visibility', 'visible');
 
