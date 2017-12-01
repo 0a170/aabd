@@ -64,7 +64,7 @@ $(document).ready(function() {
 				$('#' + statusID).fadeOut("slow");
 				}, 3000);
 			$('#' + statusID).css('visibility', 'hidden');
-
+ 
 
 		} else {
 
