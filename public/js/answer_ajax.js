@@ -38,7 +38,7 @@ $(document).ready(function() {
 
 		//var failureID = $('#' + fID + ' :nth-child(8)').attr('id');
 		//var failureID = $('#' + dID + ' :nth-child(3)').attr('id');
-		var statusID = $('#' + dID).next().attr('id');
+		var statusID = $('#' + dID).next().next().attr('id');
 		//var successID = $('#' + fID + ' :nth-child(9)').attr('id');
 		//var successID = $('#' + dID + ' :nth-child(4)').attr('id');
 		//var servFailureID = $('#' + fID + ' :nth-child(10)').attr('id');
@@ -49,13 +49,13 @@ $(document).ready(function() {
 
 		if(ansVal == '') {
 
-			$('#' + ansStatus).html('Answer Cannot Be Empty');
+			/*$('#' + ansStatus).html('Answer Cannot Be Empty');
 			$('#' + ansStatus).css('color', 'red');
 
 			$('#' + ansStatus).css('visibility', 'visible');
 			setTimeout(function() {
 				$('#' + statusID).css('visibility', 'hidden');
-				}, 3000);
+			}, 3000); */
 
 			//$('#' + failureID).show().html("Answer Cannot be empty");
 			$('#' + statusID).html('Answer Cannot Be Empty');
