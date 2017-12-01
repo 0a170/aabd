@@ -33,7 +33,7 @@ $(document).ready(function() {
 		var emailVal = $('#' + emailID).val();
 		//var userID = $('#' + fID + ' :hidden:eq(2)').attr('id');
 
-		var ansStatus = $('#' + fID + ':nth-child(6)').att('id');
+		var ansStatus = $('#' + fID + ' :nth-child(6)').att('id');
 
 
 		//var failureID = $('#' + fID + ' :nth-child(8)').attr('id');
@@ -49,7 +49,6 @@ $(document).ready(function() {
 
 		if(ansVal == '') {
 
-			alert("something is wrong with the js");
 			$('#' + ansStatus).html('Answer Cannot Be Empty');
 			$('#' + ansStatus).css('color', 'red');
 
