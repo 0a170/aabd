@@ -31,7 +31,7 @@ $(document).ready(function() {
 		var questVal = $('#' + questID).val();
 		var emailID = $('#' + fID + ' :hidden:eq(1)').attr('id');
 		var emailVal = $('#' + emailID).val();
-		var userID = $('#' + fID + ' :hidden:eq(2)').attr('id');
+		//var userID = $('#' + fID + ' :hidden:eq(2)').attr('id');
 
 
 		//var failureID = $('#' + fID + ' :nth-child(8)').attr('id');
@@ -42,8 +42,8 @@ $(document).ready(function() {
 		//var servFailureID = $('#' + fID + ' :nth-child(10)').attr('id');
       var servFailureID = $('#' + dID + ' :nth-child(5)').attr('id');
 
-		var token = $('#' + fID + ' :nth-child(4)').attr('id');
-
+		//var token = $('#' + fID + ' :nth-child(4)').attr('id');
+		var token = $('#' + fID + ' :hidden:eq(2)').attr('id');
 
 		if(ansVal == '') {
 
