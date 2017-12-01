@@ -50,7 +50,8 @@ $(document).ready(function() {
 		if(ansVal == '') {
 
 			alert("something is wrong with the js");
-			$('#' + ansStatus).text('Answer Cannot Be Empty').css('color', 'red');
+			$('#' + ansStatus).text('Answer Cannot Be Empty');
+			$('#' + ansStatus).css('color', 'red');
 
 			$('#' + ansStatus).css('visibility', 'visible');
 			setTimeout(function() {
@@ -64,7 +65,7 @@ $(document).ready(function() {
 				$('#' + statusID).fadeOut("slow");
 				}, 3000);
 			$('#' + statusID).css('visibility', 'hidden');
- 
+
 
 		} else {
 
