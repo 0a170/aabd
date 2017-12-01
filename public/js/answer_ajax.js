@@ -53,17 +53,17 @@ $(document).ready(function() {
 			$('#' + ansStatus).css('color', 'red');
 
 			$('#' + ansStatus).css('visibility', 'visible');
-			setTimeout(function() {
+			/*setTimeout(function() {
 				$('#' + statusID).css('visibility', 'hidden');
-			}, 3000);
+			}, 3000); */
 
 			//$('#' + failureID).show().html("Answer Cannot be empty");
-			$('#' + statusID).text('Answer Cannot Be Empty');
+			/*$('#' + statusID).text('Answer Cannot Be Empty');
 			$('#' + statusID).css('visibility', 'visible');
 			setTimeout(function() {
 				$('#' + statusID).fadeOut("slow");
 				}, 3000);
-			$('#' + statusID).css('visibility', 'hidden');
+			$('#' + statusID).css('visibility', 'hidden'); */
 
 
 		} else {
@@ -80,9 +80,14 @@ $(document).ready(function() {
 
 					//alert(data);
 
-					$('#' + statusID).html(data);
-					$('#' + statusID).css('visibility', 'visible');
+					$('#' + ansStatus).text('Answer Cannot Be Empty');
+					$('#' + ansStatus).css('color', 'red');
+					$('#' + ansStatus).css('visibility', 'visible');
+
+					/*$('#' + statusID).html(data);
+					$('#' + statusID).css('visibility', 'visible'); */
 					//setTimeout(function() {
+
 					$('#' + dID).fadeOut(3000, function() {
 						$('#' + dID).remove();
 					});
