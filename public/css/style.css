@@ -385,7 +385,7 @@ Button[id*="downButton"]:hover {
 }
 
 .center {
-   margin: 0 auto !important;
+   text-align: center;
 }
 
 #frmDemo .content > .body input{
