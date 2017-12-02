@@ -352,8 +352,6 @@ Button[id*="downButton"]:hover {
 	max-width: 400px !important;
 	display: inline-block !important;
 	text-align: center !important;
-	//box-shadow: 2px 2px 2px #888888 !important;
-	padding-bottom: 5% !important;
 	background: #F0F0F0 !important;
    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24) !important;
 
@@ -374,25 +372,18 @@ Button[id*="downButton"]:hover {
 #frmDemo > .content > .body {
 	//display: inline-block;
 	height: auto;
-  text-align: center !important;
-}
+   position: relative;
+   float: center;
 
-.wizard .content > .body {
-   margin: 0 auto;
-}
-.wizard .content > .body input {
-   margin: 0 auto !important;
 }
 
 .center {
-   margin: auto !important; 
+   margin: auto !important;
 }
 
 #frmDemo .content > .body input{
 
 	width: 100%;
-   //text-align: center;
-	//display: inline-block;
 	margin: 0 auto;
    margin-bottom: 30px;
    font-size: 16px;
