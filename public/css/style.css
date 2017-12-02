@@ -126,7 +126,6 @@ Button[id*="downButton"]:hover {
 }
 
 .ans_status {
-   padding-top: 5px;
    visibility: hidden;
 }
 
