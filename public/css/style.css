@@ -371,9 +371,9 @@ Button[id*="downButton"]:hover {
 }
 
 .wizard > .content > .body {
-   float: center !important;
+   float: center;
 	height: auto;
-   position: relative !important;
+   position: relative;
 }
 
 
