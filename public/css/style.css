@@ -384,6 +384,10 @@ Button[id*="downButton"]:hover {
    margin: 0 auto !important;
 }
 
+#frmDemo-p-0 {
+   margin: 0 auto;
+}
+
 #frmDemo .content > .body input{
 
 	width: 100%;
