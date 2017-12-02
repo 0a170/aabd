@@ -377,6 +377,10 @@ Button[id*="downButton"]:hover {
   text-align: center !important;
 }
 
+.wizard .content > .body input {
+   margin: 0 auto !important;
+}
+
 #frmDemo > .content > .body input{
 
 	width: 100%;
