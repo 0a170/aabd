@@ -377,6 +377,9 @@ Button[id*="downButton"]:hover {
   text-align: center !important;
 }
 
+.wizard .content > .body {
+   margin: 0 auto;
+}
 .wizard .content > .body input {
    margin: 0 auto !important;
 }
