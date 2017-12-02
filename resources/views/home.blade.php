@@ -169,7 +169,7 @@
                   <input type="hidden" value="{{ csrf_token() }}">
                   <br>
                   <input type="submit" class="btn btn-primary" id="ent{{ $question->question_id }}" name="theAnswer" value="Answer This">
-                  <span id="aStatus{{ $question->question_id }}" class="ans_status">&nbsp</span>
+                  <div id="aStatus{{ $question->question_id }}" class="ans_status">place holder</div>
                </form>
                <br>
             </div>
