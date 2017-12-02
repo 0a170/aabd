@@ -352,6 +352,7 @@ Button[id*="downButton"]:hover {
 	max-width: 400px !important;
 	display: inline-block !important;
 	text-align: center !important;
+	padding-bottom: 5% !important;
 	background: #F0F0F0 !important;
    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24) !important;
 
@@ -369,17 +370,13 @@ Button[id*="downButton"]:hover {
 	text-align: center;	*/
 }
 
-#frmDemo > .content > .body {
-	//display: inline-block;
+.wizard > .content > .body {
+   float: center !important;
 	height: auto;
-   position: relative;
-   float: center;
-
+   position: relative !important;
 }
 
-.center {
-   margin: auto !important;
-}
+
 
 #frmDemo .content > .body input{
 
