@@ -33,7 +33,7 @@ $(document).ready(function() {
 		var emailVal = $('#' + emailID).val();
 		//var userID = $('#' + fID + ' :hidden:eq(2)').attr('id');
 
-		var ansStatus = $('#' + fID + ' :nth-child(7)').attr('id');
+		var ansStatus = $('#' + dID + ' :nth-child(3)').attr('id');
 
 
 		//var failureID = $('#' + fID + ' :nth-child(8)').attr('id');
