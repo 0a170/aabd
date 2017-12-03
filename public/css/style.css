@@ -372,8 +372,8 @@ Button[id*="downButton"]:hover {
 
 .wizard > .content > .body {
    float: none;
+   margin-left: 7px;
 }
-
 
 #frmDemo .content > .body input{
 	width: 100%;
