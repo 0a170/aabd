@@ -84,7 +84,7 @@
 
 		         <h3> Ask</h3>
 
-		         <section class="center">
+		         <section>
 
 			          <div id="stepHeader">
 				           <h2> Your Question</h2>
@@ -96,7 +96,7 @@
 
 		         <h3> Email </h3>
 
-		         <section class="center">
+		         <section>
 
 			          <div id="stepHeader">
 				           <h2> Your Email </h2>
