@@ -352,7 +352,7 @@ Button[id*="downButton"]:hover {
 	max-width: 400px !important;
 	display: inline-block !important;
 	text-align: center !important;
-	padding-bottom: 5% !important;
+	padding-bottom: 15px !important;
 	background: #F0F0F0 !important;
    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24) !important;
 
@@ -368,6 +368,10 @@ Button[id*="downButton"]:hover {
 	background: #F0F0F0 !important;
   /*display: inline-block;
 	text-align: center;	*/
+}
+
+.wizard > .actions {
+   padding-top: 10px;
 }
 
 .wizard > .content > .body {
