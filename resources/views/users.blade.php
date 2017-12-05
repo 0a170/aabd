@@ -25,7 +25,7 @@
 
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -58,10 +58,10 @@
 
         @else
 
-          <li><a href="{{ url('/login') }}" class="link1"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
-          <li><a href="{{ url('/ask') }}" class="link2"><span class="glyphicon glyphicon-question-sign"></span> Ask </a></li>
-          <li><a href="{{ url('/register') }}" class="link3"><span class="glyphicon glyphicon-check"></span> Register </a></li>
-          <li><a href="{{ url('/recent') }}" class="link4"><span class="glyphicon glyphicon-thumbs-up"></span> Recent </a></li>
+          <li><a href="{{ url('/login') }}" class="link1"> Login</a></li>
+          <li><a href="{{ url('/ask') }}" class="link2"> Ask</a></li>
+          <li><a href="{{ url('/register') }}" class="link3"> Register</a></li>
+          <li><a href="{{ url('/recent') }}" class="link4"> Recent</a></li>
 
         @endif
 

@@ -42,8 +42,9 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                <ul class="nav navbar-nav">
                   @if (Auth::check())
+                     <li><a href="{{ url('/ask') }}" class="link"> Ask </a></li>
                      <li><a href="{{ url('/home') }}" class="link"> Answer</a></li>
-                     <li><a href="{{ url('/recent') }}" class="link"> Recent</a></li>
+                     <li><a href="{{ url('/recent') }}" class="link"> Recent </a></li>
                      <li><a href="{{ url('/users') }}" class="link"> Users </a></li>
 
                      <li>
@@ -111,7 +112,7 @@
 		         <section>
 
 			          <div id="stepHeader">
-				           <h2> Submit your question </h2>
+				           <h2> Submit Your Question </h2>
 			          </div>
 			          <br>
 
