@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{{ secure_asset('css/style.css') }}" rel="stylesheet" type="text/css">
+
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>AABD - Ask</title>
@@ -14,7 +16,6 @@
 
         <link rel="stylesheet" type="text/css" href="{{ secure_asset('css/jquery.steps.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ secure_asset('css/bootstrap.min.css') }}">
-        <link href="{{ secure_asset('css/style.css') }}" rel="stylesheet" type="text/css">
 
 
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -41,28 +42,25 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                <ul class="nav navbar-nav">
+
+                  <li><a href="{{ url('/ask') }}" class="link"> Ask </a></li>
+                  <li><a href="{{ url('/home') }}" class="link"> Answer</a></li>
+                  <li><a href="{{ url('/recent') }}" class="link"> Recent </a></li>
+                  <li><a href="{{ url('/users') }}" class="link"> Users </a></li>
+
                   @if (Auth::check())
-                     <li><a href="{{ url('/ask') }}" class="link"> Ask </a></li>
-                     <li><a href="{{ url('/home') }}" class="link"> Answer</a></li>
-                     <li><a href="{{ url('/recent') }}" class="link"> Recent </a></li>
-                     <li><a href="{{ url('/users') }}" class="link"> Users </a></li>
-
                      <li>
-                     <a href=" {{ url('/logout') }}" onclick="event.preventDefault();
-                                                              document.getElementById('logOutForm').submit();" class="logOutLink">
-                        Logout <img src="{{ Storage::disk('s3')->url('icons/icon_' . Auth::user()->profile_image) }}" class="iconImg">
-                     </a>
+                        <a href=" {{ url('/logout') }}" onclick="event.preventDefault();
+                                                                document.getElementById('logOutForm').submit();" class="logOutLink">
+                           Logout <img src="{{ Storage::disk('s3')->url('icons/icon_' . Auth::user()->profile_image) }}" class="iconImg">
+                        </a>
 
-                     <form id="logOutForm" method="POST" action="{{ url('/logout') }}" style="display: none;">
-                        {{ csrf_field() }}
-                     </form>
-
+                        <form id="logOutForm" method="POST" action="{{ url('/logout') }}" style="display: none;">
+                           {{ csrf_field() }}
+                        </form>
                      </li>
                   @else
-                     <li><a href="{{ url('/login') }}" class="link"> Login</a></li>
                      <li><a href="{{ url('/register') }}"class="link"> Register</a></li>
-                     <li><a href="{{ url('/recent') }}" class="link"> Recent</a></li>
-                     <li><a href="{{ url('/users') }}" class="link"> Users</a></li>
                   @endif
                </ul>
             </div>
