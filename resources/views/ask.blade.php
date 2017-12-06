@@ -41,13 +41,13 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                <ul class="nav navbar-nav">
-
                   <li><a href="{{ url('/ask') }}" class="link"> Ask </a></li>
                   <li><a href="{{ url('/home') }}" class="link"> Answer</a></li>
                   <li><a href="{{ url('/recent') }}" class="link"> Recent </a></li>
                   <li><a href="{{ url('/users') }}" class="link"> Users </a></li>
-
-                  @if (Auth::check())
+               </ul>
+               <ul class="nav navbar-nav navbar-right">
+                  @if(Auth::check())
                      <li>
                         <a href=" {{ url('/logout') }}" onclick="event.preventDefault();
                                                                 document.getElementById('logOutForm').submit();" class="logOutLink">
