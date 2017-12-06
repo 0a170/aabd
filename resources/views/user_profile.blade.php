@@ -33,27 +33,27 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-      @if (Auth::check())
-        <li><a href="{{ url('/home') }}" class="link"> Answer </a></li>
-        <li><a href="{{ url('/ask') }}" class="link"> Ask </a></li>
-        <li><a href="{{ url('/recent') }}" class="link"> Recent </a></li>
-        <li><a href="{{ url('/users') }}" class="link"> Users </a></li>
-        <li>
-            <a href="#" onclick="event.preventDefault();
-                                                     document.getElementById('logOutForm').submit();" class="link">
-            <span= class="glyphicon glyphicon-log-out"></span> Logout </a>
-               <form id="logOutForm" method="POST" action="{{ route('logout') }}" style="display: none;">
-                  {{ csrf_field() }}
-               </form>
-        </li>
-        @else
-          <li><a href="{{ url('/login') }}" class="link"> Login</a></li>
+
           <li><a href="{{ url('/ask') }}" class="link"> Ask </a></li>
-          <li><a href="{{ url('/register') }}" class="link"> Register </a></li>
+          <li><a href="{{ url('/home') }}" class="link"> Answer</a></li>
           <li><a href="{{ url('/recent') }}" class="link"> Recent </a></li>
           <li><a href="{{ url('/users') }}" class="link"> Users </a></li>
-        @endif
 
+          @if(Auth::check())
+             <li>
+                <a href=" {{ url('/logout') }}" onclick="event.preventDefault();
+                                                       document.getElementById('logOutForm').submit();" class="logOutLink">
+                   Logout <img src="{{ Storage::disk('s3')->url('icons/icon_' . Auth::user()->profile_image) }}" class="iconImg">
+                </a>
+
+                <form id="logOutForm" method="POST" action="{{ url('/logout') }}" style="display: none;">
+                   {{ csrf_field() }}
+                </form>
+             </li>
+          @else
+             <li><a href="{{ url('/login') }}" class="link"> Login</a></li>
+             <li><a href="{{ url('/register') }}"class="link"> Register</a></li>
+          @endif
       </ul>
     </div>
   </div>

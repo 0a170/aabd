@@ -31,31 +31,28 @@
       <a class="navbar-brand" href="{{ url('/ask') }}">AABG</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-
       <ul class="nav navbar-nav">
-      @if (Auth::check())
-        <li><a href="{{ url('/ask') }}" class="link"> Ask </a></li>
-        <li><a href="{{ url('/home') }}" class="link"> Answer </a></li>
-        <li><a href="{{ url('/users') }}" class="link"> Users </a></li>
-        <li>
-            <a href="#" onclick="event.preventDefault();
-                                 document.getElementById('logOutForm').submit();" class="link">
-               Logout
-            </a>
 
-               <form id="logOutForm" method="POST" action="{{ url('/logout') }}" style="display: none;">
+          <li><a href="{{ url('/ask') }}" class="link"> Ask </a></li>
+          <li><a href="{{ url('/home') }}" class="link"> Answer</a></li>
+          <li><a href="{{ url('/recent') }}" class="link"> Recent </a></li>
+          <li><a href="{{ url('/users') }}" class="link"> Users </a></li>
 
-                  {{ csrf_field() }}
+          @if(Auth::check())
+             <li>
+                <a href=" {{ url('/logout') }}" onclick="event.preventDefault();
+                                                       document.getElementById('logOutForm').submit();" class="logOutLink">
+                   Logout <img src="{{ Storage::disk('s3')->url('icons/icon_' . Auth::user()->profile_image) }}" class="iconImg">
+                </a>
 
-               </form>
-
-        </li>
-      @else
-        <li><a href="{{ url('/ask') }}" class="link1"><span class="glyphicon glyphicon-question-sign"></span> Ask</a></li>
-        <li><a href="{{ url('/login') }}" class="link2"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        <li><a href="{{ url('/register') }}" class="link3"><span class="glyphicon glyphicon-check"></span> Register</a></li>
-        <li><a href="{{ url('/users') }}" class="link4"><span class="glyphicon glyphicon-user"></span> Users</a></li>
-      @endif
+                <form id="logOutForm" method="POST" action="{{ url('/logout') }}" style="display: none;">
+                   {{ csrf_field() }}
+                </form>
+             </li>
+          @else
+             <li><a href="{{ url('/login') }}" class="link"> Login</a></li>
+             <li><a href="{{ url('/register') }}"class="link"> Register</a></li>
+          @endif
       </ul>
     </div>
   </div>

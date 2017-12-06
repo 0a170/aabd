@@ -4,8 +4,6 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="{{ secure_asset('css/style.css') }}" rel="stylesheet" type="text/css">
-
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>AABD - Ask</title>
@@ -16,6 +14,7 @@
 
         <link rel="stylesheet" type="text/css" href="{{ secure_asset('css/jquery.steps.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ secure_asset('css/bootstrap.min.css') }}">
+        <link href="{{ secure_asset('css/style.css') }}" rel="stylesheet" type="text/css">
 
 
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -60,6 +59,7 @@
                         </form>
                      </li>
                   @else
+                     <li><a href="{{ url('/login') }}" class="link"> Login</a></li>
                      <li><a href="{{ url('/register') }}"class="link"> Register</a></li>
                   @endif
                </ul>

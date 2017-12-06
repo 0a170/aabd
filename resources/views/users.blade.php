@@ -36,35 +36,28 @@
       <a class="navbar-brand" href="{{ url('/ask') }}">AABG</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-
       <ul class="nav navbar-nav">
 
-      @if (Auth::check())
+          <li><a href="{{ url('/ask') }}" class="link"> Ask </a></li>
+          <li><a href="{{ url('/home') }}" class="link"> Answer</a></li>
+          <li><a href="{{ url('/recent') }}" class="link"> Recent </a></li>
+          <li><a href="{{ url('/users') }}" class="link"> Users </a></li>
 
-        <li><a href="{{ url('/ask') }}" class="link1"> Ask </a></li>
-        <li><a href="{{ url('/recent') }}" class="link2"> Recent</a></li>
-        <li><a href="{{ url('/home') }}" class="link4"> Answer</a></li>
-        <li>
-            <a href="#" class="link3" onclick="event.preventDefault();
-                                                     document.getElementById('logOutForm').submit();">
-            Logout</a>
+          @if(Auth::check())
+             <li>
+                <a href=" {{ url('/logout') }}" onclick="event.preventDefault();
+                                                       document.getElementById('logOutForm').submit();" class="logOutLink">
+                   Logout <img src="{{ Storage::disk('s3')->url('icons/icon_' . Auth::user()->profile_image) }}" class="iconImg">
+                </a>
 
-               <form id="logOutForm" method="POST" action="{{ route('logout') }}" style="display: none;">
-
-                  {{ csrf_field() }}
-
-               </form>
-        </li>
-
-        @else
-
-          <li><a href="{{ url('/login') }}" class="link1"> Login</a></li>
-          <li><a href="{{ url('/ask') }}" class="link2"> Ask</a></li>
-          <li><a href="{{ url('/register') }}" class="link3"> Register</a></li>
-          <li><a href="{{ url('/recent') }}" class="link4"> Recent</a></li>
-
-        @endif
-
+                <form id="logOutForm" method="POST" action="{{ url('/logout') }}" style="display: none;">
+                   {{ csrf_field() }}
+                </form>
+             </li>
+          @else
+             <li><a href="{{ url('/login') }}" class="link"> Login</a></li>
+             <li><a href="{{ url('/register') }}"class="link"> Register</a></li>
+          @endif
       </ul>
     </div>
   </div>
