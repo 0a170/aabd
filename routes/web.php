@@ -32,7 +32,7 @@ Route::get('/user/{id}', 'UserController@userAnswers');
 //USER AJAX SEARCH
 //Route::get('/search', 'UserController@userSearch');
 
-Route::get('search', 'UserController@userSearch');
+//************REPLACE OR TURN BACK ON ***** Route::get('search', 'UserController@userSearch'); *******************
 
 
 //USER ANSWERING ROUTES
