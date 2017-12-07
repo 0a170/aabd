@@ -25,14 +25,18 @@ Auth::routes();
 //Route::get('/home', 'HomeController@index');
 
 //USER BROWSING ROUTES
-Route::get('/users', 'UserController@userList');
+//Route::get('/users', 'UserController@userList');
+
+Route::get('/users', function() {
+   return view('users');
+});
 
 Route::get('/user/{id}', 'UserController@userAnswers');
 
 //USER AJAX SEARCH
 //Route::get('/search', 'UserController@userSearch');
 
-//************REPLACE OR TURN BACK ON ***** Route::get('search', 'UserController@userSearch'); *******************
+Route::get('search', 'UserController@userSearch');
 
 
 //USER ANSWERING ROUTES
