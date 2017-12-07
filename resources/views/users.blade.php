@@ -20,7 +20,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 <script src="{{ asset('js/answer_ajax.js') }}"></script>
 <script src="{{ asset('js/user_search_ajax.js') }}"></script>
-<script src="{{ asset('js/test_search_ajax.js') }}"></script>
 </head>
 
 <body>
@@ -88,9 +87,11 @@
       <br>
       <br>
 
-      @foreach($users as $user)
+      <div class="loader"></div>
 
-         <a href="user/{{ $user->id }}" style="display: block;">
+      {{-- @foreach($users as $user) --}}
+
+         <!-- <a href="user/{{ $user->id }}" style="display: block;">
 
          <div class="userDiv">
 
@@ -110,9 +111,9 @@
 
          </a>
 
-         <br>
+         <br> -->
 
-      @endforeach
+      {{-- @endforeach --}}
 
       <br>
 

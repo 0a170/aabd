@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-   $('.itemName').select2({
+   /*$('.itemName').select2({
      placeholder: 'Search for a user',
      ajax: {
        //url: '/userSearch',
@@ -20,7 +20,9 @@ $(document).ready(function() {
        cache: true
      }
 
-   });
+  }); */
+
+  $(".loader").show();
 
 
    $("#goUser").on('click', function(){
