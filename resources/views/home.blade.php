@@ -77,7 +77,9 @@
 <div class="container-fluid">
 
    <div class="col-sm-12">
+
 <!-- ************************************ USER IMAGE AND STATS/MODALS************************************************** -->
+
       <div class="col-sm-4">
 
        <div class="divLeft">
@@ -193,24 +195,24 @@
 
       <div class="col-sm-4" style="padding-left: 20px;">
 
-       <div class="divRight">
+         <div class="divRight">
 
-         <a href="https://twitter.com/askaboredguy" class="twitter-follow-button" data-show-count="false" style="margin: 0 auto; display: block;">Follow @askaboredguy</a>
+            <a href="https://twitter.com/askaboredguy" class="twitter-follow-button" data-show-count="false" style="margin: 0 auto; display: block;">Follow @askaboredguy</a>
 
-         <div class="well">
-            <p>Text</p>
-            <p>Text</p>
-            <p>Text</p>
-            <p>Text</p>
+            <div class="well">
+               <p>Text</p>
+               <p>Text</p>
+               <p>Text</p>
+               <p>Text</p>
+            </div>
+            <div class="well">
+               <p>Text</p>
+               <p>Text</p>
+               <p>Text</p>
+               <p>Text</p>
+            </div>
+
          </div>
-         <div class="well">
-            <p>Text</p>
-            <p>Text</p>
-            <p>Text</p>
-            <p>Text</p>
-         </div>
-
-       </div>
 
       </div>
 <!-- ************************************************************************************************************ -->

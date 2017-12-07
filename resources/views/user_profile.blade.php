@@ -21,7 +21,7 @@
 
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -68,7 +68,7 @@
          <div class="divLeft">
 
             <div class="row">
-               <img src="{{ Storage::disk('s3')->url('profile_images/' . $user->profile_image) }}" class="profileImg">
+               <img src="{{ Storage::disk('s3')->url('profile_images/' . $user->profile_image) }}" class="profImg" style="border-radius: 50%;">
                <h2 style="color: #4981ce; padding: 7px;"> {{ $user->user_name }} </h2>
                <i class="fa fa-trophy fa-2x" style="color: gold;" aria-hidden="true"></i>
             </div>
@@ -86,7 +86,6 @@
 
       <div class="col-sm-4">
          <h1 style="color: #4981ce;"> {{ $user->user_name }}'s answers </h1>
-         <hr style="color: #4981ce;" class="ansDivider">
          <br>
          @if($user_answers->isEmpty())
             <div class="rateDiv">
