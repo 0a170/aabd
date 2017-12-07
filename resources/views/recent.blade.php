@@ -62,7 +62,9 @@
 </nav>
 
 
-<div class="container-fluid" style="float: none; margin: 0 auto;">
+<div class="container-fluid">
+
+   <div style="float: none; margin: 0 auto;" class="row">
 
                 <h1> Recent Answers </h1>
 
@@ -114,6 +116,7 @@
                   <br>
                  @endforeach
                 <br>
+   </div>
 </div>
 
 
