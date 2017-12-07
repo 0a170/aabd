@@ -64,7 +64,9 @@
 
 <div class="container-fluid">
 
-   <div style="float: none; margin: 0 auto;" class="row">
+   <div class="row">
+
+      <div style="float: none; margin: 0 auto;">
 
                 <h1> Recent Answers </h1>
 
@@ -116,9 +118,9 @@
                   <br>
                  @endforeach
                 <br>
+      </div>
    </div>
 </div>
-
 
 </body>
 
