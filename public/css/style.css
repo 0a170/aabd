@@ -125,6 +125,17 @@ Button[id*="downButton"]:hover {
 	padding: 10px;
 }
 
+.rateDiv {
+	margin: 0 auto;
+	border: 1px solid white;
+	border-color: white;
+	text-align: center;
+	background-color: white;
+	max-width: 400px;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	padding: 10px;
+}
+
 .ans_status {
    padding-top: 5px;
    visibility: hidden;
@@ -193,19 +204,6 @@ Button[id*="downButton"]:hover {
 
 }
 
-.rateDiv {
-	/*display: inline-block; */
-	border: 1px solid white;
-	border-color: white;
-	text-align: center;
-	background-color: white;
-   /*width: 90%; */
-	max-width: 400px;
-	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-	padding: 10px;
-	//padding-bottom: 10px;
-}
-
 .all_buttons {
    border:none !important;
    border-radius: 25px !important;
@@ -215,6 +213,7 @@ Button[id*="downButton"]:hover {
 }
 
 @media only screen and (min-width: 768px) {
+
    .logOutLink {
       display: inline;
       float: right;
@@ -241,6 +240,18 @@ Button[id*="downButton"]:hover {
       box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
       padding: 10px;
    }
+
+   .rateDiv {
+      margin: 0 auto;
+   	border: 1px solid white;
+   	border-color: white;
+   	text-align: center;
+   	background-color: white;
+   	max-width: 400px;
+   	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+   	padding: 10px;
+   }
+
 }
 
 #error_message {
