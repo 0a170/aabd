@@ -60,100 +60,104 @@
 </nav>
 
 <div class="container-fluid">
-   <img src="{{ Storage::disk('s3')->url('profile_images/' . $user->profile_image) }}" class="profileImg">
-   <!-- <div class="container" style="inline-block; text-align: center; background-color: #e4e4e4;"> -->
 
-   <div class="div1">
-   <div class="statsDiv">
-      <div class="row">
-         <div class="col-sm-3">
-            <h2 style="display: inline-block; text-align: center; background-color: #888888; color: white; padding: 7px;"> Name </h2>
+   <div class="col-sm-12">
+
+      <div class="col-sm-4">
+
+         <div class="divLeft">
+
+            <div class="row">
+               <img src="{{ Storage::disk('s3')->url('profile_images/' . $user->profile_image) }}" class="profileImg">
+               <h2 style="color: #4981ce; padding: 7px;"> {{ $user->user_name }} </h2>
+               <i class="fa fa-trophy fa-2x" style="color: gold;" aria-hidden="true"></i>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="row">
+               <p style="color: #4981ce;"> {{ $user->description }} </p>
+            </div>
+
          </div>
-         <div class="col-sm-9">
-            <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; padding: 7px;"> {{ $user->user_name }} </h2>
-         </div>
+      </div><br>
+
+<!-- ************************************* USER'S ANSWERS SECTION ********************************************** -->
+
+      <div class="col-sm-4">
+         <h1 style="color: #4981ce;"> {{ $user->user_name }}'s answers </h1>
+         <hr style="color: #4981ce;" class="ansDivider">
+         <br>
+         @if($user_answers->isEmpty())
+            <div class="rateDiv">
+               <p> {{ $user->user_name }} hasn't answered any questions yet </p>
+            </div> <br><br>
+         @else
+         @foreach($user_answers as $user_answer)
+            <div class="rateDiv">
+               <form id="{{ $user_answer->answer_id }}" class="rateForm" method="POST">
+                  <br>
+                  <input type="hidden" value="{{ $user_answer->user_id }}" name="UIDName">
+                  <input type="hidden" value="{{ $user_answer->answer_score }}" name="answerScoreName">
+                  <input type="hidden" value="{{ $user_answer->user_answer }}" name="answeredQuestionName">
+                  <input type="hidden" value="{{ $user_answer->up_votes }}" name="upVoteName">
+                  <input type="hidden" value="{{ $user_answer->down_votes }}" name="downVoteName">
+                  <input type="hidden" value="{{ $user_answer->answer_id }}">
+                  <input type="hidden" value="{{ csrf_token() }}">
+                  <p> Question: {{ $user_answer->answered_question }} </p>
+                  <br>
+                  <p> Answer: {{ $user_answer->user_answer }} </p>
+                  <br>
+                  <button type="button" id="voteButton" class="btn btn-default btn-lg" value="upButtonVal">
+                     <span class="glyphicon glyphicon-thumbs-up">
+                        {{ $user_answer->up_votes }}
+                     </span>
+                  </button>
+
+                  &nbsp &nbsp &nbsp &nbsp
+
+                  <button type="button" id="voteButton" class="btn btn-default btn-lg" value="downButtonVal">
+                     <span class="glyphicon glyphicon-thumbs-down">
+                        {{ $user_answer->down_votes }}
+                     </span>
+                  </button>
+                  <br>
+                  <br>
+                  <div id="rate_failure{{ $user_answer->answer_id }}" class="ajax_failure"></div>
+               </form>
+            </div>
+            <br>
+            <br>
+         @endforeach
+         @endif
+         <br>
       </div>
-      <br>
-      <hr class="divider">
-      <br>
-      <div class="row">
-         <div class="col-sm-3">
-	           <h2 style="display: inline-block; text-align: center; background-color: #888888; color: white; padding: 7px;" data-toggle="modal" data-target="#popupDesc"> Status </h3>
+
+<!-- ****************************************** ADS SECTION ************************************************** -->
+
+      <div class="col-sm-4" style="padding-left: 20px;">
+
+         <div class="divRight">
+
+            <a href="https://twitter.com/askaboredguy" class="twitter-follow-button" data-show-count="false" style="margin: 0 auto; display: block;">Follow @askaboredguy</a>
+
+            <div class="well">
+               <p>Text</p>
+               <p>Text</p>
+               <p>Text</p>
+               <p>Text</p>
+            </div>
+            <div class="well">
+               <p>Text</p>
+               <p>Text</p>
+               <p>Text</p>
+               <p>Text</p>
+            </div>
+
          </div>
-         <div class="col-sm-9">
-              <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; border-radius: 7px; padding: 7px;" data-toggle="modal" data-target="#popupDesc"> {{ $user->description }} </h3>
-         </div>
+
       </div>
-
-      <br>
-      <hr class="divider">
-      <br>
-
-      <div class="row">
-         <div class="col-sm-3">
-            <i class="fa fa-trophy fa-5x" style="color: gold;" aria-hidden="true"></i>
-         </div>
-         <div class="col-sm-9">
-            <h2 style="display: inline-block; text-align: center; background-color: white; color: #888888; padding: 7px;"> {{ $user->score}} </h2> <br>
-         </div>
-      </div>
-   </div>
-   </div>
-
-   <div>
-      <br><br>
-   </div>
-
-   <div class="div1">
-      <h1> {{ $user->user_name }}'s answers </h1>
-      <hr class="ansDivider">
-      <br>
-      @if($user_answers->isEmpty())
-         <div class="rateDiv">
-            <p> {{ $user->user_name }} hasn't answered any questions yet </p>
-         </div>
-         <br>
-         <br>
-      @else
-
-      @foreach($user_answers as $user_answer)
-         <div class="rateDiv">
-            <form id="{{ $user_answer->answer_id }}" class="rateForm" method="POST">
-               <br>
-               <input type="hidden" value="{{ $user_answer->user_id }}" name="UIDName">
-               <input type="hidden" value="{{ $user_answer->answer_score }}" name="answerScoreName">
-               <input type="hidden" value="{{ $user_answer->user_answer }}" name="answeredQuestionName">
-               <input type="hidden" value="{{ $user_answer->up_votes }}" name="upVoteName">
-               <input type="hidden" value="{{ $user_answer->down_votes }}" name="downVoteName">
-               <input type="hidden" value="{{ $user_answer->answer_id }}">
-               <input type="hidden" value="{{ csrf_token() }}">
-               <p> Question: {{ $user_answer->answered_question }} </p>
-               <br>
-               <p> Answer: {{ $user_answer->user_answer }} </p>
-               <br>
-               <button type="button" id="voteButton" class="btn btn-default btn-lg" value="upButtonVal">
-                  <span class="glyphicon glyphicon-thumbs-up">
-                     {{ $user_answer->up_votes }}
-                  </span>
-               </button>
-
-               &nbsp &nbsp &nbsp &nbsp
-
-               <button type="button" id="voteButton" class="btn btn-default btn-lg" value="downButtonVal">
-                  <span class="glyphicon glyphicon-thumbs-down">
-                     {{ $user_answer->down_votes }}
-                  </span>
-               </button>
-               <br>
-               <br>
-               <div id="rate_failure{{ $user_answer->answer_id }}" class="ajax_failure"></div>
-            </form>
-         </div>
-         <br>
-         <br>
-      @endforeach
-      @endif
-      <br>
+<!-- ********************************************************************************************************** -->
    </div>
 </div>
 </body>
