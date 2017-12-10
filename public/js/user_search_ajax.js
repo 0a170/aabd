@@ -61,7 +61,7 @@ $(document).ready(function() {
             data:{'user_input':userValue},
             success: function(response) {
                $(".loader").hide();
-               $(".response-table").html(response);
+               $(".response-table").append(response);
             }
 
 
