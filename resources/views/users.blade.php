@@ -77,7 +77,7 @@
          <select id="itemNameID" class="itemName form-control" name="itemName"></select>
 
          <input type="text" name="userN" class="userNClass"><br>
-         <table class="response-table"></table>
+         <table class="response-table" style="border: 1px solid black;"></table>
 
          <br>
          <div id="failedRequest" class="ajax_failure"></div>

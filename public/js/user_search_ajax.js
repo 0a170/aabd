@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+   $(".loader").hide();
    /*$('.itemName').select2({
      placeholder: 'Search for a user',
      ajax: {
@@ -57,8 +58,8 @@ $(document).ready(function() {
          $.ajax({
             type: "GET",
             url: 'search',
-            //dataType: 'json',
-            data:{'user_input': userValue},
+            data: user_input,
+            //data:{'user_input': userValue},
             success: function(response) {
                $(".response-table").empty();
                if(response == "") {
