@@ -22,10 +22,9 @@ $(document).ready(function() {
 
   }); */
 
-  $(".loader").show();
 
 
-   $("#goUser").on('click', function(){
+   /*$("#goUser").on('click', function(){
 
       var userValue = $("#itemNameID").val();
 
@@ -40,6 +39,35 @@ $(document).ready(function() {
          window.location.href = "http://aabd.herokuapp.com/user/" + userValue;
 
       }
+
+   }); */
+
+   $(".loader").show();
+
+   $(".userNClass").on('keyup', function() {
+
+      var minLength = 3;
+
+      var userInput = this;
+
+      var userValue = this.val();
+
+      if(userValue.length >= minLength) {
+
+         $.ajax({
+            type: "GET",
+            url: 'search',
+            dataType: 'json',
+            data:{'user_input':userValue},
+            success: function(response) {
+               $('.response-table').html(response);
+            }
+
+
+         });
+
+      }
+
 
    });
 

@@ -53,7 +53,7 @@ class UserController extends Controller {
 
    public function userSearch(Request $req) {
 
-      $data = [];
+      /*$data = [];
 
       if($req->has('q')){
           $search = $req->q;
@@ -63,7 +63,27 @@ class UserController extends Controller {
                 ->get();
       }
 
-      return response()->json($data);
+      return response()->json($data); */
+
+      //$data = [];
+      $output = "";
+
+      if($req->has('q')){
+          $search = $req->q;
+          $users = DB::table("users")
+                ->select("id","user_name")
+                ->where('user_name','LIKE',"%$search%")
+                ->get();
+
+          if($user) {
+             foreach ($users as $user) {
+                $output .= '<tr class="user-table" style="background: white; color: blue;">' . $user . '<tr><br>';
+             }
+          }
+      }
+
+      return $output;
+
 
    }
 

@@ -65,7 +65,6 @@
 
 
 <div class="container-fluid">
-   <div class="div1">
 
       <h1> Browse Users </h1>
 
@@ -76,6 +75,9 @@
          <!-- <h2>Laravel 5 - Dynamic autocomplete search using select2 JS Ajax</h2>
          <br/> -->
          <select id="itemNameID" class="itemName form-control" name="itemName"></select>
+
+         <input type="text" name="userN" class="userNClass"><br>
+         <table class="response-table"></table>
 
          <br>
          <div id="failedRequest" class="ajax_failure"></div>
@@ -88,6 +90,8 @@
       <br>
 
       <div class="loader"></div>
+
+
 
       {{-- @foreach($users as $user) --}}
 
@@ -117,7 +121,6 @@
 
       <br>
 
-   </div>
 </div>
 
 

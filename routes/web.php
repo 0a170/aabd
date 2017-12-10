@@ -34,7 +34,7 @@ Route::get('/users', function() {
 Route::get('/user/{id}', 'UserController@userAnswers');
 
 //USER AJAX SEARCH
-//Route::get('/search', 'UserController@userSearch');
+Route::get('/search', 'UserController@userSearch');
 
 Route::get('search', 'UserController@userSearch');
 
