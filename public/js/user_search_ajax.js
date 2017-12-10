@@ -42,8 +42,6 @@ $(document).ready(function() {
 
    }); */
 
-   $(".loader").show();
-
    $(".userNClass").on('keyup', function() {
 
       var minLength = 3;
