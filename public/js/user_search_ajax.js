@@ -60,7 +60,7 @@ $(document).ready(function() {
             //dataType: 'json',
             data:{'user_input': userValue},
             success: function(response) {
-
+               $(".response-table").empty();
                if(response == "") {
                   $(".loader").hide();
                   $(".response-table").append("Found Nothing");
