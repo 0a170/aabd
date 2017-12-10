@@ -62,6 +62,7 @@ $(document).ready(function() {
             success: function(response) {
 
                if(response == "") {
+                  $(".loader").hide();
                   $(".response-table").append("Found Nothing");
                }
                else
