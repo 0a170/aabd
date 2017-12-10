@@ -58,7 +58,7 @@ $(document).ready(function() {
          $.ajax({
             type: "GET",
             url: 'search',
-            data: user_input,
+            data: userValue,
             //data:{'user_input': userValue},
             success: function(response) {
                $(".response-table").empty();
