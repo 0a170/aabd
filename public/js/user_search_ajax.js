@@ -50,7 +50,7 @@ $(document).ready(function() {
 
       var userInput = this;
 
-      var userValue = this.val();
+      var userValue = userInput.val();
 
       if(userValue.length >= minLength) {
 
@@ -60,7 +60,8 @@ $(document).ready(function() {
             dataType: 'json',
             data:{'user_input':userValue},
             success: function(response) {
-               $('.response-table').html(response);
+               $(".loader").hide();
+               $(".response-table").html(response);
             }
 
 
