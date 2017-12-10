@@ -66,6 +66,7 @@ class UserController extends Controller {
       return response()->json($data); */
 
       //$data = [];
+
       $output = "";
 
       if($req->has('q')){
@@ -77,7 +78,7 @@ class UserController extends Controller {
 
           if($user) {
              foreach ($users as $user) {
-                $output .= '<tr class="user-table" style="background: white; color: blue;">' . $user . '<tr><br>';
+                $output .= '<tr class="user-table" style="background: white; color: blue;"><td>' . $user . '</td></tr>';
              }
           }
       }

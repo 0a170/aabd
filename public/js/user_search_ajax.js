@@ -63,7 +63,7 @@ $(document).ready(function() {
                $(".response-table").empty();
                if(response == "") {
                   $(".loader").hide();
-                  $(".response-table").append("Found Nothing");
+                  $(".response-table").append("<tr><td> Found Nothing </td></tr>");
                }
                else
                if(response != ""){
