@@ -95,29 +95,6 @@
 
 
 
-         <!-- <a href="user/{{ $user->id }}" style="display: block;">
-
-         <div class="userDiv">
-
-               <img src="{{ Storage::disk('s3')->url('thumbnails/thumbnail_' . $user->profile_image) }}" class="userThumb">
-
-               <div class="rightText">
-
-                  <p class="user_info"> Name: {{ $user->user_name }} </p>
-
-                  <p class="user_info"> Description: {{ $user->description }} </p>
-
-                  <p class="user_info"> Score: {{ $user->score }} </p>
-
-               </div>
-
-         </div>
-
-         </a>
-
-         <br> -->
-
-      
       <br>
 
 </div>
