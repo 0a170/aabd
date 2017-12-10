@@ -93,7 +93,7 @@
 
 
 
-      {{-- @foreach($users as $user) --}}
+
 
          <!-- <a href="user/{{ $user->id }}" style="display: block;">
 
@@ -117,8 +117,7 @@
 
          <br> -->
 
-      {{-- @endforeach --}}
-
+      
       <br>
 
 </div>
