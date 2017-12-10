@@ -60,8 +60,15 @@ $(document).ready(function() {
             //dataType: 'json',
             data:{'user_input': userValue},
             success: function(response) {
-               $(".loader").hide();
-               $(".response-table").append(response);
+
+               if(response == "") {
+                  $(".response-table").append("Found Nothing");
+               }
+               else
+               if(response != ""){
+                  $(".loader").hide();
+                  $(".response-table").append(response);
+               }
             }
 
 
