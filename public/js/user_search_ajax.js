@@ -54,11 +54,13 @@ $(document).ready(function() {
 
       if(userValue.length >= minLength) {
 
+         $(".loader").show();
+
          $.ajax({
             type: "GET",
             url: 'search',
             //dataType: 'json',
-            data:{'user_input':userValue},
+            data:{'user_input': userValue},
             success: function(response) {
                $(".loader").hide();
                $(".response-table").append(response);
