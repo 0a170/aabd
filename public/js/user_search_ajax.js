@@ -64,7 +64,7 @@ $(document).ready(function() {
                $(".response-table").empty();
                if(response == "") {
                   $(".loader").hide();
-                  $(".response-table").append("<tr><td> Found Nothing </td></tr>");
+                  $(".response-table").append("<tr class='user-table' style='background: white; color: blue;><td> Found Nothing </td></tr>");
                }
                else
                if(response != ""){

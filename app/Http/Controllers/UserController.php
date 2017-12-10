@@ -77,8 +77,8 @@ class UserController extends Controller {
                 ->get();
 
           if($user) {
-             foreach ($users as $user) {
-                $output .= '<tr class="user-table" style="background: white; color: blue;"><td>' . $user . '</td></tr>';
+             foreach($users as key => $user)
+                $output .= '<tr class="user-table" style="background: white; color: blue;"><td>' . $user->user_name . '</td></tr>';
              }
           }
       }
