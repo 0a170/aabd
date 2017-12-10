@@ -50,7 +50,7 @@ $(document).ready(function() {
 
       var userInput = this;
 
-      var userValue = userInput.val();
+      var userValue = userInput.value;
 
       if(userValue.length >= minLength) {
 
