@@ -57,7 +57,7 @@ $(document).ready(function() {
          $.ajax({
             type: "GET",
             url: 'search',
-            dataType: 'json',
+            //dataType: 'json',
             data:{'user_input':userValue},
             success: function(response) {
                $(".loader").hide();
