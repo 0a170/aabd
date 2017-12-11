@@ -20,6 +20,15 @@ p {
 
 a {
    font-family: "Roboto", sans-serif;
+   display: block;
+}
+
+a:hover {
+   text-decoration: none;
+}
+
+td:hover{
+   
 }
 
 h2 {
@@ -43,6 +52,17 @@ Button[id*="upButton"]:hover {
 Button[id*="downButton"]:hover {
 	background-color: red;
 	color: white;
+}
+
+.response-table {
+   height: 5%;
+   width: 100%;
+   border: 1px solid black;
+}
+
+.user-row {
+   background: white;
+   color: red;
 }
 
 .loader {

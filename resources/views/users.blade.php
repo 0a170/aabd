@@ -74,15 +74,14 @@
 
          <!-- <h2>Laravel 5 - Dynamic autocomplete search using select2 JS Ajax</h2>
          <br/> -->
-         <select id="itemNameID" class="itemName form-control" name="itemName"></select>
 
-         <input type="text" name="userN" class="userNClass"><br>
-         <table class="response-table" style="border: 1px solid black;"></table>
+         <input type="text" style="width: 100%; text-align: center;" name="userN" class="userNClass" placeholder="Search User"><br>
+         <table class="response-table"></table>
 
          <br>
          <div id="failedRequest" class="ajax_failure"></div>
          <br>
-         <button id="goUser" class="btn btn-primary"> Go </button>
+         <!-- <button id="goUser" class="btn btn-primary"> Go </button> -->
 
       </div>
 

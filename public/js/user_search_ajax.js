@@ -51,6 +51,10 @@ $(document).ready(function() {
 
       var userValue = userInput.value;
 
+      if(userValue.length < minLength) {
+         $(".response-table").html("");
+      }
+
       if(userValue.length >= minLength) {
 
          $(".loader").show();
@@ -58,18 +62,18 @@ $(document).ready(function() {
          $.ajax({
             type: "GET",
             url: 'search',
-            data: userValue,
-            //data:{'user_input': userValue},
+            //data: userValue,
+            data:{'user_input': userValue},
             success: function(response) {
                $(".response-table").empty();
                if(response == "") {
                   $(".loader").hide();
-                  $(".response-table").append("<tr class='user-table' style='background: white; color: blue;><td> Found Nothing </td></tr>");
+                  $(".response-table").html('<tr class="user-row"><td> Found Nothing </td></tr>');
                }
                else
                if(response != ""){
                   $(".loader").hide();
-                  $(".response-table").append(response);
+                  $(".response-table").html(response);
                }
             }
 

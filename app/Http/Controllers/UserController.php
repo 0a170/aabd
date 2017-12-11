@@ -69,21 +69,21 @@ class UserController extends Controller {
 
       $output = "";
 
-      if($req->has('q')){
-          $search = $req->q;
+      //if($req->has('q')){
+          //$search = $req->q;
           $users = DB::table("users")
                 ->select("id","user_name")
-                ->where('user_name','LIKE',"%$search%")
+                //->where('user_name','LIKE',"%$search%")
+                ->where('user_name', 'LIKE', '%' . $req->user_input . '%')
                 ->get();
 
-          if($user) {
-             foreach($users as key => $user)
-                $output .= '<tr class="user-table" style="background: white; color: blue;"><td>' . $user->user_name . '</td></tr>';
+          if($users) {
+             foreach($users as $user)
+                $output .= '<tr class="user-table" style="border: 1px solid black; background: white; color: blue;"><td><a href="user/' . $user->id . '"><img src="{{ Storage::disk(\'s3\')->url(\'icons/icon_\' . Auth::user()->profile_image) }}" style="float: left;">' . $user->user_name . '</a></td></tr>';
              }
-          }
-      }
+      //}
 
-      return $output;
+      return Response($output);
 
 
    }

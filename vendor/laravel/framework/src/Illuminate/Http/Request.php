@@ -252,7 +252,7 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
     }
 
     /**
-     * Returns the client IP address.
+     * Get the client IP address.
      *
      * @return string
      */
@@ -260,30 +260,25 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
     {
         return $this->getClientIp();
     }
-	
-	/* Returns IP address of client when request is sent through load balancing */
-	public function getIp(){
-    foreach (array('HTTP_CLIENT_IP', 'HTTP_X_FORWARDED_FOR', 'HTTP_X_FORWARDED', 'HTTP_X_CLUSTER_CLIENT_IP', 'HTTP_FORWARDED_FOR', 'HTTP_FORWARDED', 'REMOTE_ADDR') as $key){
-        if (array_key_exists($key, $_SERVER) === true){
-            foreach (explode(',', $_SERVER[$key]) as $ip){
-                $ip = trim($ip); // just to be safe
-                if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) !== false){
-                    return $ip;
-                }
-            }
-        }
-    }
-	}
-	
-	
+
     /**
-     * Returns the client IP addresses.
+     * Get the client IP addresses.
      *
      * @return array
      */
     public function ips()
     {
         return $this->getClientIps();
+    }
+
+    /**
+     * Get the client user agent.
+     *
+     * @return string
+     */
+    public function userAgent()
+    {
+        return $this->headers->get('User-Agent');
     }
 
     /**
