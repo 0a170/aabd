@@ -55,6 +55,19 @@ return [
             'engine' => null,
         ],
 
+        'testing' => [
+           'driver' => 'pgsql',
+           'host' => env('DB_HOST', '127.0.0.1'),
+           'port' => env('DB_PORT', '3306'),
+           'database' => env('DB_DATABASE', 'aabd'),
+           'username' => env('DB_USERNAME', 'postgres'),
+           'password' => env('DB_PASSWORD', 'Argosy21'),
+           'charset' => 'utf8',
+           'prefix' => '',
+           'schema' => 'public',
+           'sslmode' => 'prefer',
+        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', 'ec2-23-23-225-12.compute-1.amazonaws.com'),
