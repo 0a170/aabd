@@ -16,7 +16,7 @@
 
 <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js/rate_ajax.js') }}"></script>
+<script src="{{ secure_asset('js/rate_ajax.js') }}"></script>
 
 
 </head>
@@ -102,7 +102,7 @@
                            </span>
                         </button>
 
-                        &nbsp 
+                        &nbsp
 
                         <button type="button" id="voteButton" class="btn btn-default btn-lg voteButtonClass" value="downButtonVal">
                            <span class="glyphicon glyphicon-thumbs-down">
