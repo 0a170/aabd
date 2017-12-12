@@ -102,7 +102,7 @@
                            </span>
                         </button>
 
-
+                        &nbsp 
 
                         <button type="button" id="voteButton" class="btn btn-default btn-lg voteButtonClass" value="downButtonVal">
                            <span class="glyphicon glyphicon-thumbs-down">
