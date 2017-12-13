@@ -97,7 +97,7 @@
                         <p> User Answer: {{ $answer->user_answer }} </p>
                         <br>
 
-                        <button type="button" id="voteButton" style="class="btn btn-default btn-lg voteButtonClass" value="upButtonVal">
+                        <button type="button" id="voteButton" class="btn btn-default btn-lg voteButtonClass" value="upButtonVal">
                            <span class="glyphicon glyphicon-thumbs-up">
                               {{ $answer->up_votes }}
                            </span>
