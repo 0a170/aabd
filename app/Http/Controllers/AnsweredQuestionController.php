@@ -103,7 +103,8 @@ class AnsweredQuestionController extends Controller
       $user_id = $req['UIDName'];
       $answer = $req['answeredQuestionName'];
       $answer_id = (int)$req['AIDName'];
-      $ip_add = $req->getIp();
+      //$ip_add = $req->getIp();
+      $ip_add = request()->ip();
       //$ip_add = \Request::getClientIp();
 
       //$vote_exists = Vote::where('answer_id', '=', $answer_id)->where('ip_address', '=', $ip_add)->first();
