@@ -29,6 +29,8 @@ abstract class AbstractSurrogateFragmentRenderer extends RoutableFragmentRendere
     private $signer;
 
     /**
+     * Constructor.
+     *
      * The "fallback" strategy when surrogate is not available should always be an
      * instance of InlineFragmentRenderer.
      *
@@ -98,8 +100,8 @@ abstract class AbstractSurrogateFragmentRenderer extends RoutableFragmentRendere
     private function containsNonScalars(array $values)
     {
         foreach ($values as $value) {
-            if (is_array($value)) {
-                return $this->containsNonScalars($value);
+            if (is_array($value) && $this->containsNonScalars($value)) {
+                return true;
             } elseif (!is_scalar($value) && null !== $value) {
                 return true;
             }

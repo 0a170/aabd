@@ -454,35 +454,27 @@ class Arr
     }
 
     /**
-     * Get one or a specified number of random values from an array.
+     * Get a random value from an array.
      *
      * @param  array  $array
-     * @param  int|null  $number
+     * @param  int|null  $amount
      * @return mixed
      *
      * @throws \InvalidArgumentException
      */
-    public static function random($array, $number = null)
+    public static function random($array, $amount = null)
     {
-        $requested = is_null($number) ? 1 : $number;
-
-        $count = count($array);
-
-        if ($requested > $count) {
+        if (($requested = $amount ?: 1) > ($count = count($array))) {
             throw new InvalidArgumentException(
-                "You requested {$requested} items, but there are only {$count} items available."
+                "You requested {$requested} items, but there are only {$count} items in the array."
             );
         }
 
-        if (is_null($number)) {
+        if (is_null($amount)) {
             return $array[array_rand($array)];
         }
 
-        if ((int) $number === 0) {
-            return [];
-        }
-
-        $keys = array_rand($array, $number);
+        $keys = array_rand($array, $amount);
 
         $results = [];
 

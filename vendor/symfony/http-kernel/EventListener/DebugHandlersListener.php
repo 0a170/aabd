@@ -60,6 +60,8 @@ class DebugHandlersListener implements EventSubscriberInterface
 
     /**
      * Configures the error handler.
+     *
+     * @param Event|null $event The triggering event
      */
     public function configure(Event $event = null)
     {
@@ -86,7 +88,7 @@ class DebugHandlersListener implements EventSubscriberInterface
                         $handler->screamAt($levels);
                     }
                     if ($this->scope) {
-                        $handler->scopeAt($levels & ~E_USER_DEPRECATED & ~E_DEPRECATED);
+                        $handler->scopeAt($this->levels);
                     } else {
                         $handler->scopeAt(0, true);
                     }

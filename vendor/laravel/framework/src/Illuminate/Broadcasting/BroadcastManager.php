@@ -14,9 +14,6 @@ use Illuminate\Broadcasting\Broadcasters\RedisBroadcaster;
 use Illuminate\Broadcasting\Broadcasters\PusherBroadcaster;
 use Illuminate\Contracts\Broadcasting\Factory as FactoryContract;
 
-/**
- * @mixin \Illuminate\Contracts\Broadcasting\Broadcaster
- */
 class BroadcastManager implements FactoryContract
 {
     /**

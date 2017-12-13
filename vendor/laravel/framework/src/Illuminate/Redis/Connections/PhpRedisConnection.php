@@ -4,13 +4,10 @@ namespace Illuminate\Redis\Connections;
 
 use Closure;
 
-/**
- * @mixin \Redis
- */
 class PhpRedisConnection extends Connection
 {
     /**
-     * Create a new PhpRedis connection.
+     * Create a new Predis connection.
      *
      * @param  \Redis  $client
      * @return void

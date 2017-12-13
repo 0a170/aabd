@@ -44,7 +44,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class Shell extends Application
 {
-    const VERSION = 'v0.8.16';
+    const VERSION = 'v0.8.9';
 
     const PROMPT      = '>>> ';
     const BUFF_PROMPT = '... ';
@@ -65,8 +65,6 @@ class Shell extends Application
     private $outputWantsNewline = false;
     private $completion;
     private $tabCompletionMatchers = array();
-    private $stdoutBuffer;
-    private $prompt;
 
     /**
      * Create a new Psy Shell.
@@ -75,14 +73,13 @@ class Shell extends Application
      */
     public function __construct(Configuration $config = null)
     {
-        $this->config       = $config ?: new Configuration();
-        $this->cleaner      = $this->config->getCodeCleaner();
-        $this->loop         = $this->config->getLoop();
-        $this->context      = new Context();
-        $this->includes     = array();
-        $this->readline     = $this->config->getReadline();
-        $this->inputBuffer  = array();
-        $this->stdoutBuffer = '';
+        $this->config   = $config ?: new Configuration();
+        $this->cleaner  = $this->config->getCodeCleaner();
+        $this->loop     = $this->config->getLoop();
+        $this->context  = new Context();
+        $this->includes = array();
+        $this->readline = $this->config->getReadline();
+        $this->inputBuffer = array();
 
         parent::__construct('Psy Shell', self::VERSION);
 
@@ -182,7 +179,6 @@ class Shell extends Application
             new Command\TraceCommand(),
             new Command\BufferCommand(),
             new Command\ClearCommand(),
-            new Command\EditCommand($this->config->getRuntimeDir()),
             // new Command\PsyVersionCommand(),
             $sudo,
             $hist,
@@ -207,9 +203,6 @@ class Shell extends Application
                 new Matcher\ClassAttributesMatcher(),
                 new Matcher\ObjectMethodsMatcher(),
                 new Matcher\ObjectAttributesMatcher(),
-                new Matcher\ClassMethodDefaultParametersMatcher(),
-                new Matcher\ObjectMethodDefaultParametersMatcher(),
-                new Matcher\FunctionDefaultParametersMatcher(),
             );
         }
 
@@ -339,7 +332,6 @@ class Shell extends Application
             if ($this->hasCommand($input)) {
                 $this->readline->addHistory($input);
                 $this->runCommand($input);
-
                 continue;
             }
 
@@ -532,7 +524,6 @@ class Shell extends Application
         } catch (\Exception $e) {
             // Add failed code blocks to the readline history.
             $this->addCodeBufferToHistory();
-
             throw $e;
         }
     }
@@ -673,22 +664,12 @@ class Shell extends Application
         if ($out !== '' && !$isCleaning) {
             $this->output->write($out, false, ShellOutput::OUTPUT_RAW);
             $this->outputWantsNewline = (substr($out, -1) !== "\n");
-            $this->stdoutBuffer .= $out;
         }
 
         // Output buffering is done!
-        if ($phase & PHP_OUTPUT_HANDLER_END) {
-            // Write an extra newline if stdout didn't end with one
-            if ($this->outputWantsNewline) {
-                $this->output->writeln(sprintf('<aside>%s</aside>', $this->config->useUnicode() ? '⏎' : '\\n'));
-                $this->outputWantsNewline = false;
-            }
-
-            // Save the stdout buffer as $__out
-            if ($this->stdoutBuffer !== '') {
-                $this->context->setLastStdout($this->stdoutBuffer);
-                $this->stdoutBuffer = '';
-            }
+        if ($this->outputWantsNewline && $phase & PHP_OUTPUT_HANDLER_END) {
+            $this->output->writeln(sprintf('<aside>%s</aside>', $this->config->useUnicode() ? '⏎' : '\\n'));
+            $this->outputWantsNewline = false;
         }
     }
 
@@ -746,11 +727,7 @@ class Shell extends Application
     {
         $message = $e->getMessage();
         if (!$e instanceof PsyException) {
-            if ($message === '') {
-                $message = get_class($e);
-            } else {
-                $message = sprintf('%s with message \'%s\'', get_class($e), $message);
-            }
+            $message = sprintf('%s with message \'%s\'', get_class($e), $message);
         }
 
         $severity = ($e instanceof \ErrorException) ? $this->getSeverity($e) : 'error';
@@ -877,11 +854,7 @@ class Shell extends Application
      */
     protected function getPrompt()
     {
-        if ($this->hasCode()) {
-            return static::BUFF_PROMPT;
-        }
-
-        return $this->config->getPrompt() ?: static::PROMPT;
+        return $this->hasCode() ? static::BUFF_PROMPT : static::PROMPT;
     }
 
     /**
@@ -906,17 +879,7 @@ class Shell extends Application
             return $line;
         }
 
-        if ($bracketedPaste = $this->config->useBracketedPaste()) {
-            printf("\e[?2004h"); // Enable bracketed paste
-        }
-
-        $line = $this->readline->readline($this->getPrompt());
-
-        if ($bracketedPaste) {
-            printf("\e[?2004l"); // ... and disable it again
-        }
-
-        return $line;
+        return $this->readline->readline($this->getPrompt());
     }
 
     /**
@@ -1013,7 +976,7 @@ class Shell extends Application
         try {
             $client = $this->config->getChecker();
             if (!$client->isLatest()) {
-                $this->output->writeln(sprintf('New version is available (current: %s, latest: %s)', self::VERSION, $client->getLatest()));
+                $this->output->writeln(sprintf('New version is available (current: %s, latest: %s)',self::VERSION, $client->getLatest()));
             }
         } catch (\InvalidArgumentException $e) {
             $this->output->writeln($e->getMessage());

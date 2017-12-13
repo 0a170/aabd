@@ -23,7 +23,7 @@ class Schedule
     protected $mutex;
 
     /**
-     * Create a new schedule instance.
+     * Create a new event instance.
      *
      * @return void
      */

@@ -87,6 +87,8 @@ class Process implements \IteratorAggregate
      * Exit codes translation table.
      *
      * User-defined errors must use exit codes in the 64-113 range.
+     *
+     * @var array
      */
     public static $exitCodes = array(
         0 => 'OK',
@@ -132,6 +134,8 @@ class Process implements \IteratorAggregate
     );
 
     /**
+     * Constructor.
+     *
      * @param string|array   $commandline The command line to run
      * @param string|null    $cwd         The working directory or null to use the working dir of the current PHP process
      * @param array|null     $env         The environment variables or null to use the same environment as the current PHP process
@@ -328,14 +332,6 @@ class Process implements \IteratorAggregate
             // Workaround for the bug, when PTS functionality is enabled.
             // @see : https://bugs.php.net/69442
             $ptsWorkaround = fopen(__FILE__, 'r');
-        }
-
-        if (!is_dir($this->cwd)) {
-            if ('\\' === DIRECTORY_SEPARATOR) {
-                throw new RuntimeException('The provided cwd does not exist.');
-            }
-
-            @trigger_error('The provided cwd does not exist. Command is currently ran against getcwd(). This behavior is deprecated since version 3.4 and will be removed in 4.0.', E_USER_DEPRECATED);
         }
 
         $this->process = proc_open($commandline, $descriptors, $this->processPipes->pipes, $this->cwd, $env, $this->options);
@@ -835,7 +831,7 @@ class Process implements \IteratorAggregate
      */
     public function isStarted()
     {
-        return self::STATUS_READY != $this->status;
+        return $this->status != self::STATUS_READY;
     }
 
     /**
@@ -847,7 +843,7 @@ class Process implements \IteratorAggregate
     {
         $this->updateStatus(false);
 
-        return self::STATUS_TERMINATED == $this->status;
+        return $this->status == self::STATUS_TERMINATED;
     }
 
     /**
@@ -1326,7 +1322,7 @@ class Process implements \IteratorAggregate
      */
     public function checkTimeout()
     {
-        if (self::STATUS_STARTED !== $this->status) {
+        if ($this->status !== self::STATUS_STARTED) {
             return;
         }
 
@@ -1517,7 +1513,7 @@ class Process implements \IteratorAggregate
         $callback = $this->callback;
         foreach ($result as $type => $data) {
             if (3 !== $type) {
-                $callback(self::STDOUT === $type ? self::OUT : self::ERR, $data);
+                $callback($type === self::STDOUT ? self::OUT : self::ERR, $data);
             } elseif (!isset($this->fallbackStatus['signaled'])) {
                 $this->fallbackStatus['exitcode'] = (int) $data;
             }
@@ -1688,7 +1684,7 @@ class Process implements \IteratorAggregate
      *
      * @param string $functionName The function name that was called
      *
-     * @throws LogicException if the process has not run
+     * @throws LogicException If the process has not run.
      */
     private function requireProcessIsStarted($functionName)
     {
@@ -1702,7 +1698,7 @@ class Process implements \IteratorAggregate
      *
      * @param string $functionName The function name that was called
      *
-     * @throws LogicException if the process is not yet terminated
+     * @throws LogicException If the process is not yet terminated.
      */
     private function requireProcessIsTerminated($functionName)
     {

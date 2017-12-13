@@ -72,7 +72,7 @@ class Image extends File
      *
      * @var array
      */
-    protected $backups = [];
+    protected $backups = array();
 
     /**
      * Last image encoding result

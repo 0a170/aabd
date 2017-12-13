@@ -13,7 +13,7 @@ namespace Psy\Test\Formatter;
 
 use Psy\Formatter\CodeFormatter;
 
-class CodeFormatterTest extends \PHPUnit\Framework\TestCase
+class CodeFormatterTest extends \PHPUnit_Framework_TestCase
 {
     private function ignoreThisMethod($arg)
     {
@@ -56,10 +56,6 @@ EOS;
 
     public function filenames()
     {
-        if (defined('HHVM_VERSION')) {
-            $this->markTestSkipped('We have issues with PHPUnit mocks on HHVM.');
-        }
-
         return array(array(null), array('not a file'));
     }
 }

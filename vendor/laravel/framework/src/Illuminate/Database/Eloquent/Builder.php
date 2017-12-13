@@ -217,7 +217,7 @@ class Builder
     /**
      * Add an "or where" clause to the query.
      *
-     * @param  string|array|\Closure  $column
+     * @param  string|\Closure  $column
      * @param  string  $operator
      * @param  mixed  $value
      * @return \Illuminate\Database\Eloquent\Builder|static
@@ -933,7 +933,7 @@ class Builder
 
         $result = $scope(...array_values($parameters)) ?: $this;
 
-        if (count((array) $query->wheres) > $originalWhereCount) {
+        if (count($query->wheres) > $originalWhereCount) {
             $this->addNewWheresWithinGroup($query, $originalWhereCount);
         }
 

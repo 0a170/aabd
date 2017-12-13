@@ -10,6 +10,7 @@ use ArrayIterator;
 use CachingIterator;
 use JsonSerializable;
 use IteratorAggregate;
+use InvalidArgumentException;
 use Illuminate\Support\Traits\Macroable;
 use Illuminate\Contracts\Support\Jsonable;
 use Illuminate\Contracts\Support\Arrayable;
@@ -58,23 +59,23 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
-     * Create a new collection by invoking the callback a given number of times.
+     * Create a new collection by invoking the callback a given amount of times.
      *
-     * @param  int  $number
+     * @param  int  $amount
      * @param  callable  $callback
      * @return static
      */
-    public static function times($number, callable $callback = null)
+    public static function times($amount, callable $callback = null)
     {
-        if ($number < 1) {
+        if ($amount < 1) {
             return new static;
         }
 
         if (is_null($callback)) {
-            return new static(range(1, $number));
+            return new static(range(1, $amount));
         }
 
-        return (new static(range(1, $number)))->map($callback);
+        return (new static(range(1, $amount)))->map($callback);
     }
 
     /**
@@ -1069,20 +1070,26 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
-     * Get one or a specified number of items randomly from the collection.
+     * Get one or more items randomly from the collection.
      *
-     * @param  int|null  $number
+     * @param  int|null  $amount
      * @return mixed
      *
      * @throws \InvalidArgumentException
      */
-    public function random($number = null)
+    public function random($amount = null)
     {
-        if (is_null($number)) {
+        if (($requested = $amount ?: 1) > ($count = $this->count())) {
+            throw new InvalidArgumentException(
+                "You requested {$requested} items, but there are only {$count} items in the collection."
+            );
+        }
+
+        if (is_null($amount)) {
             return Arr::random($this->items);
         }
 
-        return new static(Arr::random($this->items, $number));
+        return new static(Arr::random($this->items, $amount));
     }
 
     /**

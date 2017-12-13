@@ -10,9 +10,6 @@ use Illuminate\Support\Traits\Macroable;
 use PHPUnit\Framework\Assert as PHPUnit;
 use Symfony\Component\HttpFoundation\Cookie;
 
-/**
- * @mixin \Illuminate\Http\Response
- */
 class TestResponse
 {
     use Macroable {

@@ -148,12 +148,12 @@ class Color extends \Intervention\Image\AbstractColor
      */
     public function getArray()
     {
-        return [
+        return array(
             $this->getRedValue(),
             $this->getGreenValue(),
             $this->getBlueValue(),
             $this->getAlphaValue()
-        ];
+        );
     }
 
     /**
@@ -183,12 +183,12 @@ class Color extends \Intervention\Image\AbstractColor
         $color_tolerance = round($tolerance * 2.55);
         $alpha_tolerance = round($tolerance);
 
-        $delta = [
+        $delta = array(
             'r' => abs($color->getRedValue() - $this->getRedValue()),
             'g' => abs($color->getGreenValue() - $this->getGreenValue()),
             'b' => abs($color->getBlueValue() - $this->getBlueValue()),
             'a' => abs($color->getAlphaValue() - $this->getAlphaValue())
-        ];
+        );
 
         return (
             $delta['r'] > $color_tolerance or

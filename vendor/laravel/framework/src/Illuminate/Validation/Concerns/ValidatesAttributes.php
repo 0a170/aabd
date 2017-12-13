@@ -358,9 +358,7 @@ trait ValidatesAttributes
             return false;
         }
 
-        $format = $parameters[0] == 'Y-m' ? '!Y-m' : $parameters[0];
-
-        $date = DateTime::createFromFormat($format, $value);
+        $date = DateTime::createFromFormat($parameters[0], $value);
 
         return $date && $date->format($parameters[0]) == $value;
     }
@@ -919,10 +917,6 @@ trait ValidatesAttributes
             return false;
         }
 
-        if ($this->shouldBlockPhpUpload($value, $parameters)) {
-            return false;
-        }
-
         return $value->getPath() != '' && in_array($value->guessExtension(), $parameters);
     }
 
@@ -940,31 +934,9 @@ trait ValidatesAttributes
             return false;
         }
 
-        if ($this->shouldBlockPhpUpload($value, $parameters)) {
-            return false;
-        }
-
         return $value->getPath() != '' &&
                 (in_array($value->getMimeType(), $parameters) ||
                  in_array(explode('/', $value->getMimeType())[0].'/*', $parameters));
-    }
-
-    /**
-     * Check if PHP uploads are explicitly allowed.
-     *
-     * @param  mixed  $value
-     * @param  array  $parameters
-     * @return bool
-     */
-    protected function shouldBlockPhpUpload($value, $parameters)
-    {
-        if (in_array('php', $parameters)) {
-            return false;
-        }
-
-        return ($value instanceof UploadedFile)
-           ? strtolower($value->getClientOriginalExtension()) === 'php'
-           : strtolower($value->getExtension()) === 'php';
     }
 
     /**
