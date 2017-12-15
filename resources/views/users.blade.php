@@ -70,7 +70,7 @@
 
    <br>
 
-   <row>
+   <div class="row">
 
       <div class="searchDiv">
 
@@ -98,7 +98,7 @@
 
       <br>
 
-   </row>
+   </div>
 
 </div>
 
