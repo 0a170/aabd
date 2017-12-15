@@ -28,7 +28,7 @@ a:hover {
 }
 
 td:hover{
-   
+
 }
 
 h2 {
@@ -210,7 +210,6 @@ Button[id*="downButton"]:hover {
 }
 
 .searchDiv {
-	display: inline-block;
 	text-align: center;
 	width: 90%;
 	max-width: 400px;
