@@ -114,7 +114,7 @@ class UserController extends Controller {
       Storage::disk('s3')->put('profile_images/' . $username, $file_avatar->__toString());
 
       // CREATE AND STORE THUMBNAIL
-      $file_thumbnail = Image::make($req->file('userImage'))->resize(100, 100);
+      $file_thumbnail = Image::make($req->file('userImage'))->resize(50, 50);
 
       $file_thumbnail = $file_thumbnail->stream();
 
