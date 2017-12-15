@@ -79,7 +79,7 @@ class UserController extends Controller {
 
           if($users) {
              foreach($users as $user)
-                $output .= '<tr class="user-table" style="border: 1px solid black; background: white; color: blue;"><td><a href="user/' . $user->id . '"><img src="{{ Storage::disk(\'s3\')->url(\'icons/icon_' . $user->profile_image . '\') }}" style="float: left;">' . $user->user_name . '</a></td></tr>';
+                $output .= '<tr class="user-table" style="border: 1px solid black; background: white; color: blue;"><td><a href="user/' . $user->id . '"><img src="{!! Storage::disk(\'s3\')->url(\'icons/icon_' . $user->profile_image . '\') !!}" style="float: left;">' . $user->user_name . '</a></td></tr>';
              }
       //}
 
