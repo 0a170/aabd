@@ -72,7 +72,7 @@ class UserController extends Controller {
       //if($req->has('q')){
           //$search = $req->q;
           $users = DB::table("users")
-                ->select("id","user_name")
+                ->select("id","user_name", "profile_image")
                 //->where('user_name','LIKE',"%$search%")
                 ->where('user_name', 'LIKE', '%' . $req->user_input . '%')
                 ->get();
