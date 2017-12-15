@@ -80,8 +80,8 @@ class UserController extends Controller {
 
           if($users) {
              foreach($users as $user)
-                $s3String = Storage::disk('s3')->url('icons/icon_' . $user->profile_image);
-                $output .= '<tr class="user-table" style="border: 1px solid black; background: white; color: blue;"><td><a href="user/' . $user->id . '"><img src="{{' . $s3String . '}}" style="float: left;">' . $user->user_name . '</a></td></tr>';
+                $s3String = '{{' . Storage::disk('s3')->url('icons/icon_' . $user->profile_image) . '}}';
+                $output .= '<tr class="user-table" style="border: 1px solid black; background: white; color: blue;"><td><a href="user/' . $user->id . '"><img src="' . $s3String . '" style="float: left;">' . $user->user_name . '</a></td></tr>';
              }
       //}
 
