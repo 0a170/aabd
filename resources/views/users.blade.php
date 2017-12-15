@@ -66,9 +66,11 @@
 
 <div class="container-fluid">
 
-      <h1> Browse Users </h1>
+   <h1> Browse Users </h1>
 
-      <br>
+   <br>
+
+   <row>
 
       <div class="searchDiv">
 
@@ -95,6 +97,8 @@
 <!-- **********************************************************-->
 
       <br>
+
+   </row>
 
 </div>
 
