@@ -33,7 +33,8 @@ class AnsweredQuestionController extends Controller
 
       $answers = AnsweredQuestion::where('answered', 1)
                                         ->orderBy('updated_at', 'desc')
-                                        ->get();
+                                        //->get();
+                                        ->paginate(10);
 
       return view('recent', ['answers' => $answers]);
 

@@ -119,6 +119,7 @@
                   <br>
                  @endforeach
                 <br>
+                <div style="margin: 0 auto;"> {!! $questions->render() !!} </div>
       </div>
    </div>
 </div>
