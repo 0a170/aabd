@@ -119,7 +119,7 @@
                   <br>
                  @endforeach
                 <br>
-                <div style="margin: 0 auto;"> {!! $questions->render() !!} </div>
+                <div style="margin: 0 auto;"> {!! $answers->render() !!} </div>
       </div>
    </div>
 </div>
