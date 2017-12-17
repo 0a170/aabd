@@ -159,8 +159,6 @@ Button[id*="downButton"]:hover {
 	border-color: white;
 	text-align: center;
 	background-color: white;
-   width: 90%;
-   min-width: 288px;
 	max-width: 400px;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 	padding: 10px;
@@ -173,7 +171,6 @@ Button[id*="downButton"]:hover {
 	text-align: center;
    word-wrap: break-word;
 	background-color: white;
-   width: 90%;
 	max-width: 400px;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 	padding: 10px;
