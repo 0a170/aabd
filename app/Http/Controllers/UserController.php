@@ -53,35 +53,18 @@ class UserController extends Controller {
 
    public function userSearch(Request $req) {
 
-      /*$data = [];
-
-      if($req->has('q')){
-          $search = $req->q;
-          $data = DB::table("users")
-                ->select("id","user_name")
-                ->where('user_name','LIKE',"%$search%")
-                ->get();
-      }
-
-      return response()->json($data); */
-
-      //$data = [];
-
       $output = "";
 
-      //if($req->has('q')){
-          //$search = $req->q;
-          $users = DB::table("users")
-                ->select("id","user_name", "profile_image")
+      $users = DB::table("users")
+               ->select("id","user_name", "profile_image")
                 //->where('user_name','LIKE',"%$search%")
-                ->where('user_name', 'LIKE', '%' . $req->user_input . '%')
-                ->get();
+               ->where('user_name', 'ILIKE', '%' . $req->user_input . '%')
+               ->get();
 
-          if($users) {
-             foreach($users as $user)
-                $output .= '<tr class="user-table" style="border: 1px solid black; background: white; color: blue;"><td style="display: block;"><a href="user/' . $user->id . '"><img src="' . Storage::disk('s3')->url('thumbnails/thumbnail_' . $user->profile_image) . '" style="float: left;"><h2>' . $user->user_name . '</h2></a></td></tr>';
-             }
-      //}
+      if($users) {
+         foreach($users as $user)
+            $output .= '<tr class="user-table" style="border: 1px solid black; background: white; color: blue;"><td style="display: block;"><a href="user/' . $user->id . '"><img src="' . Storage::disk('s3')->url('thumbnails/thumbnail_' . $user->profile_image) . '" style="float: left;"><h2>' . $user->user_name . '</h2></a></td></tr>';
+         }
 
       return Response($output);
 
