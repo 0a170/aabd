@@ -86,14 +86,14 @@
 
          <div class="row">
             <img src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profImg" style="border-radius: 50%;" data-toggle="modal" data-target="#popupLogin">
-            <h2 style="color: #4981ce; padding: 7px;"> {{ Auth::user()->user_name }} </h2>
-            <i class="fa fa-trophy fa-2x" style="color: gold;" aria-hidden="true"></i>
+            <h2 style="color: #4981ce; padding: 7px; display: inline-block;"> {{ Auth::user()->user_name }} </h2>
+            <i class="fa fa-trophy fa-2x" style="display: inline-block;" style="color: gold;" aria-hidden="true"></i>
          </div>
 
          <div class="divider"></div>
 
          <div class="row">
-            <p style="color: #4981ce;" data-toggle="modal" data-target="#popupDesc"> {{ Auth::user()->description }} </p>
+            <p style="color: #4981ce; text-align: center;" data-toggle="modal" data-target="#popupDesc"> {{ Auth::user()->description }} </p>
          </div>
 
          <div role="dialog" id="popupLogin" class="modal fade">
