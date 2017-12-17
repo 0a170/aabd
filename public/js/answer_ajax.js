@@ -1,6 +1,13 @@
 $(document).ready(function() {
 
-	//$(".aForm").hide();
+	function charCount(str) {
+		var count = 0;
+		var charArr = str.split("");
+		for(var i = 0; i < charArr.length; i++) {
+			count += 1;
+		}
+		return count;
+	}
 
 	$.ajaxSetup({
    	headers: {
@@ -53,18 +60,13 @@ $(document).ready(function() {
 			$('#' + ansStatus).css('color', 'red');
 
 			$('#' + ansStatus).css('visibility', 'visible');
-			/*setTimeout(function() {
-				$('#' + statusID).css('visibility', 'hidden');
-			}, 3000); */
 
-			//$('#' + failureID).show().html("Answer Cannot be empty");
-			/*$('#' + statusID).text('Answer Cannot Be Empty');
-			$('#' + statusID).css('visibility', 'visible');
-			setTimeout(function() {
-				$('#' + statusID).fadeOut("slow");
-				}, 3000);
-			$('#' + statusID).css('visibility', 'hidden'); */
+		} else if(charCount(ansVal) > 150) {
 
+			$('#' + ansStatus).html('150 characters or less, buddy');
+			$('#' + ansStatus).css('color', 'red');
+
+			$('#' + ansStatus).css('visibility', 'visible');
 
 		} else {
 
