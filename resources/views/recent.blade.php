@@ -73,7 +73,7 @@
             <div style="text-align: center;">
 
                 <h1 style="display: inline-block;"> Recent Answers </h1>
-                <i style="font-size:24px; color: #4981ce; display: inline-block;" class="fa" id="gear">&#xf013;</i>
+                <i style="font-size:24px; position: absolute; right: 3%; color: #4981ce; display: inline-block;" class="fa" id="gear">&#xf013;</i>
 
             </div>
 
