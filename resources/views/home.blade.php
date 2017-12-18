@@ -96,6 +96,8 @@
             <p style="color: #4981ce; text-align: center;" data-toggle="modal" data-target="#popupDesc"> {{ Auth::user()->description }} </p>
          </div>
 
+         <div class="divider"></div>
+
          <div role="dialog" id="popupLogin" class="modal fade">
 		      <div class="modal-content">
 			      <div class="modal-header">
