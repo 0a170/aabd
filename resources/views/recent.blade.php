@@ -69,7 +69,8 @@
 
       <div style="float: none; margin: 0 auto;">
 
-                <h1> Recent Answers </h1>
+                <h1 style="display: inline-block;"> Recent Answers </h1>
+                <i style="font-size:24px; color: #4981ce; display: inline-block;" class="fa" id="gear">&#xf013;</i>
 
                 <br>
 
