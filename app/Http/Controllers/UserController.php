@@ -71,6 +71,23 @@ class UserController extends Controller {
 
    }
 
+   public function topBoredGuys() {
+
+      $tOutput = "";
+
+      $topUsers = DB::table("user")
+                  ->select("id","user_name", "profile_image", "score")
+                  ->
+   }
+
+   public function bottomBoredGuys() {
+
+   }
+
+   public function newestBoredGuys() {
+
+   }
+
 
    public function upload(Request $req) {
 

@@ -85,6 +85,29 @@ $(document).ready(function() {
 
    });
 
+   $(".bSearch").on ('click', function() {
+
+      var buttonClicked = this;
+
+      if(buttonClicked.id = "topBG") {
+
+         $(".loader").show();
+
+         $.ajax({
+            type: "GET",
+            url: 'topBoredGuys',
+            success: function(response) {
+               $(".loader").hide();
+               $()
+
+            }
+
+
+         });
+
+      }
+
+   });
 
 
 

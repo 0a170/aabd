@@ -66,6 +66,7 @@ Button[id*="downButton"]:hover {
 }
 
 .loader {
+   margin: 0 auto;
   border: 16px solid #f3f3f3;
   border-radius: 50%;
   border-top: 16px solid #3498db;
@@ -236,15 +237,14 @@ Button[id*="downButton"]:hover {
 
 .userDiv {
    display: inline-block;
-   max-width: 500px;
-   width: 100%;
+   /*max-width: 500px;*/
+   width: 90%;
    height: 20%;
    //border: 1px solid black;
    //border-color: black;
    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
    background-color: white;
    font-family: "Roboto", sans-serif;
-
 }
 
 .all_buttons {

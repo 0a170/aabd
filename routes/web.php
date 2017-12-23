@@ -34,10 +34,13 @@ Route::get('/users', function() {
 Route::get('/user/{id}', 'UserController@userAnswers');
 
 //USER AJAX SEARCH
-//Route::get('/search', 'UserController@userSearch');
-
 Route::get('search', 'UserController@userSearch');
 
+Route::get('topUsers', 'UserController@topBoredGuys');
+
+Route::get('bottomUsers', 'UserController@bottomBoredGuys');
+
+Route::get('newestUsers', 'UserController@newestBoredGuys');
 
 //USER ANSWERING ROUTES
 Route::get('/home', 'QuestionController@showQues');
