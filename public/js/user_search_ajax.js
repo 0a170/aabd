@@ -74,7 +74,7 @@ $(document).ready(function() {
                if(response != ""){
                   $(".loader").hide();
                   $(".response-table").html(response);
-               } 
+               }    
             }
 
 
