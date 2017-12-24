@@ -74,7 +74,7 @@ $(document).ready(function() {
                if(response != ""){
                   $(".loader").hide();
                   $(".response-table").html(response);
-               }    
+               }
             }
 
 
@@ -85,11 +85,11 @@ $(document).ready(function() {
 
    });
 
-   $(".bSearch").on ('click', function() {
+   $("#topBG").on ('click', function() {
 
       var buttonClicked = this;
 
-      if(buttonClicked.id = "topBG") {
+      //if(buttonClicked.id = "topBG") {
 
          $(".loader").show();
 
@@ -98,14 +98,12 @@ $(document).ready(function() {
             url: 'topBoredGuys',
             success: function(response) {
                $(".loader").hide();
-               $()
-
+               $(".button-results").html(response);
             }
-
 
          });
 
-      }
+      //}
 
    });
 

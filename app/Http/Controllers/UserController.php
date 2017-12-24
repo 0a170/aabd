@@ -68,7 +68,6 @@ class UserController extends Controller {
 
       return Response($output);
 
-
    }
 
    public function topBoredGuys() {
@@ -77,7 +76,16 @@ class UserController extends Controller {
 
       $topUsers = DB::table("user")
                   ->select("id","user_name", "profile_image", "score")
-                  ->
+                  ->orderBy('score')
+                  ->take(25)
+                  ->get();
+
+      foreach($topUsers as $topUser) {
+        $tOutput = .'<div class="userDiv">' . $topUser->user_name . ' ' . $topUser->score . '</div><br>';
+      }
+
+      return $tOutput;
+
    }
 
    public function bottomBoredGuys() {
