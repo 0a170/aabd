@@ -6,6 +6,7 @@ $(document).ready(function() {
     	}
 	});
 
+
 	//$('Button').on('click', function(e) {
 	$('.voteButtonClass').on('click', function(e) {
 

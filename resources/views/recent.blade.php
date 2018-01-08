@@ -73,7 +73,15 @@
             <div style="text-align: center;">
 
                 <h1 style="display: inline-block;"> Recent Answers </h1>
-                <i style="font-size:24px; position: absolute; right: 3%; color: #4981ce; display: inline-block;" class="fa" id="gear">&#xf013;</i>
+                <i style="font-size:24px; position: absolute; right: 3%; color: #4981ce; display: inline-block;" class="fa gear" id="gear">&#xf013;</i><br>
+                <!-- <form class="gear-options" style="float: right;">
+              --><div id="gearOptions" style="z-index: 3000; display: none; float: right; background: #4981ce;">
+                    <div id="five" class="per-page"><p id="fiveText" style="border-bottom: 1px solid white; color: white;">5 per page </p></div>
+                    <div id="ten" class="per-page"><p id="tenText" style="border-bottom: 1px solid white; color: white;">10 per page </p></div>
+                    <div id="fifteen" class="per-page"><p id="fifteenText" style="border-bottom: 1px solid white; color: white;">15 per page </p></div>
+                    <div id="twenty" class="per-page"><p id="twentyText" style="color: white;">20 per page </p></div>
+                  </div>
+              <!--  </form> -->
 
             </div>
 
@@ -83,7 +91,7 @@
 
                   <br>
 
-                  <div class="rateDiv">
+                  <div class="rateDiv" style="z-index: 2;">
 
                     <form id="{{ $answer->answer_id }}" class="rateForm" method="POST">
 
@@ -139,6 +147,45 @@
       $("#logOutForm").submit(function(e) {
 
          e.preventDefault();
+
+      });
+
+      $("#gear").on('click', function() {
+
+        $("#gear").toggleClass("gear-spin");
+
+        $("#gearOptions").toggle();
+
+        //$("select-options-id").val(1) {
+
+          /*$.ajax({
+              type: "GET",
+              data: ,
+              dataType: "JSON",
+
+
+          }); */
+          //alert("5 selected");
+        //}
+
+
+      });
+
+      $('.per-page').on('click', function() {
+
+        var pOption = $(this);
+        var pOptionId = pOption.attr('id');
+        //var pOptionTextId = $("#" + pOptionId + ": first-child").attr('id');
+        //var pOptionText = $()
+
+        //var pOptionTextId = pOptionText.attr('id');
+
+        if(pOption.attr('id') == "five") {
+
+          $('#five').css("background", "white");
+          $("#" + pOptionId).children().css("color", "#4981ce");
+
+        }
 
       });
 

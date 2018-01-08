@@ -85,29 +85,71 @@ $(document).ready(function() {
 
    });
 
+   var topBGFlag = 0;
+   var newestBGFlag = 0;
+
    $("#topBG").on ('click', function() {
 
       var buttonClicked = this;
 
-      //if(buttonClicked.id = "topBG") {
+      //$(".loader").show();
 
-         $(".loader").show();
+      if(topBGFlag == 0) {
+      $.ajax({
+        type: "GET",
+        dataType: 'JSON',
+        url: 'topUsers',
+        success: function(response) {
+          $(".loader").hide();
+          $("#button-results").empty();
+          var retStr = "";
+          for(var i=0; i < response.length; i++) {
 
-         $.ajax({
-            type: "GET",
-            url: 'topBoredGuys',
-            success: function(response) {
-               $(".loader").hide();
-               $(".button-results").html(response);
+            //retStr += '<div class="userDiv">' + response[i].username +
+            retStr += '<div class="userDiv"><img src="' + response[i].profileImage + '" style="display: inline-block;"> <p style="display: inline-block;">' + response[i].username +
+                      ' and ' + response[i].score + '</div><br>';
+          }
+          $("#button-results").html(retStr);
+        }
+
+      });
+
+      topBGFlag = 1;
+      newestBGFlag = 0;
+
+      }
+
+    });
+
+    $("#newestBG").on('click', function() {
+
+      //$(".loader").show();
+        if(newestBGFlag == 0) {
+
+        $.ajax({
+          type: "GET",
+          dataType: 'JSON',
+          url: 'newestUsers',
+          success: function(response) {
+            $(".loader").hide();
+            $("#button-results").empty();
+            var retStr = "";
+            for(var i=0; i < response.length; i++) {
+
+              //retStr += '<div class="userDiv"><img src="{{ Storage::disk(\'s3\')->url(\'thumbnails/thumbnail_' + response[i].profileImage + '\') }}"> <p>' + response[i].username +
+              retStr += '<div class="userDiv"><img src="' + response[i].profileImage + '" style="display: inline-block;"> <p style="display: inline-block;">' + response[i].username +
+                        ' and ' + response[i].score + '</p></div><br>';
             }
+            $("#button-results").html(retStr);
+          }
 
-         });
+        });
 
-      //}
+        newestBGFlag = 1;
+        topBGFlag = 0;
 
-   });
+        }
 
-
-
+      });
 
 });

@@ -79,8 +79,7 @@
          <table class="response-table"></table>
 
          <br>
-         <button type="button" id="topBG" class="bSearch btn btn-info">Top Bored Guys</button>
-         <button type="button" id="worstBG" class="bSearch btn btn-danger">Worst Bored Guys</button>
+         <button type="button" id="topBG" class="bSearch btn btn-success">Top Bored Guys</button>
          <button type="button" id="newestBG" class="bSearch btn btn-warning">Newest Bored Guys</button>
 
          <div id="failedRequest" class="ajax_failure"></div>
@@ -93,7 +92,7 @@
       <br>
 
       <div class="loader"></div>
-      <div class="button-results"></div>
+      <div id="button-results"></div>
 
 
 

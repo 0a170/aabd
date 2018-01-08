@@ -20,7 +20,7 @@ p {
 
 a {
    font-family: "Roboto", sans-serif;
-   display: block;
+   display: flex;
 }
 
 a:hover {
@@ -74,6 +74,28 @@ Button[id*="downButton"]:hover {
   height: 120px;
   -webkit-animation: spin 2s linear infinite; /* Safari */
   animation: spin 2s linear infinite;
+}
+
+.gear-spin {
+  -webkit-animation: gearSpin 1s linear;
+  animation: gearSpin 1s linear;
+}
+
+/*.gear-options {
+  display: hidden;
+  background: #f3f3f3;
+  width: 100px;
+  height: 100px;
+}*/
+
+@-webkit-keyframes gearSpin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes gearSpin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
 }
 
 @-webkit-keyframes spin {
@@ -236,15 +258,26 @@ Button[id*="downButton"]:hover {
 }
 
 .userDiv {
-   display: inline-block;
-   /*max-width: 500px;*/
+   max-width: 400px;
    width: 90%;
    height: 20%;
-   //border: 1px solid black;
-   //border-color: black;
+   margin: 0 auto;
    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
    background-color: white;
    font-family: "Roboto", sans-serif;
+   position: relative;
+   animation: slideIn 0.5s;
+   -webkit-animation: slideIn 0.5s;
+}
+
+@keyframes slideIn {
+    from {right: -400px;}
+    to {right: 0px;}
+}
+
+@-webkit-@keyframes slideIn {
+  from {right: -400px;}
+  to {right: 0px;}s
 }
 
 .all_buttons {

@@ -63,7 +63,7 @@ class UserController extends Controller {
 
       if($users) {
          foreach($users as $user)
-            $output .= '<tr class="user-table" style="border: 1px solid black; background: white; color: blue;"><td style="display: block;"><a href="user/' . $user->id . '"><img src="' . Storage::disk('s3')->url('thumbnails/thumbnail_' . $user->profile_image) . '" style="float: left;"><h2>' . $user->user_name . '</h2></a></td></tr>';
+            $output .= '<tr class="user-table" style="height: 50px; border: 1px solid black; background: white; color: blue;"><td><a href="user/' . $user->id . '" style="float: left; display: flex; width: 100%;""><img src="' . Storage::disk('s3')->url('thumbnails/thumbnail_' . $user->profile_image) . '" style="float: left; display: inline-block;"><h3 style="display: inline-block;">' . $user->user_name . '</h3></a></td></tr>';
          }
 
       return Response($output);
@@ -72,28 +72,46 @@ class UserController extends Controller {
 
    public function topBoredGuys() {
 
-      $tOutput = "";
+      //$tOutput = "";
 
-      $topUsers = DB::table("user")
+      $tOutput = [];
+
+      $topUsers = DB::table("users")
                   ->select("id","user_name", "profile_image", "score")
-                  ->orderBy('score')
+                  ->orderBy('score', 'asc')
                   ->take(25)
                   ->get();
 
-      foreach($topUsers as $topUser) {
-        $tOutput = .'<div class="userDiv">' . $topUser->user_name . ' ' . $topUser->score . '</div><br>';
+    /* foreach($topUsers as $topUser) {
+        $tOutput .= '<div class="userDiv"><p>' . $topUser->user_name . '</p> <p>' . $topUser->score . '</div><br>';
+      } */
+      foreach ($topUsers as $topUser) {
+        $tOutput[] = ["id" => $topUser->id, "username" => $topUser->user_name, "score" => $topUser->score, "profileImage" => Storage::disk('s3')->url('thumbnails/thumbnail_' . $topUser->profile_image)];
       }
 
-      return $tOutput;
-
-   }
-
-   public function bottomBoredGuys() {
+      //return Response($tOutput);
+      return Response()->json($tOutput, 200);
 
    }
 
    public function newestBoredGuys() {
 
+     $nOutput = [];
+
+     $newestUsers = DB::table("users")
+                 ->select("id","user_name", "profile_image", "score")
+                 ->orderBy('created_at', 'asc')
+                 ->take(25)
+                 ->get();
+
+   /* foreach($topUsers as $topUser) {
+       $tOutput .= '<div class="userDiv"><p>' . $topUser->user_name . '</p> <p>' . $topUser->score . '</div><br>';
+     } */
+     foreach ($newestUsers as $newestUser) {
+       $nOutput[] = ["id" => $newestUser->id, "username" => $newestUser->user_name, "score" => $newestUser->score, "profileImage" => Storage::disk('s3')->url('thumbnails/thumbnail_' . $newestUser->profile_image)];
+     }
+
+     return Response()->json($nOutput, 200);
    }
 
 

@@ -38,8 +38,6 @@ Route::get('search', 'UserController@userSearch');
 
 Route::get('topUsers', 'UserController@topBoredGuys');
 
-Route::get('bottomUsers', 'UserController@bottomBoredGuys');
-
 Route::get('newestUsers', 'UserController@newestBoredGuys');
 
 //USER ANSWERING ROUTES

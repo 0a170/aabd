@@ -147,6 +147,22 @@ class AnsweredQuestionController extends Controller
          echo $new_down_votes[0];
          //echo $new_down_votes;
       }
+  
+    }
+
+    public function fivePerPage() {
+
+    }
+
+    public function tenPerPage() {
+
+    }
+
+    public function fifteenPerPage() {
+
+    }
+
+    public function twentyPerPage() {
 
     }
 
