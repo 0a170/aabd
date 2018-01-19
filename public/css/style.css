@@ -9,6 +9,16 @@ body {
    margin: 0 auto;
 }
 
+.footer {
+   background: #4981ce;
+}
+
+.footer-text {
+   color: white;
+   font-size: 1em;
+   text-align: center;
+}
+
 p {
 	font-family: "Roboto", sans-serif;
 	color: black;
@@ -81,12 +91,6 @@ Button[id*="downButton"]:hover {
   animation: gearSpin 1s linear;
 }
 
-/*.gear-options {
-  display: hidden;
-  background: #f3f3f3;
-  width: 100px;
-  height: 100px;
-}*/
 
 @-webkit-keyframes gearSpin {
   0% { -webkit-transform: rotate(0deg); }
@@ -188,6 +192,19 @@ Button[id*="downButton"]:hover {
 	padding-top: 10px;
 }
 
+.commentDiv {
+	margin: 0 auto;
+	border: 1px solid white;
+	border-color: white;
+	text-align: center;
+	background-color: white;
+	max-width: 400px;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	/*position: relative;
+   animation: slideOut 0.5;
+   -webkit-animation: slideOut 0.5s;*/
+}
+
 .rateDiv {
 	margin: 0 auto;
 	border: 1px solid white;
@@ -204,6 +221,18 @@ Button[id*="downButton"]:hover {
 .ans_status {
    padding-top: 5px;
    visibility: hidden;
+}
+
+#comStatus {
+   padding-top: 5px;
+   visibility: hidden;
+   font-family: "Roboto", sans-serif;
+}
+
+#editCommentStatus {
+   padding-top: 5px;
+   visibility: hidden;
+   font-family: "Roboto", sans-serif;
 }
 
 .divRight {
@@ -223,6 +252,11 @@ Button[id*="downButton"]:hover {
    border-radius: 50%;
    max-width: 100%;
    max-height: 100%;
+}
+
+.icon-container {
+   max-width: 25px;
+   max-height; 25px;
 }
 
 .statsDiv {
@@ -271,13 +305,23 @@ Button[id*="downButton"]:hover {
 }
 
 @keyframes slideIn {
-    from {right: -400px;}
-    to {right: 0px;}
+   from {right: -400px;}
+   to {right: 0px;}
 }
 
 @-webkit-@keyframes slideIn {
-  from {right: -400px;}
-  to {right: 0px;}s
+   from {right: -400px;}
+   to {right: 0px;}s
+}
+
+@keyframes slideOut {
+   from {left: 0px;}
+   to {right: 400px;}
+}
+
+@-webkit-@@keyframes slideOut {
+   from {left: 0px;}
+   to {right: 400px;}s
 }
 
 .all_buttons {

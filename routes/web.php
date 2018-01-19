@@ -24,9 +24,10 @@ Auth::routes();
 
 //Route::get('/home', 'HomeController@index');
 
-//USER BROWSING ROUTES
-//Route::get('/users', 'UserController@userList');
+//TESTING REDIRECT TO USER PAGE AFTER TRYING TO COMMENT WITHOUT BEING LOGGED IN
+//Route::get('/returnAfterLogin/{id}', 'Auth\LoginController@returnAfterLogin');
 
+//USER BROWSING ROUTES
 Route::get('/users', function() {
    return view('users');
 });
@@ -36,13 +37,16 @@ Route::get('/user/{id}', 'UserController@userAnswers');
 //USER AJAX SEARCH
 Route::get('search', 'UserController@userSearch');
 
+//TOP USERS ROUTE
 Route::get('topUsers', 'UserController@topBoredGuys');
 
+//NEWEST USERS ROUTE
 Route::get('newestUsers', 'UserController@newestBoredGuys');
 
-//USER ANSWERING ROUTES
+//HOME PAGE ROUTE
 Route::get('/home', 'QuestionController@showQues');
 
+//RECENT PAGE ROUTE
 Route::get('/recent', 'AnsweredQuestionController@showAll');
 
 
@@ -63,6 +67,16 @@ Route::post('dislike', 'AnsweredQuestionController@dislike')->middleware('thrott
 Route::post('/user/{id}/like', 'AnsweredQuestionController@like')->middleware('throttle:10');
 
 Route::post('/user/{id}/dislike', 'AnsweredQuestionController@dislike')->middleware('throttle:10');
+
+//SUMBIT COMMENT REQUEST
+Route::post('/user/{id}/makeComment', 'CommentController@submitComment');
+
+//DELETE COMMENT REQUEST
+Route::post('/user/{id}/deleteComment', 'CommentController@deleteComment');
+
+//EDIT COMMENT REQUEST
+Route::post('/user/{id}/editComment', 'CommentController@editComment')->middleware('throttle:3');
+//Route::post('editComment', 'CommentController@editComment')->middleware('throttle:3');
 
 //HOME PAGE REQUESTS
 Route::post('upload_image', 'UserController@upload')->middleware('throttle:3');

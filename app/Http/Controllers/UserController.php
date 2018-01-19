@@ -6,9 +6,10 @@ namespace App\Http\Controllers;
 
 
 use View;
-use App\User;
 use Image;
 use Storage;
+use App\User;
+use App\Comment;
 use App\AnsweredQuestion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -41,13 +42,38 @@ class UserController extends Controller {
 
    public function userAnswers($id) {
 
+
+      //GET USER OBJECT
       $user = User::findOrFail($id);
 
+      //GET ALL ANSWERED QUESTIONS BY USER
       $user_answers = AnsweredQuestion::where('user_id', $id)
                                              ->orderBy('updated_at', 'desc')
-                                             ->get();
+                                             //->get();
+                                             ->paginate(10);
+      //GET ALL COMMENTS FOR A USER PAGE
+      $user_comments = Comment::where('u_id', $id)
+                                     ->select("u_id", "comment_id", "comment", "commenter",
+                                     "commenter_icon", "created_at", "updated_at")
+                                     ->paginate(10);
+      //GET COMMENTER IP (USE GETIP() METHOD IN HEROKU ENV, IP() METHOD RETURNS LOAD BALANCER IP)
+      //$commenterIp = $req->ip();
 
-      return view('user_profile', compact('user', 'user_answers'));
+      //GET COMMENTER USER NAME IF COMMENTER HAS NOT ALREADY COMMENTED ON THE USER'S PAGE
+      if(Auth::check()) {
+         $commenter_name_check = Comment::where('commenter', '=', Auth::user()->user_name)
+                                       ->select('comment_id', 'commenter', 'comment')
+                                       ->first();
+      }
+      else {
+         $commenter_name_check = null;
+      }
+      //IF COMMENTER HAS ALREADY COMMENTED ON THE USER'S PAGE, GET COMMENT FOR DISPLAYING AND EDITING
+      //$commenter_comment = Comment::where('commenter_ip', '=', $commenterIp)
+
+
+      //RETURN USER, USER ANSWERS, AND USER COMMENTS TO  USER PROFILE VIEW
+      return view('user_profile', compact('user', 'user_answers', 'user_comments', 'commenter_name_check'));
 
    }
 
@@ -126,6 +152,8 @@ class UserController extends Controller {
 
 
       $username_sans_ext = $req->input('hidUsn');
+
+      // REMOVE PREVIOUS IMAGE FROM S3 BUCKET
 
       // UPLOAD FILE TO FILE SYSTEM
       $ext = $file->getClientOriginalExtension();

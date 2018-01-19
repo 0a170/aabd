@@ -106,8 +106,8 @@ $(document).ready(function() {
           for(var i=0; i < response.length; i++) {
 
             //retStr += '<div class="userDiv">' + response[i].username +
-            retStr += '<div class="userDiv"><img src="' + response[i].profileImage + '" style="display: inline-block;"> <p style="display: inline-block;">' + response[i].username +
-                      ' and ' + response[i].score + '</div><br>';
+            retStr += '<a href="user/' + response[i].id + '"><div class="userDiv"><img src="' + response[i].profileImage + '" style="display: inline-block;"> <p style="display: inline-block;">' + response[i].username +
+                      ' and ' + response[i].score + '</div></a><br>';
           }
           $("#button-results").html(retStr);
         }
@@ -137,8 +137,8 @@ $(document).ready(function() {
             for(var i=0; i < response.length; i++) {
 
               //retStr += '<div class="userDiv"><img src="{{ Storage::disk(\'s3\')->url(\'thumbnails/thumbnail_' + response[i].profileImage + '\') }}"> <p>' + response[i].username +
-              retStr += '<div class="userDiv"><img src="' + response[i].profileImage + '" style="display: inline-block;"> <p style="display: inline-block;">' + response[i].username +
-                        ' and ' + response[i].score + '</p></div><br>';
+              retStr += '<a href="user/' + response[i].id + '"><div class="userDiv"><img src="' + response[i].profileImage + '" style="display: inline-block;"> <p style="display: inline-block;">' + response[i].username +
+                        ' and ' + response[i].score + '</p></div></a><br>';
             }
             $("#button-results").html(retStr);
           }

@@ -62,13 +62,16 @@ class QuestionController extends Controller
       }
 
       $questions = DB::table('questions')
-
                           ->leftJoin('answered_questions', 'answered_questions.answered_question', '=' ,'questions.question')
                           ->where('answered_questions.answered_question', null)
                           //->get();
                           ->paginate(5);
 
-      return view('home', ['questions' => $questions]);
+      $comments = DB::table('comments')
+                          ->where('u_id', '=', $userId)
+                          ->paginate(10);
+
+      return view('home', ['questions' => $questions, 'comments' => $comments]);
 
    }
 

@@ -10,7 +10,7 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <title>AABD - Home</title>
- 
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
@@ -193,7 +193,7 @@
          <br>
       </div>
 
-<!-- **************************************  ADS SECTION ****************************************************************************************** -->
+<!-- **************************************  COMMENTS SECTION ****************************************************************************************** -->
 
       <div class="col-sm-4" style="padding-left: 20px;">
 
@@ -201,23 +201,32 @@
 
             <a href="https://twitter.com/askaboredguy" class="twitter-follow-button" data-show-count="false" style="margin: 0 auto; display: block;">Follow @askaboredguy</a>
 
-            <div class="well">
-               <p>Text</p>
-               <p>Text</p>
-               <p>Text</p>
-               <p>Text</p>
-            </div>
-            <div class="well">
-               <p>Text</p>
-               <p>Text</p>
-               <p>Text</p>
-               <p>Text</p>
-            </div>
+            <!-- <div class="well"> -->
+            @if($comments->isEmpty())
+
+               <h2> Your Comments </h2>
+
+               <div class="answerDiv">
+                  <p> You have no comments </p>
+               </div>
+
+            @else
+            @foreach($comments as $comment)
+
+               <div class="comment-class">
+                  <p> {{ $comment->comment }} </p>
+               </div>
+
+            @endforeach
+            @endif
 
          </div>
 
       </div>
 <!-- ************************************************************************************************************ -->
+      <div class="footer-copyright">
+         <p> © 2015 Copyright AskABoredGuy</p>
+      </div>
    </div>
 </div>
 </body>

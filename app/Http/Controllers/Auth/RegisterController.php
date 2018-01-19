@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Image;
+use Storage;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -62,11 +64,34 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+
+        //GET DEFAULT USER IMAGE AND CREATE A COPY RENAMED FOR NEW USER, THEN UPLOAD TO S3
+
+        $default_image = Storage::disk('local')->get('prof_def.png');
+        $image_name = $data['user_name'] . '.png';
+
+        //CREATE AND UPLOAD BASIC PROFILE IMAGE TO S3 BUCKET
+        $profile_image = Image::make($default_image)->resize(300, 300);
+        $profile_image = $profile_image->stream();
+        Storage::disk('s3')->put('profile_images/' . $image_name, $profile_image->__toString());
+
+        //CREATE AND UPLOAD THUMBNAIL TO S3 BUCKET
+        $thumbnail_image = Image::make($default_image)->resize(50, 50);
+        $thumbnail_image = $thumbnail_image->stream();
+        Storage::disk('s3')->put('thumbnails/thumbnail_' . $image_name, $thumbnail_image->__toString());
+
+        //CREATE AND UPLOAD ICON TO S3 BUCKET
+        $icon_image = Image::make($default_image)->resize(25, 25);
+        $icon_image = $icon_image->stream();
+        Storage::disk('s3')->put('icons/icon_' . $image_name, $icon_image->__toString());
+
         return User::create([
             'user_name' => $data['user_name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'profile_image' => 'prof_def.png',
+            //'profile_image' => 'prof_def.png',
+            'profile_image' => $image_name,
             'description' => 'Click here to change your description',
             'questions_answered' => 0,
 			'score' => 0,
