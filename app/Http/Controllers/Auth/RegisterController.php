@@ -69,7 +69,7 @@ class RegisterController extends Controller
         //GET DEFAULT USER IMAGE AND CREATE A COPY RENAMED FOR NEW USER, THEN UPLOAD TO S3
 
         //$default_image = Storage::disk('local')->get('/images/prof_def.png');
-        $default_image = Storage::disk('local')->get('storage/images/prof_def.png');
+        $default_image = Storage::disk('s3')->get('profile_images/prof_def.png');
         $image_name = $data['user_name'] . '.png';
 
         //CREATE AND UPLOAD BASIC PROFILE IMAGE TO S3 BUCKET
