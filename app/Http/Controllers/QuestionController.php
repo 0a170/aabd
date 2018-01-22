@@ -19,6 +19,7 @@ class QuestionController extends Controller
     public function __construct()
     {
        // $this->middleware('auth');
+       $this->middleware('throttle');
     }
 
 
@@ -33,17 +34,25 @@ class QuestionController extends Controller
          'email' => 'required|email',
       ]);
 
+      $question_check = Question::where('question', '=', $question)
+                                  ->first();
 
-      $new_question = new Question;
+      if($question_check) {
+         //if question is already in the db send response back to js
+         return Response()->json(['failure' => 'Question has already been asked']);
+      }
+      else {
 
-      $new_question->question = $question;
-      $new_question->asker_email = $email;
+         $new_question = new Question;
+         $new_question->question = $question;
+         $new_question->asker_email = $email;
+         $new_question->save();
 
-      $new_question->save();
-
-      //echo "Question submitted, we'll get back to you by email soon";
-      //return redirect()->back()->with("message", "Question submitted, we'll get back to you by email soon");
-      echo "Question submitted, we'll get back to you by email soon";
+         //echo "Question submitted, we'll get back to you by email soon";
+         //return redirect()->back()->with("message", "Question submitted, we'll get back to you by email soon");
+         //echo "Question submitted, we'll get back to you by email soon";
+         return Response()->json(['success' => 'Question Submitted']);
+      }
    }
 
 

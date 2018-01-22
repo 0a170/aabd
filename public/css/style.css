@@ -121,16 +121,21 @@ Button[id*="downButton"]:hover {
    border: 1px solid #4981ce;
 }
 
+.navbar-toggle:focus,
+.navbar-toggle:hover {
+   background-color: transparent !important;
+}
+
 .navbar-brand {
    color: white !important;
 }
 
 .navbar-toggle {
-   color: white !important
+   color: white !important;
+   border-style: none !important;
 }
 
 .navbar-nav > li {
-	//display: inline-block;
    font-size: 20px;
    text-align: center;
 }
@@ -190,6 +195,11 @@ Button[id*="downButton"]:hover {
 	max-width: 400px;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 	padding-top: 10px;
+   -webkit-transition: all .2s ease-in;
+   -moz-transition: all .2s ease-in;
+   -o-transition: all .2s ease-in;
+   -ms-transition: all .2s ease-in;
+   transition: all .2s ease-in;
 }
 
 .commentDiv {
@@ -374,10 +384,10 @@ Button[id*="downButton"]:hover {
 
 }
 
-#error_message {
+/*#error_message {
    background: #F3A6A6;
    margin: 0 auto;
-}
+}*/
 
 #name_error {
 	background: #F3A6A6;
@@ -399,25 +409,19 @@ Button[id*="downButton"]:hover {
 	background: #F3A6A6;
 }
 
-#success_message{
-    background: #CCF5CC;
-    margin: 0 auto;
-}
-
-.ajax_response {
+#question_status {
+   margin: 0 auto;
    padding: 10px 20px;
    border: 0;
    display: inline-block;
    margin-top: 20px;
-   cursor: pointer;
-	display:none;
 	color: white;
 	text-shadow: none;
 	box-sizing: border-box;
-	border-radius: 7px:
    font-family: "Roboto", sans-serif;
    font-size: 25px;
-	font-weight: 300
+	font-weight: 300;
+   width: 90%;
    max-width: 400px;
 }
 
@@ -540,7 +544,7 @@ Button[id*="downButton"]:hover {
 	/*border: 1px solid red !important; */
    border-radius: 5px !important;
    border-top: 5px !important;
-   background: #ff6666 !important;
+   background: #d9534f !important;
    color: white !important;
    margin-right: 25px;
    display: inline-block;
@@ -565,7 +569,7 @@ Button[id*="downButton"]:hover {
 
 #frmDemo > .actions > ul > li:last-child {
 	/*border: 1px solid green !important; */
-   background: #00ff55 !important;
+   background: #5cb85c !important;
    border-radius: 5px !important;
    border-top: 5px !important;
    text-align: center !important;

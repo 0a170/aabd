@@ -22,6 +22,7 @@ $(document).ready(function() {
 
   var emailReg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
+
   $("#frmDemo").steps({
 
 	 headerTag: "h3",
@@ -41,37 +42,42 @@ $(document).ready(function() {
 		var token = $(":hidden").val();
 		var tokenClass = $("#frmDemo:hidden").attr('class');
 
-		if(ques == "" || ques == "Question" || em == "" || em == "Email Address") {
+      $('#em').click(function() {
+         $('#em').css('background', 'white');
+      });
 
-			$('#error_message').fadeIn().html("Question and Email fields must be filled in");
-         setTimeout(function() {
-            $('#error_message').fadeOut('slow');
-         }, 3000);
+      $('#quest').click(function() {
+         $('#quest').css('background', 'white');
+      });
+
+		if(ques == "" || em == "") {
+         $('#question_status').css('opacity', '1');
+         $('#question_status').css('background', '#d9534f').html('All fields must be filled in');
+
+         if(ques == "") {
+            $('#quest').css('background', '#d9534f');
+         }
+         if(em == "") {
+            $('#em').css('background', '#d9534f');
+         }
 
 		}
 
       else
 
       if(em.match(emailReg) == null) {
-
-         $('#error_message').fadeIn().html("Invalid Email Address");
-         setTimeout(function() {
-            $('#error_message').fadeOut('slow');
-         }, 3000);
-
+         $('#question_status').css('opacity', '1');
+         $('#question_status').css('background', '#ff6666').html("Invalid Email Address");
+         $('#em').css('background', '#d9534f');
       }
 
       else
 
       if(charCount(ques) > 140) {
-
-         $('#error_message').fadeIn().html("Question must be 140 characters or less");
-         setTimeout(function() {
-            $('#error_message').fadeOut('slow');
-         }, 3000);
-
+         $('#question_status').css('opacity', '1');
+         $('#question_status').css('background', '#ff6666').html("Question must be 140 characters or less");
+         $('#em').css('background', '#d9534f');
       }
-
 
 		else {
 
@@ -81,22 +87,30 @@ $(document).ready(function() {
 			url: 'submit',
 			data: { 'question': ques, 'email': em, '_token': token },
 			cache: false,
-			success: function(data){
+			success: function(response){
 
-				console.log(data);
-				$('#success_message').fadeIn().html(data);
-				setTimeout(function() {
-					$('#success_message').fadeOut("slow");
-				}, 3000 );
+				if(response.success) {
+               $('#question_status').css('opacity', '1');
+				   $('#question_status').css('background', '#5cb85c').html(response.success);
+               $('#question_status').fadeTo(4000, 0);
+            }
+            else
+            if(response.failure) {
+               $('#question_status').css('opacity', '1');
+               $('#question_status').css('background', '#d9534f').html(response.failure);
+               $('#question_status').fadeTo(4000, 0);
+            }
 
 			},
-			error: function(data) {
+			error: function(response) {
 
-				$('#error_message').fadeIn().html(tokenClass + ": not working");
-				setTimeout(function() {
-					$('#error_message').fadeOut('slow');
-				}, 3000);
-				console.log(data);
+            $('#question_status').css('opacity', '1');
+            $('#question_status').css('background', '#d9534f').html(response);
+            $('#question_status').fadeTo(4000, 0);
+				/*setTimeout(function() {
+					$('#question_status').fadeOut('slow');
+				}, 3000);*/
+				console.log(response);
 
 			}
 

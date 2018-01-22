@@ -12,19 +12,15 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 
-        <link rel="stylesheet" type="text/css" href="{{ secure_asset('css/jquery.steps.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ secure_asset('css/bootstrap.min.css') }}">
-        <link href="{{ secure_asset('css/style.css') }}" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.steps.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
 
 
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-         <script src="{{ secure_asset('js/jquery-3.2.1.js') }}"></script>
-         <script src="{{ secure_asset('js/jquery.steps.min.js') }}"></script>
-
-       <script src="{{ secure_asset('js/quest_submit_ajax.js') }}"></script>
 
     </head>
     <body>
@@ -75,7 +71,6 @@
 	     <h1> Ask a Bored Guy </h1>
 
 	     <br>
-	     <br>
 
 	     <div id="askDiv">
 
@@ -88,7 +83,7 @@
 			          <div id="stepHeader">
 				           <h2> Your Question</h2>
 			          </div>
-			          <input type="text" id="quest" name="question" class="all_inputs" value="Question" onfocus="if(this.value == 'Question') this.value = ''">
+			          <input type="text" id="quest" name="question" class="all_inputs" placeholder="Question">
 			          <input type="hidden" class="whatev" value="{{ csrf_token() }}">
 
                </section>
@@ -100,8 +95,8 @@
 			          <div id="stepHeader">
 				           <h2> Your Email </h2>
 			          </div>
-			          <input type="text" id="em" name="email"  class="all_inputs" value="Email Address" onfocus="if(this.value == 'Email Address') this.value = ''">
-                <br>
+			          <input type="text" id="em" name="email"  class="all_inputs" placeholder="Email Address">
+                   <br>
 
 		         </section>
 
@@ -120,8 +115,7 @@
 
 	     </div>
         <br>
-        <div id="success_message" class="ajax_response"></div>
-        <div id="error_message" class="ajax_response"></div>
+        <div id="question_status"></div>
 
     </div>
 
@@ -130,7 +124,10 @@
    </div>
   </div>
 
-    </body>
+<script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
+<script src="{{ asset('js/jquery.steps.min.js') }}"></script>
+
+<script src="{{ asset('js/quest_submit_ajax.js') }}"></script>
 
 <script>
 
@@ -145,5 +142,9 @@
    });
 
 </script>
+
+
+</body>
+
 
 </html>

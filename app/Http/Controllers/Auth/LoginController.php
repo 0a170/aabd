@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Middleware\RedirectIfAuthenticated;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Session;
@@ -37,21 +38,7 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        //$this->middleware('RedirectIfAuthenticated');
     }
-
-    /*public function returnAfterLogin($id) {
-
-       return redirect()->route('/user/');
-
-    }*/
-
-    /*public function logOut(Request $req) {
-
-        //$this->logout($req);
-        Auth::logout();
-        //return redirect()->route($redirectTo);
-        //return redirect('/');
-
-    } */
 
 }
