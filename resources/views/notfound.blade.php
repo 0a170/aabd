@@ -13,7 +13,6 @@
 <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
 
 <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
-
 <script src="{{ asset('js/quest_submit_ajax.js') }}"></script>
 <script src="{{ asset('js/jquery.steps.min.js') }}"></script>
 </head>
@@ -60,28 +59,30 @@
 
 <div class="container-fluid">
 
+   <div class="row">
+
       <h1> 404 Error </h1>
 
-      <br>
       <br>
 
       <h2 style="text-align: center;"> Page not found </h2>
 
+   </div>
 
 </div>
+<footer id="aabdFooter" class="footer">
+    <div id="footer-container" class="container-fluid">
+        <p class="footer-text"> Copyright © 2018 <p>
+    </div>
+</footer>
 </body>
-
 
 <script>
 
    $(document).ready(function() {
-
       $("#logOutForm").submit(function(e) {
-
          e.preventDefault();
-
       });
-
    });
 
 </script>

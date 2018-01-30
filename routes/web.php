@@ -44,7 +44,7 @@ Route::get('topUsers', 'UserController@topBoredGuys');
 Route::get('newestUsers', 'UserController@newestBoredGuys');
 
 //HOME PAGE ROUTE
-Route::get('/home', 'QuestionController@showQues');
+Route::get('/home', 'QuestionController@showHome');
 
 //RECENT PAGE ROUTE
 Route::get('/recent', 'AnsweredQuestionController@showAll');

@@ -15,17 +15,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 
-<script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-
-<script src="{{ asset('js/answer_ajax.js') }}"></script>
-
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 </head>
 
 <body>
-
    <nav class="navbar navbar-inverse navbar-fixed">
       <div class="container-fluid">
          <div class="navbar-header">
@@ -80,7 +72,7 @@
 
 <!-- ************************************ USER IMAGE AND STATS/MODALS************************************************** -->
 
-      <div class="col-sm-4">
+      <div class="col-sm-4 lefty">
 
        <div class="divLeft">
 
@@ -90,13 +82,13 @@
             <i class="fa fa-trophy fa-2x" style="display: inline-block;" style="color: gold;" aria-hidden="true"></i>
          </div>
 
-         <div class="divider"></div>
+         <div class="divider"></div><br>
 
-         <div class="row">
-            <p style="color: #4981ce; text-align: center;" data-toggle="modal" data-target="#popupDesc"> {{ Auth::user()->description }} </p>
-         </div>
-
-         <div class="divider"></div>
+         <div class="descDiv">
+            <p> {{ Auth::user()->description }} </p>
+            <!-- <input type="button" id="editDescId" class="glyphicon glyphicon-edit btn btn-primary" data-toggle="modal" data-target="#editDescModal"> -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editDescModal"><span class="glyphicon glyphicon-edit"></span></button><br>
+         </div><br>
 
          <div role="dialog" id="popupLogin" class="modal fade">
 		      <div class="modal-content">
@@ -106,20 +98,15 @@
 			      </div>
 
 			      <div class="modal-body">
-
 	               <form id="upl_img" enctype="multipart/form-data" action="upload_image" method="POST">
-
                      {{ csrf_field() }}
-
                      <div style="padding:10px 20px;">
 				  	         <input type="file" name="userImage"><br>
                         <input type="hidden" name="hidUsn" value="{{ Auth::user()->user_name }}">
                         <input type="hidden" value="{{ csrf_token() }}">
 					         <input type="submit" class="btn btn-primary" id="Up_Img" name="Upload_Image" value="Upload">
 					      </div>
-
 				      </form>
-
                   @if ($errors->any())
                      <div class="alert alert-danger">
                         <ul>
@@ -130,13 +117,13 @@
                      </div>
                   @endif
 
-				      <p id="msg"></p>
+                  <p id="msg"></p>
 			      </div>
             </div>
          </div> <br><br>
 
 
-         <div role="dialog" id="popupDesc" class="modal fade">
+         <div role="dialog" id="editDescModal" class="modal fade">
             <div class="modal-content">
                <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -147,14 +134,14 @@
                   <form id="upd_desc" action="change_description" method="POST">
                      {{ csrf_field() }}
                      <div style="padding: 10px 20px;">
-                        <input type="text" id="nD" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left" name="newDesc"><br>
+                        <textarea id="nD" rows="3" name="newDesc"></textarea><br>
                         <input type="hidden" name="hidUsnD" value="{{ Auth::user()->user_name }}">
                         <input type="hidden" value="{{ csrf_token() }}">
                         <br>
-                        <input type="submit" class="btn btn-primary" id="Up_Desc" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check" name="Update_Description" value="Update">
+                        <input type="submit" class="btn btn-primary" id="upDescButton" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check" name="Update_Description" value="Update">
                      </div>
-                  </form>
-                  <p id="msg2"></p>
+                     <p id="editDescStatus"></p>
+                  </form><br>
                </div>
             </div>
          </div>
@@ -165,28 +152,30 @@
 
       <div class="col-sm-4">
 
+         <h3 class="blue-text"> Newest Questions </h3>
+
+         <div class="divider"></div><br>
+
          @if($questions->isEmpty())
             <div class="answerDiv">
                <p> No questions to answer now. Check back later. </p>
             </div> <br><br>
          @else
          @foreach($questions as $question)
-            <br>
             <div id="aDiv{{ $question->question_id }}" class="answerDiv">
-               <p style="color: #888888;"><b>Question: {{ $question->question }}</b></p>
+               <p style="color: #888888;"><b>{{ $question->question }}</b></p>
                <form id="{{ $question->question_id }}" class="aForm" method="POST">
-                  <input type="text" id="answerID{{ $question->question_id }}" name="answerInput" class="answers" style="max-width: 80%; display: block; margin: 0 auto;"></textarea>
+                  <!-- <input type="text" id="answerID{{ $question->question_id }}" name="answerInput" class="answers" style="max-width: 80%; display: block; margin: 0 auto;">-->
+                  <textarea class="answer-text" name="answerInput_{{ $question->question_id }}" rows="3"></textarea>
                   <input type="hidden" id="questionID{{ $question->question_id }}" name="ques" value="{{ $question->question }}">
                   <input type="hidden" id="emailID{{ $question->question_id }}" name="ema" value="{{ $question->asker_email }}">
                   <input type="hidden" value="{{ csrf_token() }}">
-                  <br>
-                  <input type="submit" class="btn btn-primary" id="ent{{ $question->question_id }}" name="theAnswer" value="Answer This">
-                  <div id="aStatus{{ $question->question_id }}" class="ans_status">place holder</div>
+                  <br><br>
+                  <input type="submit" class="btn btn-primary button-margin" id="ent{{ $question->question_id }}" name="theAnswer" value="Answer This">
+                  <div id="aStatus{{ $question->question_id }}" class="answer-status">place holder</div>
                </form>
-               <br>
             </div>
             <br>
-
          @endforeach
          <div style="margin: 0 auto;"> {!! $questions->render() !!} </div>
          @endif
@@ -195,39 +184,52 @@
 
 <!-- **************************************  COMMENTS SECTION ****************************************************************************************** -->
 
-      <div class="col-sm-4" style="padding-left: 20px;">
+      <div class="col-sm-4 righty" style="padding-left: 20px;">
 
          <div class="divRight">
 
-            <a href="https://twitter.com/askaboredguy" class="twitter-follow-button" data-show-count="false" style="margin: 0 auto; display: block;">Follow @askaboredguy</a>
+            <h3 class="blue-text"> Your Comments </h3>
 
-            <!-- <div class="well"> -->
+            <div class="divider"></div><br>
+            <div class="comment-wrapper">
             @if($comments->isEmpty())
-
-               <h2> Your Comments </h2>
-
-               <div class="answerDiv">
+               <div class="commentDiv">
                   <p> You have no comments </p>
                </div>
-
+               <br>
             @else
             @foreach($comments as $comment)
-
-               <div class="comment-class">
+               <div class="commentDiv">
+                  <div class="icon-container">
+                     <a href="{{ url('user/' . $comment->commenter_id) }}">
+                        <img src="{{ Storage::disk('s3')->url('icons/icon_' . $comment->profile_image) }}" class="iconImg">
+                     </a>
+                  </div>
                   <p> {{ $comment->comment }} </p>
-               </div>
-
+                  <div class="inside-div-divider"></div>
+                  <p class="smaller-text"> {{ $comment->created_at }} </p>
+               </div><br>
             @endforeach
+            <br>
             @endif
-
+            </div>
          </div>
 
       </div>
 <!-- ************************************************************************************************************ -->
-      <div class="footer-copyright">
-         <p> © 2015 Copyright AskABoredGuy</p>
-      </div>
    </div>
 </div>
+<footer id="aabdFooter" class="footer">
+    <div id="footer-container" class="container-fluid">
+        <p class="footer-text"> Copyright © 2018 <p>
+    </div>
+</footer>
+
+<script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/answer_ajax.js') }}"></script>
+<script src="{{ asset('js/changeDesc.js') }}"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 </body>
 </html>

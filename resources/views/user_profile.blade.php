@@ -11,13 +11,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
-
-
-
 </head>
 
 <body>
@@ -64,7 +60,7 @@
 
    <div class="col-sm-12">
 
-      <div class="col-sm-4">
+      <div class="col-sm-4 lefty">
 
          <div class="divLeft">
 
@@ -109,7 +105,7 @@
                   <br>
                   <p> Answer: {{ $user_answer->user_answer }} </p>
                   <br>
-                  <button type="button" id="voteButton" class="btn btn-default btn-lg" value="upButtonVal">
+                  <button type="button" id="upVoteButton_{{ $user_answer->answer_id }}" class="btn btn-default btn-lg voteButtonClass" value="upButtonVal">
                      <span class="glyphicon glyphicon-thumbs-up">
                         {{ $user_answer->up_votes }}
                      </span>
@@ -117,29 +113,30 @@
 
                   &nbsp &nbsp &nbsp &nbsp
 
-                  <button type="button" id="voteButton" class="btn btn-default btn-lg" value="downButtonVal">
+                  <button type="button" id="downVoteButtonId_{{ $user_answer->answer_id }}" class="btn btn-default btn-lg voteButtonClass" value="downButtonVal">
                      <span class="glyphicon glyphicon-thumbs-down">
                         {{ $user_answer->down_votes }}
                      </span>
                   </button>
                   <br>
                   <br>
-                  <div id="rate_failure{{ $user_answer->answer_id }}" class="ajax_failure"></div>
+                  <div id="rate_failure{{ $user_answer->answer_id }}" class="ajax_failure">placeholder</div>
                </form>
             </div>
             <br>
             <br>
          @endforeach
+         <br>
+         <div style="margin: 0 auto;"> {!! $user_answers->render() !!} </div>
          @endif
          <br>
       </div>
 
 <!-- ****************************************** COMMENTS SECTION ************************************************** -->
 
-
       <!-- <div class="divider"></div> -->
 
-      <div class="col-sm-4" style="padding-left: 20px;">
+      <div class="col-sm-4 righty" style="padding-left: 20px;">
 
          <div class="divRight">
 
@@ -157,10 +154,9 @@
                               <img src="{{ Storage::disk('s3')->url('icons/icon_' . Auth::user()->profile_image) }}" href=""class="iconImg" style="float: left;"><br>
                            </a>
                         </div><br>
-                        <input type="hidden" id="cCommenter" name="cCommenterName" value="{{ Auth::user()->user_name }}">
+                        <input type="hidden" id="commenterId" name="cCommenterName" value="{{ Auth::user()->id }}">
                         <!-- <input type="text" id="cCommenter" name="cCommenterName"> -->
-                        <input type="hidden" id="cUserId" name="cUserIdName" value="{{ $user->id }}">
-                        <input type="hidden" id="cCommenterIconId" name="cUserCommenterIconName" value="{{ Auth::user()->profile_image }}">
+                        <input type="hidden" id="userId" name="cUserIdName" value="{{ $user->id }}">
                         <input type="text" id="newCommentId" name="newCommentName" placeholder="Enter Comment">
                         <br><br>
                         <input type="hidden" id="commentToken" value="{{ csrf_token() }}">
@@ -175,7 +171,7 @@
                   <div class="commentDiv">
                      <form id="changeCommentForm" class="commentForm" method="POST">
                         <a href="{{ url('/home') }}">
-                           <img src="{{ Storage::disk('s3')->url('icons/icon_' . Auth::user()->profile_image) }}" href=""class="iconImg" style="float: left;"><br>
+                           <img src="{{ Storage::disk('s3')->url('icons/icon_' . Auth::user()->profile_image) }}" class="iconImg" style="float: left;"><br>
                         </a><br>
                         <p> {{ $commenter_name_check->comment }} </p>
                         <input type="hidden" id="commentId" name="cCommenterName" value="{{ $commenter_name_check->comment_id }}">
@@ -245,26 +241,33 @@
                @endif
             @else
 
-            <p> Login or Register to Comment <a href="{{ url('/login')}}">Login</a> | <a href="{{ url('/register') }}">Register</a> </p>
+            <p> Login or Register to Comment <a href="{{ url('/login')}}">Login</a> | <a href="{{ url('/register') }}">Register</a> </p><br>
 
             @endif
 
-            <h2> {{ $user->user_name }}'s Comments </h2>
+            <h3 class="blue-text"> {{ $user->user_name }}'s Comments </h3>
 
-            <div  id="newestComment" class="commentDiv"></div><br>
+            <div class="divider"></div><br>
+            <div class="comment-wrapper">
             @if($user_comments->isEmpty())
                <div class="commentDiv">
-                  <p>{{ $user->user_name }} has no comments</p>
+                  <p> {{ $user->user_name }} has no comments </p>
                </div>
             @else
             @foreach($user_comments as $user_comment)
                <div class="commentDiv">
-                  <a href="{{ url('user/' . $user_comment->u_id) }}"><img src="{{ Storage::disk('s3')->url('icons/icon_' . $user_comment->commenter_icon) }}"></a><br>
-                  <p>{{ $user_comment->comment }}</p>
+                  <div class="icon-container">
+                     <a href="{{ url('user/' . $user_comment->commenter_id) }}">
+                        <img src="{{ Storage::disk('s3')->url('icons/icon_' . $user_comment->profile_image) }}" class="iconImg">
+                     </a>
+                  </div>
+                  <p> {{ $user_comment->comment }} </p>
+                  <div class="inside-div-divider"></div>
+                  <p class="smaller-text"> {{ $user_comment->updated_at }} </p>
                </div><br>
             @endforeach
             @endif
-
+         </div>
          </div>
 
       </div>

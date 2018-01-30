@@ -12,11 +12,8 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 
-
-
 <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 <script src="{{ asset('js/user_search_ajax.js') }}"></script>
 </head>
 
@@ -69,42 +66,26 @@
    <br>
 
    <div class="row">
-
       <div class="searchDiv">
-
-         <!-- <h2>Laravel 5 - Dynamic autocomplete search using select2 JS Ajax</h2>
-         <br/> -->
-
          <input type="text" style="width: 100%; text-align: center;" name="userN" class="userNClass" placeholder="Search User"><br>
-         <table class="response-table"></table>
-
-         <br>
-         <button type="button" id="topBG" class="bSearch btn btn-success">Top Bored Guys</button>
+         <table class="response-table"></table><br>
+         <button type="button" id="topBG" class="bSearch btn btn-success"><span class="glyphicon glyphicon-king"></span></button>
          <button type="button" id="newestBG" class="bSearch btn btn-warning">Newest Bored Guys</button>
-
          <div id="failedRequest" class="ajax_failure"></div>
          <br>
-         <!-- <button id="goUser" class="btn btn-primary"> Go </button> -->
-
       </div>
 
       <br>
       <br>
 
       <div class="loader"></div>
-      <div id="button-results"></div>
-
-
-
-<!-- **********************************************************-->
-
-      <br>
-
+      <div id="button-results"></div><br>
    </div>
-
 </div>
-
-
-
+<footer id="aabdFooter" class="footer">
+    <div id="footer-container" class="container-fluid"><br>
+        <p class="footer-text"> Copyright © 2018 <p>
+    </div>
+</footer>
 </body>
 </html>

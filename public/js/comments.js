@@ -11,9 +11,9 @@ $(document).ready(function() {
 
       e.preventDefault();
 
-      var commenter = $("#cCommenter").val();
-      var cUserId = $("#cUserId").val();
-      var cCommenterIcon = $("#cCommenterIconId").val();
+      var commenterId = $("#commenterId").val();
+      var userId = $("#userId").val();
+      //var cCommenterIcon = $("#cCommenterIconId").val();
       var comment = $("#newCommentId").val();
       var token = $("#commentToken").val();
 
@@ -27,9 +27,9 @@ $(document).ready(function() {
       $.ajax({
 
          type: 'POST',
-         url: cUserId + '/makeComment',
+         url: userId + '/makeComment',
          dataType: 'JSON',
-         data: { 'commenter': commenter, 'cUserId': cUserId, 'cCommenterIcon': cCommenterIcon, 'comment': comment, '_token': token },
+         data: { 'commenterId': commenterId, 'userId': userId, 'comment': comment, '_token': token },
          cache: false,
 
          success: function(response) {

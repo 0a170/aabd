@@ -1,25 +1,18 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
+<title>AABD - RECENT</title>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
-
-
-
-<script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js/rate_ajax.js') }}"></script>
-
 
 </head>
 
@@ -75,26 +68,19 @@
                 <h1 style="display: inline-block;"> Recent Answers </h1>
                 <i style="font-size:24px; position: absolute; right: 3%; color: #4981ce; display: inline-block;" class="fa gear" id="gear">&#xf013;</i><br>
                 <!-- <form class="gear-options" style="float: right;">
-              --><div id="gearOptions" style="z-index: 3000; display: none; float: right; background: #4981ce;">
+              --><div id="gearOptions">
                     <div id="five" class="per-page"><p id="fiveText" style="border-bottom: 1px solid white; color: white;">5 per page </p></div>
                     <div id="ten" class="per-page"><p id="tenText" style="border-bottom: 1px solid white; color: white;">10 per page </p></div>
                     <div id="fifteen" class="per-page"><p id="fifteenText" style="border-bottom: 1px solid white; color: white;">15 per page </p></div>
                     <div id="twenty" class="per-page"><p id="twentyText" style="color: white;">20 per page </p></div>
                   </div>
               <!--  </form> -->
-
             </div>
-
                 <br>
-
                   @foreach($answers as $answer)
-
                   <br>
-
-                  <div class="rateDiv" style="z-index: 2;">
-
+                  <div class="rateDiv">
                     <form id="{{ $answer->answer_id }}" class="rateForm" method="POST">
-
                         <br>
                         <input type="hidden" value="{{ $answer->user_id }}" name="UIDName">
                         <input type="hidden" value="{{ $answer->answer_score }}" name="answerScoreName">
@@ -102,16 +88,12 @@
                         <input type="hidden" value="{{ $answer->up_votes }}" name="upVoteName">
                         <input type="hidden" value="{{ $answer->down_votes }}" name="downVoteName">
                         <input type="hidden" value="{{ $answer->answer_id }}">
-
                         <input type="hidden" value="{{ csrf_token() }}">
-
-
                         <p> Question: {{ $answer->answered_question }} </p>
                         <br>
                         <p> User Answer: {{ $answer->user_answer }} </p>
                         <br>
-
-                        <button type="button" id="voteButton" class="btn btn-default btn-lg voteButtonClass" value="upButtonVal">
+                        <button type="button" id="upVoteButtonId_{{ $answer->answer_id }}" class="btn btn-default btn-lg voteButtonClass" value="upButtonVal">
                            <span class="glyphicon glyphicon-thumbs-up">
                               {{ $answer->up_votes }}
                            </span>
@@ -119,14 +101,12 @@
 
                         &nbsp &nbsp &nbsp &nbsp
 
-                        <button type="button" id="voteButton" class="btn btn-default btn-lg voteButtonClass" value="downButtonVal">
+                        <button type="button" id="downVoteButtonId_{{ $answer->answer_id }}" class="btn btn-default btn-lg voteButtonClass" value="downButtonVal">
                            <span class="glyphicon glyphicon-thumbs-down">
                               {{ $answer->down_votes }}
                            </span>
                         </button>
-                        <br>
-                        <br>
-                        <div id="rate_failure{{ $answer->answer_id }}" class="ajax_failure"></div>
+                        <div id="rate_failure{{ $answer->answer_id }}" class="rate-status">placeholder</div>
                     </form>
                   </div>
                   <br>
@@ -134,61 +114,52 @@
                  @endforeach
                 <br>
                 <div style="margin: 0 auto;"> {!! $answers->render() !!} </div>
+                <br><br>
       </div>
    </div>
 </div>
+<footer id="aabdFooter" class="footer">
+    <div id="footer-container" class="container-fluid">
+        <p class="footer-text"> Copyright © 2018 <p>
+    </div>
+</footer>
 
+<script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/rate_ajax.js') }}"></script>
 <script>
-
    $(document).ready(function() {
 
       $("#logOutForm").submit(function(e) {
-
          e.preventDefault();
-
       });
 
       $("#gear").on('click', function() {
-
         $("#gear").toggleClass("gear-spin");
-
         $("#gearOptions").toggle();
-
         //$("select-options-id").val(1) {
-
           /*$.ajax({
               type: "GET",
               data: ,
               dataType: "JSON",
 
-
           }); */
           //alert("5 selected");
         //}
-
-
       });
 
       $('.per-page').on('click', function() {
-
         var pOption = $(this);
         var pOptionId = pOption.attr('id');
         //var pOptionTextId = $("#" + pOptionId + ": first-child").attr('id');
         //var pOptionText = $()
-
         //var pOptionTextId = pOptionText.attr('id');
-
         if(pOption.attr('id') == "five") {
-
           $('#five').css("background", "white");
           $("#" + pOptionId).children().css("color", "#4981ce");
-
         }
-
       });
-
    });
-
 </script>
 
 </body>

@@ -86,6 +86,7 @@ $(document).ready(function() {
 			type: 'POST',
 			url: 'submit',
 			data: { 'question': ques, 'email': em, '_token': token },
+         //dataType: 'json',
 			cache: false,
 			success: function(response){
 
@@ -103,14 +104,18 @@ $(document).ready(function() {
 
 			},
 			error: function(response) {
+            //response = JSON.stringify(response);
 
+            var responseJSObject = JSON.parse(JSON.stringify(response));
+
+            //alert(responseJSObject.responseText);
             $('#question_status').css('opacity', '1');
-            $('#question_status').css('background', '#d9534f').html(response);
+            $('#question_status').css('background', '#d9534f').html("Too many attempts, try again in 60 seconds");
             $('#question_status').fadeTo(4000, 0);
 				/*setTimeout(function() {
 					$('#question_status').fadeOut('slow');
 				}, 3000);*/
-				console.log(response);
+				console.log(responseJSObject);
 
 			}
 

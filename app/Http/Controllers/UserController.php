@@ -27,7 +27,6 @@ class UserController extends Controller {
    public function profile($id) {
 
       $user = User::findOrFail($id);
-
       return view('user_profile', ['user' => $user]);
 
    }
@@ -42,7 +41,6 @@ class UserController extends Controller {
 
    public function userAnswers($id) {
 
-
       //GET USER OBJECT
       $user = User::findOrFail($id);
 
@@ -51,26 +49,36 @@ class UserController extends Controller {
                                              ->orderBy('updated_at', 'desc')
                                              //->get();
                                              ->paginate(10);
+
       //GET ALL COMMENTS FOR A USER PAGE
-      $user_comments = Comment::where('u_id', $id)
-                                     ->select("u_id", "comment_id", "comment", "commenter",
-                                     "commenter_icon", "created_at", "updated_at")
-                                     ->paginate(10);
-      //GET COMMENTER IP (USE GETIP() METHOD IN HEROKU ENV, IP() METHOD RETURNS LOAD BALANCER IP)
-      //$commenterIp = $req->ip();
+
+      /*$user_comments = DB::table('comments')
+                          ->leftJoin('users', 'comments.commenter_id', '=', 'users.id')
+                          ->where('u_id', '=', $id)
+                          ->select('u_id', 'profile_image', 'comment_id', 'comment', 'commenter_id',
+                                   'comments.created_at', 'comments.updated_at')
+                          ->orderBy('comments.created_at')
+                          ->paginate(10);*/
+
+      $user_comments = DB::table('comments')
+                          ->join('users', function($join) use ($id) {
+                               $join->on('comments.commenter_id', '=', 'users.id')
+                                    ->where('u_id', '=', $id);
+                          })
+                          ->select('u_id', 'profile_image', 'comment_id', 'comment', 'commenter_id',
+                                   'comments.created_at', 'comments.updated_at')
+                          ->orderBy('comments.created_at', 'desc')
+                          ->paginate(10);
 
       //GET COMMENTER USER NAME IF COMMENTER HAS NOT ALREADY COMMENTED ON THE USER'S PAGE
       if(Auth::check()) {
-         $commenter_name_check = Comment::where('commenter', '=', Auth::user()->user_name)
-                                       ->select('comment_id', 'commenter', 'comment')
-                                       ->first();
+         $commenter_name_check = Comment::where('commenter_id', '=', Auth::user()->id)
+                                               ->select('comment_id', 'commenter_id', 'comment')
+                                               ->first();
       }
       else {
          $commenter_name_check = null;
       }
-      //IF COMMENTER HAS ALREADY COMMENTED ON THE USER'S PAGE, GET COMMENT FOR DISPLAYING AND EDITING
-      //$commenter_comment = Comment::where('commenter_ip', '=', $commenterIp)
-
 
       //RETURN USER, USER ANSWERS, AND USER COMMENTS TO  USER PROFILE VIEW
       return view('user_profile', compact('user', 'user_answers', 'user_comments', 'commenter_name_check'));
@@ -98,13 +106,11 @@ class UserController extends Controller {
 
    public function topBoredGuys() {
 
-      //$tOutput = "";
-
       $tOutput = [];
 
       $topUsers = DB::table("users")
                   ->select("id","user_name", "profile_image", "score")
-                  ->orderBy('score', 'asc')
+                  ->orderBy('score', 'desc')
                   ->take(25)
                   ->get();
 
@@ -117,7 +123,6 @@ class UserController extends Controller {
 
       //return Response($tOutput);
       return Response()->json($tOutput, 200);
-
    }
 
    public function newestBoredGuys() {
@@ -126,7 +131,7 @@ class UserController extends Controller {
 
      $newestUsers = DB::table("users")
                  ->select("id","user_name", "profile_image", "score")
-                 ->orderBy('created_at', 'asc')
+                 ->orderBy('created_at', 'desc')
                  ->take(25)
                  ->get();
 
@@ -149,11 +154,18 @@ class UserController extends Controller {
          'userImage' => 'required|mimes:jpeg,jpg,png|max:500000',
       ]);
 
-
-
       $username_sans_ext = $req->input('hidUsn');
 
-      // REMOVE PREVIOUS IMAGE FROM S3 BUCKET
+      // REMOVE PREVIOUS PROFILE IMAGE FROM S3 BUCKET IF IT EXISTS
+      if(Storage::disk('s3')->exists('profile_images/' . Auth::user()->profile_image)) {
+         Storage::disk('s3')->delete('profile_images/' . Auth::user()->profile_image);
+      }
+      if(Storage::disk('s3')->exists('thumbnails/thumbnail_' . Auth::user()->profile_image)) {
+         Storage::disk('s3')->delete('thumbnails/thumbnail_' . Auth::user()->profile_image);
+      }
+      if(Storage::disk('s3')->exists('icons/icon_' . Auth::user()->profile_image)) {
+         Storage::disk('s3')->delete('icons/icon_' . Auth::user()->profile_image);
+      }
 
       // UPLOAD FILE TO FILE SYSTEM
       $ext = $file->getClientOriginalExtension();
@@ -185,35 +197,30 @@ class UserController extends Controller {
       $user_prof = User::where('user_name', $username_sans_ext)->first();
 
       $user_prof->profile_image = $username;
-
       $user_prof->save();
 
       return redirect()->back();
-
-
    }
 
 
    public function updateDescription(Request $req) {
 
       // UPDATE PROFILE DESCRIPTION IN DATABASE AND REFRESH PAGE
-      $desc = $req->input('newDesc');
+      //$desc = $req->input('newDesc');
+      $desc = $req['newDesc'];
 
-      $this->validate($req, [
+      /*$this->validate($req, [
          'newDesc' => 'required',
-      ]);
+      ]);*/
 
-
-      $usernameD = $req->input('hidUsnD');
+      $usernameD = $req['hidUsnD'];
 
       $user_desc = User::where('user_name', $usernameD)->first();
 
       $user_desc->description = $desc;
-
       $user_desc->save();
 
       return redirect()->back();
-
    }
 
 }

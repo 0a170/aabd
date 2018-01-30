@@ -108,6 +108,11 @@
             </div>
         </div>
     </div>
+    <footer id="aabdFooter" class="footer">
+        <div id="footer-container" class="container-fluid">
+            <p class="footer-text"> Copyright © 2018 <p>
+        </div>
+    </footer>
 </div>
 
 </body>

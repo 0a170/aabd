@@ -6,8 +6,7 @@ $(document).ready(function() {
     	}
 	});
 
-
-	//$('Button').on('click', function(e) {
+	//	LIKE OR DISLIKE BUTTON CLICKED
 	$('.voteButtonClass').on('click', function(e) {
 
 		e.preventDefault();
@@ -28,12 +27,13 @@ $(document).ready(function() {
 
 		var span = $(':first-child', this);
 
-		var failureID = $('#' + theFormID).last().attr('id');
+		var upVoteButtonId = $("#" + theFormID + " :eq(12)").attr('id');
+		var downVoteButtonId = $("#" + theFormID + " :eq(14)").attr('id');
+
+		var failureID = $('#' + theFormID + ' div:last-child').attr('id');
 		//var failureID = $('#' + theFormID + ' :last').attr('id');
 
 		if(btnVal == "upButtonVal") {
-
-		//something is wrong
 
 			$.ajax({
 
@@ -46,36 +46,42 @@ $(document).ready(function() {
 				cache: false,
 
 				success: function(data) {
+					data = JSON.parse(data);
 
-					if(data == "Already voted" || data == null || data == "") {
-
-						$('#' + failureID).text(data);
-
+					if(data.alreadyLiked) {
+						$('#' + failureID).html(data.alreadyLiked);
+						$('#' + failureID).css('color', 'red');
+						$('#' + failureID).css('visibility', 'visible');
+						$('#' + downVoteButtonId).css({'color': 'black', 'background': 'white'});
 					}
-					else if(data != "Already voted") {
+					else
+					//if (data.changedUp && data.changedDown) {
+					if(data.changedToUp) {
+						$('#' + failureID).css('visibility', 'hidden');
 
-						data = JSON.parse(data);
+						$(btn).css({'color': 'white', 'background': '#5cb85c'});
+						$(span).text(" " + data.changedToUp.changedUp);
 
-						$(btn).css({'color': 'white', 'background': 'green'});
-
-					   $(span).text(" " + data.up_votes);
-
+						$("#" + downVoteButtonId).css({'color': 'black', 'background': 'white'});
+						$("#" + downVoteButtonId + " :first-child").text(" " + data.changedToUp.changedDown);
 					}
-
+					else
+					if(data.newVote) {
+						//data = JSON.parse(data);
+						$(btn).css({'color': 'white', 'background': '#5cb85c'});
+					   $(span).text(" " + data.newVote);
+					}
 				},
 				error: function(data) {
-
 					$('#' + failureID).text(data);
-
 				}
 
 			});
 
 		}
 
-		else
-
-		/*if(btnVal == "downButtonVal")*/ {
+		//ELSE CLICKED ON VOTE DOWN
+		else {
 
 			$.ajax({
 
@@ -88,24 +94,28 @@ $(document).ready(function() {
 				cache: false,
 
 				success: function(data) {
+					data = JSON.parse(data);
 
-			   	if(data == "Already voted") {
-
-						//$('#' + failureID).show();
-						$('#' + failureID).text(data);
-
+			   	if(data.alreadyDisliked) {
+						$('#' + failureID).html(data.alreadyDisliked);
+						$('#' + failureID).css('color', 'red');
+						$('#' + failureID).css('visibility', 'visible');
 					}
-
 					else
+					if(data.changedToDown) {
+						$('#' + failureID).css('visibility', 'hidden');
 
-					if(data != "Already voted") {
+						$(btn).css({'color': 'white', 'background': '#d9534f'});
+						$(span).text(" " + data.changedToDown.changedDown);
 
-						data = JSON.parse(data);
-
-						$(btn).css({'color': 'white', 'background': 'red'});
-
-						$(span).text(" " + data.down_votes);
-
+						//alert($("#" + theFormID + " :eq(13):nth-child(1)").attr('id'));
+						$("#" + upVoteButtonId).css({'color': 'black', 'background': 'white'});
+						$("#" + upVoteButtonId + " :first-child").text(" " + data.changedToDown.changedUp);
+					}
+					else
+					if(data.newDislike) {
+						$(btn).css({'color': 'white', 'background': '#d9534f'});
+						$(span).text(" " + data.newDislike);
 		         }
 
 				}

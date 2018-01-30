@@ -13,7 +13,7 @@ class User extends Authenticatable
      * The attributes that are mass assignable.
      *
      * @var array
-     */ 
+     */
     protected $fillable = [
         'user_name', 'email', 'password', 'profile_image', 'description', 'questions_answered', 'score'
     ];
@@ -26,4 +26,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function comments() {
+       return $this->hasMany('App\Comment');
+    }
 }

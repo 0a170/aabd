@@ -63,7 +63,7 @@
          </div>
       </nav>
 
-  <div class="container-fluid" style="float: none; margin: 0 auto;">
+  <div class="container-fluid">
   <div class="row">
 
     <div id="pAsk">
@@ -123,7 +123,11 @@
 
    </div>
   </div>
-
+  <footer id="aabdFooter" class="footer">
+      <div id="footer-container" class="container-fluid">
+          <p class="footer-text"> Copyright © 2018 <p>
+      </div>
+  </footer>
 <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
 <script src="{{ asset('js/jquery.steps.min.js') }}"></script>
 

@@ -23,14 +23,15 @@ $(document).ready(function() {
 		var fID = theForm.attr('id');
 		var dID = $('#' + fID).parent().attr('id');
 
-		var ansID = $('#' + fID + ' :nth-child(1)').attr('id');
-		var ansVal = $('#' + ansID).val();
+		var ansVal = $('#' + fID + ' :nth-child(1)').val();
+		//var ansID = $('#' + fID + ' :nth-child(1)').attr('id');
+	//	var ansVal = $('#' + ansID).val();
 		var questID = $('#' + fID + ' :hidden:eq(0)').attr('id');
 		var questVal = $('#' + questID).val();
 		var emailID = $('#' + fID + ' :hidden:eq(1)').attr('id');
 		var emailVal = $('#' + emailID).val();
 
-		var ansStatus = $('#' + fID + ' :nth-child(7)').attr('id');
+		var ansStatus = $('#' + fID + ' :nth-child(8)').attr('id');
 
 		var statusID = $('#' + dID).nextAll().eq(0).attr('id');
 		var token = $('#' + fID + ' :hidden:eq(2)').attr('id');
@@ -60,41 +61,33 @@ $(document).ready(function() {
 				cache: false,
 
 				success: function(data) {
+					//data = JSON.parse(data);
 
-					//alert(data);
-
-					$('#' + ansStatus).text(data);
+					$('#' + ansStatus).text(data.successfulAnswer);
 					$('#' + ansStatus).css('color', 'green');
+					$('#' + ansStatus).css('visibility', 'visible');
 
 					$('#' + dID).closest('div').fadeTo(500,0).animate({width: '0px'}, 500, function(){
         				$('#' + dID).remove();
     				});
-					//$('#' + ansStatus).css('visibility', 'visible');
-
-					//$('#' + dID).toggle('slide', {direction: 'right'}, 1000);
-
-
-					/*$('#' + dID).fadeOut(3000, function() {
-						$('#' + dID).remove();
-					});*/
 
 				},
 				error: function(data) {
 
-					$('#' + servFailureID).show().html("Server Issue: " + data + " try again later");
-					//setTimeout(function() {
-					$('#' + servFailureID).fadeOut(3000, function() {
-						$('#' + servFailureID).remove();
-					});
+					//var dataJSObject = JSON.parse(JSON.stringify(data));
+
+					$('#' + ansStatus).html(dataJSObject.responseText);
+					$('#' + ansStatus).css('color', 'red');
+
+					$('#' + ansStatus).css('visibility', 'visible');
+					$('#' + ansStatus).fadeTo(3000, 0);
 
 				}
 
 			});
 
-
 		}
 
 	});
-
 
 });
