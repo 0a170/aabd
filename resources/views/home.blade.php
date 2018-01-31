@@ -151,11 +151,8 @@
 <!-- ************************************ QUESTIONS SECTION ****************************************************************************************** -->
 
       <div class="col-sm-4">
-
          <h3 class="blue-text"> Newest Questions </h3>
-
          <div class="divider"></div><br>
-
          @if($questions->isEmpty())
             <div class="answerDiv">
                <p> No questions to answer now. Check back later. </p>

@@ -67,8 +67,9 @@
 
                 <h1 style="display: inline-block;"> Recent Answers </h1>
                 <i style="font-size:24px; position: absolute; right: 3%; color: #4981ce; display: inline-block;" class="fa gear" id="gear">&#xf013;</i><br>
-                <!-- <form class="gear-options" style="float: right;">
-              --><div id="gearOptions">
+                <!-- <form class="gear-options" style="float: right;"> -->
+                <div class="header-divider"></div>
+                  <div id="gearOptions">
                     <div id="five" class="per-page"><p id="fiveText" style="border-bottom: 1px solid white; color: white;">5 per page </p></div>
                     <div id="ten" class="per-page"><p id="tenText" style="border-bottom: 1px solid white; color: white;">10 per page </p></div>
                     <div id="fifteen" class="per-page"><p id="fifteenText" style="border-bottom: 1px solid white; color: white;">15 per page </p></div>
@@ -78,7 +79,6 @@
             </div>
                 <br>
                   @foreach($answers as $answer)
-                  <br>
                   <div class="rateDiv">
                     <form id="{{ $answer->answer_id }}" class="rateForm" method="POST">
                         <br>

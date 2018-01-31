@@ -30,9 +30,6 @@ class AnsweredQuestionController extends Controller
 
     public function showAll() {
 
-      //$ip = $req->getIp();
-      $ip = request()->ip();
-
       $answers = AnsweredQuestion::where('answered', 1)
                                         ->orderBy('updated_at', 'desc')
                                         //->get();
@@ -47,8 +44,8 @@ class AnsweredQuestionController extends Controller
       $user_id = $req['UIDName'];
       $answer = $req['answeredQuestionName'];
       $answer_id = (int)$req['AIDName'];
-      $ip_add = request()->ip();
-      //$ip_add = $req->getIp();
+      //$ip_add = $req->ip();
+      $ip_add = $req->getIp();
 
       // COMPARE CLIENT'S IP ADDRESS WITH IP ADDRESSES IN VOTE TABLE FOR SPECIFIC ANSWER VOTE
       $vote_check = Vote::where('ip_address', $ip_add)
@@ -117,8 +114,8 @@ class AnsweredQuestionController extends Controller
       $user_id = $req['UIDName'];
       $answer = $req['answeredQuestionName'];
       $answer_id = (int)$req['AIDName'];
-      $ip_add = request()->ip();
-      //$ip_add = $req->getIp();
+      //$ip_add = $req->ip();
+      $ip_add = $req->getIp();
 
       // COMPARE CLIENT'S IP ADDRESS WITH IP ADDRESSES IN VOTE TABLE FOR SPECIFIC ANSWER VOTE
       $vote_check = Vote::where('ip_address', $ip_add)
@@ -130,6 +127,7 @@ class AnsweredQuestionController extends Controller
 
          $new_vote = new Vote;
          $new_vote->answer_id = $answer_id;
+         $new_vote->user_id = $user_id;
          $new_vote->answer = $answer;
          $new_vote->vote_up = 0;
          $new_vote->vote_down = 1;

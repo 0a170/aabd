@@ -67,15 +67,15 @@ class QuestionController extends Controller
       $questions = DB::table('questions')
                           ->leftJoin('answered_questions', 'answered_questions.answered_question', '=' ,'questions.question')
                           ->where('answered_questions.answered_question', null)
+                          ->orderBy('questions.created_at', 'desc')
                           //->get();
                           ->paginate(5);
 
-      $comments = Comment::where('u_id', '=', $userId)
-                          //->where('u_id', '=', $userId)
+      /*$comments = Comment::where('u_id', '=', $userId)
                           ->select('u_id', 'comment_id', 'comment', 'commenter_id',
                                    'created_at', 'updated_at')
                           ->orderBy('created_at', 'desc')
-                          ->paginate(10);
+                          ->paginate(10);*/
                           //->get();
 
       $comments = DB::table('comments')

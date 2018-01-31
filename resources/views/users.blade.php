@@ -63,7 +63,7 @@
 
    <h1> Browse Users </h1>
 
-   <br>
+   <div class="header-divider"></div><br>
 
    <div class="row">
       <div class="searchDiv">

@@ -72,8 +72,8 @@
 
             <div class="divider"></div><br>
 
-            <div class="row">
-               <p style="color: #4981ce;"> {{ $user->description }} </p>
+            <div class="descDiv">
+               <p> {{ $user->description }} </p>
             </div>
             <div class="divider"></div>
 
@@ -83,15 +83,15 @@
 <!-- ************************************* USER'S ANSWERS SECTION ********************************************** -->
 
       <div class="col-sm-4">
-         <h1 style="color: #4981ce;"> {{ $user->user_name }}'s answers </h1>
-         <br>
+         <h3 class="blue-text"> {{ $user->user_name }}'s answers </h3>
+         <div class="divider"></div><br>
          @if($user_answers->isEmpty())
             <div class="rateDiv">
                <p> {{ $user->user_name }} hasn't answered any questions yet </p>
             </div> <br><br>
          @else
          @foreach($user_answers as $user_answer)
-            <div class="rateDiv">
+            <div class="rateProfileDiv">
                <form id="{{ $user_answer->answer_id }}" class="rateForm" method="POST">
                   <br>
                   <input type="hidden" value="{{ $user_answer->user_id }}" name="UIDName">
@@ -100,12 +100,12 @@
                   <input type="hidden" value="{{ $user_answer->up_votes }}" name="upVoteName">
                   <input type="hidden" value="{{ $user_answer->down_votes }}" name="downVoteName">
                   <input type="hidden" value="{{ $user_answer->answer_id }}">
-                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                  <input type="hidden" value="{{ csrf_token() }}">
                   <p> Question: {{ $user_answer->answered_question }} </p>
                   <br>
                   <p> Answer: {{ $user_answer->user_answer }} </p>
                   <br>
-                  <button type="button" id="upVoteButton_{{ $user_answer->answer_id }}" class="btn btn-default btn-lg voteButtonClass" value="upButtonVal">
+                  <button type="button" id="upVoteButtonId_{{ $user_answer->answer_id }}" class="btn btn-default btn-lg voteButtonClass" value="upButtonVal">
                      <span class="glyphicon glyphicon-thumbs-up">
                         {{ $user_answer->up_votes }}
                      </span>
@@ -118,9 +118,7 @@
                         {{ $user_answer->down_votes }}
                      </span>
                   </button>
-                  <br>
-                  <br>
-                  <div id="rate_failure{{ $user_answer->answer_id }}" class="ajax_failure">placeholder</div>
+                  <div id="rate_failure{{ $user_answer->answer_id }}" class="rate-status">placeholder</div>
                </form>
             </div>
             <br>
@@ -150,7 +148,7 @@
                   <div class="commentDiv">
                      <form id="createCommentForm" class="commentForm" method="POST">
                         <div class="icon-container">
-                           <a href="{{ url('user/' . Auth::user()->id)}}">
+                           <a href="{{ url('user/' . Auth::user()->id) }}">
                               <img src="{{ Storage::disk('s3')->url('icons/icon_' . Auth::user()->profile_image) }}" href=""class="iconImg" style="float: left;"><br>
                            </a>
                         </div><br>
@@ -284,7 +282,7 @@
 <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 <script src="https://use.fontawesome.com/4269355819.js"></script>
-<script src="{{ asset('js/home_rate_ajax.js') }}"></script>
+<script src="{{ asset('js/user_rate_ajax.js') }}"></script>
 <script src="{{ asset('js/comments.js') }}"></script>
 
 </body>

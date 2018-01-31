@@ -6,7 +6,7 @@ $(document).ready(function() {
     	}
 	});
 
-	//	LIKE OR DISLIKE BUTTON CLICKED
+	// LIKE OR DISLIKE BUTTON ON HOME PAGE
 	$('.voteButtonClass').on('click', function(e) {
 
 		e.preventDefault();
@@ -31,19 +31,23 @@ $(document).ready(function() {
 		var downVoteButtonId = $("#" + theFormID + " :eq(14)").attr('id');
 
 		var failureID = $('#' + theFormID + ' div:last-child').attr('id');
-		//var failureID = $('#' + theFormID + ' :last').attr('id');
 
 		if(btnVal == "upButtonVal") {
+
 			$.ajax({
+
 				type: 'POST',
-				url: 'like',
+				url: '{' + User_ID + '}/like',
 				data: { 'UIDName': User_ID, 'answerScoreName': Answer_Score,
 				        'upVoteName': upVal, 'answeredQuestionName': Answer_Question,
 				        'AIDName': Answer_ID, '_token': token },
-				dataType: "json",
+				dataType: 'json',
 				cache: false,
 
 				success: function(data) {
+
+					//data = JSON.stringify(data);
+
 					if(data.alreadyLiked) {
 						$('#' + failureID).html(data.alreadyLiked);
 						$('#' + failureID).css('color', 'red');
@@ -66,27 +70,35 @@ $(document).ready(function() {
 						$(btn).css({'color': 'white', 'background': '#5cb85c'});
 					   $(span).text(" " + data.newVote);
 					}
+
 				},
 				error: function(data) {
 					$('#' + failureID).text(data);
 				}
+
 			});
+
 		}
 
-		//ELSE CLICKED ON VOTE DOWN
+		// ELSE CLICKED ON VOTE DOWN ON USER PAGE
 		else {
+
 			$.ajax({
+
 				type: "POST",
-				url: 'dislike',
+				url: '{' + User_ID + '}/dislike',
 				data: {'UIDName': User_ID, 'answerScoreName': Answer_Score,
 						 'downVoteValName': downVal, 'answeredQuestionName': Answer_Question,
 						 'AIDName': Answer_ID, '_token': token },
-				dataType: "json",
+				dataType: 'json',
 				cache: false,
+
 				success: function(data) {
-			   	if(data.alreadyDisliked) {
+					//data = JSON.parse(data);
+
+					if(data.alreadyDisliked) {
 						alert(failureID);
-						$('#' + failureID).html(data.alreadyDisliked);
+						$('#' + failureID).text(data.alreadyDisliked);
 						$('#' + failureID).css('color', 'red');
 						$('#' + failureID).css('visibility', 'visible');
 					}
@@ -105,8 +117,13 @@ $(document).ready(function() {
 						$(btn).css({'color': 'white', 'background': '#d9534f'});
 						$(span).text(" " + data.newDislike);
 		         }
+
 				}
+
 			});
+
 		}
+
 	});
+
 });

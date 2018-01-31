@@ -23,7 +23,6 @@ class UserController extends Controller {
        // $this->middleware('auth');
    }
 
-
    public function profile($id) {
 
       $user = User::findOrFail($id);
@@ -39,27 +38,30 @@ class UserController extends Controller {
    }
 
 
-   public function userAnswers($id) {
+   public function userAnswers($id, Request $req) {
 
       //GET USER OBJECT
       $user = User::findOrFail($id);
 
+      //GET ANSWEREDQUESTION OBJECT
+      $answered_question = AnsweredQuestion::findOrFail($id);
+
+      $ip_add = $req->ip();
       //GET ALL ANSWERED QUESTIONS BY USER
       $user_answers = AnsweredQuestion::where('user_id', $id)
                                              ->orderBy('updated_at', 'desc')
                                              //->get();
                                              ->paginate(10);
 
+      /*$user_answers = DB::table('answered_questions')
+                         ->join('votes', function($join) use ($id) {
+                              $join->on('answered_questions.answer_id', '=', 'votes.answer_id')
+                                   ->where('answered_questions.user_id', '=', $id);
+                         })
+                         ->where('votes.user_id', '=', $id)
+                         ->paginate(10);*/
+
       //GET ALL COMMENTS FOR A USER PAGE
-
-      /*$user_comments = DB::table('comments')
-                          ->leftJoin('users', 'comments.commenter_id', '=', 'users.id')
-                          ->where('u_id', '=', $id)
-                          ->select('u_id', 'profile_image', 'comment_id', 'comment', 'commenter_id',
-                                   'comments.created_at', 'comments.updated_at')
-                          ->orderBy('comments.created_at')
-                          ->paginate(10);*/
-
       $user_comments = DB::table('comments')
                           ->join('users', function($join) use ($id) {
                                $join->on('comments.commenter_id', '=', 'users.id')
@@ -69,6 +71,15 @@ class UserController extends Controller {
                                    'comments.created_at', 'comments.updated_at')
                           ->orderBy('comments.created_at', 'desc')
                           ->paginate(10);
+
+      /*$user_comments = DB::table('comments')
+                            ->leftJoin('users', 'comments.commenter_id', '=', 'users.id')
+                            ->where('u_id', '=', $id)
+                            ->select('u_id', 'profile_image', 'comment_id', 'comment', 'commenter_id',
+                                     'comments.created_at', 'comments.updated_at')
+                            ->orderBy('comments.created_at')
+                            ->paginate(10);*/
+
 
       //GET COMMENTER USER NAME IF COMMENTER HAS NOT ALREADY COMMENTED ON THE USER'S PAGE
       if(Auth::check()) {

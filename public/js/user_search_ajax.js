@@ -57,7 +57,7 @@ $(document).ready(function() {
 
       if(userValue.length >= minLength) {
 
-         $(".loader").show();
+         //$(".loader").show();
 
          $.ajax({
             type: "GET",
