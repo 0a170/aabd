@@ -85,7 +85,7 @@
          <div class="divider"></div><br>
 
          <div class="descDiv">
-            <p> {{ Auth::user()->description }} </p>
+            <p style="text-align: left;"> {{ Auth::user()->description }} </p>
             <!-- <input type="button" id="editDescId" class="glyphicon glyphicon-edit btn btn-primary" data-toggle="modal" data-target="#editDescModal"> -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editDescModal"><span class="glyphicon glyphicon-edit"></span></button><br>
          </div><br>
@@ -126,7 +126,7 @@
          <div role="dialog" id="editDescModal" class="modal fade">
             <div class="modal-content">
                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <button type="button" class="close" data-dismiss="modal" style="float: right;">&times;</button>
                   <h3 class="modal-title">Change your profile description</h3>
                </div>
 
@@ -151,6 +151,7 @@
 <!-- ************************************ QUESTIONS SECTION ****************************************************************************************** -->
 
       <div class="col-sm-4">
+      <div class="divCenter">
          <h3 class="blue-text"> Newest Questions </h3>
          <div class="divider"></div><br>
          @if($questions->isEmpty())
@@ -165,11 +166,11 @@
                   <!-- <input type="text" id="answerID{{ $question->question_id }}" name="answerInput" class="answers" style="max-width: 80%; display: block; margin: 0 auto;">-->
                   <textarea class="answer-text" name="answerInput_{{ $question->question_id }}" rows="3"></textarea>
                   <input type="hidden" id="questionID{{ $question->question_id }}" name="ques" value="{{ $question->question }}">
-                  <input type="hidden" id="emailID{{ $question->question_id }}" name="ema" value="{{ $question->asker_email }}">
+                  <input type="hidden" id="questionKey{{ $question->question_id }}" name="quesId" value="{{ $question->question_id }}">
                   <input type="hidden" value="{{ csrf_token() }}">
                   <br><br>
                   <input type="submit" class="btn btn-primary button-margin" id="ent{{ $question->question_id }}" name="theAnswer" value="Answer This">
-                  <div id="aStatus{{ $question->question_id }}" class="answer-status">place holder</div>
+                  <p id="aStatus{{ $question->question_id }}" class="answer-status">place holder</p>
                </form>
             </div>
             <br>
@@ -177,6 +178,7 @@
          <div style="margin: 0 auto;"> {!! $questions->render() !!} </div>
          @endif
          <br>
+      </div>
       </div>
 
 <!-- **************************************  COMMENTS SECTION ****************************************************************************************** -->
@@ -190,7 +192,7 @@
             <div class="divider"></div><br>
             <div class="comment-wrapper">
             @if($comments->isEmpty())
-               <div class="commentDiv">
+               <div class="commentDiv" style="text-align: center;">
                   <p> You have no comments </p>
                </div>
                <br>
@@ -211,11 +213,11 @@
             @endif
             </div>
          </div>
-
       </div>
 <!-- ************************************************************************************************************ -->
    </div>
 </div>
+<br><br>
 <footer id="aabdFooter" class="footer">
     <div id="footer-container" class="container-fluid">
         <p class="footer-text"> Copyright © 2018 <p>

@@ -85,7 +85,6 @@ $(document).ready(function() {
 				cache: false,
 				success: function(data) {
 			   	if(data.alreadyDisliked) {
-						alert(failureID);
 						$('#' + failureID).html(data.alreadyDisliked);
 						$('#' + failureID).css('color', 'red');
 						$('#' + failureID).css('visibility', 'visible');

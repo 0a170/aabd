@@ -37,14 +37,13 @@ class UserController extends Controller {
 
    }
 
-
    public function userAnswers($id, Request $req) {
 
       //GET USER OBJECT
       $user = User::findOrFail($id);
 
       //GET ANSWEREDQUESTION OBJECT
-      $answered_question = AnsweredQuestion::findOrFail($id);
+      $answered_question = AnsweredQuestion::find($id);
 
       $ip_add = $req->ip();
       //GET ALL ANSWERED QUESTIONS BY USER
@@ -79,7 +78,6 @@ class UserController extends Controller {
                                      'comments.created_at', 'comments.updated_at')
                             ->orderBy('comments.created_at')
                             ->paginate(10);*/
-
 
       //GET COMMENTER USER NAME IF COMMENTER HAS NOT ALREADY COMMENTED ON THE USER'S PAGE
       if(Auth::check()) {
@@ -146,16 +144,12 @@ class UserController extends Controller {
                  ->take(25)
                  ->get();
 
-   /* foreach($topUsers as $topUser) {
-       $tOutput .= '<div class="userDiv"><p>' . $topUser->user_name . '</p> <p>' . $topUser->score . '</div><br>';
-     } */
      foreach ($newestUsers as $newestUser) {
        $nOutput[] = ["id" => $newestUser->id, "username" => $newestUser->user_name, "score" => $newestUser->score, "profileImage" => Storage::disk('s3')->url('thumbnails/thumbnail_' . $newestUser->profile_image)];
      }
 
      return Response()->json($nOutput, 200);
    }
-
 
    public function upload(Request $req) {
 
@@ -213,16 +207,10 @@ class UserController extends Controller {
       return redirect()->back();
    }
 
-
    public function updateDescription(Request $req) {
 
       // UPDATE PROFILE DESCRIPTION IN DATABASE AND REFRESH PAGE
-      //$desc = $req->input('newDesc');
       $desc = $req['newDesc'];
-
-      /*$this->validate($req, [
-         'newDesc' => 'required',
-      ]);*/
 
       $usernameD = $req['hidUsnD'];
 

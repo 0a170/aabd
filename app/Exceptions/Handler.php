@@ -45,8 +45,13 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
         if ($exception instanceof NotFoundHttpException) {
-           //return redirect()->route('/');
-           return redirect('/notfound');
+
+           return response()->view('errors', [], 404);
+        }
+
+        if($exception instanceof ModelNotFoundException) {
+
+           return response()->view('errors', [], usernotfound);
         }
 
         if ($exception instanceof TokenMismatchException) {

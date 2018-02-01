@@ -57,11 +57,8 @@
 </nav>
 
 <div class="container-fluid">
-
    <div class="col-sm-12">
-
       <div class="col-sm-4 lefty">
-
          <div class="divLeft">
 
             <div class="row">
@@ -83,6 +80,7 @@
 <!-- ************************************* USER'S ANSWERS SECTION ********************************************** -->
 
       <div class="col-sm-4">
+      <div class="divCenter">
          <h3 class="blue-text"> {{ $user->user_name }}'s answers </h3>
          <div class="divider"></div><br>
          @if($user_answers->isEmpty())
@@ -129,29 +127,24 @@
          @endif
          <br>
       </div>
+      </div>
 
 <!-- ****************************************** COMMENTS SECTION ************************************************** -->
 
-      <!-- <div class="divider"></div> -->
-
       <div class="col-sm-4 righty" style="padding-left: 20px;">
-
          <div class="divRight">
-
-            <a href="https://twitter.com/askaboredguy" class="twitter-follow-button" data-show-count="false" style="margin: 0 auto; display: block;">Follow @askaboredguy</a>
-            <br>
             @if(Auth::check())
                @if(Auth::user()->id != $user->id)
                   @if(!$commenter_name_check)
-                  <h2 style="text-align: center; color: #4981ce;"> Leave A Comment </h2><br>
-
-                  <div class="commentDiv">
+                  <h3 style="text-align: center; color: #4981ce;"> Leave A Comment </h3><br>
+                  <div class="divider"></div><br>
+                  <div class="commentDiv" style="text-align: center;">
                      <form id="createCommentForm" class="commentForm" method="POST">
-                        <div class="icon-container">
+                        <div class="icon-container"``>
                            <a href="{{ url('user/' . Auth::user()->id) }}">
                               <img src="{{ Storage::disk('s3')->url('icons/icon_' . Auth::user()->profile_image) }}" href=""class="iconImg" style="float: left;"><br>
                            </a>
-                        </div><br>
+                        </div>
                         <input type="hidden" id="commenterId" name="cCommenterName" value="{{ Auth::user()->id }}">
                         <!-- <input type="text" id="cCommenter" name="cCommenterName"> -->
                         <input type="hidden" id="userId" name="cUserIdName" value="{{ $user->id }}">
@@ -161,17 +154,18 @@
                         <input type="submit" id="submitCommentId" class="btn btn-primary">
                         <div id="comStatus">place holder</div>
                      </form>
-                     <br>
                   </div>
                   @else
-                  <h2 style="text-align: center; color: #4981ce;"> You Said </h2><br>
-
-                  <div class="commentDiv">
+                  <h3 style="text-align: center; color: #4981ce;"> You Said </h3>
+                  <div class="divider"></div><br>
+                  <div class="commentDiv" style="text-align: center;">
                      <form id="changeCommentForm" class="commentForm" method="POST">
-                        <a href="{{ url('/home') }}">
-                           <img src="{{ Storage::disk('s3')->url('icons/icon_' . Auth::user()->profile_image) }}" class="iconImg" style="float: left;"><br>
-                        </a><br>
-                        <p> {{ $commenter_name_check->comment }} </p>
+                        <div class="icon-container">
+                           <a href="{{ url('/home') }}">
+                              <img src="{{ Storage::disk('s3')->url('icons/icon_' . Auth::user()->profile_image) }}" class="iconImg" style="float: left;"><br>
+                           </a>
+                        </div>
+                        <p style="text-align: left;"> {{ $commenter_name_check->comment }} </p>
                         <input type="hidden" id="commentId" name="cCommenterName" value="{{ $commenter_name_check->comment_id }}">
                         <!-- <input type="text" id="cCommenter" name="cCommenterName"> -->
                         <!-- <input type="hidden" id="cUserId" name="cUserIdName" value="{{ $user->id }}"> -->
@@ -248,7 +242,7 @@
             <div class="divider"></div><br>
             <div class="comment-wrapper">
             @if($user_comments->isEmpty())
-               <div class="commentDiv">
+               <div class="commentDiv" style="text-align: center;">
                   <p> {{ $user->user_name }} has no comments </p>
                </div>
             @else

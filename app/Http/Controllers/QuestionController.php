@@ -53,8 +53,6 @@ class QuestionController extends Controller
       }
    }
 
-
-
    public function showHome() {
 
       if(Auth::check()) {
@@ -101,10 +99,17 @@ class QuestionController extends Controller
 
    public function answer(Request $req) {
 
+      $question_id = $req['quesId'];
       $answer_val = $req['answerInput'];
       $question_val = $req['ques'];
-      $email_val = $req['ema'];
-      //$userId = $req['use'];
+
+      $email_val = DB::table('questions')
+                      ->where('question_id', $question_id)
+                      ->select('asker_email')
+                      ->first();
+
+      //$email_val = $req['ema'];
+      $email_val = $email_val->asker_email;
 
       //IF USER IS LOGGED IN, GENERATE MAIL WITH ANSWER, SEND IT, THEN STORE IT IN DB
       if(Auth::check()) {

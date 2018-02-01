@@ -9,15 +9,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
+<title>AABD - 404 ERROR</title>
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
 
-<script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
-<script src="{{ asset('js/quest_submit_ajax.js') }}"></script>
-<script src="{{ asset('js/jquery.steps.min.js') }}"></script>
 </head>
 
-<body style="padding-top: 70px; background: #80bfff;">
+<body>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
@@ -58,33 +57,15 @@
 </nav>
 
 <div class="container-fluid">
-
-   <div class="row">
-
-      <h1> 404 Error </h1>
-
-      <br>
-
-      <h2 style="text-align: center;"> Page not found </h2>
-
-   </div>
-
+      <h3 style="text-align: center;"> Page not found </h3>
+      <h2 style="text-align: center;"> 404 Error </h2><br>
 </div>
 <footer id="aabdFooter" class="footer">
     <div id="footer-container" class="container-fluid">
         <p class="footer-text"> Copyright © 2018 <p>
     </div>
 </footer>
+<script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
 </body>
-
-<script>
-
-   $(document).ready(function() {
-      $("#logOutForm").submit(function(e) {
-         e.preventDefault();
-      });
-   });
-
-</script>
 
 </html>

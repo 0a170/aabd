@@ -1,25 +1,25 @@
 <!DOCTYPE html>
+
 <html>
+
 <head>
+
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<title>AABD - Browse Users</title>
-
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet"/>
-<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
 
 <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js/user_search_ajax.js') }}"></script>
+<script src="{{ asset('js/quest_submit_ajax.js') }}"></script>
+<script src="{{ asset('js/jquery.steps.min.js') }}"></script>
 </head>
 
-<body>
+<body style="padding-top: 70px; background: #80bfff;">
 
-<nav class="navbar navbar-inverse navbar-fixed">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -57,32 +57,34 @@
   </div>
 </nav>
 
-
-
 <div class="container-fluid">
-   <h1> Browse Users </h1>
-   <div class="header-divider"></div><br>
+
    <div class="row">
-      <div class="searchDiv">
-         <input type="text" style="width: 100%; text-align: center;" name="userN" class="userNClass" placeholder="Search User"><br>
-         <table class="response-table"></table><br>
-         <button type="button" id="topBG" class="bSearch btn btn-warning"><span class="glyphicon glyphicon-king"></span></button>
-         <button type="button" id="newestBG" class="bSearch btn btn-success">Newest Bored Guys</button>
-         <div id="failedRequest" class="ajax_failure"></div>
-         <br>
-      </div>
+
+      <h1> Sorry </h1>
 
       <br>
-      <br>
 
-      <div class="loader"></div>
-      <div id="button-results"></div><br>
+      <h2 style="text-align: center;"> User not found </h2>
+
    </div>
+
 </div>
 <footer id="aabdFooter" class="footer">
-    <div id="footer-container" class="container-fluid"><br>
+    <div id="footer-container" class="container-fluid">
         <p class="footer-text"> Copyright © 2018 <p>
     </div>
 </footer>
 </body>
+
+<script>
+
+   $(document).ready(function() {
+      $("#logOutForm").submit(function(e) {
+         e.preventDefault();
+      });
+   });
+
+</script>
+
 </html>

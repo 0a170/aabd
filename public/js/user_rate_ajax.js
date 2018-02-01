@@ -97,7 +97,6 @@ $(document).ready(function() {
 					//data = JSON.parse(data);
 
 					if(data.alreadyDisliked) {
-						alert(failureID);
 						$('#' + failureID).text(data.alreadyDisliked);
 						$('#' + failureID).css('color', 'red');
 						$('#' + failureID).css('visibility', 'visible');

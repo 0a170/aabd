@@ -82,13 +82,3 @@ Route::post('/user/{id}/editComment', 'CommentController@editComment')->middlewa
 Route::post('upload_image', 'UserController@upload')->middleware('throttle:3');
 
 Route::post('change_description', 'UserController@updateDescription')->middleware('throttle:5');
-
-//ERROR ROUTE STILL IN TESTING
-Route::get('/error', function() {
-   return view('error');
-});
-
-//404 PAGE
-Route::any('{query}',
-   function() { return view('notfound'); })
-   ->where('query', '.*');
