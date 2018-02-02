@@ -56,6 +56,7 @@ class AnsweredQuestionController extends Controller
       if(!$vote_check) {
          $new_vote = new Vote;
          $new_vote->answer_id = $answer_id;
+         $new_vote->user_id = $user_id;
          $new_vote->answer = $answer;
          $new_vote->vote_up = 1;
          $new_vote->vote_down = 0;

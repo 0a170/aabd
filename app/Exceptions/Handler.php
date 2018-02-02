@@ -48,17 +48,14 @@ class Handler extends ExceptionHandler
 
            return response()->view('errors', [], 404);
         }
-
         if($exception instanceof ModelNotFoundException) {
 
            return response()->view('errors', [], usernotfound);
         }
-
         if ($exception instanceof TokenMismatchException) {
 
            return redirect('/')->with('message', 'Session expired, please log in again.');
         }
-
         return parent::render($request, $exception);
     }
 

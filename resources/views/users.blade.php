@@ -9,12 +9,9 @@
 <title>AABD - Browse Users</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 
-<script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js/user_search_ajax.js') }}"></script>
 </head>
 
 <body>
@@ -84,5 +81,9 @@
         <p class="footer-text"> Copyright © 2018 <p>
     </div>
 </footer>
+<script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/jquery.lazyloadxt.min.js') }}"></script>
+<script src="{{ asset('js/user_search_ajax.js') }}"></script>
 </body>
 </html>

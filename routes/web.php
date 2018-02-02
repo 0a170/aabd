@@ -22,11 +22,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//VERFICATION LINK INSIDE EMAIL
+Route::get('/verify/{email_token}', 'VerifyController@verify')->name('verify');
+
 //Route::get('/home', 'HomeController@index');
+//RESEND VERFICATION EMAIL LINK
+Route::get('/resendEmailVerification', 'UserController@resendEmailVerification');
 
 //TESTING REDIRECT TO USER PAGE AFTER TRYING TO COMMENT WITHOUT BEING LOGGED IN
 //Route::get('/returnAfterLogin/{id}', 'Auth\LoginController@returnAfterLogin');
-
 //USER BROWSING ROUTES
 Route::get('/users', function() {
    return view('users');

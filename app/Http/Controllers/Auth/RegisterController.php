@@ -65,10 +65,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
-
         //GET DEFAULT USER IMAGE AND CREATE A COPY RENAMED FOR NEW USER, THEN UPLOAD TO S3
-
-        //$default_image = Storage::disk('local')->get('/images/prof_def.png');
         $default_image = Storage::disk('s3')->get('profile_images/prof_def.png');
         $image_name = $data['user_name'] . '.png';
 
@@ -87,15 +84,20 @@ class RegisterController extends Controller
         $icon_image = $icon_image->stream();
         Storage::disk('s3')->put('icons/icon_' . $image_name, $icon_image->__toString());
 
-        return User::create([
+        //return User::create([
+        $user = User::create([
             'user_name' => $data['user_name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            //'profile_image' => 'prof_def.png',
             'profile_image' => $image_name,
             'description' => 'Click here to change your description',
             'questions_answered' => 0,
-			'score' => 0,
+			   'score' => 0,
+            'email_token' => str_random(10),
         ]);
+
+        $user->sendVerificationEmail();
+
+        return $user;
     }
 }

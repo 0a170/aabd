@@ -73,17 +73,43 @@
 <!-- ************************************ USER IMAGE AND STATS/MODALS************************************************** -->
 
       <div class="col-sm-4 lefty">
-
        <div class="divLeft">
-
          <div class="row">
-            <img src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profImg" style="border-radius: 50%;" data-toggle="modal" data-target="#popupLogin">
+            <img data-src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profImg" style="border-radius: 50%;" data-toggle="modal" data-target="#popupLogin">
             <h2 style="color: #4981ce; padding: 7px; display: inline-block;"> {{ Auth::user()->user_name }} </h2>
-            <i class="fa fa-trophy fa-2x" style="display: inline-block;" style="color: gold;" aria-hidden="true"></i>
+            @if(Auth::user()->score < 10)
+               <i class="fa fa-trophy fa-2x" style="display: inline-block; color: black;" aria-hidden="true"></i>
+            @elseif(Auth::user()->score >= 10 && Auth::user()->score < 100)
+               <i class="fa fa-trophy fa-2x" style="display: inline-block; color: #cd7f32;" aria-hidden="true"></i>
+            @elseif(Auth::user()->score >= 100 && Auth::user()->score < 1000)
+               <i class="fa fa-trophy fa-2x" style="display: inline-block; color: silver;" aria-hidden="true"></i>
+            @elseif(Auth::user()->score >= 1000)
+               <i class="fa fa-trophy fa-2x" style="display: inline-block; color: gold;" aria-hidden="true"></i>
+            @endif
          </div>
 
          <div class="divider"></div><br>
-
+         @if(Session::has('successfulVerification'))
+            <div class="alert alert-success">
+               <h4> Success! </h4>
+               <p> {{ Session::get('successfulVerification') }} </p><!-- show the message -->
+            </div><br>
+         @endif
+         @if(Session::has('successfulResend'))
+            <div class="alert alert-success">
+               <h4> Resent! </h4>
+               <p> {{ Session::get('successfulResend') }} </p>
+            </div>
+         @endif
+         @if(Auth::user()->verified == 0)
+            <div class="alert alert-info">
+               <h4> Not Verified </h4>
+               <p>Check Your Email For The Verification Email</p>
+               <form action="{{ url('/resendEmailVerification') }}">
+                  <input type="submit" class="btn btn-primary" value="Resend Verification Email">
+               </form>
+            </div><br>
+         @endif
          <div class="descDiv">
             <p style="text-align: left;"> {{ Auth::user()->description }} </p>
             <!-- <input type="button" id="editDescId" class="glyphicon glyphicon-edit btn btn-primary" data-toggle="modal" data-target="#editDescModal"> -->
@@ -154,28 +180,34 @@
       <div class="divCenter">
          <h3 class="blue-text"> Newest Questions </h3>
          <div class="divider"></div><br>
-         @if($questions->isEmpty())
+         @if(Auth::user()->verified == 0)
             <div class="answerDiv">
-               <p> No questions to answer now. Check back later. </p>
-            </div> <br><br>
-         @else
-         @foreach($questions as $question)
-            <div id="aDiv{{ $question->question_id }}" class="answerDiv">
-               <p style="color: #888888;"><b>{{ $question->question }}</b></p>
-               <form id="{{ $question->question_id }}" class="aForm" method="POST">
-                  <!-- <input type="text" id="answerID{{ $question->question_id }}" name="answerInput" class="answers" style="max-width: 80%; display: block; margin: 0 auto;">-->
-                  <textarea class="answer-text" name="answerInput_{{ $question->question_id }}" rows="3"></textarea>
-                  <input type="hidden" id="questionID{{ $question->question_id }}" name="ques" value="{{ $question->question }}">
-                  <input type="hidden" id="questionKey{{ $question->question_id }}" name="quesId" value="{{ $question->question_id }}">
-                  <input type="hidden" value="{{ csrf_token() }}">
-                  <br><br>
-                  <input type="submit" class="btn btn-primary button-margin" id="ent{{ $question->question_id }}" name="theAnswer" value="Answer This">
-                  <p id="aStatus{{ $question->question_id }}" class="answer-status">place holder</p>
-               </form>
-            </div>
-            <br>
-         @endforeach
-         <div style="margin: 0 auto;"> {!! $questions->render() !!} </div>
+               <p> You must have your email verified to start answering questions </p>
+            </div><br><br>
+         @elseif(Auth::user()->verified == 1)
+            @if($questions->isEmpty())
+               <div class="answerDiv">
+                  <p> No questions to answer now. Check back later. </p>
+               </div> <br><br>
+            @else
+            @foreach($questions as $question)
+               <div id="aDiv{{ $question->question_id }}" class="answerDiv">
+                  <p style="color: #888888;"><b>{{ $question->question }}</b></p>
+                  <form id="{{ $question->question_id }}" class="aForm" method="POST">
+                     <!-- <input type="text" id="answerID{{ $question->question_id }}" name="answerInput" class="answers" style="max-width: 80%; display: block; margin: 0 auto;">-->
+                     <textarea class="answer-text" name="answerInput_{{ $question->question_id }}" rows="3"></textarea>
+                     <input type="hidden" id="questionID{{ $question->question_id }}" name="ques" value="{{ $question->question }}">
+                     <input type="hidden" id="questionKey{{ $question->question_id }}" name="quesId" value="{{ $question->question_id }}">
+                     <input type="hidden" value="{{ csrf_token() }}">
+                     <br><br>
+                     <input type="submit" class="btn btn-primary button-margin" id="ent{{ $question->question_id }}" name="theAnswer" value="Answer This">
+                     <p id="aStatus{{ $question->question_id }}" class="answer-status">place holder</p>
+                  </form>
+               </div>
+               <br>
+            @endforeach
+            <div style="margin: 0 auto;"> {!! $questions->render() !!} </div>
+            @endif
          @endif
          <br>
       </div>
@@ -184,11 +216,8 @@
 <!-- **************************************  COMMENTS SECTION ****************************************************************************************** -->
 
       <div class="col-sm-4 righty" style="padding-left: 20px;">
-
          <div class="divRight">
-
             <h3 class="blue-text"> Your Comments </h3>
-
             <div class="divider"></div><br>
             <div class="comment-wrapper">
             @if($comments->isEmpty())
@@ -201,7 +230,7 @@
                <div class="commentDiv">
                   <div class="icon-container">
                      <a href="{{ url('user/' . $comment->commenter_id) }}">
-                        <img src="{{ Storage::disk('s3')->url('icons/icon_' . $comment->profile_image) }}" class="iconImg">
+                        <img data-src="{{ Storage::disk('s3')->url('icons/icon_' . $comment->profile_image) }}" class="iconImg">
                      </a>
                   </div>
                   <p> {{ $comment->comment }} </p>
@@ -220,15 +249,14 @@
 <br><br>
 <footer id="aabdFooter" class="footer">
     <div id="footer-container" class="container-fluid">
-        <p class="footer-text"> Copyright © 2018 <p>
+        <p class="footer-text"> Copyright © 2018 </p>
     </div>
 </footer>
 
 <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js/answer_ajax.js') }}"></script>
-<script src="{{ asset('js/changeDesc.js') }}"></script>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src="{{ asset('js/jquery.lazyloadxt.min.js') }}"></script>
+<script src="{{ asset('js/home.js') }}"></script>
 
 </body>
 </html>

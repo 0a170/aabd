@@ -42,8 +42,7 @@ class UserController extends Controller {
       //GET USER OBJECT
       $user = User::findOrFail($id);
 
-      //GET ANSWEREDQUESTION OBJECT
-      $answered_question = AnsweredQuestion::find($id);
+      //$answered_question = AnsweredQuestion::find($id);
 
       $ip_add = $req->ip();
       //GET ALL ANSWERED QUESTIONS BY USER
@@ -115,6 +114,7 @@ class UserController extends Controller {
 
    public function topBoredGuys() {
 
+      //ARRAY FOR TOP USERS
       $tOutput = [];
 
       $topUsers = DB::table("users")
@@ -136,6 +136,7 @@ class UserController extends Controller {
 
    public function newestBoredGuys() {
 
+     //ARRAY FOR NEWEST USERS
      $nOutput = [];
 
      $newestUsers = DB::table("users")
@@ -220,6 +221,15 @@ class UserController extends Controller {
       $user_desc->save();
 
       return redirect()->back();
+   }
+
+   public function resendEmailVerification(Request $req) {
+      //$user = User::where('id', '=', Auth::user()->id)->firstOrFail();
+      $user = User::findOrFail(Auth::user()->id);
+      $user->sendVerificationEmail();
+
+      return Redirect('/home')->with(["successfulResend" =>
+                                          "Succesfully Resent Email Verification!"]);
    }
 
 }

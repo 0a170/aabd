@@ -8,9 +8,6 @@
 
 <title>AABD - {{ $user->user_name }}</title>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
@@ -62,15 +59,23 @@
          <div class="divLeft">
 
             <div class="row">
-               <img src="{{ Storage::disk('s3')->url('profile_images/' . $user->profile_image) }}" class="profImg" style="border-radius: 50%;">
-               <h2 style="color: #4981ce; padding: 7px;"> {{ $user->user_name }} </h2>
-               <i class="fa fa-trophy fa-2x" style="color: gold;" aria-hidden="true"></i>
+               <img data-src="{{ Storage::disk('s3')->url('profile_images/' . $user->profile_image) }}" class="profImg" style="border-radius: 50%;">
+               <h2 style="color: #4981ce; padding: 7px; display: inline-block;"> {{ $user->user_name }} </h2>
+               @if($user->score < 10)
+                  <i class="fa fa-trophy fa-2x" style="display: inline-block; color: black;" aria-hidden="true"></i>
+               @elseif($user->score >= 10 && $user->score < 100)
+                  <i class="fa fa-trophy fa-2x" style="display: inline-block; color: #cd7f32;" aria-hidden="true"></i>
+               @elseif($user->score >= 100 && $user->score < 1000)
+                  <i class="fa fa-trophy fa-2x" style="display: inline-block; color: silver;" aria-hidden="true"></i>
+               @elseif($user->score >= 1000)
+                  <i class="fa fa-trophy fa-2x" style="display: inline-block; color: gold;" aria-hidden="true"></i>
+               @endif
             </div>
 
             <div class="divider"></div><br>
 
             <div class="descDiv">
-               <p> {{ $user->description }} </p>
+               <p style="text-align: left;"> {{ $user->description }} </p>
             </div>
             <div class="divider"></div>
 
@@ -146,7 +151,6 @@
                            </a>
                         </div>
                         <input type="hidden" id="commenterId" name="cCommenterName" value="{{ Auth::user()->id }}">
-                        <!-- <input type="text" id="cCommenter" name="cCommenterName"> -->
                         <input type="hidden" id="userId" name="cUserIdName" value="{{ $user->id }}">
                         <input type="text" id="newCommentId" name="newCommentName" placeholder="Enter Comment">
                         <br><br>
@@ -171,8 +175,14 @@
                         <!-- <input type="hidden" id="cUserId" name="cUserIdName" value="{{ $user->id }}"> -->
                         <br>
                         <input type="hidden" id="commentToken" value="{{ csrf_token() }}">
-                        <input type="button" id="editCommentId" class="btn btn-primary" value="Edit" data-toggle="modal" data-target="#editCommentModal">
-                        <input type="button" id="deleteCommentPrompt" class="btn btn-danger" value="Delete" data-toggle="modal" data-target="#deleteCommentModal">
+                        <div style="text-align: right;">
+                           <button type="button" id="editCommentId" class="btn btn-primary" value="Edit" data-toggle="modal" data-target="#editCommentModal">
+                              <span class="glyphicon glyphicon-edit"></span>
+                           </button>
+                           <button type="button" id="deleteCommentPrompt" class="btn btn-danger" value="Delete" data-toggle="modal" data-target="#deleteCommentModal">
+                              <span class="glyphicon glyphicon-remove"></span>
+                           </button>
+                        </div>
                      </form>
                      <br>
                   </div>
@@ -228,7 +238,6 @@
                         </div>
                      </div>
                   </div>
-
                   @endif
                @endif
             @else
@@ -276,6 +285,7 @@
 <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 <script src="https://use.fontawesome.com/4269355819.js"></script>
+<script src="{{ asset('js/jquery.lazyloadxt.min.js') }}"></script>
 <script src="{{ asset('js/user_rate_ajax.js') }}"></script>
 <script src="{{ asset('js/comments.js') }}"></script>
 

@@ -20,10 +20,7 @@ class AnswerMail extends Mailable
      */
     public function __construct($body)
     {
-        //
-        //$this->$title = $title;
         $this->body = $body;
-
     }
 
     /**
@@ -35,9 +32,6 @@ class AnswerMail extends Mailable
     {
         return $this->from('askaboredguy@gmail.com')
         ->view('email.sendanswer')
-        ->subject("A bored guy has answered your question");
-
-
-
+        ->subject("A bored guy has answered your question!");
     }
 }

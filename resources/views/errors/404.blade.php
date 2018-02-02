@@ -55,17 +55,20 @@
     </div>
   </div>
 </nav>
-
 <div class="container-fluid">
-      <h3 style="text-align: center;"> Page not found </h3>
-      <h2 style="text-align: center;"> 404 Error </h2><br>
+   <div class="row">
+      <h3 style="text-align: center;"> Page not found </h3><br>
+      <h2 style="text-align: center;"> 404 Error </h2>
+   </div>
 </div>
 <footer id="aabdFooter" class="footer">
     <div id="footer-container" class="container-fluid">
         <p class="footer-text"> Copyright © 2018 <p>
     </div>
 </footer>
-<script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
-</body>
 
+<script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+</body>
 </html>
