@@ -15,7 +15,6 @@
 </head>
 
 <body>
-
 <nav class="navbar navbar-inverse navbar-fixed">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -54,8 +53,6 @@
   </div>
 </nav>
 
-
-
 <div class="container-fluid">
    <h1> Browse Users </h1>
    <div class="header-divider"></div><br>
@@ -65,19 +62,16 @@
          <table class="response-table"></table><br>
          <button type="button" id="topBG" class="bSearch btn btn-warning"><span class="glyphicon glyphicon-king"></span></button>
          <button type="button" id="newestBG" class="bSearch btn btn-success">Newest Bored Guys</button>
+         <button type="button" id="closeBG" class="bSearch btn btn-danger" style="float: right;"><span class="glyphicon glyphicon-remove"></span></button>
          <div id="failedRequest" class="ajax_failure"></div>
          <br>
-      </div>
-
-      <br>
-      <br>
-
+      </div><br><br>
       <div class="loader"></div>
       <div id="button-results"></div><br>
    </div>
 </div>
 <footer id="aabdFooter" class="footer">
-    <div id="footer-container" class="container-fluid"><br>
+    <div id="footer-container" class="container-fluid">
         <p class="footer-text"> Copyright © 2018 <p>
     </div>
 </footer>

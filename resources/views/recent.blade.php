@@ -56,15 +56,10 @@
   </div>
 </nav>
 
-
 <div class="container-fluid">
-
    <div class="row">
-
       <div style="float: none; margin: 0 auto;">
-
             <div style="text-align: center;">
-
                 <h1 style="display: inline-block;"> Recent Answers </h1>
                 <i style="font-size:24px; position: absolute; right: 3%; color: #4981ce; display: inline-block;" class="fa gear" id="gear">&#xf013;</i><br>
                 <!-- <form class="gear-options" style="float: right;"> -->
@@ -78,6 +73,7 @@
               <!--  </form> -->
             </div>
                 <br>
+                  <div class="rate-wrapper scrollbar">
                   @foreach($answers as $answer)
                   <div class="rateDiv">
                     <form id="{{ $answer->answer_id }}" class="rateForm" method="POST">
@@ -112,6 +108,7 @@
                   <br>
                   <br>
                  @endforeach
+                 </div>
                 <br>
                 <div style="margin: 0 auto;"> {!! $answers->render() !!} </div>
                 <br><br>
@@ -129,11 +126,9 @@
 <script src="{{ asset('js/rate_ajax.js') }}"></script>
 <script>
    $(document).ready(function() {
-
       $("#logOutForm").submit(function(e) {
          e.preventDefault();
       });
-
       $("#gear").on('click', function() {
         $("#gear").toggleClass("gear-spin");
         $("#gearOptions").toggle();
@@ -163,5 +158,4 @@
 </script>
 
 </body>
-
 </html>

@@ -44,10 +44,12 @@ class VerifyEmail extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('Verify Your Account Email To Start Answering')
-                    //->action('Notification Action', url('/'))
+                    /*->line('Verify Your Account Email To Start Answering')
                     ->action('Verify Account', route('verify', $this->user->email_token))
-                    ->line('Thank you for using our application!');
+                    ->line('Thank you for using our application!');*/
+                    ->from('askaboredguy@gmail.com', 'askaboredguy@gmail.com')
+                    ->subject('Ask A Bored Guy - Verify your email')
+                    ->markdown('email.verify', ['user' => $this->user]);
     }
 
     /**

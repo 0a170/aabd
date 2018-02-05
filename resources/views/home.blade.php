@@ -176,10 +176,11 @@
 
 <!-- ************************************ QUESTIONS SECTION ****************************************************************************************** -->
 
-      <div class="col-sm-4">
+      <div class="col-sm-4 c">
       <div class="divCenter">
          <h3 class="blue-text"> Newest Questions </h3>
          <div class="divider"></div><br>
+         <div class="scrollbar">
          @if(Auth::user()->verified == 0)
             <div class="answerDiv">
                <p> You must have your email verified to start answering questions </p>
@@ -195,7 +196,7 @@
                   <p style="color: #888888;"><b>{{ $question->question }}</b></p>
                   <form id="{{ $question->question_id }}" class="aForm" method="POST">
                      <!-- <input type="text" id="answerID{{ $question->question_id }}" name="answerInput" class="answers" style="max-width: 80%; display: block; margin: 0 auto;">-->
-                     <textarea class="answer-text" name="answerInput_{{ $question->question_id }}" rows="3"></textarea>
+                     <textarea class="answer-text form-control" name="answerInput_{{ $question->question_id }}" rows="3"></textarea>
                      <input type="hidden" id="questionID{{ $question->question_id }}" name="ques" value="{{ $question->question }}">
                      <input type="hidden" id="questionKey{{ $question->question_id }}" name="quesId" value="{{ $question->question_id }}">
                      <input type="hidden" value="{{ csrf_token() }}">
@@ -210,6 +211,7 @@
             @endif
          @endif
          <br>
+         </div>
       </div>
       </div>
 
@@ -219,7 +221,7 @@
          <div class="divRight">
             <h3 class="blue-text"> Your Comments </h3>
             <div class="divider"></div><br>
-            <div class="comment-wrapper">
+            <div class="scrollbar">
             @if($comments->isEmpty())
                <div class="commentDiv" style="text-align: center;">
                   <p> You have no comments </p>

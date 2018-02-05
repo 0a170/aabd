@@ -69,58 +69,38 @@
     <div id="pAsk">
 
 	     <h1> Ask a Bored Guy </h1>
-
 	     <br>
-
 	     <div id="askDiv">
-
 	        <form id="frmDemo" class="form-group" method="POST">
-
 		         <h3> Ask</h3>
-
 		         <section>
-
 			          <div id="stepHeader">
 				           <h2> Your Question</h2>
 			          </div>
-			          <input type="text" id="quest" name="question" class="all_inputs" placeholder="Question">
+			          <input type="text" id="quest" name="question" class="all_inputs form-control" placeholder="Question">
 			          <input type="hidden" class="whatev" value="{{ csrf_token() }}">
-
                </section>
-
 		         <h3> Email </h3>
-
 		         <section>
-
 			          <div id="stepHeader">
 				           <h2> Your Email </h2>
 			          </div>
-			          <input type="text" id="em" name="email"  class="all_inputs" placeholder="Email Address">
+			          <input type="text" id="em" name="email"  class="all_inputs form-control" placeholder="Email Address">
                    <br>
-
 		         </section>
-
 		         <h3> Submit </h3>
-
 		         <section>
-
 			          <div id="stepHeader">
 				           <h2> Submit Your Question </h2>
 			          </div>
 			          <br>
-
 		         </section>
-
 	        </form>
-
 	     </div>
         <br>
-        <div id="question_status"></div>
-
+        <div id="question_status" class="alert initial"></div>
     </div>
-
     <br>
-
    </div>
   </div>
   <footer id="aabdFooter" class="footer">
@@ -134,21 +114,11 @@
 <script src="{{ asset('js/quest_submit_ajax.js') }}"></script>
 
 <script>
-
    $(document).ready(function() {
-
       $("#logOutForm").submit(function(e) {
-
          e.preventDefault();
-
       });
-
    });
-
 </script>
-
-
 </body>
-
-
 </html>

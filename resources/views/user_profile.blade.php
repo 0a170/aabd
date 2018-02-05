@@ -152,7 +152,7 @@
                         </div>
                         <input type="hidden" id="commenterId" name="cCommenterName" value="{{ Auth::user()->id }}">
                         <input type="hidden" id="userId" name="cUserIdName" value="{{ $user->id }}">
-                        <input type="text" id="newCommentId" name="newCommentName" placeholder="Enter Comment">
+                        <textarea id="newCommentId" class="form-control" name="newCommentName" placeholder="Enter Comment"></textarea>
                         <br><br>
                         <input type="hidden" id="commentToken" value="{{ csrf_token() }}">
                         <input type="submit" id="submitCommentId" class="btn btn-primary">
@@ -188,30 +188,25 @@
                   </div>
 
                   <div class="modal fade" id="editCommentModal" role="dialog">
-                     <div class="modal-dialog modal-sm">
                         <div class="modal-content">
                            <div class="modal-header">
                               <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h4 class="modal-title">Modal Header</h4>
+                              <h3 class="modal-title">Edit Your Comment Below</h4>
                            </div>
                            <div class="modal-body">
                               <form id="editCommentForm" method="POST">
                                  {{ csrf_field() }}
-                                 <h2> Edit Below: </h2><br>
                                  <input type="hidden" id="eCommentId" name="eCommentIdName" value="{{ $commenter_name_check->comment_id }}">
                                  <input type="hidden" id="eUserPageId" name="eUserPageIdName" value="{{ $user->id }}">
                                  <input type="hidden" id="editCommentTokenId" name="editCommentToken" value="{{ csrf_token() }}">
-                                 <input type="text" id="newCommentTextId" name="newCommentText"><br><br>
-                                 <input type="button" class="btn btn-primary" value="Go Back" data-dismiss="modal">
-                                 <input type="submit" id="editCommentId" class="btn btn-success" value="Submit Edit"><br>
+                                 <textarea id="newCommentTextId" class="form-control" name="newCommentText"></textarea><br>
+                                 <div style="text-align: right;">
+                                    <input type="submit" id="editCommentId" class="btn btn-success">
+                                 </div>
                                  <div id="editCommentStatus">place holder</div>
                               </form>
                            </div>
-                           <div class="modal-footer">
-                              <input type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                           </div>
                         </div>
-                     </div>
                   </div>
 
                   <div class="modal fade" id="deleteCommentModal" role="dialog">
@@ -281,13 +276,11 @@
         <p class="footer-text"> Copyright © 2018 <p>
     </div>
 </footer>
-
 <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 <script src="https://use.fontawesome.com/4269355819.js"></script>
 <script src="{{ asset('js/jquery.lazyloadxt.min.js') }}"></script>
 <script src="{{ asset('js/user_rate_ajax.js') }}"></script>
 <script src="{{ asset('js/comments.js') }}"></script>
-
 </body>
 </html>

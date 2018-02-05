@@ -12,7 +12,7 @@
       p {
    	   font-family: "Roboto", sans-serif;
    	   color: #4981ce;
-   	   font-size:1.1em;
+   	   font-size:1em;
          font-weight: 300;
    	   text-shadow: none;
          text-align: center;
@@ -22,7 +22,7 @@
    	   font-family: "Roboto", sans-serif;
    	   color: #4981ce;
    	   text-shadow: none;
-       text-align: center;
+         text-align: center;
       }
 
       h1 {
@@ -45,6 +45,7 @@
       }
 
       td.header {
+         text-align: center;
          border-bottom: 3px solid #4981ce;
          background: #80bfff;
       }
@@ -68,20 +69,25 @@
 <div class="container">
    <table style="width: 100%; max-width: 600px;" border="0" cellpadding="0" cellspacing="0">
        <tr>
-        <td class="header" >
-           <h1> Ask A Bored Guy <h1>
+        <td class="header">
+           <h1 style="text-align: center; color: #4981ce;"> Ask A Bored Guy <h1>
         </td>
        </tr>
        <tr>
         <td><br><br><br>
-         <h2> {{ $body }} </h2><br><br><br>
+         <h2 style="color: #4981ce;">
+            Thank you for registering, {{ $user->user_name }}.
+            Follow the link below to verify your email.
+         </h2>
          <div style="text-align: center;">
-            <a href="{{ url('/ask') }}" class="ask-button" style="color: white">Ask Again</a>
-         </div><br><br></td>
+            <a href="{{ url('/verify/' . $user->email_token) }}" class="ask-button" style="text-align: center; color: white;">Verify Email</a>
+         </div>
+         <br><br>
+        </td>
        </tr>
        <tr>
-        <td class="footer" ><br>
-           <p> Copyright - Ask A Bored Dude </p><br>
+        <td class="footer"><br>
+           <p style="text-align: center; color: #4981ce;"> Copyright - Ask A Bored Dude </p><br>
         </td>
        </tr>
    </table>
