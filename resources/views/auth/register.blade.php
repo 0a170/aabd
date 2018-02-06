@@ -12,17 +12,9 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-
 </head>
 
 <body>
-
-
 <nav class="navbar navbar-inverse navbar-fixed">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -51,9 +43,11 @@
 
 <div class="container-fluid" style="float: none; margin: 0 auto;">
     <div class="row">
+      <h2 style="color: #4981ce;"> Register </h2>
+      <div class="divider" style="margin: 0 auto; width: 90%; max-width: 400px;"></div><br>
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
+
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
@@ -121,6 +115,8 @@
         </div>
     </div>
 </div>
+<script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
 </body>
 

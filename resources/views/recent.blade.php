@@ -60,19 +60,18 @@
    <div class="row">
       <div style="float: none; margin: 0 auto;">
             <div style="text-align: center;">
-                <h1 style="display: inline-block;"> Recent Answers </h1>
-                <i style="font-size:24px; position: absolute; right: 3%; color: #4981ce; display: inline-block;" class="fa gear" id="gear">&#xf013;</i><br>
-                <!-- <form class="gear-options" style="float: right;"> -->
+                <h1 style="display: inline-block; color: #4981ce;"> Recent Answers </h1>
+                <div class="askrate-divider"></div><br>
+                <!--<i style="font-size:24px; position: absolute; right: 3%; color: #4981ce; display: inline-block;" class="fa gear" id="gear">&#xf013;</i><br>
                 <div class="header-divider"></div>
                   <div id="gearOptions">
                     <div id="five" class="per-page"><p id="fiveText" style="border-bottom: 1px solid white; color: white;">5 per page </p></div>
                     <div id="ten" class="per-page"><p id="tenText" style="border-bottom: 1px solid white; color: white;">10 per page </p></div>
                     <div id="fifteen" class="per-page"><p id="fifteenText" style="border-bottom: 1px solid white; color: white;">15 per page </p></div>
                     <div id="twenty" class="per-page"><p id="twentyText" style="color: white;">20 per page </p></div>
-                  </div>
-              <!--  </form> -->
+                 </div>-->
             </div>
-                <br>
+                <!-- <br> -->
                   <div class="rate-wrapper scrollbar">
                   @foreach($answers as $answer)
                   <div class="rateDiv">

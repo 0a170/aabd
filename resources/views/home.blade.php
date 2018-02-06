@@ -3,7 +3,6 @@
 <html>
 
 <head>
-
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -67,7 +66,6 @@
    @endif
 
 <div class="container-fluid">
-
    <div class="col-sm-12">
 
 <!-- ************************************ USER IMAGE AND STATS/MODALS************************************************** -->
@@ -87,7 +85,6 @@
                <i class="fa fa-trophy fa-2x" style="display: inline-block; color: gold;" aria-hidden="true"></i>
             @endif
          </div>
-
          <div class="divider"></div><br>
          @if(Session::has('successfulVerification'))
             <div class="alert alert-success">
@@ -148,7 +145,6 @@
             </div>
          </div> <br><br>
 
-
          <div role="dialog" id="editDescModal" class="modal fade">
             <div class="modal-content">
                <div class="modal-header">
@@ -160,7 +156,7 @@
                   <form id="upd_desc" action="change_description" method="POST">
                      {{ csrf_field() }}
                      <div style="padding: 10px 20px;">
-                        <textarea id="nD" rows="3" name="newDesc"></textarea><br>
+                        <textarea id="nD" class="form-control" style="margin: 0 auto; width: 90%; max-width: 100%;" rows="3" name="newDesc"></textarea><br>
                         <input type="hidden" name="hidUsnD" value="{{ Auth::user()->user_name }}">
                         <input type="hidden" value="{{ csrf_token() }}">
                         <br>
@@ -217,7 +213,7 @@
 
 <!-- **************************************  COMMENTS SECTION ****************************************************************************************** -->
 
-      <div class="col-sm-4 righty" style="padding-left: 20px;">
+      <div class="col-sm-4 righty">
          <div class="divRight">
             <h3 class="blue-text"> Your Comments </h3>
             <div class="divider"></div><br>

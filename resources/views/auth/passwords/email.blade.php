@@ -12,15 +12,9 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 </head>
-
-
 <body>
-
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -31,17 +25,15 @@
       <a class="navbar-brand" href="#">AABG</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-
       <ul class="nav navbar-nav">
-
-        <li><a href="{{ url('/ask') }}" class="link">Ask</a></li>
-        @if (Auth::check())
-           <li><a href="{{ url('/home') }}" class="link">Answer</a></li>
-           <li><a href="{{ url('/recent') }}" class="link">Recent</a></li>
-        @else
-           <li><a href="{{ url('/recent') }}" class="link">Recent</a></li>
-        @endif
-
+         <li><a href="{{ url('/ask') }}" class="link"> Ask </a></li>
+         <li><a href="{{ url('/home') }}" class="link"> Answer</a></li>
+         <li><a href="{{ url('/recent') }}" class="link"> Recent </a></li>
+         <li><a href="{{ url('/users') }}" class="link"> Users </a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+         <li><a href="{{ url('/login') }}" class="link"> Login</a></li>
+         <li><a href="{{ url('/register') }}"class="link"> Register</a></li>
       </ul>
     </div>
   </div>
@@ -49,9 +41,10 @@
 
 <div class="container-fluid">
     <div class="row">
+      <h2 style="color: #4981ce;"> Reset Password </h2>
+      <div class="divider" style="margin: 0 auto; width: 90%;"></div><br>
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
                 <div class="panel-body">
                     @if (session('status'))
                         <div class="alert alert-success">
@@ -91,5 +84,7 @@
 </div>
 
 </body>
+<script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
 </html>

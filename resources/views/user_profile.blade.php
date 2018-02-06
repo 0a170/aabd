@@ -57,7 +57,6 @@
    <div class="col-sm-12">
       <div class="col-sm-4 lefty">
          <div class="divLeft">
-
             <div class="row">
                <img data-src="{{ Storage::disk('s3')->url('profile_images/' . $user->profile_image) }}" class="profImg" style="border-radius: 50%;">
                <h2 style="color: #4981ce; padding: 7px; display: inline-block;"> {{ $user->user_name }} </h2>
@@ -136,12 +135,12 @@
 
 <!-- ****************************************** COMMENTS SECTION ************************************************** -->
 
-      <div class="col-sm-4 righty" style="padding-left: 20px;">
+      <div class="col-sm-4 righty">
          <div class="divRight">
             @if(Auth::check())
                @if(Auth::user()->id != $user->id)
                   @if(!$commenter_name_check)
-                  <h3 style="text-align: center; color: #4981ce;"> Leave A Comment </h3><br>
+                  <h3 style="text-align: center; color: #4981ce;"> Leave A Comment </h3>
                   <div class="divider"></div><br>
                   <div class="commentDiv" style="text-align: center;">
                      <form id="createCommentForm" class="commentForm" method="POST">
@@ -153,7 +152,7 @@
                         <input type="hidden" id="commenterId" name="cCommenterName" value="{{ Auth::user()->id }}">
                         <input type="hidden" id="userId" name="cUserIdName" value="{{ $user->id }}">
                         <textarea id="newCommentId" class="form-control" name="newCommentName" placeholder="Enter Comment"></textarea>
-                        <br><br>
+                        <br>
                         <input type="hidden" id="commentToken" value="{{ csrf_token() }}">
                         <input type="submit" id="submitCommentId" class="btn btn-primary">
                         <div id="comStatus">place holder</div>
@@ -170,10 +169,7 @@
                            </a>
                         </div>
                         <p style="text-align: left;"> {{ $commenter_name_check->comment }} </p>
-                        <input type="hidden" id="commentId" name="cCommenterName" value="{{ $commenter_name_check->comment_id }}">
-                        <!-- <input type="text" id="cCommenter" name="cCommenterName"> -->
-                        <!-- <input type="hidden" id="cUserId" name="cUserIdName" value="{{ $user->id }}"> -->
-                        <br>
+                        <input type="hidden" id="commentId" name="cCommenterName" value="{{ $commenter_name_check->comment_id }}"><br>
                         <input type="hidden" id="commentToken" value="{{ csrf_token() }}">
                         <div style="text-align: right;">
                            <button type="button" id="editCommentId" class="btn btn-primary" value="Edit" data-toggle="modal" data-target="#editCommentModal">
@@ -184,14 +180,13 @@
                            </button>
                         </div>
                      </form>
-                     <br>
                   </div>
 
                   <div class="modal fade" id="editCommentModal" role="dialog">
                         <div class="modal-content">
                            <div class="modal-header">
                               <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h3 class="modal-title">Edit Your Comment Below</h4>
+                              <h3 class="modal-title">Edit Your Comment</h4>
                            </div>
                            <div class="modal-body">
                               <form id="editCommentForm" method="POST">
@@ -214,7 +209,7 @@
                         <div class="modal-content">
                            <div class="modal-header">
                               <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h4 class="modal-title">Modal Header</h4>
+                              <h3 class="modal-title">Delete Your Comment</h3>
                            </div>
                            <div class="modal-body">
                               <form id="deleteCommentForm" action="{{ $user->id }}/deleteComment" method="POST">
@@ -223,12 +218,10 @@
                                  <input type="hidden" name="deleteCommentToken" value="{{ csrf_token() }}">
                                  <input type="hidden" name="dCommentId" value="{{ $commenter_name_check->comment_id }}">
                                  <input type="hidden" name="dUserPageId" value="{{ $user->id }}">
-                                 <input type="button" class="btn btn-primary" value="Go Back" data-dismiss="modal">
-                                 <input type="submit" id="deleteCommentId" class="btn btn-danger" value="Delete It">
+                                 <div style="text-align: right;">
+                                    <input type="submit" id="deleteCommentId" class="btn btn-danger" value="Delete It">
+                                 </div>
                               </form>
-                           </div>
-                           <div class="modal-footer">
-                              <input type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                            </div>
                         </div>
                      </div>

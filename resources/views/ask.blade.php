@@ -68,8 +68,8 @@
 
     <div id="pAsk">
 
-	     <h1> Ask a Bored Guy </h1>
-	     <br>
+	     <h2 style="color: #4981ce;"> Ask a Bored Guy </h2>
+	     <div class="askrate-divider"></div><br>
 	     <div id="askDiv">
 	        <form id="frmDemo" class="form-group" method="POST">
 		         <h3> Ask</h3>
