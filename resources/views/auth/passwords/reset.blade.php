@@ -9,16 +9,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.steps.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
 <link rel="stylesheet" type="text/css" href="{{asset('public/css/style.css')}}">
 
-
-
-<script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-
 </head>
-
 <body>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -49,9 +44,10 @@
 
 <div class="container-fluid">
     <div class="row">
+      <h2 style="color: #4981ce;">Reset Password Below</h2>
+      <div class="divider" style="margin: 0 auto; width: 90%;"></div>
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -119,7 +115,8 @@
         </div>
     </div>
 </div>
-
 </body>
 
+<script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 </html>

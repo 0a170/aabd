@@ -10,6 +10,8 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
+        
 <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
 
 </head>
