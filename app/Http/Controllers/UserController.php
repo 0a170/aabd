@@ -80,7 +80,8 @@ class UserController extends Controller {
 
       //GET COMMENTER USER NAME IF COMMENTER HAS NOT ALREADY COMMENTED ON THE USER'S PAGE
       if(Auth::check()) {
-         $commenter_name_check = Comment::where('commenter_id', '=', Auth::user()->id)
+         $commenter_name_check = Comment::where('u_id', $id)
+                                               ->where('commenter_id', Auth::user()->id)
                                                ->select('comment_id', 'commenter_id', 'comment')
                                                ->first();
       }
