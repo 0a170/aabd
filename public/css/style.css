@@ -111,16 +111,6 @@ h1 {
    background: white;
 }
 
-Button[id*="upButton"]:hover {
-	background-color: green;
-	color: white;
-}
-
-Button[id*="downButton"]:hover {
-	background-color: red;
-	color: white;
-}
-
 .response-table {
    height: 5%;
    width: 100%;
@@ -259,10 +249,8 @@ Button[id*="downButton"]:hover {
 }
 
 .quesDiv {
-   /*max-width: 400px*/
    text-align: center;
    background: #80bfff;
-   /*margin: 0 auto;*/
 }
 
 .divLeft {
@@ -388,6 +376,16 @@ Button[id*="downButton"]:hover {
    max-width: 400px;
 }
 
+.profImgContainer {
+   position: relative;
+}
+
+#changeProfImgButton {
+   float: right;
+   position: absolute;
+   z-index: 3000;
+}
+
 .profImg {
    margin: 0 auto;
    border-radius: 50%;
@@ -438,6 +436,31 @@ Button[id*="downButton"]:hover {
    float: left;
 }
 
+@keyframes slideIn {
+   0% {right: -400px; opacity: 0;}
+   100% {right: 0px; opacity: 1;}
+}
+
+@-webkit-keyframes slideIn {
+   0% {right: -400px; opacity: 0;}
+   100% {right: 0px; opacity: 1;}
+}
+
+@keyframes slideOut {
+   0% {right: 0px; opacity: 1;}
+   100% {right: -400px; opacity: 0;}
+}
+
+@-webkit-keyframes slideOut {
+   0% {right: 0px;}
+   100% {right: -400px;}
+}
+
+@-webkit-@keyframes slideOut {
+   0% {right: 0px;}
+   100% {right: -400px;}
+}
+
 .userDiv {
    max-width: 400px;
    width: 90%;
@@ -451,24 +474,17 @@ Button[id*="downButton"]:hover {
    -webkit-animation: slideIn 0.5s;
 }
 
-@keyframes slideIn {
-   from {right: -400px;}
-   to {right: 0px;}
-}
-
-@-webkit-@keyframes slideIn {
-   from {right: -400px;}
-   to {right: 0px;}s
-}
-
-@keyframes slideOut {
-   from {left: 0px;}
-   to {right: 400px;}
-}
-
-@-webkit-@@keyframes slideOut {
-   from {left: 0px;}
-   to {right: 400px;}s
+.userDivRemove {
+   max-width: 400px;
+   width: 90%;
+   height: 20%;
+   margin: 0 auto;
+   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+   background-color: white;
+   font-family: "Roboto", sans-serif;
+   position: relative;
+   animation: slideOut 0.5s;
+   -webkit-animation: slideOut 0.5;
 }
 
 .all_buttons {

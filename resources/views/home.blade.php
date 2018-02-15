@@ -73,7 +73,10 @@
       <div class="col-sm-4 lefty">
        <div class="divLeft">
          <div class="row">
-            <img data-src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profImg" style="border-radius: 50%;" data-toggle="modal" data-target="#popupLogin">
+            <div id="profImgContainer">
+               <button type="button" id="changeProfImgButton" class="btn btn-primary" style="float: right;" data-toggle="modal" data-target="#popupLogin"><span class="glyphicon glyphicon-user"></span></button>
+               <img data-src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profImg" style="border-radius: 50%;">
+            </div>
             <h2 style="color: #4981ce; padding: 7px; display: inline-block;"> {{ Auth::user()->user_name }} </h2>
             @if(Auth::user()->score < 10)
                <i class="fa fa-trophy fa-2x" style="display: inline-block; color: black;" aria-hidden="true"></i>

@@ -88,12 +88,22 @@ $(document).ready(function() {
    var topBGFlag = 0;
    var newestBGFlag = 0;
 
+   $("#closeBG").on('click', function() {
+      if(topBGFlag == 1 || newestBGFlag == 1) {
+         var allUsers = $("#button-results").children();
+
+         $.each(allUsers, function(index, allUser) {
+            $(allUser).removeClass('userDiv').addClass('userDivRemove');
+         });
+         setTimeout(function() {
+            $("#button-results").empty();
+         }, 500);
+      }
+      topBGFlag = 0;
+   });
+
    $("#topBG").on ('click', function() {
-
       var buttonClicked = this;
-
-      //$(".loader").show();
-
       if(topBGFlag == 0) {
       $.ajax({
         type: "GET",
@@ -105,27 +115,19 @@ $(document).ready(function() {
           var retStr = "";
           for(var i=0; i < response.length; i++) {
 
-            //retStr += '<div class="userDiv">' + response[i].username +
-            retStr += '<a href="user/' + response[i].id + '"><div class="userDiv"><img src="' + response[i].profileImage + '" style="display: inline-block;"> <p style="display: inline-block;">' + response[i].username +
-                      ' and ' + response[i].score + '</div></a><br>';
+            retStr += '<a href="user/' + response[i].id + '" class="userDiv" style="margin-bottom: 15px;"><div><img src="' + response[i].profileImage + '" style="display: inline-block;"> <p style="display: inline-block;">' + response[i].username +
+                      ' and ' + response[i].score + '</div></a>';
           }
           $("#button-results").html(retStr);
         }
-
       });
-
       topBGFlag = 1;
       newestBGFlag = 0;
-
       }
-
     });
 
     $("#newestBG").on('click', function() {
-
-      //$(".loader").show();
         if(newestBGFlag == 0) {
-
         $.ajax({
           type: "GET",
           dataType: 'JSON',
@@ -135,14 +137,11 @@ $(document).ready(function() {
             $("#button-results").empty();
             var retStr = "";
             for(var i=0; i < response.length; i++) {
-
-              //retStr += '<div class="userDiv"><img src="{{ Storage::disk(\'s3\')->url(\'thumbnails/thumbnail_' + response[i].profileImage + '\') }}"> <p>' + response[i].username +
-              retStr += '<a href="user/' + response[i].id + '"><div class="userDiv"><img src="' + response[i].profileImage + '" style="display: inline-block;"> <p style="display: inline-block;">' + response[i].username +
-                        ' and ' + response[i].score + '</p></div></a><br>';
+               retStr += '<a href="user/' + response[i].id + '" class="userDiv" style="margin-bottom: 15px;"><div><img src="' + response[i].profileImage + '" style="display: inline-block;"> <p style="display: inline-block;">' + response[i].username +
+                         ' and ' + response[i].score + '</p></div></a>';
             }
             $("#button-results").html(retStr);
           }
-
         });
 
         newestBGFlag = 1;
