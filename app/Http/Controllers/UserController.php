@@ -102,6 +102,7 @@ class UserController extends Controller {
                ->select("id","user_name", "profile_image")
                 //->where('user_name','LIKE',"%$search%")
                ->where('user_name', 'ILIKE', '%' . $req->user_input . '%')
+               ->take(5)
                ->get();
 
       if($users) {

@@ -74,19 +74,25 @@
        <div class="divLeft">
          <div class="row">
             <div id="profImgContainer">
-               <button type="button" id="changeProfImgButton" class="btn btn-primary" style="float: right;" data-toggle="modal" data-target="#popupLogin"><span class="glyphicon glyphicon-user"></span></button>
+               <button type="button" id="changeProfImgButton" class="btn btn-primary" data-toggle="modal" data-target="#popupLogin"><span class="glyphicon glyphicon-user"></span></button>
                <img data-src="{{ Storage::disk('s3')->url('profile_images/' . Auth::user()->profile_image) }}" class="profImg" style="border-radius: 50%;">
             </div>
-            <h2 style="color: #4981ce; padding: 7px; display: inline-block;"> {{ Auth::user()->user_name }} </h2>
-            @if(Auth::user()->score < 10)
-               <i class="fa fa-trophy fa-2x" style="display: inline-block; color: black;" aria-hidden="true"></i>
-            @elseif(Auth::user()->score >= 10 && Auth::user()->score < 100)
-               <i class="fa fa-trophy fa-2x" style="display: inline-block; color: #cd7f32;" aria-hidden="true"></i>
-            @elseif(Auth::user()->score >= 100 && Auth::user()->score < 1000)
-               <i class="fa fa-trophy fa-2x" style="display: inline-block; color: silver;" aria-hidden="true"></i>
-            @elseif(Auth::user()->score >= 1000)
-               <i class="fa fa-trophy fa-2x" style="display: inline-block; color: gold;" aria-hidden="true"></i>
-            @endif
+            <div class="name-and-score-div">
+               <div class="name-div" style="display: inline-block; margin: 0 auto;">
+                  <h2 style="text-align: center; color: #4981ce;"> {{ Auth::user()->user_name }} </h2>
+               </div>
+               <div class="score-div" style="display: inline-block;">
+                  @if(Auth::user()->score < 10)
+                     <i class="fa fa-trophy fa-2x" style="color: black;" aria-hidden="true" data-toggle="modal" data-target="#scoreModal"></i>
+                  @elseif(Auth::user()->score >= 10 && Auth::user()->score < 100)
+                     <i class="fa fa-trophy fa-2x" style="color: #cd7f32;" aria-hidden="true" data-toggle="modal" data-target="#scoreModal"></i>
+                  @elseif(Auth::user()->score >= 100 && Auth::user()->score < 1000)
+                     <i class="fa fa-trophy fa-2x" style="color: silver;" aria-hidden="true" data-toggle="modal" data-target="#scoreModal"></i>
+                  @elseif(Auth::user()->score >= 1000)
+                     <i class="fa fa-trophy fa-2x" style="color: gold;" aria-hidden="true" data-toggle="modal" data-target="#scoreModal"></i>
+                  @endif
+               </div>
+            </div>
          </div>
          <div class="divider"></div><br>
          @if(Session::has('successfulVerification'))
@@ -146,7 +152,23 @@
                   <p id="msg"></p>
 			      </div>
             </div>
-         </div> <br><br>
+         </div>
+
+         <div class="modal" id="scoreModal" style="height:200px; width: 200px;" class="modal fade" role="dialog">
+            <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <h5 class="modal-title">Your Score</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                       <span aria-hidden="true">&times;</span>
+                    </button>
+                 </div>
+                 <div class="modal-body">
+                    <p>{{ Auth::user()->score }}</p>
+                 </div>
+              </div>
+           </div>
+        </div>
 
          <div role="dialog" id="editDescModal" class="modal fade">
             <div class="modal-content">

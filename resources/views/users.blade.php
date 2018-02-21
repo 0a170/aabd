@@ -54,11 +54,11 @@
 </nav>
 
 <div class="container-fluid">
-   <h1> Browse Users </h1>
-   <div class="header-divider"></div><br>
+   <h2 style="color: #4981ce;"> Browse Users </h2>
+   <div class="divider"></div><br>
    <div class="row">
       <div class="searchDiv">
-         <input type="text" style="width: 100%; text-align: center;" name="userN" class="userNClass" placeholder="Search User"><br>
+         <input type="text" id="userNId" style="width: 100%; text-align: center;" name="userN" class="userNClass form-control" placeholder="Search User">
          <table class="response-table"></table><br>
          <button type="button" id="topBG" class="bSearch btn btn-warning"><span class="glyphicon glyphicon-king"></span></button>
          <button type="button" id="newestBG" class="bSearch btn btn-success">Newest Bored Guys</button>

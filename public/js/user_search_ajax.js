@@ -1,54 +1,17 @@
 $(document).ready(function() {
 
    $(".loader").hide();
-   /*$('.itemName').select2({
-     placeholder: 'Search for a user',
-     ajax: {
-       //url: '/userSearch',
-       url: 'search',
-       dataType: 'json',
-       delay: 250,
-       processResults: function (data) {
-         return {
-           results:  $.map(data, function (item) {
-                 return {
-                     text: item.user_name,
-                     id: item.id
-                 }
-             })
-         };
-       },
-       cache: true
-     }
 
-  }); */
-
-
-
-   /*$("#goUser").on('click', function(){
-
-      var userValue = $("#itemNameID").val();
-
-      if(userValue === null || userValue == "") {
-
-         $('#failedRequest').show().html("Please select a user");
-
+   $('body').click(function(e) {
+      if(!(e.target.id == 'userNId')) {
+         $(".response-table").html("");
       }
-
-      else {
-
-         window.location.href = "http://aabd.herokuapp.com/user/" + userValue;
-
-      }
-
-   }); */
+   });
 
    $(".userNClass").on('keyup', function() {
 
       var minLength = 3;
-
       var userInput = this;
-
       var userValue = userInput.value;
 
       if(userValue.length < minLength) {
@@ -56,19 +19,15 @@ $(document).ready(function() {
       }
 
       if(userValue.length >= minLength) {
-
-         //$(".loader").show();
-
          $.ajax({
             type: "GET",
             url: 'search',
-            //data: userValue,
             data:{'user_input': userValue},
             success: function(response) {
                $(".response-table").empty();
                if(response == "") {
                   $(".loader").hide();
-                  $(".response-table").html('<tr class="user-row"><td> Found Nothing </td></tr>');
+                  $(".response-table").html('<tr class="user-row"><td><h3> Found Nothing </h3></td></tr>');
                }
                else
                if(response != ""){
@@ -76,13 +35,8 @@ $(document).ready(function() {
                   $(".response-table").html(response);
                }
             }
-
-
          });
-
       }
-
-
    });
 
    var topBGFlag = 0;
@@ -114,7 +68,6 @@ $(document).ready(function() {
           $("#button-results").empty();
           var retStr = "";
           for(var i=0; i < response.length; i++) {
-
             retStr += '<a href="user/' + response[i].id + '" class="userDiv" style="margin-bottom: 15px;"><div><img src="' + response[i].profileImage + '" style="display: inline-block;"> <p style="display: inline-block;">' + response[i].username +
                       ' and ' + response[i].score + '</div></a>';
           }
@@ -143,12 +96,8 @@ $(document).ready(function() {
             $("#button-results").html(retStr);
           }
         });
-
         newestBGFlag = 1;
         topBGFlag = 0;
-
         }
-
       });
-
 });
